@@ -32,7 +32,7 @@ Tụi em từng thử cách mà nhiều anh chị đang tính: ráp bằng công
 
 Cách thứ hai là thuê thêm người trực. Cách này chạy, nhưng chỉ chạy trong giờ hành chính. Khách của tụi em thì mua hosting lúc nửa đêm, đóng học phí cuối tuần.
 
-Nên tụi em viết phần mềm riêng, nối thẳng vào ngân hàng, để thông báo tiền vào chạy thẳng vào phần mềm quản lý chứ không đi vòng qua email hay bảng tính. Chạy hơn 4 năm, thu tiền cho [Mona.Host](https://mona.host), cho Khánh Hùng Academy với 40.000 học viên, cho đơn phần mềm của Mona.Software, rồi từ 2022 nhúng vào web bán hàng và phần mềm giao cho khách, tới nay hơn 6.000 khách hàng mới của MONA dùng. Năm 2026 tụi em mở nó ra thành [MONA Pay](/gioi-thieu) cho mọi doanh nghiệp.
+Nên tụi em viết phần mềm riêng, nối thẳng vào ngân hàng, để thông báo tiền vào chạy thẳng vào phần mềm quản lý chứ không đi vòng qua email hay bảng tính. Chạy hơn 4 năm, thu tiền cho [Mona.Host](https://mona.host), cho Khánh Hùng Academy với 40.000 học viên, cho đơn phần mềm của Mona.Software, rồi từ 2022 nhúng vào web bán hàng và phần mềm giao cho khách, tới nay khách hàng của MONA dùng. Năm 2026 tụi em mở nó ra thành [MONA Pay](/gioi-thieu) cho mọi doanh nghiệp.
 
 ## Làm xác nhận thanh toán tự động với MONA Pay trong 4 bước
 
@@ -68,7 +68,7 @@ Gửi thất bại thì sao? Mỗi lần gửi đều có lịch sử trong dash
 
 Với MONA Pay là 0 đồng. Miễn phí 500 giao dịch mỗi tháng, trên đó tính theo số giao dịch, không thu phần trăm trên số tiền, không phí mở tài khoản, không phí nối ngân hàng. Giới hạn duy nhất là fair-use chống lạm dụng, ai dùng bình thường không chạm tới.
 
-Tụi em để miễn phí được vì ba lẽ. Hạ tầng này đã chạy sẵn hơn 4 năm cho chính MONA và cho hơn 6.000 khách hàng MONA từ 2022, mở thêm người dùng gần như không tốn thêm. Tiền không đi qua MONA Pay nên không có phí trung gian để thu. Và MONA sống bằng làm web, hosting, phần mềm, cổng thanh toán tự động chỉ làm mấy thứ đó chạy trọn vẹn hơn.
+Tụi em để miễn phí được vì ba lẽ. Hạ tầng này đã chạy sẵn hơn 4 năm cho chính MONA và cho khách hàng của MONA từ 2022, mở thêm người dùng gần như không tốn thêm. Tiền không đi qua MONA Pay nên không có phí trung gian để thu. Và MONA sống bằng làm web, hosting, phần mềm, cổng thanh toán tự động chỉ làm mấy thứ đó chạy trọn vẹn hơn.
 
 Để anh chị dễ hình dung, cổng thanh toán quốc tế như PayPal thu 4,40% cộng phí cố định cho mỗi giao dịch thương mại từ ngoài Việt Nam, rút tiền về ngân hàng Việt Nam thêm 60.000 đồng mỗi lần, theo biểu phí PayPal công bố mà tụi em kiểm ngày 28/08/2026. Một đơn 10 triệu đồng mất hơn 440.000 đồng phí. Với khách trong nước chuyển khoản, khoản đó bằng 0. Bài so sánh đầy đủ ở [trang cổng thanh toán quốc tế](/cong-thanh-toan-quoc-te).
 

@@ -5,13 +5,13 @@ import CtaBand from '../components/CtaBand.astro';
 import { SITE } from '../data/site';
 import { PRICE_LINE } from '../data/pricing';
 import { BANKS, LIVE_BANKS, APPLYING_BANKS, PLANNED_BANKS, STATUS_LABEL } from '../data/banks';
-const title = 'Ngân hàng hỗ trợ MONA Pay: ACB đang chạy, các ngân hàng khác đang kết nối';
+const title = `Ngân hàng hỗ trợ MONA Pay: ${LIVE_BANKS.map((b) => b.name).join(', ')} đang chạy, các ngân hàng khác đang kết nối`;
 const description = `MONA Pay nhận thông báo tiền vào qua API đối tác của ngân hàng: ${LIVE_BANKS.map((b) => b.name).join(', ')} đang hoạt động, ${APPLYING_BANKS.length} ngân hàng đang đăng ký kết nối. Bảng trạng thái cập nhật tại trang này, thêm ngân hàng không phải sửa code.`;
 const faq = [
   { q: 'Hiện MONA Pay nhận tiền được ở ngân hàng nào?', a: `${LIVE_BANKS.map((b) => b.name).join(', ')} đang hoạt động thật: tài khoản ảo, VietQR động, thông báo giao dịch. ${APPLYING_BANKS.map((b) => b.name).join(', ')} đang trong quá trình đăng ký kết nối API đối tác. Trạng thái từng ngân hàng cập nhật ngay tại trang này.` },
   { q: 'Tài khoản của tôi ở ngân hàng chưa hỗ trợ thì làm sao?', a: 'Cách nhanh nhất là mở một tài khoản ACB đứng tên doanh nghiệp hoặc cá nhân để nhận tiền (mở online tại acb.com.vn), nối vào MONA Pay trong vài phút, tiền vẫn nằm ở ngân hàng của anh chị. Khi ngân hàng của anh chị lên trạng thái đang hoạt động, anh chị nối thêm, không phải làm lại webhook hay Telegram vì cấu hình không phụ thuộc ngân hàng.' },
   { q: 'Khi thêm ngân hàng mới, phần tích hợp đã làm có phải sửa không?', a: 'Không. Webhook, Telegram, API key và mã QR động là lớp chung của MONA Pay; ngân hàng chỉ là nguồn thông báo. Payload webhook có trường bank_name, phần mềm của anh chị đọc trường đó là phân biệt được tiền về ngân hàng nào. Thêm ngân hàng là thêm một dòng cấu hình phía tụi em.' },
-  { q: 'Vì sao ACB đi trước?', a: 'Vì ACB có chương trình API đối tác cho tài khoản ảo và thông báo giao dịch, và tụi em đã chạy thật với ACB từ 2022 cho hơn 6.000 khách hàng mới của MONA. Các ngân hàng khác mở API đối tác muộn hơn hoặc cần hồ sơ doanh nghiệp, tụi em đang nộp lần lượt.' },
+  { q: 'Vì sao ACB đi trước?', a: 'Vì ACB có chương trình API đối tác cho tài khoản ảo và thông báo giao dịch, và tụi em đã chạy thật với ACB từ 2022 cho khách hàng của MONA. Các ngân hàng khác mở API đối tác muộn hơn hoặc cần hồ sơ doanh nghiệp, tụi em đang nộp lần lượt.' },
   { q: 'Bao giờ có ngân hàng tiếp theo?', a: 'Mỗi ngân hàng có quy trình duyệt đối tác riêng, thường tính bằng tuần tới vài tháng. Tụi em không hứa ngày; bảng trạng thái ở trên đổi từ "đang đăng ký kết nối" sang "đang hoạt động" là dùng được ngay. Cần gấp, gọi 1900 636 648 để tụi em tư vấn đường nhận tiền phù hợp trong lúc chờ.' },
 ];
 const jsonld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: 'Ngân hàng hỗ trợ MONA Pay', itemListElement: BANKS.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: `${b.name} (${STATUS_LABEL[b.status]})` })) }];
@@ -35,7 +35,7 @@ const jsonld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: '
             <td>{b.features?.va ? <span class="check">✓</span> : <span style="color:var(--text-soft)">—</span>}</td>
             <td>{b.features?.qr ? <span class="check">✓</span> : <span style="color:var(--text-soft)">—</span>}</td>
             <td>{b.features?.notify ? <span class="check">✓</span> : <span style="color:var(--text-soft)">—</span>}</td>
-            <td style="font-size:.9rem">{b.status === 'live' ? <a href={'/' + b.slug}>Xem trang {b.name}</a> : (b.note || 'Sẽ cập nhật khi có kết quả.')}</td>
+            <td style="font-size:.9rem">{b.status === 'live' && b.page ? <a href={'/' + b.slug}>Xem trang {b.name}</a> : (b.note || 'Sẽ cập nhật khi có kết quả.')}</td>
           </tr>
         ))}
       </tbody>

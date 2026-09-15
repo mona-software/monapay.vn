@@ -1,0 +1,46 @@
+---
+// Dải logo ngân hàng — logo CHÍNH THỐNG (VietQR/Napas, nền trong) đặt trong grid.
+// Nói VỀ chính ngân hàng (nominative use): ACB/BIDV đã nối API báo có tự động;
+// mọi ngân hàng khác = khách quét VietQR chuyển vào thẳng tài khoản anh chị.
+import { BANKS } from '../data/banks';
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+// Thứ tự: live trước (ACB, BIDV), rồi tới các bank còn lại. Chỉ hiện bank có file logo.
+const order = ['acb','bidv','vietinbank','mb','ocb','msb','techcombank','vietcombank','vpbank','tpbank','sacombank','kienlongbank','agribank'];
+const banks = order
+  .map((slug) => BANKS.find((b) => b.slug === slug))
+  .filter((b): b is NonNullable<typeof b> => Boolean(b));
+---
+<section class={compact ? 'banklogos banklogos--compact' : 'banklogos'}>
+  <div class="wrap">
+    {!compact && (
+      <>
+        <span class="eyebrow">Ngân hàng</span>
+        <h2>Hoạt động với ngân hàng<br class="br-d" /> của anh chị</h2>
+        <p class="banklogos-lead">Khách chuyển khoản từ bất kỳ ngân hàng nào qua VietQR, tiền vào thẳng tài khoản đứng tên anh chị. <strong>ACB, BIDV và VietinBank</strong> đã nối API đối tác nên MONA Pay tự động báo có theo thời gian thực; các ngân hàng khác đang nối thêm, trạng thái cập nhật ở <a href="/ngan-hang">trang ngân hàng hỗ trợ</a>.</p>
+      </>
+    )}
+    <ul class="banklogos-grid" role="list">
+      {banks.map((b) => (
+        <li class={'banklogos-cell' + (b.status === 'live' ? ' is-live' : '')}>
+          <img src={`/img/banks/${b.slug}.png`} alt={b.name} width="831" height="311" loading="lazy" decoding="async" />
+          {b.status === 'live' && <span class="banklogos-tag">✓ Báo có tự động</span>}
+        </li>
+      ))}
+    </ul>
+    {!compact && <p class="banklogos-note">Logo là nhãn hiệu của các ngân hàng tương ứng, dùng để nhận diện ngân hàng khách chuyển khoản.</p>}
+  </div>
+</section>
+
+<style>
+  .banklogos--compact{padding:32px 0}
+  .banklogos-lead{max-width:64ch;color:var(--text-soft);margin:.2rem 0 1.6rem}
+  .banklogos-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .banklogos-cell{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 14px;display:flex;align-items:center;justify-content:center;min-height:76px;box-shadow:var(--shadow)}
+  .banklogos-cell img{width:100%;height:auto;max-height:40px;object-fit:contain}
+  .banklogos-cell.is-live{border-color:var(--success);box-shadow:0 0 0 1px var(--success)}
+  .banklogos-tag{position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.62rem;font-weight:700;color:#fff;background:var(--success);padding:2px 8px;border-radius:999px;letter-spacing:.01em}
+  .banklogos-note{color:var(--text-soft);font-size:.78rem;margin:1.5rem 0 0}
+  @media (max-width:900px){.banklogos-grid{grid-template-columns:repeat(4,1fr)}}
+  @media (max-width:560px){.banklogos-grid{grid-template-columns:repeat(3,1fr);gap:12px}.banklogos-cell{min-height:64px;padding:12px 10px}.banklogos-cell img{max-height:32px}}
+</style>

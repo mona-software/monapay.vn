@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 """QC gate site monapay.vn: quét dist/*.html (+ docs .md) theo luật voice MONA + GEO checklist SPEC 1.4.
 Dùng: python3 scripts/qc.py dist [--strict]  → exit 1 nếu có FAIL."""
-import re, sys, os, html, json, glob
-root = sys.argv[1] if len(sys.argv) > 1 else 'dist'
+import re, sys, os, html, json, glob, argparse, csv, io
+from pathlib import Path
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('root', nargs='?', default='dist')
+parser.add_argument('--strict', action='store_true', help='Giữ tương thích cách gọi cũ')
+parser.add_argument('--allow-mon-kiem', action='store_true', help='Chỉ build thử: hạ gate số liệu nghiên cứu thành cảnh báo')
+args = parser.parse_args()
+root = args.root
+if not os.path.isdir(root):
+    parser.error(f'Không có thư mục build: {root}')
 BANNED = os.path.expanduser('~/.claude/skills/mon-taste-qc/catalog/banned-ai-tells.md')
 subs, regs = [], []
 for line in open(BANNED, encoding='utf-8'):
@@ -26,6 +34,26 @@ def text_of(h):
     t = re.sub(r'<[^>]+>', ' ', h)
     return html.unescape(re.sub(r'\s+', ' ', t))
 fails, warns = 0, 0
+# Inspect raw content too: frontmatter, metadata, JSON-LD and code can carry
+# unverified figures even when the rendered prose no longer shows the marker.
+research_files = sorted(p for p in (Path(root) / 'nghien-cuu').rglob('*') if p.suffix.lower() in ('.html', '.md', '.csv'))
+if (Path(root) / 'nghien-cuu.html').is_file():
+    research_files.append(Path(root) / 'nghien-cuu.html')
+for path in research_files:
+    raw = path.read_text(encoding='utf-8-sig')
+    decoded = html.unescape(raw) if path.suffix == '.html' else raw
+    problems = []
+    for marker in ('[MON KIỂM', '[CẦN NGUỒN]'):
+        count = decoded.count(marker)
+        if count: problems.append(f'{marker}: {count} lần')
+    if path.suffix == '.csv':
+        count = sum(row.get('xac_minh', '').strip().lower() == 'mon_kiem' for row in csv.DictReader(io.StringIO(raw)))
+        if count: problems.append(f'xac_minh=mon_kiem: {count} dòng')
+    for problem in problems:
+        level = 'warn' if args.allow_mon_kiem else 'FAIL'
+        print(f'{level} {path.relative_to(root)}: số liệu chưa kiểm: {problem}')
+        if args.allow_mon_kiem: warns += 1
+        else: fails += 1
 files = sorted(glob.glob(os.path.join(root, '**', '*.html'), recursive=True))
 for f in files:
     raw = open(f, encoding='utf-8').read()

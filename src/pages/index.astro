@@ -6,6 +6,7 @@ import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
 import MonaStory from '../components/MonaStory.astro';
 import MonaScale from '../components/MonaScale.astro';
+import BankLogos from '../components/BankLogos.astro';
 import MonaVisit from '../components/MonaVisit.astro';
 import MonaFreeBanner from '../components/MonaFreeBanner.astro';
 import Steps from '../components/Steps.astro';
@@ -25,7 +26,7 @@ const description = `Cổng thanh toán tự động báo có MONA Pay: khách c
 const stats = [
   { value: String(SITE.founded), label: 'năm The MONA Group thành lập, hơn 10 năm làm web và phần mềm' },
   { value: SITE.projects, label: 'dự án đã giao cho khách hàng' },
-  { value: SITE.customersSince2022, label: 'khách hàng mới của MONA thu tiền qua hệ thống này từ 2022 tới nay' },
+  { value: SITE.retention, label: 'khách làm xong quay lại làm tiếp với MONA' },
   isFree ? { value: '0 đ', label: 'miễn phí, không giới hạn giao dịch, đủ tính năng' } : { value: String(FREE_TX_PER_MONTH), label: 'giao dịch mỗi tháng miễn phí, đủ tính năng' },
 ];
 
@@ -119,6 +120,8 @@ const jsonld = [{
       </div>
     </div>
   </section>
+
+  <BankLogos />
 
   <section class="section-alt">
     <div class="wrap">
@@ -230,7 +233,7 @@ const jsonld = [{
       <div class="grid grid-2 why">
         <div>
           <p>Gói Miễn phí có đủ mọi thứ: tài khoản ảo, mã QR, báo Telegram, nối website, sổ giao dịch, API, và {fmt(FREE_TX_PER_MONTH)} giao dịch tiền vào mỗi tháng, {FREE_MULTIPLE_LINE}. Không phí mở tài khoản, không thu phần trăm trên số tiền. Shop bán đều 15 đơn mỗi ngày dùng cả năm không mất đồng nào.</p>
-          <p>Bán nhiều hơn {fmt(FREE_TX_PER_MONTH)} giao dịch mỗi tháng, anh chị chọn gói trả phí từ {fmtVnd(CHEAPEST_PAID.price_month)} mỗi tháng cho {fmt(PAID_PLANS[0].tx_limit)} giao dịch, tính theo số giao dịch chứ không theo số tiền, trả năm chỉ tính {YEARLY_MONTHS} tháng. Tụi em giữ giá thấp được vì MONA Pay không giữ tiền nên không có chi phí xử lý tiền, và hệ thống này đã xây từ 2022 để thu tiền cho chính MONA rồi nhúng vào web, phần mềm giao cho hơn 6.000 khách hàng mới của MONA. Máy chủ và đội kỹ thuật đã có sẵn.</p>
+          <p>Bán nhiều hơn {fmt(FREE_TX_PER_MONTH)} giao dịch mỗi tháng, anh chị chọn gói trả phí từ {fmtVnd(CHEAPEST_PAID.price_month)} mỗi tháng cho {fmt(PAID_PLANS[0].tx_limit)} giao dịch, tính theo số giao dịch chứ không theo số tiền, trả năm chỉ tính {YEARLY_MONTHS} tháng. Tụi em giữ giá thấp được vì MONA Pay không giữ tiền nên không có chi phí xử lý tiền, và hệ thống này đã xây từ 2022 để thu tiền cho chính MONA rồi nhúng vào web, phần mềm giao cho khách hàng của MONA. Máy chủ và đội kỹ thuật đã có sẵn.</p>
           <p><a href="/bang-gia">Xem trang bảng giá</a> để đọc đủ 5 gói, cách đếm giao dịch và chuyện vượt mức thì sao.</p>
         </div>
         <div class="card compare">

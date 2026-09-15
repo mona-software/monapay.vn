@@ -4,6 +4,7 @@ import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Steps from '../components/Steps.astro';
 import CodeTabs from '../components/CodeTabs.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
 import { SITE } from '../data/site';
 import { PRICE_LINE } from '../data/pricing';
 
@@ -223,6 +224,13 @@ const jsonld = [
     </div>
   </section>
 
+  <section class="woo-video">
+    <div class="wrap">
+      <span class="eyebrow">Video · 3 phút</span>
+      <VideoEmbed id="v1-woocommerce" heading="Xem cài MONA Pay cho WooCommerce từ tải plugin tới đơn tự xác nhận" />
+    </div>
+  </section>
+
   <section class="section-alt woo-live">
     <div class="wrap">
       <span class="eyebrow">Ảnh thật · 5 bước</span>
@@ -272,7 +280,7 @@ const jsonld = [
     <div class="wrap">
       <span class="eyebrow">Cách MONA Pay làm</span>
       <h2>Plugin tự động xác nhận thanh toán qua tài khoản ngân hàng</h2>
-      <p class="lead">Tụi em dùng cách này để thu tiền hosting, học phí, đơn phần mềm cho chính MONA, rồi từ 2022 hơn 6.000 khách hàng mới của MONA thu tiền qua đây trước khi mở cho anh chị.</p>
+      <p class="lead">Tụi em dùng cách này để thu tiền hosting, học phí, đơn phần mềm cho chính MONA, rồi từ 2022 khách hàng của MONA thu tiền qua đây trước khi mở cho anh chị.</p>
       <div style="margin-top:1.5rem"><Steps items={steps} /></div>
     </div>
   </section>

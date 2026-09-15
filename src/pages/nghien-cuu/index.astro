@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../data/site';
+import { newestResearchFirst, researchISO, researchURL } from '../../data/research';
+const reports = (await getCollection('nghien-cuu')).filter((r) => !r.data.draft).sort(newestResearchFirst);
+const title = 'Nghiên cứu MONA Pay: báo cáo, dữ liệu và nguồn trích dẫn';
+const description = 'Báo cáo của nhóm nghiên cứu MONA Pay về thanh toán và API ngân hàng. Đọc phương pháp, tải PDF, CSV và Markdown, trích dẫn kèm nguồn.';
+const jsonld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: title, url: SITE.url + '/nghien-cuu', numberOfItems: reports.length, itemListOrder: 'https://schema.org/ItemListOrderDescending', itemListElement: reports.map((report, index) => ({ '@type': 'ListItem', position: index + 1, name: report.data.title, url: researchURL(report.id) })) }];
+---
+<Base title={title} description={description} path="/nghien-cuu" jsonld={jsonld} lang="vi">
+  <meta slot="head" http-equiv="Content-Language" content="vi" />
+  <div class="wrap research-hub">
+    <header class="hub-head">
+      <p class="hub-eyebrow">Nghiên cứu MONA Pay</p>
+      <h1>Dữ liệu về cách doanh nghiệp nhận tiền</h1>
+      <div class="answer-first"><p>Nhóm nghiên cứu MONA Pay thuộc The MONA Group nghiên cứu thanh toán và kết nối API ngân hàng. Mỗi báo cáo trình bày phương pháp, giới hạn dữ liệu và nguồn tham khảo, kèm bản PDF, CSV và Markdown để đọc, kiểm tra và trích dẫn.</p></div>
+    </header>
+    <section aria-labelledby="reports-title" class="reports-section">
+      <h2 id="reports-title">Báo cáo nghiên cứu</h2>
+      <ol class="report-list">{reports.map((report) => <li>
+        <div class="report-date"><time datetime={researchISO(report.data.published)}>{report.data.published}</time><span>Phiên bản {report.data.version}</span></div>
+        <div><h3><a href={'/nghien-cuu/' + report.id}>{report.data.title}</a></h3><p>{report.data.description}</p>
+          <div class="report-formats"><a href={'/nghien-cuu/' + report.id}>Đọc báo cáo →</a><a href={researchURL(report.id) + '.pdf'}>PDF</a><a href={researchURL(report.id) + '.csv'}>CSV</a><a href={researchURL(report.id) + '.md'}>Markdown</a></div>
+        </div>
+      </li>)}</ol>
+      {!reports.length && <p class="empty-reports">Báo cáo đang được chuẩn bị. Các bản công bố sẽ được liệt kê tại đây theo ngày mới nhất.</p>}
+    </section>
+    <aside class="research-contact"><h2>Xin dữ liệu gốc hoặc trao đổi phương pháp</h2><p>Liên hệ nhóm nghiên cứu qua <a href="mailto:info@themona.global">info@themona.global</a>, ghi rõ tên báo cáo, phiên bản và dữ liệu cần kiểm tra. Nhóm sẽ phản hồi về phạm vi dữ liệu có thể cung cấp.</p><p>Báo cáo và bộ dữ liệu công bố được trích dẫn lại kèm nguồn theo <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p></aside>
+  </div>
+</Base>
+<style>
+  .research-hub{max-width:1060px;padding-top:64px;padding-bottom:64px}.hub-head{max-width:860px}.hub-eyebrow{text-transform:uppercase;letter-spacing:.08em;color:var(--primary);font-size:.8rem;font-weight:700}
+  .hub-head h1{font-size:clamp(2rem,4.5vw,3.5rem);margin-bottom:28px}.hub-head .answer-first{padding:0;border:0;box-shadow:none;background:none;border-radius:0;color:var(--text-soft)}
+  .reports-section{padding:32px 0}.reports-section h2,.research-contact h2{font-size:1.35rem}.report-list{list-style:none;padding:0;margin:24px 0}.report-list li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;margin:0;padding:28px 0;border-top:1px solid var(--border)}
+  .report-date{font-size:.85rem;color:var(--text-soft)}.report-date span{display:block;margin-top:4px}.report-list h3{font-size:1.35rem}.report-list p{font-size:.95rem;color:var(--text-soft)}.report-formats{display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem}.report-formats a:first-child{font-weight:700}
+  .research-contact{padding:28px;border-left:4px solid var(--primary);background:var(--surface);max-width:860px}.research-contact p{font-size:.95rem}.research-contact p:last-child{margin:0}
+  @media(max-width:650px){.research-hub{padding-top:32px}.report-list li{grid-template-columns:1fr;gap:12px}.report-date{display:flex;gap:16px}.report-date span{margin:0}}
+</style>

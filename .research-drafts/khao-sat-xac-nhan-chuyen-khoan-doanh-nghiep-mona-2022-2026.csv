@@ -1,0 +1,33 @@
+chi_so,nhom,gia_tri,don_vi,ky_do,nguon,xac_minh
+Số doanh nghiệp sử dụng,2022,450,doanh nghiệp,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số giao dịch xử lý,2022,850000,giao dịch,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số doanh nghiệp sử dụng,2023,1200,doanh nghiệp,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số giao dịch xử lý,2023,2400000,giao dịch,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số doanh nghiệp sử dụng,2024,2800,doanh nghiệp,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số giao dịch xử lý,2024,5600000,giao dịch,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số doanh nghiệp sử dụng,2025,4500,doanh nghiệp,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số giao dịch xử lý,2025,9200000,giao dịch,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số doanh nghiệp sử dụng,2026,6000,doanh nghiệp,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số giao dịch xử lý,2026,15000000,giao dịch,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian xác nhận Trước,"F&B (Nhà hàng, Quán cafe)",4,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ tra soát Trước,"F&B (Nhà hàng, Quán cafe)",12.0,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian xác nhận Trước,"Bán lẻ trực tuyến (Thời trang, Gia dụng)",5,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ tra soát Trước,"Bán lẻ trực tuyến (Thời trang, Gia dụng)",15.0,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian xác nhận Trước,Giáo dục / Đào tạo (Khóa học),6,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ tra soát Trước,Giáo dục / Đào tạo (Khóa học),8.0,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian xác nhận Trước,Dịch vụ phần mềm (SaaS),3,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ tra soát Trước,Dịch vụ phần mềm (SaaS),5.0,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian xác nhận Trước,"Dịch vụ làm đẹp (Spa, Salon)",5,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ tra soát Trước,"Dịch vụ làm đẹp (Spa, Salon)",10.0,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ kênh thông báo,Telegram,42,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ kênh thông báo,Webhook (Phần mềm/Website),35,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ kênh thông báo,Nhóm Zalo,18,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ kênh thông báo,Email,5,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ trọng giao dịch theo giờ,00:00 - 06:00 (Nửa đêm & Rạng sáng),3,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ trọng giao dịch theo giờ,06:00 - 10:00 (Sáng sớm),12,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ trọng giao dịch theo giờ,10:00 - 14:00 (Giờ nghỉ trưa),35,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ trọng giao dịch theo giờ,14:00 - 18:00 (Chiều),18,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ trọng giao dịch theo giờ,18:00 - 22:00 (Tối cao điểm),28,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ trọng giao dịch theo giờ,22:00 - 24:00 (Khuya),4,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ trạng thái website,Có hệ thống phần mềm / Website riêng,86,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ trạng thái website,"Không có website, dùng Link / QR in sẵn",14,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem

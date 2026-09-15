@@ -1,0 +1,151 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Base from './Base.astro';
+import { SITE } from '../data/site';
+import { RESEARCH_LICENSE, researchCitation, researchISO, researchURL } from '../data/research';
+interface Props { report: CollectionEntry<'nghien-cuu'> }
+const { report } = Astro.props;
+const { title, description, published, updated, version, authors, sources, key_numbers } = report.data;
+const path = `/nghien-cuu/${report.id}`;
+const url = researchURL(report.id);
+const citation = researchCitation(report);
+// Render the Markdown slot first so the scroll containers are present without JS.
+let tableNumber = 0;
+const body = (await Astro.slots.render('default'))
+  .replace(/<table\b/g, () => `<div class="research-table-wrap" tabindex="0" role="region" aria-label="Bảng dữ liệu ${++tableNumber}, cuộn ngang để xem thêm"><table`)
+  .replace(/<\/table>/g, '</table></div>');
+const creator = { '@type': 'Organization', name: 'The MONA Group', url: SITE.companyUrl };
+const common = { name: title, description, creator, author: authors.map((name) => ({ '@type': 'Organization', name })), datePublished: researchISO(published), dateModified: researchISO(updated || published), version, license: RESEARCH_LICENSE, inLanguage: 'vi' };
+const jsonld = [
+  { '@context': 'https://schema.org', '@type': 'Report', '@id': url + '#report', ...common, headline: title, url,
+    publisher: creator, mainEntityOfPage: url, associatedMedia: [
+      { '@type': 'MediaObject', encodingFormat: 'application/pdf', contentUrl: url + '.pdf' },
+      { '@type': 'MediaObject', encodingFormat: 'text/markdown', contentUrl: url + '.md' },
+    ], hasPart: { '@id': url + '#dataset' }, citation: sources.filter((source) => /^https?:\/\//.test(source.url)).map((source) => source.url) },
+  { '@context': 'https://schema.org', '@type': 'Dataset', '@id': url + '#dataset', ...common,
+    name: `Bộ dữ liệu: ${title}`, url: url + '.csv', isPartOf: { '@id': url + '#report' },
+    distribution: [{ '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: url + '.csv' }] },
+];
+---
+<Base title={title} description={description} path={path} jsonld={jsonld} lang="vi">
+  <Fragment slot="head">
+    <meta http-equiv="Content-Language" content="vi" />
+    <link rel="stylesheet" href="/fonts/research-fonts.css" />
+    <link rel="alternate" type="text/markdown" href={url + '.md'} title="Bản Markdown" />
+    <link rel="alternate" type="application/pdf" href={url + '.pdf'} title="Báo cáo PDF" />
+  </Fragment>
+  <article class="wrap research-report">
+    <header class="research-hero">
+      <a class="research-back screen-only" href="/nghien-cuu">← Tất cả báo cáo</a>
+      <img class="print-logo" src="/brand/monapay-logo-light.svg" alt="MONA Pay" width="220" height="48" />
+      <p class="research-eyebrow">Nghiên cứu MONA Pay</p>
+      <h1>{title}</h1>
+      <div class="answer-first research-summary"><p>{description}</p></div>
+      <dl class="research-meta">
+        <div><dt>Công bố</dt><dd><time datetime={researchISO(published)}>{published}</time></dd></div>
+        {updated && <div><dt>Cập nhật</dt><dd><time datetime={researchISO(updated)}>{updated}</time></dd></div>}
+        <div><dt>Phiên bản</dt><dd>{version}</dd></div>
+        <div><dt>Tác giả</dt><dd>{authors.join(' · ')}</dd></div>
+      </dl>
+      <div class="btn-row screen-only research-downloads" aria-label="Tải báo cáo">
+        <a class="btn btn-primary" href={path + '.pdf'} download>Tải PDF</a>
+        <a class="btn btn-outline" href={path + '.csv'} download>Tải dữ liệu CSV</a>
+        <a class="btn btn-ghost" href={path + '.md'} download>Bản .md</a>
+      </div>
+      <p class="print-publisher">The MONA Group · monapay.vn</p>
+    </header>
+    <section class="research-numbers" aria-labelledby="key-numbers-title">
+      <h2 id="key-numbers-title">Con số chính</h2>
+      <dl class="number-grid">
+        {key_numbers.map((number) => <div class="number-card"><dt>{number.label}</dt><dd>{number.value}</dd></div>)}
+      </dl>
+    </section>
+    <div class="research-body prose-md" set:html={body} />
+    <section class="research-citation" aria-labelledby="citation-title">
+      <h2 id="citation-title">Trích dẫn báo cáo này</h2>
+      <p id="research-apa">{citation.apa}</p>
+      <button type="button" class="copy-button screen-only" data-copy-target="research-apa">Sao chép trích dẫn</button>
+      <h3>BibTeX</h3>
+      <pre><code id="research-bibtex">{citation.bibtex}</code></pre>
+      <button type="button" class="copy-button screen-only" data-copy-target="research-bibtex">Sao chép BibTeX</button>
+      <p class="copy-status screen-only" role="status" aria-live="polite"></p>
+      <p class="research-license">Báo cáo và dữ liệu được trích dẫn lại kèm nguồn theo giấy phép <a href={RESEARCH_LICENSE}>CC BY 4.0</a>.</p>
+    </section>
+    <section class="research-sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Nguồn</h2>
+      <ol>{sources.map((source) => <li>{/^https?:\/\//.test(source.url) ? <a href={source.url}>{source.name}</a> : <span>{source.name}: {source.url}</span>}<span> · Kiểm tra <time datetime={researchISO(source.checked)}>{source.checked}</time></span><span class="print-source-url">{source.url}</span></li>)}</ol>
+    </section>
+  </article>
+</Base>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy-target]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const target = document.getElementById(button.dataset.copyTarget || '');
+      const status = document.querySelector('.copy-status');
+      if (!target || !status) return;
+      try {
+        await navigator.clipboard.writeText(target.textContent || '');
+        status.textContent = button.dataset.copyTarget === 'research-bibtex' ? 'Đã sao chép BibTeX.' : 'Đã sao chép trích dẫn.';
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(target);
+        const selection = window.getSelection();
+        selection?.removeAllRanges(); selection?.addRange(range);
+        status.textContent = 'Đã chọn nội dung. Nhấn Ctrl+C hoặc ⌘C để sao chép.';
+      }
+    });
+  });
+</script>
+<style>
+  .research-report{max-width:1000px;font-family:'MONA Research',var(--font);padding-top:40px;padding-bottom:64px;overflow-wrap:anywhere}
+  .research-hero{border-bottom:2px solid var(--primary);padding-bottom:36px}
+  .research-back{display:inline-block;margin-bottom:28px;font-size:.9rem}
+  .research-eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;font-weight:700;color:var(--primary);margin-bottom:16px}
+  .research-hero h1{font-size:clamp(1.9rem,3.8vw,3rem);max-width:900px}
+  .research-summary{padding:0;border:0;border-radius:0;box-shadow:none;background:none;margin:24px 0;color:var(--text-soft)}
+  .research-meta{display:flex;gap:20px 36px;flex-wrap:wrap;margin:28px 0 0;font-size:.88rem}
+  .research-meta dt{color:var(--text-soft)}.research-meta dd{margin:0;font-weight:600;color:var(--ink)}
+  .research-report section{padding:32px 0}
+  .research-report h2{font-size:1.5rem}.research-report h3{font-size:1.12rem}
+  .number-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;margin-bottom:0}
+  .number-card{background:var(--surface);padding:20px;border-top:3px solid var(--primary)}
+  .number-card dt{color:var(--text-soft);font-size:.88rem}.number-card dd{font-weight:800;font-size:1.4rem;color:var(--primary);margin:8px 0 0;line-height:1.4}
+  .research-body{min-width:0;max-width:100%}
+  .research-body :global(h2){margin-top:36px}.research-body :global(h3){margin-top:24px}
+  .research-body :global(.research-table-wrap){width:100%;max-width:100%;overflow-x:auto;margin:24px 0;overscroll-behavior-x:contain}
+  .research-body :global(table){display:table;width:100%;min-width:640px;margin:0;border-radius:0;box-shadow:none;overflow:visible}
+  .research-body :global(th),.research-body :global(td){min-width:110px}
+  .research-body :global(pre){max-width:100%}
+  .research-citation{margin-top:32px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .research-citation pre{margin:16px 0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.8rem}
+  .research-citation h3{margin-top:28px}.copy-button{padding:8px 14px;font:inherit;font-size:.85rem;border:1px solid var(--primary);background:var(--surface);color:var(--primary);cursor:pointer;border-radius:4px}
+  .copy-button:focus-visible{outline:3px solid var(--cta);outline-offset:3px}
+  .copy-status{font-size:.85rem;margin-top:8px}.research-license{font-size:.9rem;margin:24px 0 0}
+  .research-sources li{margin-bottom:14px}.research-sources span{font-size:.85rem;color:var(--text-soft)}
+  .print-logo,.print-publisher,.print-source-url{display:none}
+  @media(max-width:600px){.research-downloads{align-items:stretch}.research-downloads .btn{font-size:.9rem;padding:.8em 1em}.research-report{padding-top:24px}}
+  @media print{
+    @page{size:A4;margin:18mm 16mm 20mm;@bottom-left{content:'The MONA Group · monapay.vn';font-family:'MONA Research',sans-serif;font-size:8pt;color:#6F5960}@bottom-right{content:counter(page) ' / ' counter(pages);font-family:'MONA Research',sans-serif;font-size:8pt;color:#6F5960}}
+    @page:first{@bottom-left{content:none}@bottom-right{content:none}}
+    :global(html),:global(body){background:#fff!important;color:#261118!important;font-family:'MONA Research',sans-serif!important;font-size:10pt;line-height:1.6}
+    :global(.site-header),:global(.site-footer),.screen-only{display:none!important}
+    .research-report{width:100%;max-width:none;padding:0;margin:0}
+    .research-hero{min-height:245mm;display:flex;flex-direction:column;border:0;padding:0;break-after:page;page-break-after:always}
+    .print-logo{display:block;width:55mm;height:auto;margin:0 0 30mm}
+    .research-eyebrow{font-size:10pt}.research-hero h1{font-size:27pt;line-height:1.35;text-wrap:initial}
+    .research-summary{font-size:12pt;margin:8mm 0}.research-meta{font-size:10pt;gap:6mm 10mm;margin:8mm 0}
+    .print-publisher{display:block;margin:auto 0 0;padding-top:12mm;font-size:11pt;font-weight:700;color:#971B38}
+    .research-report section{padding:6mm 0}.research-report h2{font-size:16pt}.research-report h3{font-size:12pt}
+    .number-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:3mm}.number-card{padding:3mm;border:1px solid #E1D2D6;break-inside:avoid}.number-card dd{font-size:14pt}.number-card dt{font-size:9pt}
+    .research-body :global(.research-table-wrap){overflow:visible;margin:5mm 0;max-width:none}
+    .research-body :global(table){display:table!important;width:100%;min-width:0;table-layout:fixed;font-size:8pt;break-inside:auto}
+    .research-body :global(th),.research-body :global(td){min-width:0;padding:2mm;overflow-wrap:anywhere;white-space:normal}
+    .research-body :global(thead){display:table-header-group}.research-body :global(tr){break-inside:avoid;page-break-inside:avoid}
+    .research-body :global(h2),.research-body :global(h3),.research-report h2,.research-report h3{break-after:avoid;page-break-after:avoid}
+    .research-body :global(p),.research-body :global(li){orphans:3;widows:3}
+    .research-report :global(pre){white-space:pre-wrap;overflow:visible;font-size:8pt;box-shadow:none;background:#fff!important;color:#261118!important;border:1px solid #E1D2D6;border-radius:0}
+    .research-report :global(a){color:inherit;text-decoration:underline}
+    .research-citation{margin-top:6mm}.research-license{font-size:9pt}.research-sources li{break-inside:avoid}
+    .print-source-url{display:block;font-size:8pt!important}
+  }
+</style>

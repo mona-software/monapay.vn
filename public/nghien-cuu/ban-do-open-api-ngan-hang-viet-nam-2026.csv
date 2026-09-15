@@ -1,0 +1,28 @@
+chi_so,nhom,gia_tri,don_vi,ky_do,nguon,xac_minh
+Có Sandbox,BIDV,1,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,BIDV,đang hoàn thiện hồ sơ form devportal,trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Có Sandbox,MB,1,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,MB,"thư 04/09/2026, chưa phản hồi",trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Có Sandbox,VietinBank,1,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,VietinBank,"sandbox công khai, hồ sơ production đang chuẩn bị",trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Có Sandbox,OCB,1,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,OCB,"2 địa chỉ trả thư lại, gửi lại 04/09/2026, chưa phản hồi",trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Có Sandbox,NCB,1,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,NCB,"thư 04/09/2026, chưa phản hồi",trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Có Sandbox,VPBank,0,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,VPBank,"chỉ có cổng CSKH, đang nộp",trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Có Sandbox,TPBank,0,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,TPBank,"thư 04/09/2026, phiếu TIK4469540 trong ngày",trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Có Sandbox,KienlongBank,0,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,KienlongBank,"thư 04/09/2026, chưa phản hồi",trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Có Sandbox,MSB,0,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,MSB,"thư 04/09/2026, chưa phản hồi",trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Có Sandbox,ACB,1,Boolean,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Liên hệ MONA Pay ghi nhận,ACB,đang hoạt động; đề nghị mở luồng doanh nghiệp,trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Tổng số ngân hàng có tiền lệ mở API,Toàn thị trường,28,Ngân hàng,08/2026,https://sepay.vn/api-ngan-hang.html,cong_khai
+Cam kết tích hợp nhanh nhất,MB,3,tuần,08/2026,https://cafef.vn/mb-dan-dat-chuyen-doi-so-toan-dien-voi-baas-188240819104529719.chn,cong_khai
+Số ngân hàng đang đăng ký kết nối,MONA Pay,10,Ngân hàng,06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai
+Yêu cầu công việc nối 1 bank,Mục 1,1,hạng mục,08/2026,Kinh nghiệm triển khai kết nối ACB của MONA Pay (2022–2026),cong_khai
+Yêu cầu công việc nối 1 bank,Mục 2,1,hạng mục,08/2026,Kinh nghiệm triển khai kết nối ACB của MONA Pay (2022–2026),cong_khai
+Yêu cầu công việc nối 1 bank,Mục 3,1,hạng mục,08/2026,Kinh nghiệm triển khai kết nối ACB của MONA Pay (2022–2026),cong_khai
+Liên hệ MONA Pay ghi nhận,Nam A Bank,"thư 04/09/2026, chưa phản hồi",trạng thái,04–06/09/2026,"MONA Pay, sổ gửi thư ngân hàng 04/09/2026",cong_khai

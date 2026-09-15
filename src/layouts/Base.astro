@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { SITE, FOOTER_LINKS, FOOTER_LINKS_EN } from '../data/site';
 import { MEGA, MEGA_EN } from '../data/nav';
+import { getCollection } from 'astro:content';
 interface Props {
   title: string;
   description: string;
@@ -15,6 +16,10 @@ interface Props {
 const { title, description, path, ogImage = '/og/monapay-og.png', jsonld = [], noindex = false, lang = 'vi', alternate } = Astro.props;
 const isEn = lang === 'en';
 const NAV = isEn ? MEGA_EN : MEGA;
+// Mục 'Nghiên cứu' chỉ hiện khi có báo cáo đã công bố (không còn nhãn số chưa kiểm)
+const publishedResearch = (await getCollection('nghien-cuu')).filter((r) => !r.data.draft).length;
+const FOOTER_SHOWN = Object.fromEntries(Object.entries(isEn ? FOOTER_LINKS_EN : FOOTER_LINKS).map(([h, links]) => [h, publishedResearch ? links : links.filter((l) => l.href !== '/nghien-cuu')]));
+const NAV_SHOWN = publishedResearch ? NAV : NAV.map((g) => g.cols ? { ...g, cols: g.cols.map((c) => ({ ...c, items: c.items.filter((i) => i.href !== '/nghien-cuu') })) } : g);
 const langHref = isEn ? (alternate?.vi ?? '/') : (alternate?.en ?? '/en');
 const canonical = SITE.url + (path === '/' ? '/' : path);
 const org = {
@@ -64,7 +69,7 @@ const schemas = [org, website, ...jsonld];
       <a class="logo" href={isEn ? '/en' : '/'} aria-label="MONA Pay"><img src="/brand/monapay-logo-light.svg" alt="MONA Pay" width="157" height="34" /></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
       <nav class="nav" id="site-nav" aria-label={isEn ? 'Main navigation' : 'Điều hướng chính'}>
-        {NAV.map((g) => {
+        {NAV_SHOWN.map((g) => {
           const active = (g.match || []).some((m) => path === m || path.startsWith(/[-/]$/.test(m) ? m : m + '/')) || (g.href && path === g.href);
           return g.cols ? (
             <div class="nav-group" data-group>
@@ -107,7 +112,7 @@ const schemas = [org, website, ...jsonld];
           <p class="hotline-big"><a href={SITE.hotlineTel}>{SITE.hotline}</a></p>
           <p style="margin:0"><a href={'mailto:' + SITE.email}>{SITE.email}</a></p>
         </div>
-        {Object.entries(isEn ? FOOTER_LINKS_EN : FOOTER_LINKS).map(([h, links]) => (
+        {Object.entries(FOOTER_SHOWN).map(([h, links]) => (
           <div>
             <h4>{h}</h4>
             <ul>{links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
@@ -119,7 +124,11 @@ const schemas = [org, website, ...jsonld];
           <a href={SITE.companyUrl} aria-label="The MONA Group"><img src="/brand/mona-logo-the-mona-white.svg" alt="THE MONA" width="160" height="26" /></a>
           <span>© {new Date().getFullYear()} {SITE.company} · {isEn ? `since ${SITE.founded} · ${SITE.projects} projects` : `từ ${SITE.founded} · ${SITE.projects} dự án`}</span>
         </div>
-        <p class="footer-group" style="flex-basis:100%;margin:0 0 .6rem;font-size:.85rem;opacity:.85">{isEn ? 'MONA Pay is part of the monacloud group (MONA Cloud) by The MONA Group, alongside' : 'MONA Pay thuộc nhóm monacloud (MONA Cloud) của The MONA Group, đi cùng'} <a href="https://vibecloud.vn">VibeCloud</a> (deploy) · MONA Base (database) · MONA AI ({isEn ? 'models billed in VND' : 'gọi model trả VND'}) · <a href="https://monahddt.vn">monahddt</a> ({isEn ? 'e-invoices' : 'hoá đơn điện tử'}).</p>
+        <p class="footer-group" style="flex-basis:100%;margin:0 0 .6rem;font-size:.85rem;opacity:.85">{isEn ? 'MONA Pay is part of The MONA Group dev stack, alongside' : 'MONA Pay thuộc bộ hạ tầng cho lập trình viên của The MONA Group, đi cùng'} <a href="https://monacloud.vn">MONA Cloud</a> (deploy) · <a href="https://monabase.vn">MONA Base</a> (database) · <a href="https://monamail.vn">MONA Mail</a> ({isEn ? 'transactional email' : 'email giao dịch'}) · <a href="https://monaeinvoice.vn">MONA eInvoice</a> ({isEn ? 'e-invoices' : 'hoá đơn điện tử'}).</p>
+        <div class="footer-social" style="display:flex;gap:1.2rem;flex-wrap:wrap;flex-basis:100%;margin:0 0 .6rem">
+          <span style="opacity:.8">{isEn ? 'Channels:' : 'Kênh MONA Pay:'}</span>
+          {SITE.social.map((s) => (<a href={s.href} rel="me noopener" target="_blank" title={s.note}>{s.label}</a>))}
+        </div>
         <div style="display:flex;gap:1.2rem;flex-wrap:wrap">
           <a href="/llms.txt">llms.txt</a>
           <a href="/.well-known/mcp-manifest.json">MCP manifest</a>

@@ -1,0 +1,220 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Steps from '../components/Steps.astro';
+import BankLogos from '../components/BankLogos.astro';
+import { SITE } from '../data/site';
+import { BANKS_LINE, LIVE_BANKS, APPLYING_BANKS } from '../data/banks';
+import { PRICE_LINE } from '../data/pricing';
+
+const title = 'API VietinBank: thu hộ VietQR, tài khoản định danh, tự động báo có';
+const description = 'Nối tài khoản VietinBank vào MONA Pay qua VietinBank Open API: tài khoản định danh (VA), thu hộ VietQR Pay chuẩn Napas, thông báo biến động số dư và sao kê đối soát. Tiền vẫn ở VietinBank, MONA Pay chỉ đọc thông báo và bắn webhook, Telegram.';
+
+const support = [
+  { f: 'Tài khoản định danh (Virtual Account)', ok: true, note: 'VietinBank cấp dải tài khoản định danh qua Open API, mỗi đơn hoặc mỗi khách một số riêng để tiền vào là biết của ai' },
+  { f: 'Thu hộ VietQR Pay (chuẩn Napas)', ok: true, note: 'Khách quét mã VietQR chuyển đúng số tiền và nội dung, VietinBank thu hộ và báo giao dịch về hệ thống' },
+  { f: 'Thông báo biến động số dư realtime', ok: true, note: 'VietinBank chủ động đẩy dữ liệu biến động số dư theo thời gian thực khi có tiền phát sinh' },
+  { f: 'Sao kê tài khoản để đối soát', ok: true, note: 'API sao kê giúp MONA Pay đối soát tự động, khớp từng giao dịch cuối ngày, cuối tháng' },
+  { f: 'Webhook có chữ ký HMAC-SHA256', ok: true, note: `MONA Pay bắn webhook về phần mềm của anh chị, header ${SITE.tech.hmacHeader} + ${SITE.tech.tsHeader}, từ chối nếu lệch quá ${SITE.tech.replayWindowMin} phút` },
+  { f: 'Báo vào nhóm Telegram, Zalo', ok: true, note: 'Cả đội thấy tiền vào ngay trong nhóm, không ai phải mở app ngân hàng, sửa được mẫu tin' },
+  { f: 'Tài khoản cá nhân và doanh nghiệp', ok: true, note: 'Nối tài khoản VietinBank đứng tên cá nhân hoặc pháp nhân của anh chị' },
+  { f: 'Thông báo tiền ra', ok: false, note: 'Hiện MONA Pay chỉ theo dõi chiều tiền vào tài khoản của anh chị' },
+];
+
+// VietinBank cung cấp gì (qua Open API) ↔ MONA Pay làm gì
+const roles = [
+  { bank: 'Cấp tài khoản định danh (VA) qua VietinBank Open API, mỗi số trỏ về tài khoản thật của anh chị', mona: 'Gọi API VietinBank để tạo dải số định danh thay anh chị, gắn mỗi số cho một đơn hoặc một khách, lưu lại để khớp tiền' },
+  { bank: 'Thu hộ qua VietQR Pay theo chuẩn Napas: khách quét mã là chuyển đúng số tiền, đúng nội dung', mona: 'Sinh mã VietQR động theo từng đơn qua dashboard hoặc API, đưa cho khách quét, tự khớp khi tiền vào' },
+  { bank: 'Đẩy thông báo biến động số dư theo thời gian thực khi có giao dịch tiền vào', mona: 'Nhận thông báo, ghi vào dashboard, khớp với đơn theo số định danh hoặc nội dung, bắn tiếp về phần mềm và nhóm chat' },
+  { bank: 'Cung cấp API sao kê tài khoản để lấy lịch sử giao dịch', mona: 'Đối soát tự động, so từng khoản với đơn, xuất bảng cho kế toán cuối ngày, cuối tháng' },
+  { bank: 'Giữ tiền. Tiền vào là nằm trong tài khoản VietinBank của anh chị, ngân hàng không chuyển đi đâu', mona: 'Không chạm tới tiền: chỉ đọc thông báo, bắn webhook ký HMAC-SHA256 và tin nhắn, có nút gửi lại và lịch sử từng lần gửi' },
+];
+
+// Anh chị cần gì phía VietinBank
+const needs = [
+  { t: 'Tài khoản VietinBank đứng tên anh chị', d: 'Cá nhân hay doanh nghiệp đều được. Tài khoản phải do chính anh chị (hoặc pháp nhân của anh chị) đứng tên, tiền vào là nằm trong tài khoản này.' },
+  { t: 'Kết nối qua VietinBank Open API', d: 'Phần tích hợp kỹ thuật qua cổng Open API của VietinBank (tài khoản định danh, VietQR Pay, thông báo biến động số dư, sao kê) do MONA Pay lo. Anh chị không phải tự code với ngân hàng.' },
+  { t: 'Chọn kênh nhận thông báo', d: 'Webhook về phần mềm, tin nhắn Telegram hoặc Zalo vào nhóm, hoặc chỉ xem trên dashboard. Cấu hình một lần, dùng chung cho mọi ngân hàng anh chị nối.' },
+  { t: 'Chưa có tài khoản VietinBank?', d: 'Mở tại VietinBank rồi quay lại nối. Thủ tục mở tài khoản, phí dịch vụ phía ngân hàng theo biểu phí VietinBank, anh chị hỏi ngân hàng trực tiếp tại <a href="https://www.vietinbank.vn" rel="noopener">vietinbank.vn</a>. Tụi em không thu thêm gì ở phía MONA Pay.' },
+];
+
+const steps = [
+  { title: 'MONA Pay kết nối VietinBank Open API', body: '<p>MONA Pay tích hợp sẵn bốn nhóm dịch vụ trên cổng VietinBank Open API: tài khoản định danh (Virtual Account), thu hộ VietQR Pay chuẩn Napas, thông báo biến động số dư theo thời gian thực và sao kê tài khoản. Anh chị không phải tự làm việc kỹ thuật với ngân hàng.</p>' },
+  { title: 'Nối tài khoản VietinBank của anh chị', body: '<p>Trong dashboard MONA Pay, anh chị khai báo tài khoản VietinBank đứng tên mình để nhận tiền. Tiền của khách sẽ vào thẳng tài khoản này, MONA Pay chỉ đọc thông báo giao dịch, không có quyền chuyển hay rút.</p>' },
+  { title: 'MONA Pay tạo số định danh và mã VietQR cho từng đơn', body: '<p>Mỗi đơn hoặc mỗi khách được gắn một số tài khoản định danh riêng, kèm mã VietQR điền sẵn số tiền và nội dung. Khách quét là chuyển đúng, tiền vào số nào là biết của đơn nào, không phụ thuộc khách gõ đúng nội dung.</p>' },
+  { title: 'Chọn kênh nhận: webhook, Telegram, hoặc cả hai', body: '<p>Tiền vào là VietinBank đẩy thông báo biến động số dư, MONA Pay bắn webhook ký HMAC về phần mềm và tin nhắn vào nhóm Telegram, Zalo trong cùng lúc. Không có phần mềm thì dùng Telegram và dashboard cũng đủ. Cuối ngày đối soát bằng API sao kê.</p>' },
+];
+
+const howto = {
+  '@context': 'https://schema.org', '@type': 'HowTo',
+  name: 'Nối tài khoản VietinBank vào MONA Pay qua Open API',
+  description: 'Kết nối tài khoản định danh, thu hộ VietQR Pay, thông báo biến động số dư và sao kê của VietinBank Open API để tự động báo có tiền chuyển khoản.',
+  totalTime: 'PT5M',
+  supply: [{ '@type': 'HowToSupply', name: 'Tài khoản VietinBank đứng tên anh chị' }, { '@type': 'HowToSupply', name: 'Tài khoản MONA Pay' }],
+  step: steps.map((st, i) => ({ '@type': 'HowToStep', position: i + 1, name: st.title, text: st.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(), url: SITE.url + '/vietinbank#buoc-' + (i + 1) })),
+};
+
+const uses = [
+  { t: 'Shop bán hàng online', d: 'Mỗi đơn một mã VietQR đúng số tiền. Khách quét, chuyển, đơn tự sang đã thanh toán, nhân viên chỉ việc gói hàng. Hết cảnh khách gửi ảnh chuyển khoản rồi chờ kiểm.' },
+  { t: 'Trung tâm, khoá học, câu lạc bộ', d: 'Mỗi học viên một số tài khoản định danh. Học phí vào là phần mềm mở khoá học, gửi biên nhận. Cuối tháng đối soát bằng API sao kê, không dò tay theo tên người chuyển.' },
+  { t: 'Chuỗi cửa hàng, nhiều điểm thu', d: 'VietinBank phủ rộng khắp tỉnh thành, nhiều đơn vị hành chính và trường học đang dùng. Mỗi điểm một dải số định danh, tiền về điểm nào là biết ngay, đối soát tập trung trên một dashboard.' },
+  { t: 'Kế toán, chủ doanh nghiệp', d: 'Không cần phần mềm gì thêm: tiền vào là nhóm Telegram công ty có tin ngay, dashboard lưu đủ số tiền, nội dung, mã giao dịch để xuất đối soát.' },
+];
+
+const faq = [
+  { q: 'MONA Pay nối VietinBank bằng cách nào?', a: 'Qua cổng VietinBank Open API. MONA Pay đã đăng ký bốn nhóm dịch vụ: tài khoản định danh (Virtual Account), thu hộ VietQR Pay theo chuẩn Napas, thông báo biến động số dư theo thời gian thực và sao kê tài khoản. Đây là kênh kết nối chính thức của VietinBank cho đối tác, không phải đọc lén hay xin mật khẩu ngân hàng.' },
+  { q: 'Tiền có nằm ở MONA Pay lúc nào không?', a: 'Không lúc nào. Tài khoản định danh chỉ là số gắn lên tài khoản VietinBank thật của anh chị, tiền chuyển vào là vào thẳng tài khoản thật. MONA Pay chỉ nhận thông báo giao dịch từ VietinBank, không có quyền chuyển, rút hay giữ tiền.' },
+  { q: 'Tài khoản định danh của VietinBank là gì?', a: 'VietinBank cấp cho anh chị một dải số định danh (Virtual Account). Mỗi số trong dải trỏ về cùng tài khoản thật nhưng anh chị gắn được cho từng đơn, từng khách. Nhờ vậy tiền vào số nào là biết ngay của đơn nào, không phụ thuộc khách gõ đúng nội dung chuyển khoản.' },
+  { q: 'VietQR Pay của VietinBank khác gì QR thường?', a: 'VietQR Pay là dịch vụ thu hộ theo chuẩn Napas: khách mở app ngân hàng bất kỳ quét mã là điền sẵn số tiền và nội dung, chuyển đúng một lần. VietinBank thu hộ rồi báo giao dịch về, MONA Pay khớp với đơn và bắn thông báo cho anh chị.' },
+  { q: 'Bao lâu sau khi khách chuyển thì tôi nhận được thông báo?', a: `Ngay khi VietinBank đẩy thông báo biến động số dư, MONA Pay gửi webhook và tin Telegram trong cùng lúc. Phần mềm của anh chị trả HTTP 200 trong ${SITE.tech.webhookTimeoutSec} giây là ghi nhận thành công.` },
+  { q: 'Tôi đang dùng ngân hàng khác VietinBank thì sao?', a: `${BANKS_LINE}. Trạng thái từng ngân hàng cập nhật tại <a href="/ngan-hang">trang ngân hàng hỗ trợ</a>. Webhook, Telegram, API và mã QR của anh chị dùng chung cho mọi ngân hàng, nối thêm ngân hàng sau không phải sửa lại tích hợp.` },
+  { q: 'Dùng VietinBank qua MONA Pay có mất phí gì không?', a: `Phía MONA Pay: ${PRICE_LINE}, không thu phần trăm trên số tiền, không có gói trả phí ẩn. Phí dịch vụ của VietinBank (nếu có, tuỳ loại tài khoản và dịch vụ) do ngân hàng thu theo biểu phí của VietinBank, tụi em không cộng thêm.` },
+];
+---
+<Base title={title} description={description} path="/vietinbank" jsonld={[howto]}>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Ngân hàng VietinBank</span>
+      <h1>API VietinBank: tiền vào tài khoản,<br class="br-d" /> <span class="accent">phần mềm biết ngay</span></h1>
+      <div class="answer-first">
+        <p>Để tự động báo có tiền chuyển khoản qua VietinBank, MONA Pay nối vào VietinBank Open API: tài khoản định danh (VA), thu hộ VietQR Pay chuẩn Napas, thông báo biến động số dư theo thời gian thực và sao kê đối soát. Khách chuyển vào tài khoản đứng tên anh chị, tiền vừa vào là MONA Pay báo về website, phần mềm, nhóm Telegram. Tiền vẫn nằm ở VietinBank, MONA Pay chỉ đọc thông báo giao dịch.</p>
+      </div>
+      <p class="lead">{SITE.entity}</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={SITE.appRegister}>Tạo tài khoản miễn phí</a>
+        <a class="btn btn-outline" href="/ngan-hang">Xem bảng ngân hàng hỗ trợ</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="link-section">
+    <div class="wrap">
+      <div class="link-card">
+        <div class="link-logos" aria-label="MONA Pay kết nối VietinBank">
+          <img src="/brand/monapay-logo-light.svg" alt="MONA Pay" width="203" height="44" />
+          <span class="link-arrow" aria-hidden="true">⇄</span>
+          <img src="/img/banks/vietinbank.png" alt="Ngân hàng VietinBank" width="150" height="56" />
+        </div>
+        <p class="link-caption"><strong>MONA Pay kết nối VietinBank qua cổng VietinBank Open API</strong>: tài khoản định danh, thu hộ VietQR Pay chuẩn Napas, thông báo biến động số dư và sao kê tài khoản. Khách chuyển vào số định danh, VietinBank báo, MONA Pay bắn webhook đúng chữ ký và tin nhắn vào nhóm.</p>
+        <p class="link-note">VietinBank là Ngân hàng TMCP Công Thương Việt Nam, một trong bốn ngân hàng thương mại nhà nước lớn nhất. Tiền của anh chị nằm ở VietinBank; MONA Pay chỉ nhận thông báo giao dịch do VietinBank gửi, không có quyền chuyển, rút hay giữ tiền.</p>
+      </div>
+    </div>
+  </section>
+
+  <BankLogos />
+
+  <section class="section-alt">
+    <div class="wrap">
+      <span class="eyebrow">Phân vai</span>
+      <h2>VietinBank cung cấp gì,<br class="br-d" /> MONA Pay làm gì cho anh chị</h2>
+      <p class="lead">Hai bên chia việc rõ: ngân hàng lo phần tiền và các API chính thức, MONA Pay lo phần nối vào phần mềm và báo cho người.</p>
+      <div class="table-wrap">
+        <table class="roles">
+          <thead><tr><th>VietinBank cung cấp</th><th>MONA Pay làm</th></tr></thead>
+          <tbody>
+            {roles.map((r) => (
+              <tr>
+                <td><span class="badge">VietinBank</span> {r.bank}</td>
+                <td><span class="badge badge-cta">MONA Pay</span> {r.mona}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">VietinBank qua MONA Pay làm được gì</span>
+      <h2>Bảng tính năng, cái nào chưa có tụi em ghi chưa có</h2>
+      <p class="lead">MONA Pay nối VietinBank qua bốn nhóm dịch vụ trên VietinBank Open API. Bảng dưới đây liệt kê đúng những gì gói kết nối này làm được.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tính năng</th><th>Trạng thái</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            {support.map((s) => (
+              <tr>
+                <td><strong>{s.f}</strong></td>
+                <td>{s.ok ? <span class="check">✓ Có</span> : <span class="cross">✗ Chưa</span>}</td>
+                <td>{s.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <span class="eyebrow">Chuẩn bị</span>
+      <h2>Anh chị cần gì phía VietinBank<br class="br-d" /> trước khi nối</h2>
+      <p class="lead">Phần kết nối kỹ thuật qua VietinBank Open API do MONA Pay lo. Về phía anh chị, chỉ cần vài thứ dưới đây.</p>
+      <div class="grid grid-2">
+        {needs.map((n) => (
+          <div class="card"><h3>{n.t}</h3><p set:html={n.d} /></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Cách kết nối</span>
+      <h2>Từ VietinBank Open API<br class="br-d" /> tới thông báo tiền vào cho anh chị</h2>
+      <p class="lead">MONA Pay đứng giữa lo phần kỹ thuật với ngân hàng, anh chị chỉ khai báo tài khoản và chọn kênh nhận.</p>
+      <div id="buoc-1"></div>
+      <Steps items={steps} />
+      <div class="callout ok" style="margin-top:1.4rem">
+        <p><strong>Cần chuẩn bị:</strong> tài khoản VietinBank đứng tên anh chị · tài khoản MONA Pay (đăng ký xong dùng ngay, không cần chờ duyệt). Phần tích hợp Open API tụi em lo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <span class="eyebrow">Dùng cho việc gì</span>
+      <h2>Những công việc hay nối VietinBank vào MONA Pay nhất</h2>
+      <div class="grid grid-2">
+        {uses.map((u) => (
+          <div class="card"><h3>{u.t}</h3><p>{u.d}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <span class="eyebrow">VietinBank trong hệ MONA Pay</span>
+      <h2>Một trong những ngân hàng MONA Pay đã kết nối Open API</h2>
+      <p>VietinBank (Ngân hàng TMCP Công Thương Việt Nam) là một trong bốn ngân hàng thương mại nhà nước lớn nhất Việt Nam, phủ rộng khắp tỉnh thành, nhiều đơn vị hành chính, trường học và doanh nghiệp đang dùng. MONA Pay kết nối VietinBank qua cổng Open API chính thức cho bốn nhóm dịch vụ: tài khoản định danh, thu hộ VietQR Pay, thông báo biến động số dư và sao kê.</p>
+      <p>MONA Pay đang mở rộng danh sách ngân hàng theo chương trình Open API của từng bên: {APPLYING_BANKS.map((b) => b.name).join(', ')} đang trong quá trình đăng ký kết nối. Trạng thái từng ngân hàng cập nhật tại <a href="/ngan-hang">trang ngân hàng hỗ trợ</a>. Webhook, Telegram, API và mã QR của anh chị dùng chung cho mọi ngân hàng, nối thêm sau không phải sửa gì.</p>
+      <p>Đọc tiếp: <a href="/ngan-hang">Bảng trạng thái ngân hàng</a> · <a href="/docs/api/qr-thanh-toan">API QR thanh toán</a> · <a href="/chia-se-bien-dong-so-du-telegram">Báo biến động số dư qua Telegram</a>.</p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap narrow">
+      <Faq items={faq} eyebrow="Hỏi đáp về VietinBank" title="Câu hỏi thường gặp khi nối tài khoản VietinBank" />
+    </div>
+  </section>
+
+  <CtaBand title="Có tài khoản VietinBank là nối MONA Pay được" body="Tạo tài khoản MONA Pay, khai báo tài khoản VietinBank, nhận thông báo tiền vào qua webhook hoặc Telegram. Cần người ngồi cùng thì gọi tổng đài, kỹ sư MONA trực." secondary={{ href: '/docs/bat-dau-nhanh', label: 'Bắt đầu nhanh trong 5 phút' }} />
+</Base>
+
+<style>
+  .br-d{display:inline}
+  @media (max-width:767px){.br-d{display:none}}
+  .link-section{padding:0 0 56px}
+  .link-card{background:var(--surface);border-radius:var(--radius);padding:2rem 2.2rem;box-shadow:var(--shadow);text-align:center;max-width:860px;margin:0 auto}
+  .link-logos{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.4rem}
+  .link-logos img{height:44px;width:auto}
+  .link-arrow{font-size:2rem;font-weight:800;color:var(--cta);line-height:1}
+  .link-caption{font-size:1.05rem;color:var(--ink);margin:0 0 .6rem}
+  .link-note{color:var(--text-soft);font-size:.95rem;margin:0}
+  @media (max-width:600px){.link-logos{flex-direction:column;gap:.8rem}.link-arrow{transform:rotate(90deg)}.link-card{padding:1.5rem 1.2rem}}
+  table.roles td{width:50%}
+  table.roles .badge{margin-right:.35rem}
+</style>

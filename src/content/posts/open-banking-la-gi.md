@@ -28,7 +28,7 @@ Tới 28/08/2026 MONA Pay chạy thật với ACB; MB, BIDV, VietinBank, OCB, MS
 
 ## Vì sao open banking là lý do MONA Pay mở public năm 2026
 
-Hệ thống này sinh ra để thu tiền cho chính MONA, chưa từng có ý bán: phí hosting của [Mona.Host](https://mona.host), học phí Khánh Hùng Academy với 40.000 học viên và 760 học viên PRO, đơn phần mềm của Mona.Software. Rồi từ năm 2022 tụi em nhúng vào web bán hàng, phần mềm giao cho khách: tới nay hơn 6.000 khách hàng mới của MONA thu tiền qua nó. Hơn 4 năm đó tụi em vá nó bằng tiền thật của chính mình và của khách MONA trước khi mở cho người ngoài.
+Hệ thống này sinh ra để thu tiền cho chính MONA, chưa từng có ý bán: phí hosting của [Mona.Host](https://mona.host), học phí Khánh Hùng Academy với 40.000 học viên và 760 học viên PRO, đơn phần mềm của Mona.Software. Rồi từ năm 2022 tụi em nhúng vào web bán hàng, phần mềm giao cho khách: tới nay khách hàng của MONA thu tiền qua nó. Hơn 4 năm đó tụi em vá nó bằng tiền thật của chính mình và của khách MONA trước khi mở cho người ngoài.
 
 Năm 2026 tụi em mở ra vì hai lý do. Một, ngân hàng đã thoáng hơn hẳn, API đối tác có tài liệu, có quy trình, không còn là cửa hẹp chỉ dành cho vài công ty lớn. Hai, tụi em muốn phục vụ không chỉ doanh nghiệp lớn mà cả SME, hộ kinh doanh, người làm phần mềm một mình. Với nhóm này, một cổng nhận tiền tự động trước đây là thứ xa xỉ. Giờ thì đăng ký xong dùng ngay, miễn phí 500 giao dịch mỗi tháng, trên đó tính theo số giao dịch, chi tiết ở [bảng giá](/bang-gia). Chuyện tụi em kể kỹ ở [trang giới thiệu](/gioi-thieu).
 
@@ -54,7 +54,7 @@ Rủi ro thứ hai là bỏ sót: website đang khởi động lại đúng lúc
 Không. Chỉ đối tác được ngân hàng cấp phép mới gọi được API, và mọi kết nối vào tài khoản của anh chị đều phải có OTP do ngân hàng gửi về số điện thoại chủ tài khoản, với ACB là 2 lần. Không có OTP là không nối được. Chủ tài khoản luôn là người giữ chìa khoá cuối cùng. Tụi em cũng không nối hộ được nếu anh chị không bấm OTP.
 
 ### Open banking ở Việt Nam đã dùng được chưa?
-Đã dùng được với ngân hàng đã mở API đối tác. MONA Pay đang chạy thật trên API của ACB từ hơn 4 năm với chính MONA và hơn 6.000 khách hàng MONA, tới 28/08/2026 mở cho mọi doanh nghiệp. Đăng ký xong là dùng ngay, không có bước chờ duyệt.
+Đã dùng được với ngân hàng đã mở API đối tác. MONA Pay đang chạy thật trên API của ACB từ hơn 4 năm với chính MONA và khách hàng của MONA, tới 28/08/2026 mở cho mọi doanh nghiệp. Đăng ký xong là dùng ngay, không có bước chờ duyệt.
 
 ### Doanh nghiệp nhỏ có tự xin API ngân hàng được không?
 Thường không, vì cần pháp nhân, hồ sơ và đội kỹ thuật. Cách thực tế là dùng qua lớp trung gian đã nối sẵn như MONA Pay, tự đăng ký tại my.monapay.vn và nối tài khoản ACB trong 4 bước. Cả việc mất khoảng 5 phút kể cả 2 lần OTP. Không cần dev.

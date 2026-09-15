@@ -1,0 +1,41 @@
+chi_so,nhom,gia_tri,don_vi,ky_do,nguon,xac_minh
+Phí nhận thanh toán,PayPal (quốc tế),"4,40","% + 0,30 USD",08/2026,https://www.paypal.com/vn/webapps/mpp/merchant-fees,cong_khai
+Phí rút tiền,PayPal (quốc tế),60000,VND/lần,08/2026,https://www.paypal.com/vn/webapps/mpp/merchant-fees,cong_khai
+Phí nhận thanh toán,Stripe,Không áp dụng,Chưa mở cho pháp nhân VN,08/2026,https://stripe.com/global,cong_khai
+Phí nhận thanh toán,Chuyển khoản NAPAS,0,VND,08/2026,https://napas.com.vn,cong_khai
+Dải phí thị trường,"Thẻ (POS và thương mại điện tử, theo biểu phí VietinBank)","1,0 - 3,7",%,08/2026,https://www.vietinbank.vn/ca-nhan/cong-cu-tien-ich/bieu-phi-va-bieu-mau/dich-vu-chap-nhan-thanh-toan-the-40-html,cong_khai
+Phí PayPal hàng tháng (AOV 500k),Doanh thu 100000000,6164000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 2000k),Doanh thu 100000000,5021000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 5000k),Doanh thu 100000000,4792400,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí VietQR,Doanh thu 100000000,0,VND,08/2026,Chuyển khoản qua NAPAS/VietQR không thu phí người nhận (https://napas.com.vn),cong_khai
+Phí PayPal hàng tháng (AOV 500k),Doanh thu 500000000,29860000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 2000k),Doanh thu 500000000,24145000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 5000k),Doanh thu 500000000,23002000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí VietQR,Doanh thu 500000000,0,VND,08/2026,Chuyển khoản qua NAPAS/VietQR không thu phí người nhận (https://napas.com.vn),cong_khai
+Phí PayPal hàng tháng (AOV 500k),Doanh thu 1000000000,59480000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 2000k),Doanh thu 1000000000,48050000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 5000k),Doanh thu 1000000000,45764000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí VietQR,Doanh thu 1000000000,0,VND,08/2026,Chuyển khoản qua NAPAS/VietQR không thu phí người nhận (https://napas.com.vn),cong_khai
+Phí PayPal hàng tháng (AOV 500k),Doanh thu 5000000000,296440000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 2000k),Doanh thu 5000000000,239290000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 5000k),Doanh thu 5000000000,227860000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí VietQR,Doanh thu 5000000000,0,VND,08/2026,Chuyển khoản qua NAPAS/VietQR không thu phí người nhận (https://napas.com.vn),cong_khai
+Phí PayPal hàng tháng (AOV 500k),Doanh thu 20000000000,1185040000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 2000k),Doanh thu 20000000000,956440000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí PayPal hàng tháng (AOV 5000k),Doanh thu 20000000000,910720000,VND,08/2026,"Tính từ biểu phí PayPal 4,40% + 0,30 USD (https://www.paypal.com/vn/webapps/mpp/merchant-fees), tỷ giá giả định 25.400 đ/USD, rút 4 lần/tháng",uoc_tinh
+Phí VietQR,Doanh thu 20000000000,0,VND,08/2026,Chuyển khoản qua NAPAS/VietQR không thu phí người nhận (https://napas.com.vn),cong_khai
+Chi phí đối soát ẩn,Quy mô Nhỏ,375000,VND,08/2026,Ước tính: số giao dịch × 3 phút × lương giờ (giả định trong bài),uoc_tinh
+Chi phí đối soát ẩn,Quy mô Vừa,2250000,VND,08/2026,Ước tính: số giao dịch × 3 phút × lương giờ (giả định trong bài),uoc_tinh
+Chi phí đối soát ẩn,Quy mô Lớn,8750000,VND,08/2026,Ước tính: số giao dịch × 3 phút × lương giờ (giả định trong bài),uoc_tinh
+Phí trung gian/tháng,Tập đoàn/chuỗi lớn,420000000,VND,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Tỷ lệ mất cho trung gian,Tập đoàn/chuỗi lớn,1.4,%,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Phí trung gian/tháng,Doanh nghiệp lớn,130000000,VND,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Tỷ lệ mất cho trung gian,Doanh nghiệp lớn,1.3,%,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Phí trung gian/tháng,Doanh nghiệp vừa,27500000,VND,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Tỷ lệ mất cho trung gian,Doanh nghiệp vừa,1.1,%,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Phí trung gian/tháng,SME/shop đang lớn,4625000,VND,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Tỷ lệ mất cho trung gian,SME/shop đang lớn,0.9249999999999999,%,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Phí trung gian/tháng,Hộ kinh doanh/shop nhỏ,300000,VND,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Tỷ lệ mất cho trung gian,Hộ kinh doanh/shop nhỏ,0.6,%,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Tổng phí/tháng,Shop 800tr,9500000,VND,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh
+Tiết kiệm khi đổi kênh,Shop 800tr,6650000,VND,08/2026,Ước tính theo cơ cấu kênh giả định trong bài,uoc_tinh

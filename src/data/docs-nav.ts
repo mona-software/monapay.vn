@@ -30,6 +30,11 @@ export const DOCS_NAV: { group: string; items: { slug: string; label: string }[]
     { slug: 'api/webhook-configs', label: 'Cấu hình webhook qua API' },
     { slug: 'api/goi-va-hoa-don', label: 'Gói và hoá đơn (billing)' },
   ]},
+  { group: 'Cho lập trình viên', items: [
+    { slug: 'mcp', label: 'MCP server' },
+    { slug: 'sdk', label: 'SDK' },
+    { slug: 'github', label: 'Mã nguồn GitHub' },
+  ]},
   { group: 'Kênh thông báo', items: [
     { slug: 'telegram', label: 'Telegram' },
     { slug: 'zalo', label: 'Zalo' },
@@ -74,6 +79,11 @@ export const DOCS_NAV_EN: { group: string; items: { slug: string; label: string 
     { slug: 'api/giao-dich', label: 'Transactions' },
     { slug: 'api/webhook-configs', label: 'Webhook configuration API' },
     { slug: 'api/goi-va-hoa-don', label: 'Plans and billing' },
+  ]},
+  { group: 'For developers', items: [
+    { slug: 'mcp', label: 'MCP server' },
+    { slug: 'sdk', label: 'SDKs' },
+    { slug: 'github', label: 'GitHub source code' },
   ]},
   { group: 'Notification channels', items: [
     { slug: 'telegram', label: 'Telegram' },

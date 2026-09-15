@@ -1,6 +1,6 @@
 ---
 title: "Vì sao MONA Pay miễn phí 500 giao dịch mỗi tháng, không thu phần trăm"
-description: "Tụi em nói thẳng vì sao MONA Pay miễn phí 500 giao dịch mỗi tháng và chỉ thu một khoản cố định với khách dùng nhiều: hạ tầng đã chạy hơn 4 năm cho 6.000+ khách MONA, tiền không qua trung gian."
+description: "Tụi em nói thẳng vì sao MONA Pay miễn phí 500 giao dịch mỗi tháng và chỉ thu một khoản cố định với khách dùng nhiều: hạ tầng đã chạy hơn 4 năm cho khách hàng của MONA, tiền không qua trung gian."
 date: 29/08/2026
 keyword: "MONA Pay miễn phí"
 category: chuyen-mona
@@ -8,7 +8,7 @@ h1: "Vì sao MONA Pay miễn phí 500 giao dịch mỗi tháng, không thu phầ
 ogImage: /img/blog/vi-sao-mona-pay-mien-phi.jpg
 ---
 
-MONA Pay miễn phí 500 giao dịch mỗi tháng: không phí mở tài khoản, không phí nối ngân hàng, không thu phần trăm trên mỗi giao dịch; trên 500 giao dịch mới có gói trả phí, tính theo số giao dịch, từ 99.000đ mỗi tháng. Tụi em làm được vậy vì hệ thống này đã chạy hơn 4 năm để thu tiền cho chính MONA và cho hơn 6.000 khách hàng mới của MONA từ 2022, hạ tầng có sẵn, tiền không đi qua tụi em nên không có phí trung gian, và MONA sống bằng làm web, hosting, phần mềm chứ không sống bằng phí thanh toán. Tụi em thấy khách đến MONA hỏi câu này nhiều nhất, nhiều hơn cả hỏi về tính năng, nên bài này nói rõ từng lý do, kèm cả cách tính khi vượt mức và cả 3 thứ tụi em chưa làm được. Miễn phí thật cho shop nhỏ và vừa, 0 đồng.
+MONA Pay miễn phí 500 giao dịch mỗi tháng: không phí mở tài khoản, không phí nối ngân hàng, không thu phần trăm trên mỗi giao dịch; trên 500 giao dịch mới có gói trả phí, tính theo số giao dịch, từ 99.000đ mỗi tháng. Tụi em làm được vậy vì hệ thống này đã chạy hơn 4 năm để thu tiền cho chính MONA và cho khách hàng của MONA từ 2022, hạ tầng có sẵn, tiền không đi qua tụi em nên không có phí trung gian, và MONA sống bằng làm web, hosting, phần mềm chứ không sống bằng phí thanh toán. Tụi em thấy khách đến MONA hỏi câu này nhiều nhất, nhiều hơn cả hỏi về tính năng, nên bài này nói rõ từng lý do, kèm cả cách tính khi vượt mức và cả 3 thứ tụi em chưa làm được. Miễn phí thật cho shop nhỏ và vừa, 0 đồng.
 
 ## Khách đến MONA hỏi câu đầu tiên: miễn phí thì tiền ở đâu ra
 
@@ -18,9 +18,9 @@ Tụi em trả lời thế này với từng khách. MONA làm web, phần mềm
 
 Nói ngắn gọn thì MONA Pay là một phần của dịch vụ MONA giao cho khách, và tụi em muốn giữ nó đúng vai đó. Anh chị xem [bảng giá](/bang-gia) sẽ thấy gói Miễn phí 500 giao dịch mỗi tháng đủ tính năng, và 4 gói trả phí cho khách dùng nhiều, giá cố định theo số giao dịch chứ không theo số tiền.
 
-## Lý do một: hạ tầng đã chạy hơn 4 năm cho 6.000+ khách, thêm khách gần như không thêm chi phí
+## Lý do một: hạ tầng đã chạy hơn 4 năm cho khách hàng của MONA, thêm khách gần như không thêm chi phí
 
-Hệ thống bên dưới MONA Pay chạy từ hơn 4 năm trước để thu phí hosting của Mona.Host, học phí của Khánh Hùng Academy với 40.000 học viên, và tiền đợt của từng đơn phần mềm Mona.Software. Máy chủ, cơ sở dữ liệu, kết nối ngân hàng, đội kỹ sư trực đều đã có từ lâu vì tụi em cần cho việc của mình trước. Từ năm 2022, hơn 6.000 khách hàng mới của MONA thu tiền qua đúng hệ thống này trong web, phần mềm tụi em giao. Cái gì cũng sẵn rồi.
+Hệ thống bên dưới MONA Pay chạy từ hơn 4 năm trước để thu phí hosting của Mona.Host, học phí của Khánh Hùng Academy với 40.000 học viên, và tiền đợt của từng đơn phần mềm Mona.Software. Máy chủ, cơ sở dữ liệu, kết nối ngân hàng, đội kỹ sư trực đều đã có từ lâu vì tụi em cần cho việc của mình trước. Từ năm 2022, khách hàng của MONA thu tiền qua đúng hệ thống này trong web, phần mềm tụi em giao. Cái gì cũng sẵn rồi.
 
 Việc một giao dịch đi qua hệ thống này rất nhẹ. Ngân hàng gửi một thông báo, hệ thống khớp đơn, bắn một gói tin webhook tới máy nhận của anh chị và một tin nhắn Telegram, xong. Không xử lý thẻ, không giữ tiền, không đối soát dòng tiền của ai. Thêm một nghìn tài khoản dùng thì phần việc máy tăng lên không đáng kể so với thứ tụi em đang chạy sẵn cho hệ 14.000+ dự án. Vậy nên không có lý do gì để đẩy một khoản chi phí gần bằng không thành một mức phí phần trăm.
 
@@ -66,7 +66,7 @@ Nếu anh chị đang trả phí phần trăm cho một cổng chỉ để nhậ
 
 ### MONA Pay miễn phí tới khi nào?
 
-Không có mốc hết hạn cho gói Miễn phí 500 giao dịch mỗi tháng. Gói trả phí niêm yết công khai, đổi giá tụi em báo trước ít nhất 30 ngày, gói đang trả giữ giá tới hết kỳ. Hệ thống này đã chạy hơn 4 năm cho chính MONA và hơn 6.000 khách MONA trước khi mở ra nên không phải chương trình khuyến mãi tính theo tháng.
+Không có mốc hết hạn cho gói Miễn phí 500 giao dịch mỗi tháng. Gói trả phí niêm yết công khai, đổi giá tụi em báo trước ít nhất 30 ngày, gói đang trả giữ giá tới hết kỳ. Hệ thống này đã chạy hơn 4 năm cho chính MONA và khách hàng của MONA trước khi mở ra nên không phải chương trình khuyến mãi tính theo tháng.
 
 ### Có thu phần trăm trên số tiền giao dịch không?
 

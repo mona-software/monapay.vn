@@ -15,7 +15,7 @@ const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebPage', name: ti
   </div></section>
   <section><div class="wrap narrow legal">
     <h2>1. Dịch vụ</h2>
-    <p>{SITE.entity} MONA Pay do {SITE.company} cung cấp. Dịch vụ gồm: đăng ký tài khoản ảo và thông báo giao dịch với ngân hàng thay anh chị, sinh mã VietQR, nhận thông báo tiền vào, gửi webhook và tin Telegram, dashboard theo dõi, API và tài liệu.</p>
+    <p>{SITE.entity} MONA Pay do {SITE.legalEntity} (thuộc {SITE.company}) cung cấp. Dịch vụ gồm: đăng ký tài khoản ảo và thông báo giao dịch với ngân hàng thay anh chị, sinh mã VietQR, nhận thông báo tiền vào, gửi webhook và tin Telegram, dashboard theo dõi, API và tài liệu.</p>
     <h2>2. Tiền không đi qua MONA Pay</h2>
     <p>Khách của anh chị chuyển tiền thẳng vào tài khoản ngân hàng của anh chị. MONA Pay không giữ, không chuyển, không hoàn tiền và không đứng giữa bất kỳ dòng tiền nào. Tranh chấp về khoản tiền (chuyển nhầm, hoàn trả) giải quyết giữa anh chị, khách của anh chị và ngân hàng.</p>
     <h2>3. Tài khoản và điều kiện dùng</h2>
@@ -47,8 +47,9 @@ const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebPage', name: ti
     <p>Cách tụi em thu thập, dùng và lưu dữ liệu ghi tại <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a>, là một phần của điều khoản này.</p>
     <h2>10. Luật áp dụng và tranh chấp</h2>
     <p>Điều khoản này theo pháp luật Việt Nam. Có vấn đề, anh chị gọi {SITE.hotline} hoặc email {SITE.email} để tụi em xử lý trước; không thoả thuận được thì đưa ra toà án có thẩm quyền tại Việt Nam.</p>
-    <h2>11. Liên hệ</h2>
-    <p>{SITE.company} · Tổng đài {SITE.hotline} (giờ hành chính) · <a href={'mailto:' + SITE.email}>{SITE.email}</a> · <a href="/lien-he">Trang liên hệ</a>.</p>
+    <h2>11. Pháp nhân và liên hệ</h2>
+    <p>Đơn vị cung cấp dịch vụ: <strong>{SITE.legalEntity}</strong> (thuộc {SITE.company}) · Mã số thuế: {SITE.taxId} · Địa chỉ: {SITE.address}.</p>
+    <p>Tổng đài {SITE.hotline} (giờ hành chính) · <a href={'mailto:' + SITE.email}>{SITE.email}</a> · <a href="/lien-he">Trang liên hệ</a>.</p>
   </div></section>
 </Base>
 <style>.legal h2{font-size:1.35rem;margin-top:2rem}.legal li{margin:.4rem 0}</style>

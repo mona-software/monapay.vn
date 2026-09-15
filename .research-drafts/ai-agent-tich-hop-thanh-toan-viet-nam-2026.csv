@@ -1,0 +1,30 @@
+chi_so,nhom,gia_tri,don_vi,ky_do,nguon,xac_minh
+Thời gian làm tay,Bước 1,15.0,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian AI làm,Bước 1,0.16666666666666666,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian làm tay,Bước 2,5.0,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian AI làm,Bước 2,0.25,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian làm tay,Bước 3,10.0,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian AI làm,Bước 3,0.5,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian làm tay,Bước 4,15.0,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian AI làm,Bước 4,0.3333333333333333,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian làm tay,Bước 5,10.0,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian AI làm,Bước 5,0.6666666666666666,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian làm tay,Bước 6,25.0,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Thời gian AI làm,Bước 6,5.0,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tổng thời gian AI tích hợp (trung bình),Tổng hợp,8,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tổng thời gian Người tích hợp (trung bình),Tổng hợp,45,phút,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ lỗi khi AI tích hợp,Tính sai chữ ký HMAC-SHA256,52,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ lỗi khi AI tích hợp,Định dạng ngày giờ OTP không hợp lệ,18,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ lỗi khi AI tích hợp,Lỗi quá thời gian,12,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ lỗi khi AI tích hợp,Thiếu Header X-Client-Secret khi gọi API,9,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ lỗi khi AI tích hợp,Khác,9,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ sử dụng công cụ AI,Claude Code (Anthropic),52,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ sử dụng công cụ AI,Cursor IDE,31,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ sử dụng công cụ AI,GitHub Copilot / Codex,12,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ sử dụng công cụ AI,ChatGPT / Phân tích dữ liệu Advanced,3,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ sử dụng công cụ AI,"Các công cụ khác (Aider, Devin...)",2,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Số phiên AI thực hiện,Toàn hệ thống,1250,phiên,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ tích hợp zero-dashboard,Toàn hệ thống,45,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ AI tự fix lỗi thành công,Toàn hệ thống,90,%,08/2026,"MONA Pay, dữ liệu hệ thống 2022–2026",mon_kiem
+Tỷ lệ DN Việt dùng AI trong IT,Thị trường,65,%,08/2026,[CẦN NGUỒN],cong_khai
+Sự tăng trưởng LLM tại VN,Thị trường,150,%,08/2026,[CẦN NGUỒN],cong_khai

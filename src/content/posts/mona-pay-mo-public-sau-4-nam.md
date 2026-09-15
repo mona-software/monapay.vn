@@ -1,20 +1,20 @@
 ---
-title: "MONA Pay mở public sau 4 năm phục vụ 6.000+ khách hàng MONA"
-description: "Chuyện thật từ MONA: hệ thống nhận tiền chuyển khoản tự xây để thu hosting, học phí, phần mềm, rồi từ 2022 hơn 6.000 khách hàng MONA dùng; 2026 mở public tại monapay.vn, miễn phí."
+title: "MONA Pay mở public sau 4 năm phục vụ khách hàng của MONA"
+description: "Chuyện thật từ MONA: hệ thống nhận tiền chuyển khoản tự xây để thu hosting, học phí, phần mềm, rồi từ 2022 khách hàng của MONA dùng; 2026 mở public tại monapay.vn, miễn phí."
 date: 29/08/2026
 keyword: "MONA Pay"
 category: chuyen-mona
-h1: "MONA Pay mở cho mọi doanh nghiệp sau 4 năm phục vụ hơn 6.000 khách hàng MONA"
+h1: "MONA Pay mở cho mọi doanh nghiệp sau 4 năm phục vụ khách hàng của MONA"
 ogImage: /img/blog/mona-pay-mo-public-sau-4-nam.jpg
 ---
 
-MONA Pay là hệ thống nhận và xác nhận tiền chuyển khoản mà tụi em tự xây từ hơn 4 năm trước, ban đầu để thu phí hosting, học phí và tiền phần mềm của chính MONA, rồi từ năm 2022 tới nay đã thu tiền cho hơn 6.000 khách hàng mới của MONA qua web bán hàng, phần mềm tụi em giao. Tháng 8 năm 2026 tụi em mở nó ra cho mọi doanh nghiệp tại [monapay.vn](/), đăng ký xong dùng ngay, miễn phí 500 giao dịch mỗi tháng, trên đó gói cố định theo số giao dịch. Bài này kể vì sao có nó, vì sao giờ mới mở, và mở ra thì anh chị được gì. Kể thật, không tô.
+MONA Pay là hệ thống nhận và xác nhận tiền chuyển khoản mà tụi em tự xây từ hơn 4 năm trước, ban đầu để thu phí hosting, học phí và tiền phần mềm của chính MONA, rồi từ năm 2022 tới nay đã thu tiền cho khách hàng của MONA qua web bán hàng, phần mềm tụi em giao. Tháng 8 năm 2026 tụi em mở nó ra cho mọi doanh nghiệp tại [monapay.vn](/), đăng ký xong dùng ngay, miễn phí 500 giao dịch mỗi tháng, trên đó gói cố định theo số giao dịch. Bài này kể vì sao có nó, vì sao giờ mới mở, và mở ra thì anh chị được gì. Kể thật, không tô.
 
-## Hơn 4 năm, MONA Pay chỉ đến tay một nhóm: chính tụi em và hơn 6.000 khách làm web, phần mềm tại MONA
+## Hơn 4 năm, MONA Pay chỉ đến tay một nhóm: chính tụi em và nhiều khách làm web, phần mềm tại MONA
 
 Cái tên MONA Pay mới có gần đây, nhưng hệ thống bên dưới thì đã chạy âm thầm ở địa chỉ ipn.mona.host từ hơn 4 năm trước. Nó sinh ra vì một nhu cầu rất đời thường của chính tụi em: mỗi tháng Mona.Host thu phí hosting, VPS, tên miền của hàng nghìn tài khoản, Khánh Hùng Academy thu học phí của 40.000 học viên trong đó có 760 học viên PRO, còn Mona.Software thu tiền đợt cho từng đơn phần mềm. Toàn bộ số tiền đó đi bằng chuyển khoản ngân hàng. Khách chuyển xong thì ai xác nhận? Trước đây là người.
 
-Tụi em viết hệ thống này để máy làm phần đó thay người. Tiền vào tài khoản ngân hàng, ngân hàng báo, hệ thống khớp với đơn rồi tự mở hosting, tự kích hoạt khoá học, tự đổi trạng thái hoá đơn phần mềm. Chạy ổn cho việc của mình thì từ năm 2022 tụi em nhúng luôn vào các web bán hàng và phần mềm quản lý giao cho khách, vì khách làm web tại MONA gặp đúng một bài toán y hệt: khách của họ chuyển khoản xong rồi ngồi chờ ai đó xác nhận đơn. Từ năm 2016 tới giờ MONA làm hơn 14.000 dự án và giữ chân 85% khách quay lại, phần lớn là web bán hàng và phần mềm nghiệp vụ, nên tính tới nay đã có hơn 6.000 khách hàng mới của MONA thu tiền qua hệ thống này, nhiều hơn tụi em tưởng khi bắt đầu.
+Tụi em viết hệ thống này để máy làm phần đó thay người. Tiền vào tài khoản ngân hàng, ngân hàng báo, hệ thống khớp với đơn rồi tự mở hosting, tự kích hoạt khoá học, tự đổi trạng thái hoá đơn phần mềm. Chạy ổn cho việc của mình thì từ năm 2022 tụi em nhúng luôn vào các web bán hàng và phần mềm quản lý giao cho khách, vì khách làm web tại MONA gặp đúng một bài toán y hệt: khách của họ chuyển khoản xong rồi ngồi chờ ai đó xác nhận đơn. Từ năm 2016 tới giờ MONA làm hơn 14.000 dự án và giữ chân 85% khách quay lại, phần lớn là web bán hàng và phần mềm nghiệp vụ, nên tính tới nay đã có khách hàng của MONA thu tiền qua hệ thống này, nhiều hơn tụi em tưởng khi bắt đầu.
 
 Suốt thời gian đó nó không có trang web riêng, không có bảng giá, không có tài liệu công khai, và muốn dùng thì phải là khách MONA. Anh chị đọc thêm ở trang [khách hàng và ca dùng thật](/khach-hang).
 
@@ -36,7 +36,7 @@ Lý do bên trong là tầm nhìn của tụi em đổi. Trước đây MONA là
 
 Anh chị đang phân vân có nên thử? Tạo tài khoản tại [my.monapay.vn](https://my.monapay.vn/auth?mode=register) mất chưa tới 1 phút, không cần chờ ai duyệt, không mất phí gì. Nối ACB xong là tiền vào thấy liền.
 
-## Mở ra thì khác gì bản 6.000 khách MONA đang dùng
+## Mở ra thì khác gì bản khách hàng của MONA đang dùng
 
 Khác ở ba chỗ, và cả ba đều là thứ hồi chỉ giao cho khách MONA tụi em không cần.
 
@@ -64,13 +64,13 @@ MONA Pay cũng không phải cổng thẻ quốc tế. Anh chị bán ra nước
 
 ## Anh chị muốn thử thì làm gì trong 5 phút tới
 
-Nếu anh chị đang là người mở app ngân hàng mỗi ngày để canh tiền, hoặc đang trả nhân viên chỉ để xác nhận chuyển khoản, thì cái hệ thống hơn 6.000 khách MONA đang dùng hơn 4 năm nay đã sẵn cho anh chị. Vào [my.monapay.vn](https://my.monapay.vn/auth?mode=register), đăng ký tài khoản, đi 4 bước nối ACB với 2 lần OTP, rồi khai nhóm Telegram hoặc địa chỉ webhook. Chuyển thử 10.000 đồng vào tài khoản ảo vừa tạo. Tin báo có tới liền. Kẹt ở bước nào, gọi 1900 636 648 trong giờ hành chính, có người MONA ngồi cùng anh chị tới khi tin đầu tiên về. Web hay phần mềm làm tại MONA thì tụi em cài luôn.
+Nếu anh chị đang là người mở app ngân hàng mỗi ngày để canh tiền, hoặc đang trả nhân viên chỉ để xác nhận chuyển khoản, thì cái hệ thống khách hàng của MONA đang dùng hơn 4 năm nay đã sẵn cho anh chị. Vào [my.monapay.vn](https://my.monapay.vn/auth?mode=register), đăng ký tài khoản, đi 4 bước nối ACB với 2 lần OTP, rồi khai nhóm Telegram hoặc địa chỉ webhook. Chuyển thử 10.000 đồng vào tài khoản ảo vừa tạo. Tin báo có tới liền. Kẹt ở bước nào, gọi 1900 636 648 trong giờ hành chính, có người MONA ngồi cùng anh chị tới khi tin đầu tiên về. Web hay phần mềm làm tại MONA thì tụi em cài luôn.
 
 ## Câu hỏi thường gặp
 
 ### MONA Pay có phải sản phẩm mới ra không?
 
-Không. Hệ thống bên dưới đã chạy hơn 4 năm để thu phí hosting, học phí và tiền phần mềm cho chính MONA, rồi từ 2022 thu tiền cho hơn 6.000 khách hàng mới của MONA qua web và phần mềm tụi em giao, nên phần lõi đã được thử qua tiền thật từ lâu. Cái mới là trang monapay.vn, việc tự đăng ký dùng ngay và tài liệu công khai.
+Không. Hệ thống bên dưới đã chạy hơn 4 năm để thu phí hosting, học phí và tiền phần mềm cho chính MONA, rồi từ 2022 thu tiền cho khách hàng của MONA qua web và phần mềm tụi em giao, nên phần lõi đã được thử qua tiền thật từ lâu. Cái mới là trang monapay.vn, việc tự đăng ký dùng ngay và tài liệu công khai.
 
 ### Tiền có đi qua MONA Pay không?
 

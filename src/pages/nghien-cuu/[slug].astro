@@ -1,0 +1,11 @@
+---
+import { getCollection, render } from 'astro:content';
+import Research from '../../layouts/Research.astro';
+export async function getStaticPaths() {
+  return (await getCollection('nghien-cuu')).filter((r) => !r.data.draft).map((report) => ({ params: { slug: report.id }, props: { report } }));
+}
+const { report } = Astro.props;
+if (report.data.dataset !== report.id + '.csv') throw new Error(`Dataset phải là ${report.id}.csv`);
+const { Content } = await render(report);
+---
+<Research report={report}><Content /></Research>

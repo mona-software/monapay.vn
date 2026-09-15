@@ -1,0 +1,43 @@
+---
+// Khối video hướng dẫn: iframe YouTube (nocookie, lazy) + transcript + JSON-LD VideoObject. Dữ liệu từ src/data/videos.json (key = slug video).
+import videos from '../data/videos.json';
+import { SITE } from '../data/site';
+interface Props { id: string; heading?: string; pageUrl?: string }
+const { id, heading, pageUrl } = Astro.props;
+const v = (videos as Record<string, any>)[id];
+if (!v) throw new Error(`videos.json thiếu key ${id}`);
+const url = pageUrl ?? new URL(Astro.url.pathname, SITE.url).toString();
+const ld = {
+  '@context': 'https://schema.org', '@type': 'VideoObject', name: v.title, description: v.description,
+  thumbnailUrl: [`https://i.ytimg.com/vi/${v.youtubeId}/maxresdefault.jpg`, `https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg`],
+  uploadDate: v.uploadDate, duration: v.duration, inLanguage: 'vi',
+  contentUrl: `https://www.youtube.com/watch?v=${v.youtubeId}`, embedUrl: `https://www.youtube-nocookie.com/embed/${v.youtubeId}`,
+  publisher: { '@type': 'Organization', name: SITE.company, url: SITE.companyUrl ?? SITE.url, logo: { '@type': 'ImageObject', url: `${SITE.url}/brand/monapay-logo-light.svg` } },
+  transcript: v.transcript.map((s: any) => `${s.h}. ${s.p}`).join(' '),
+  hasPart: v.transcript.map((s: any, i: number) => ({ '@type': 'Clip', name: s.h, startOffset: s.start, endOffset: s.end, url: `https://www.youtube.com/watch?v=${v.youtubeId}&t=${Math.floor(s.start)}s` })),
+  mainEntityOfPage: url,
+};
+---
+<section class="video-embed" id={`video-${id}`}>
+  {heading && <h2>{heading}</h2>}
+  <figure class="video">
+    <iframe src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}`} title={v.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <figcaption>{v.title} · <a href={`https://www.youtube.com/watch?v=${v.youtubeId}`} rel="noopener" target="_blank">Xem trên YouTube</a></figcaption>
+  </figure>
+  <details class="video-transcript">
+    <summary>Xem transcript video ({v.transcript.length} phần)</summary>
+    {v.transcript.map((s: any) => (<section><h3>{s.h}</h3><p>{s.p}</p></section>))}
+  </details>
+  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</section>
+<style>
+  .video-embed { margin: 2rem 0; }
+  .video-embed .video { margin: 0; }
+  .video-embed iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 16px; background: #1b0c11; }
+  .video-embed figcaption { margin-top: .5rem; font-size: .9rem; opacity: .85; }
+  .video-transcript { margin-top: .8rem; border: 1px solid rgba(151, 27, 56, .18); border-radius: 12px; padding: .6rem 1rem; }
+  .video-transcript summary { cursor: pointer; font-weight: 600; }
+  .video-transcript section { margin: .8rem 0; }
+  .video-transcript h3 { font-size: 1rem; margin: 0 0 .25rem; }
+  .video-transcript p { margin: 0; }
+</style>

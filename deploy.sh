@@ -3,6 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 npm run build
+python3 scripts/build_research_pdf.py
 python3 scripts/qc.py dist || { echo "QC FAIL — không deploy"; exit 1; }
 rsync -az --delete dist/ mona-vps-1:/opt/www/monapay.vn/dist/
 echo "DEPLOYED → https://monapay.vn (kiểm: curl -s https://monapay.vn/)"

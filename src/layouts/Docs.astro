@@ -8,6 +8,10 @@ interface Props {
   faq?: { q: string; a: string }[];
 }
 const { title, description, slug, updated, lang = 'vi', howto, faq } = Astro.props;
+import VideoEmbed from '../components/VideoEmbed.astro';
+import videos from '../data/videos.json';
+// video hướng dẫn gắn theo trang docs: videos.json entry có docSlug === slug (vd 'webhooks/dinh-dang-payload')
+const docVideoIds = Object.entries(videos as Record<string, any>).filter(([, v]) => v.docSlug === slug).map(([k]) => k);
 const isEn = lang === 'en';
 const root = isEn ? '/en/docs' : '/docs';
 const path = slug === 'index' ? root : root + '/' + slug;
@@ -56,6 +60,7 @@ const jsonld = [{
         <a href="/llms.txt">llms.txt</a>
         <a href="/openapi.json">openapi.json</a>
       </div>
+      {docVideoIds.map((id, i) => <VideoEmbed id={id} heading={i === 0 ? (lang === 'en' ? 'Video guide' : 'Video hướng dẫn') : undefined} />)}
       <slot />
     </article>
   </div>

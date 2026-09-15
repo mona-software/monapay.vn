@@ -1,0 +1,1940 @@
+{
+ "v1-woocommerce": {
+  "youtubeId": "VkENu9MQ4U0",
+  "title": "Plugin WooCommerce chuyển khoản QR code tự báo có: cài MONA Pay trong 5 phút",
+  "description": "Plugin WooCommerce chuyển khoản QR code tự báo có: cài MONA Pay trong 5 phút. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-04",
+  "duration": "PT2M55S",
+  "transcript": [
+   {
+    "h": "Khách chuyển khoản là đơn tự xác nhận",
+    "p": "Anh chị bán hàng trên WooCommerce, khách chuyển khoản xong là phải mở app ngân hàng soi từng đơn rồi vào sửa trạng thái bằng tay. Video này mình cài MONA Pay vào WooCommerce, mất khoảng năm phút. Cài xong, khách quét mã QR chuyển khoản là đơn tự nhảy sang đã thanh toán, không ai phải canh app ngân hàng nữa.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bước 1: Tải và kích hoạt plugin",
+    "p": "Đầu tiên vào monapay.vn, trang cổng thanh toán WooCommerce, bấm tải plugin. Đây là file zip, anh chị vào WordPress, mục Plugin, chọn tải plugin lên, chọn file vừa tải rồi kích hoạt. Plugin của MONA đang chờ duyệt trên kho WordPress, nên tạm thời tải từ trang MONA Pay.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bước 2: Tạo khóa API trên MONA Pay",
+    "p": "Tiếp theo cần một tài khoản MONA Pay. Vào my.monapay.vn, đăng ký bằng email, dùng được ngay, không phải chờ duyệt. Vào mục Khóa API, bấm tạo khóa mới, đặt tên là cửa hàng của mình. Hệ thống đưa cho anh chị hai chuỗi: mã khách hàng và mã bí mật. Mã bí mật chỉ hiện một lần, anh chị copy lại ngay.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bước 3: Dán khóa vào WooCommerce, bật chế độ thử",
+    "p": "Quay lại WooCommerce, vào Cài đặt, Thanh toán, chọn MONA Pay. Dán mã khách hàng và mã bí mật vào hai ô này. Chế độ thanh toán để là chuyển hướng sang trang thanh toán của MONA Pay, cách này gọn nhất. Bật chế độ thử để test trước, chưa cần nối ngân hàng thật. Bấm lưu.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bước 4: Đặt thử một đơn như khách",
+    "p": "Giờ mình thử như một khách hàng. Ra ngoài cửa hàng, chọn một bó hoa, thanh toán, chọn hình thức chuyển khoản qua MONA Pay rồi đặt hàng. Trang chuyển sang trang thanh toán của MONA Pay: có mã QR, số tiền, nội dung chuyển khoản đã điền sẵn, khách chỉ việc quét bằng app ngân hàng. Vì đang ở chế độ thử nên có dải chữ báo đây là phiên thử, không chuyển tiền thật.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tiền vào là đơn tự sang đang xử lý",
+    "p": "Mình giả lập khách vừa chuyển khoản. Vài giây sau trang thanh toán báo đã nhận tiền và tự quay về trang cảm ơn của cửa hàng. Trong WooCommerce, đơn hàng đã đổi sang đang xử lý, kèm ghi chú số tiền và thời gian tiền vào. Không ai phải bấm gì cả.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chạy thật: nối ngân hàng, bật thông báo",
+    "p": "Khi chạy thật, anh chị vào MONA Pay, mục Ngân hàng, nối tài khoản ACB bằng mã OTP, tắt chế độ thử là xong, còn lại y như vừa test. Tiền vào thẳng tài khoản ngân hàng của anh chị, MONA Pay không giữ tiền. Muốn nhận thêm thông báo, bật Telegram, email hay nhóm Zalo trong phần Thông báo.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tài liệu và đăng ký miễn phí",
+    "p": "Toàn bộ hướng dẫn chi tiết ở monapay.vn, mục tài liệu. Đăng ký miễn phí tại my.monapay.vn. Anh chị cài xong mà kẹt chỗ nào, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám, đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 175.9
+   }
+  ]
+ },
+ "docs-webhook-payload": {
+  "youtubeId": "_F0ySFb6uW4",
+  "title": "Webhook MONA Pay gửi gì: từng trường trong payload và cách đọc",
+  "description": "Webhook MONA Pay gửi gì: từng trường trong payload và cách đọc. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-04",
+  "duration": "PT4M32S",
+  "transcript": [
+   {
+    "h": "Hiểu payload để khỏi sai",
+    "p": "Nhận được một gói webhook nhưng không biết trường nào dùng để khớp đơn, trường nào dùng để chống trùng là lỗi rất dễ làm sai dữ liệu. Trong video này, mình sẽ đọc đủ bảy trường payload, ba kiểu đóng gói, các header đi kèm và cách phân biệt gói thử. Làm xong, anh chị có thể viết bộ nhận dữ liệu mà không phụ thuộc vào thứ tự trường.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Payload mẫu bảy trường",
+    "p": "Định dạng mặc định tên là monapay. Body JSON có đúng bảy trường: amount, description, transfer_date, transaction_code, account_number, bank_name và type. Dữ liệu mẫu có số tiền hai triệu năm trăm nghìn đồng, mã giao dịch FT26240001234, số tài khoản 1234567890, ngân hàng ACB và loại income. Hãy đọc theo tên khóa, đừng dựa vào vị trí vì hệ thống có thể thêm trường mới về sau.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tiền, nội dung, thời gian",
+    "p": "Ba trường đầu mô tả khoản tiền. amount là số nguyên theo đơn vị VND, không có phần thập phân; hai triệu năm trăm nghìn đồng được gửi thành 2500000. description là nội dung khách gõ hoặc nội dung đã điền trong mã QR, có thể dùng để khớp đơn khi không dùng tài khoản ảo. transfer_date là chuỗi theo mẫu giờ, phút, giây rồi ngày, tháng, năm, sử dụng giờ Việt Nam.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mã và tài khoản nhận",
+    "p": "Bốn trường còn lại giúp định danh. transaction_code là mã giao dịch phía ngân hàng, giữ nguyên qua mọi lần gửi lại và phải làm khóa UNIQUE. account_number cho biết tiền vào tài khoản thật hay tài khoản ảo nào; nếu mỗi đơn có một tài khoản ảo, so trường này là đủ. bank_name hiện có giá trị ACB. type hiện là income, nghĩa là tiền vào. Code nên bỏ qua giá trị hoặc trường lạ thay vì báo lỗi.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Ba kiểu Content-Type",
+    "p": "Anh chị chọn một trong ba payload_format. application/json là mặc định và body là JSON không có khoảng trắng thừa. application/x-www-form-urlencoded gửi chuỗi giống form HTML, phù hợp hệ thống cũ chỉ đọc $_POST. multipart/form-data gửi mỗi trường thành một phần của form. Nếu dùng HMAC, luôn ký raw body đúng như nhận được, vì chuỗi JSON và chuỗi form tạo ra chữ ký khác nhau.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Các header đi kèm",
+    "p": "Header Content-Type luôn có và khớp với payload_format. Khi chọn HMAC_SHA256, gói nhận thêm X-Mona-Timestamp, là Unix giây lúc gửi, cùng X-Mona-Signature, có dạng sha256= rồi đến chuỗi hex. Nếu chọn API_KEY, Secret được đặt trong header tùy chọn, mặc định là X-Webhook-Secret. Chọn kiểu nào thì endpoint phải đọc đúng header của kiểu đó.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Nhận biết gói gửi thử",
+    "p": "Nút Gửi thử trong dashboard hoặc lệnh POST /api/v1/client-webhooks/test tạo một gói có đúng bảy trường. Với đơn quan trọng, anh chị có thể tra transaction_code qua API đối soát trước khi đổi trạng thái, hoặc chỉ gửi thử vào môi trường staging. Đừng coi dữ liệu mẫu là tiền thật. Lớp nhận cũng nên giữ transaction_code làm khóa chống trùng, kể cả khi bấm thử nhiều lần.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Parse ngày giờ đúng",
+    "p": "Lỗi hay gặp nằm ở ngày giờ và kiểu dữ liệu. transfer_date dùng mẫu HH:MM:SS dd/mm/YYYY, giờ Việt Nam UTC cộng bảy, không phải ISO tám nghìn sáu trăm lẻ một; đừng đưa thẳng vào new Date(). Hãy tự phân tích đúng mẫu hoặc lưu nguyên chuỗi để đối soát. amount luôn là số nguyên. Gửi lại mười lần vẫn là cùng một transaction_code, nên không được cộng tiền mười lần.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và thử payload",
+    "p": "Payload mẫu, bảng giải nghĩa và phần câu hỏi nhanh nằm tại monapay.vn/docs/webhooks/dinh-dang-payload. Anh chị đăng ký tại my.monapay.vn, tạo webhook rồi dùng Gửi thử để nhìn đúng body hệ thống của mình nhận được. Nếu còn vướng cách đọc trường hoặc chọn định dạng, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 272.2
+   }
+  ],
+  "docSlug": "webhooks/dinh-dang-payload"
+ },
+ "docs-api-sandbox": {
+  "youtubeId": "A0mqJKJ-HMQ",
+  "title": "Sandbox MONA Pay: thử giao dịch và checkout không tốn tiền",
+  "description": "Sandbox MONA Pay: thử giao dịch và checkout không tốn tiền. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-04",
+  "duration": "PT4M18S",
+  "transcript": [
+   {
+    "h": "Thử trọn luồng an toàn",
+    "p": "Đưa code thanh toán lên thật rồi mới thử ca thiếu tiền hoặc webhook gửi lại là quá rủi ro. Sandbox cho anh chị chạy trọn luồng mà không chuyển tiền thật. Trong video này, mình tạo giao dịch giả, nhận thông báo, thử checkout đủ tiền, thiếu tiền và gửi trùng mã. Chưa nối ngân hàng, anh chị vẫn làm được với tài khoản ảo bắt đầu bằng SBX.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo giao dịch sandbox",
+    "p": "Endpoint là POST /api/v1/sandbox/transactions, cần Bearer và X-Client-Secret. Body tối thiểu có amount, số nguyên lớn hơn không, tối đa một tỷ đồng, cùng description dài từ một đến hai trăm năm mươi lăm ký tự. Nếu không truyền tài khoản, hệ thống tự tạo hoặc dùng lại VA sandbox SBX. Response còn trả mã giao dịch, số VA, số tài khoản và số tiền; is_sandbox bằng true.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chọn VA và mã thử",
+    "p": "Muốn thử trên một VA đã có, truyền virtual_account_number. Muốn chỉ định tài khoản thật đã nối, dùng account_number; chỉ cần một trong hai. transaction_code là tùy chọn, dài tối đa một trăm ký tự. Tự đặt mã như SANDBOX-DH10234-01 rất hữu ích để kiểm chống trùng. Nếu bỏ trống, hệ thống sinh mã bắt đầu bằng SANDBOX.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đi qua kênh thật",
+    "p": "Giao dịch sandbox đi qua cùng bộ xử lý như giao dịch thật, nên webhook, Telegram, email và logic khớp checkout đều nhận được. Trong bảng nội bộ, vẫn dùng transaction_code làm khóa chống trùng và dùng is_sandbox để phân biệt môi trường thử. Không viết một nhánh xử lý hoàn toàn khác, vì mục tiêu của sandbox là kiểm đúng code mà anh chị sẽ chạy khi có tiền thật.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đưa localhost ra HTTPS",
+    "p": "Nếu endpoint webhook đang ở máy cá nhân, MONA Pay không gọi trực tiếp được localhost. Tạo URL HTTPS công khai bằng lệnh cloudflared tunnel --url http://localhost:4400, rồi dán URL được cấp vào webhook_url. Nếu chưa có URL công khai, trong lúc thử checkout anh chị có thể gọi GET /api/v1/checkouts/{checkout_id} mỗi vài giây để đọc trạng thái.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo checkout sandbox",
+    "p": "Để thử trang thanh toán, thêm sandbox bằng true vào body POST /api/v1/checkouts, đồng thời gửi Idempotency-Key. Response trả checkout_url, dữ liệu QR và VA SBX; trang thanh toán có dải “PHIÊN THỬ, không chuyển tiền thật”. Lấy data.bank.account_number hoặc VA trong response rồi tạo giao dịch sandbox vào đúng số đó. Khi tổng tiền đủ, phiên thành paid và phát CHECKOUT_PAID.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chạy ba ca kiểm thử",
+    "p": "Ca đầu là đủ tiền: checkout hai trăm năm mươi nghìn, giao dịch sandbox đúng hai trăm năm mươi nghìn, chờ CHECKOUT_PAID và bảo đảm đơn chỉ xử lý một lần. Ca hai là thiếu tiền: bắn hai trăm nghìn, status phải giữ pending và có partial_amount. Ca ba gửi lại cùng transaction_code; tổng tiền không được cộng thêm và trạng thái không được xử lý lần nữa.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Biết giới hạn sandbox",
+    "p": "Sandbox không gửi hay nhận tiền thật và giao dịch thử không tính vào hạn mức gói. VA SBX, QR và checkout thử không đưa cho khách thanh toán. Kết quả sandbox kiểm luồng dịch vụ cùng code của anh chị, nhưng không thay lần thử cuối bằng một khoản chuyển thật sau khi nối ngân hàng. Nếu trùng mã mà số tiền cộng dồn, hãy kiểm khóa UNIQUE và cách xử lý transaction_code.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và thử ngay",
+    "p": "Lệnh tạo giao dịch, checkout thử và ba kịch bản kiểm tra nằm tại monapay.vn/docs/api/sandbox. Anh chị đăng ký tại my.monapay.vn, lấy khóa API rồi chạy đầy đủ cả ba ca sandbox trước khi nối ngân hàng thật. Nếu webhook, email hoặc trạng thái checkout chưa đổi như mong đợi, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ đối chiếu luồng.",
+    "start": 0.0,
+    "end": 258.4
+   }
+  ],
+  "docSlug": "api/sandbox"
+ },
+ "docs-api-qr": {
+  "youtubeId": "2PB30Uz6bzU",
+  "title": "Tạo mã QR ngân hàng ACB (VietQR động) theo đơn hàng bằng API",
+  "description": "Tạo mã QR ngân hàng ACB (VietQR động) theo đơn hàng bằng API. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-04",
+  "duration": "PT4M36S",
+  "transcript": [
+   {
+    "h": "QR điền sẵn đúng đơn",
+    "p": "Khách gõ sai số tiền hoặc nội dung chuyển khoản thì hệ thống rất khó khớp đơn. Trong video này, mình tạo VietQR động từ API ACB, điền sẵn tài khoản, số tiền và mã đơn, hiển thị QR rồi nhận webhook sau khi khách quét. Anh chị cũng sẽ biết cách hủy mã tạo nhầm và xử lý các lỗi trường bắt buộc.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Điều kiện tạo QR",
+    "p": "Endpoint tạo là POST /api/v1/acb/qr-payment/generate, cần Bearer và X-Client-Secret. Điều kiện là tài khoản ACB đã nối và đã có tài khoản ảo. Nếu chưa muốn gọi API, dashboard có mục Tạo QR để chọn VA, nhập số tiền rồi tải ảnh. Qua API, response quan trọng nhất là qr_data_url, chuỗi dữ liệu dùng để thư viện của anh chị vẽ thành ảnh QR.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thông tin bên nhận",
+    "p": "Nhóm nhận tiền gồm ownerNumber là số tài khoản ACB, ownerType nhận PER cho cá nhân hoặc ORG cho doanh nghiệp. merchantId là mã đơn vị chấp nhận thanh toán và terminalId là mã điểm bán, cả hai do ACB cấp và hiển thị trong mục Tạo QR. beneficiaryName là tên người hoặc đơn vị hưởng hiện trên ứng dụng ngân hàng của khách.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thông tin đơn hàng",
+    "p": "Nhóm đơn hàng gồm orderId, mã duy nhất cho mỗi lần thanh toán; virtualAccountPrefix, đầu số VA dài từ một đến mười ký tự; và amount, số nguyên VND từ không đến một tỷ. Số không cho khách tự nhập tiền. description là nội dung chuyển khoản, còn traceNumber là mã theo dõi riêng để tra soát. Anh chị có thể thêm userId, mã ưu đãi và additionalInfo khi cần.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Vẽ QR từ response",
+    "p": "Response trả bản ghi QR với id, virtual_account_number, thông tin đơn và qr_data_url. Đây là dữ liệu QR theo chuẩn VietQR EMVCo. Dùng chuỗi qr_data_url với thư viện vẽ QR, chẳng hạn qrcode trong Node, rồi gắn ảnh vào trang thanh toán. Lưu id để hủy khi đơn bị hủy hoặc đổi số tiền. Đừng dùng virtualAccountPrefix thay cho virtual_account_number, vì số đầy đủ do ACB trả về.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Hủy QR tạo nhầm",
+    "p": "Nếu QR tạo nhầm và khách chưa trả, gọi DELETE /api/v1/acb/qr-payment/{qr_code_id}/cancellation. Request cần Bearer, X-Client-Secret và body khớp lúc tạo gồm ownerNumber, ownerType, orderId, amount; traceNumber là tùy chọn. Chỉ hủy mã cũ trước khi tạo mã thay thế với cùng đơn. Khi ứng dụng ngân hàng báo QR hết hạn, cũng hủy mã cũ rồi tạo lại.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Khớp đơn sau khi quét",
+    "p": "Khi khách quét và chuyển tiền, ACB báo cho MONA Pay rồi webhook mang amount, description, transfer_date, transaction_code, account_number, bank_name và type. Khớp đơn bằng số VA trong account_number hoặc mã đơn nằm trong description. Trước khi đổi trạng thái đã thanh toán, so amount với tổng đơn và chống trùng bằng transaction_code. Giao dịch QR đi qua đúng luồng webhook như tiền vào VA.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi tạo QR",
+    "p": "Nếu tạo QR trả bốn trăm, kiểm tra tài khoản đã đăng ký đúng đầu số VA và hai mã merchantId, terminalId. Bốn trăm hai mươi hai nghĩa là thiếu trường, amount vượt một tỷ hoặc virtualAccountPrefix dài hơn mười ký tự; đọc detail[]. Khách quét được nhưng không có webhook thì VA có thể chưa hoàn tất bước đăng ký thông báo và OTP lần hai. QR hết hạn trên ứng dụng ngân hàng cần được hủy và tạo lại.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và tạo thử",
+    "p": "Body mẫu, response và code cURL, PHP, Node nằm tại monapay.vn/docs/api/qr-thanh-toan. Anh chị đăng ký tại my.monapay.vn, thử tạo một mã QR trong dashboard để kiểm tra đầy đủ thông tin ACB trước khi gọi API thật. Nếu còn lỗi mã đơn, đầu số hoặc dữ liệu QR, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 276.6
+   }
+  ],
+  "docSlug": "api/qr-thanh-toan"
+ },
+ "docs-api-keys": {
+  "youtubeId": "WsqwsN56rEk",
+  "title": "API keys: tạo, xem lại, xoay secret, thu hồi",
+  "description": "API keys: tạo, xem lại, xoay secret, thu hồi. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-04",
+  "duration": "PT4M18S",
+  "transcript": [
+   {
+    "h": "Quản lý khóa không gián đoạn",
+    "p": "Một mã bí mật bị mất hoặc lộ không nên kéo theo việc dừng toàn bộ hệ thống. Video này mình tạo khóa API, lưu client_secret đúng lúc, liệt kê khóa mà không lộ Secret, thay khóa và thu hồi khóa cũ. Anh chị cũng sẽ phân biệt client_secret gọi API với secret_key ký webhook, vì nhầm hai chuỗi này là lỗi rất hay gặp.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mỗi hệ thống một khóa",
+    "p": "Mỗi hệ thống nên dùng một khóa riêng: web bán hàng một khóa, phần mềm kế toán một khóa, bot một khóa. Khi một nơi gặp sự cố, anh chị thu hồi đúng khóa đó mà hệ thống khác không bị ảnh hưởng. Khóa được tạo bằng POST /api/v1/client-keys/generate, cần Bearer. Body có thể truyền name; nếu bỏ trống, tên mặc định là Default Key.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Lưu Secret ngay khi tạo",
+    "p": "Response tạo khóa trả id, client_id, client_secret, name, is_active và created_at. Quan trọng nhất, client_secret chỉ hiện đúng một lần. Hệ thống lưu dạng băm nên đóng màn hình là không thể xem lại. Hãy chép ngay vào biến môi trường như MONA_SECRET, kiểm tra ứng dụng đọc được, và tuyệt đối không ghi chuỗi này vào mã nguồn hay commit lên git.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gửi Secret cho lệnh ghi",
+    "p": "Với Bearer token lấy từ client/login, mọi lệnh ghi POST, PUT, PATCH và DELETE bắt buộc kèm header X-Client-Secret. Lệnh GET chỉ cần Bearer. Nếu token lấy bằng oauth/token, header Secret không bắt buộc vì đã được kiểm khi cấp token, nhưng vẫn được khuyến nghị. Cách dùng ổn định là gửi cả hai header cho mọi request ghi của ứng dụng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Liệt kê khóa hiện có",
+    "p": "Muốn xem các khóa đang có, gọi GET /api/v1/client-keys/list. Response là một mảng chứa id, client_id, tên, trạng thái và ngày tạo, nhưng không bao giờ có client_secret. Vì thế, thao tác “xem lại Secret” thực tế không tồn tại. Nếu mất chuỗi bí mật, tạo khóa mới, cập nhật biến môi trường của ứng dụng, kiểm tra hoạt động rồi mới thu hồi khóa cũ.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thu hồi khóa cũ",
+    "p": "Để thu hồi, lấy đúng id từ danh sách rồi gọi DELETE /api/v1/client-keys/destroy/{key_id} với Bearer. Request đang dùng Secret của khóa đó sẽ bị từ chối ngay sau khi thu hồi. Nếu API trả bốn trăm lẻ bốn, khóa không tồn tại hoặc không thuộc tài khoản. Bốn trăm hai mươi hai thường do key_id không đúng UUID; hãy copy nguyên ID từ response danh sách.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Phân biệt hai Secret",
+    "p": "Anh chị cần phân biệt hai loại bí mật. client_secret đi trong X-Client-Secret để ứng dụng gọi API MONA Pay. secret_key nằm trong cấu hình webhook để MONA Pay ký payload gửi về server. Hai chuỗi này nên khác nhau, lưu ở hai biến môi trường khác nhau và xoay theo hai quy trình khác nhau. Đừng lấy Secret gọi API dán vào ô Secret của webhook.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thay khóa an toàn",
+    "p": "Trên dashboard, vào API Keys để tạo, xem danh sách và thu hồi. Nút tạo mở form đặt tên khóa; Secret hiện một lần nên chuẩn bị nơi lưu trước khi bấm. Dashboard còn có khối copy prompt cho AI agent. Không bấm thu hồi khi ứng dụng mới chưa chuyển sang khóa thay thế. Nếu gặp bốn trăm lẻ một, lấy Bearer token mới. Khi thay khóa, thử một request GET và một request ghi trước khi cắt khóa cũ.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và tạo khóa",
+    "p": "Endpoint, response mẫu và quy tắc dùng hai loại Secret nằm tại monapay.vn/docs/api/api-keys. Anh chị đăng ký tại my.monapay.vn, vào mục API Keys và tạo một khóa riêng cho môi trường thử trước tiên. Nếu cần hỗ trợ xoay khóa mà không gián đoạn ứng dụng, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA cùng kiểm tra.",
+    "start": 0.0,
+    "end": 258.6
+   }
+  ],
+  "docSlug": "api/api-keys"
+ },
+ "docs-api-goi-hoa-don": {
+  "youtubeId": "QiehRHC7qh4",
+  "title": "Gói và hoá đơn MONA Pay: xem hạn mức, nâng gói, thanh toán",
+  "description": "Gói và hoá đơn MONA Pay: xem hạn mức, nâng gói, thanh toán. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-04",
+  "duration": "PT4M16S",
+  "transcript": [
+   {
+    "h": "Kiểm tra hạn mức trước",
+    "p": "Webhook đang chạy mà đột nhiên không phát tiếp có thể liên quan hạn mức gói, không phải endpoint hỏng. Trong video này, mình sẽ đọc mức dùng, xem các gói, tạo hóa đơn nâng gói, thanh toán bằng VietQR và theo dõi đến khi kích hoạt. Anh chị cũng sẽ hiểu khoản nào được tính là một giao dịch và điều gì xảy ra khi vượt hạn mức.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Cách đếm giao dịch",
+    "p": "Gói Miễn phí có năm trăm giao dịch tiền vào mỗi tháng và dùng đủ tính năng. Hệ thống đếm một khoản tiền credit trên mọi tài khoản thật và tài khoản ảo đã nối, chốt theo giờ Việt Nam. Tiền ra, giao dịch sandbox và webhook gửi lại không tính. Gói trả phí tính theo số giao dịch, không lấy phần trăm số tiền. Giá cụ thể đọc tại trang Bảng giá.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đọc gói và mức dùng",
+    "p": "Gọi GET /api/v1/billing/plans không cần xác thực để đọc năm gói cùng code, giá tháng, giá năm, hạn mức, phí vượt và tính năng. Gọi GET /api/v1/billing/usage với Bearer để lấy plan_code, tx_used, tx_limit, overage_tx, overage_amount và plan_expires_at. Đây là hai endpoint nên hiển thị trong trang quản trị trước khi cho người dùng bấm nâng gói.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Khi vượt hạn mức",
+    "p": "Với gói Miễn phí, tháng đầu vượt hạn mức vẫn nhận đủ thông báo. Nếu tiếp tục vượt ở tháng kế tiếp, giao dịch vẫn được lưu trong dashboard nhưng webhook và Telegram cho phần vượt sẽ dừng đến khi nâng gói; log ghi QUOTA_EXCEEDED. Gói trả phí không khóa, phần vượt được tính phụ trội. Hệ thống nhắc qua Telegram một lần ở mốc tám mươi phần trăm và một trăm phần trăm.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo hóa đơn nâng gói",
+    "p": "Tạo hóa đơn bằng POST /api/v1/billing/invoices, gửi Bearer, X-Client-Secret, plan_code và cycle. Mã gói nhận startup, business, enterprise hoặc scale. Chu kỳ nhận month hoặc year; trả năm tính tiền mười tháng. Response HTTP hai trăm lẻ một tạo hóa đơn pending, có mã chuyển khoản bắt đầu bằng MPAY rồi sáu số và hạn thanh toán bốn mươi tám giờ.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thanh toán đúng mã MPAY",
+    "p": "Response còn có khối payment với link ảnh VietQR và payload EMVCo để tự dựng QR. Khách phải chuyển đúng số tiền và ghi đúng mã MPAY vào tài khoản trên hóa đơn. Sau khi tiền vào, hệ thống tự khớp mã cùng số tiền. Ứng dụng gọi GET /api/v1/billing/invoices/{id} đến khi status thành paid; gói được kích hoạt tại thời điểm đó.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kích hoạt hoặc hủy hóa đơn",
+    "p": "Cùng gói còn hạn thì thời gian mới được cộng từ ngày hết hạn cũ. Đổi sang gói khác thì kỳ được tính lại từ lúc thanh toán. Nếu tạo nhầm, gọi POST /api/v1/billing/invoices/{id}/cancel khi hóa đơn còn pending. Quá bốn mươi tám giờ chưa thanh toán, trạng thái tự thành expired. Danh sách hóa đơn đọc bằng GET, hỗ trợ lọc status và phân trang.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gói MONA và gia hạn",
+    "p": "Khách hàng đang dùng dịch vụ web, phần mềm hoặc hosting của The MONA Group có thể được gán gói mona; gói này không mua qua API. Khi đã được gán, endpoint usage trả plan_code bằng mona. Với gói trả phí quá hạn bảy ngày chưa gia hạn, tài khoản hạ về Miễn phí nhưng dữ liệu vẫn giữ. Nâng gói không làm đổi payload, chữ ký hay cấu hình webhook.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs hoặc dashboard",
+    "p": "Danh sách endpoint và luồng nâng gói nằm tại monapay.vn/docs/api/goi-va-hoa-don. Anh chị đăng ký tại my.monapay.vn, mở Gói và thanh toán nếu muốn thao tác bằng dashboard và theo dõi QR tự đổi trạng thái khi nhận tiền. Nếu cần kiểm tra hạn mức, hóa đơn hoặc mã MPAY, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 256.9
+   }
+  ],
+  "docSlug": "api/goi-va-hoa-don"
+ },
+ "dev-github": {
+  "youtubeId": "aCUAusi-hHo",
+  "title": "Kho mã nguồn MONA Pay trên GitHub: 10 SDK, plugin, module và MCP",
+  "description": "Kho mã nguồn MONA Pay trên GitHub: 10 SDK, plugin, module và MCP. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M52S",
+  "transcript": [
+   {
+    "h": "Bản đồ mã nguồn MONA Pay",
+    "p": "Anh chị muốn tích hợp MONA Pay nhưng chưa biết nên lấy SDK, MCP hay plugin ở đâu, hoặc repo nào đúng với nền tảng đang dùng. Video này đi một vòng tổ chức themonagroup trên GitHub, chỉ rõ mười SDK, bộ công cụ cho AI agent, plugin WooCommerce và các module thương mại điện tử. Cuối video, anh chị sẽ biết mở đúng README, lấy đúng lệnh cài và quay về tài liệu API khi cần kiểm endpoint.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bắt đầu từ tổ chức",
+    "p": "Điểm bắt đầu là github.com/themonagroup. Nhánh mã nguồn MONA Pay tách theo ngôn ngữ và mục đích, nên đừng tải một repository bất kỳ rồi đoán cách dùng. Repo SDK có tên bắt đầu bằng monapay- và kết thúc bằng ngôn ngữ. Repo nền tảng ghi rõ tên hệ thống, còn monapay-examples gom ví dụ framework. Khi mở một repo, đọc README, yêu cầu phiên bản runtime, SECURITY và LICENSE trước khi đưa vào dự án.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Năm SDK đầu tiên",
+    "p": "Năm SDK đầu là monapay-node, monapay-python, monapay-php, monapay-go và monapay-java. Node dùng gói npm @monapay/node; Python dùng gói PyPI monapay; PHP dùng tên Composer monapay/php-sdk. Go dùng module github.com/themonagroup/monapay-go, còn Java có artifact monapay. Mỗi repo này có địa chỉ public ngay dưới tổ chức. Nếu dự án web mới dùng JavaScript hoặc TypeScript, bắt đầu ở Node. Flask, FastAPI hoặc Django thì mở Python.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Năm SDK còn lại",
+    "p": "Năm SDK còn lại là monapay-dotnet, monapay-ruby, monapay-rust, monapay-dart và monapay-elixir. Như vậy, tổ chức có đủ mười repo SDK theo mười hệ sinh thái. Các địa chỉ remote local đều trỏ về tổ chức themonagroup công khai trên GitHub. Từng repo có README riêng và ví dụ webhook phù hợp với framework của ngôn ngữ đó. Chọn SDK theo runtime đang chạy trên máy chủ, không theo ngôn ngữ của giao diện. Webhook luôn được xử lý ở backend có thể giữ secret an toàn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "MCP CLI và ví dụ",
+    "p": "Nhóm công cụ gồm monapay-mcp, monapay-cli và monapay-examples. MCP cho Claude Code, Cursor và Codex gọi MONA Pay trong lúc code; manifest local hiện có bốn mươi bảy tool. CLI phục vụ lệnh terminal như nghe webhook, tạo QR và tra giao dịch. Repo examples có mẫu Next.js, Express, NestJS, Laravel, Django, FastAPI, Spring Boot và Go. Anh chị có thể bắt đầu từ ví dụ gần kiến trúc hiện tại rồi thay biến môi trường.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Plugin và connector",
+    "p": "Với cửa hàng, repo độc lập woocommerce-monapay là plugin WooCommerce. Repo monapay-connectors chứa lớp nối và adapter cho Shopify, Haravan, Sapo, KiotViet Retail, Nhanh.vn, Pancake POS và WooCommerce. Bên trong còn có module opencart-monapay, prestashop-monapay, magento2-monapay, bubble-monapay, ghost-monapay và một shopify-app. OpenCart dùng hosted checkout; PrestaShop tạo đơn chờ rồi nhận CHECKOUT_PAID; Shopify app nối đơn thanh toán thủ công với checkout MONA Pay.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chọn đúng repository",
+    "p": "Cách chọn nhanh là: cần gọi API trong code thì lấy SDK; muốn AI agent tự thao tác thì dùng MCP; muốn thử kiến trúc hoàn chỉnh thì mở examples; đang bán trên WooCommerce thì lấy plugin; còn các nền tảng khác xem connectors. Lệnh cài Node và Python trên card được chép nguyên văn từ README. Dù dùng repo nào, giữ khóa trong biến môi trường, kiểm chữ ký webhook trên raw body và chống trùng bằng transaction_code.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "README sandbox và docs",
+    "p": "GitHub cung cấp mã nguồn và ví dụ, còn nguồn xác nhận endpoint vẫn là monapay.vn/docs, llms.txt và openapi.json. Hãy mở README của đúng repo, chạy test local, dùng sandbox trước rồi mới nối luồng thật. Anh chị tạo tài khoản tại my.monapay.vn và tạo khóa trong API Keys. Nếu chưa chắc nên chọn SDK, plugin hay connector nào, gọi một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hướng dẫn.",
+    "start": 0.0,
+    "end": 292.1
+   }
+  ],
+  "docSlug": "github"
+ },
+ "dev-sdk-node": {
+  "youtubeId": "F1_uOyTneZ8",
+  "title": "SDK Node.js MONA Pay: cài từ npm, tạo VA, tạo QR, nhận webhook trong 10 phút",
+  "description": "SDK Node.js MONA Pay: cài từ npm, tạo VA, tạo QR, nhận webhook trong 10 phút. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M38S",
+  "transcript": [
+   {
+    "h": "SDK cho Node TypeScript",
+    "p": "Anh chị có một dự án Node.js hoặc TypeScript và muốn thu tiền chuyển khoản mà không tự viết từng lệnh HTTP. Trong mười phút, mình sẽ cài SDK chính thức, khởi tạo client bằng biến môi trường, tạo link thu tiền, đi qua luồng tạo tài khoản ảo, tạo VietQR và xác thực webhook. SDK có tên @monapay/node, không có dependency và dùng fetch có sẵn của Node mười tám trở lên.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Cài và tạo client",
+    "p": "Cài gói bằng npm install @monapay/node. Sau đó đặt MONAPAY_CLIENT_ID và MONAPAY_CLIENT_SECRET lấy từ API Keys trên my.monapay.vn. Trong code, import MonaPay rồi gọi MonaPay.fromEnv(). Lệnh đầu tiên tự lấy OAuth token; các lệnh sau dùng lại token tới gần hạn. SDK làm mới sớm sáu mươi giây và thử lại đúng một lần khi gặp HTTP bốn trăm lẻ một. Secret phải nằm trong biến môi trường, không commit lên git.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo link thu tiền",
+    "p": "Để tạo link thu tiền, gọi mona.checkouts.create với amount, order_code và return_url. Kết quả trả checkout_url; anh chị chuyển hướng khách tới đó hoặc gửi link qua tin nhắn. Theo tài liệu API, mỗi đơn nên có mã riêng, request tạo checkout cần khóa chống tạo trùng, và đơn chỉ được xác nhận sau sự kiện CHECKOUT_PAID đã kiểm chữ ký hoặc sau khi đọc lại checkout thấy status là paid.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo VA qua hai OTP",
+    "p": "Luồng tạo tài khoản ảo có bốn bước và hai OTP. Gọi registerVirtualAccount với loại khách hàng, số tài khoản, số điện thoại, đầu số VA, nội dung định danh và user_agreement. Lấy registration.acb_request.id để gọi verifyVirtualAccount bằng OTP người dùng nhập. Sau đó gọi registerNotification với ID của VA, nhận OTP lần hai và gọi verifyNotification. Bỏ hai bước thông báo thì VA tồn tại nhưng webhook giao dịch sẽ không chạy.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo VietQR động",
+    "p": "Khi đã có thông tin ACB, dùng mona.qr.generate. Các trường chính gồm ownerNumber, ownerType, merchantId, terminalId, orderId, virtualAccountPrefix, beneficiaryName, amount và description. Các giá trị merchant và terminal đúng được xem trong dashboard tại mục Tạo QR. SDK trả dữ liệu trực tiếp trong response, nên đọc qr.qr_data_url. Đây là payload VietQR để đưa vào thư viện vẽ QR, không phải URL ảnh. Lưu ID và số VA đầy đủ để hủy hoặc đối chiếu khi cần.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kiểm chữ ký webhook",
+    "p": "Phần dễ sai nhất là webhook. Route phải nhận raw body trước khi middleware phân tích JSON. Truyền đúng bytes cùng headers và MONA_WEBHOOK_SECRET vào verifyWebhook. Chỉ xử lý khi result.ok là true, rồi lưu transaction_code bằng unique constraint để một giao dịch gửi lại không cập nhật đơn hai lần. Sự kiện checkout dùng checkout_id, không dùng id. Ví dụ Express hoàn chỉnh và ví dụ Next.js App Router đều có trong README.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chạy thử bằng sandbox",
+    "p": "Trước khi nối ngân hàng, anh chị có thể thử cả luồng bằng sandbox. Tạo checkout với sandbox: true, sau đó gọi mona.sandbox.transaction bằng số VA của checkout, đúng số tiền và mã đơn. Đọc lại checkout để thấy trạng thái paid. Sandbox vẫn phát webhook và chạy bộ khớp checkout nhưng không chuyển tiền. Ca thiếu tiền phải giữ status là pending; chỉ giao hàng khi đã nhận đủ và xác minh thành công.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi và xem tài liệu",
+    "p": "Nếu import lỗi, kiểm tra dự án đang dùng Node từ phiên bản mười tám và đúng tên gói có scope là @monapay/node. Nếu API lỗi, MonaPayError có status và body để log. Các method trả trực tiếp trường data của response. Nếu chữ ký sai, đừng stringify lại object đã parse; hãy lấy nguyên raw body. README, danh sách method và ví dụ nằm trên npm, còn đặc tả endpoint ở monapay.vn/docs. Đăng ký tại my.monapay.vn hoặc gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 278.9
+   }
+  ],
+  "docSlug": "sdk"
+ },
+ "dev-sdk-python": {
+  "youtubeId": "T2vcKsoPYv4",
+  "title": "SDK Python MONA Pay: pip install, tạo link thu tiền, kiểm chữ ký webhook",
+  "description": "SDK Python MONA Pay: pip install, tạo link thu tiền, kiểm chữ ký webhook. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M39S",
+  "transcript": [
+   {
+    "h": "SDK cho Python backend",
+    "p": "Anh chị có dự án Flask, FastAPI hoặc Django và muốn tạo link chuyển khoản, nhận kết quả thanh toán mà không tự ghép từng request. Trong video này, mình cài SDK Python chính thức, tạo client, tạo checkout, chạy sandbox và kiểm chữ ký webhook. Tên gói trên PyPI là monapay. SDK chạy từ Python ba chấm tám, dùng đồng bộ và chỉ dựa vào thư viện chuẩn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Cài gói từ PyPI",
+    "p": "Cài gói bằng pip install monapay. Tạo API key tại my.monapay.vn rồi đặt MONAPAY_CLIENT_ID và MONAPAY_CLIENT_SECRET trong môi trường chạy ứng dụng. Import MonaPay từ monapay và gọi MonaPay.from_env(). Client tự lấy OAuth token, lưu tới gần hạn, làm mới sớm sáu mươi giây và thử lại đúng một lần khi gặp HTTP bốn trăm lẻ một. Không ghi client secret trực tiếp trong repository.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo client từ môi trường",
+    "p": "Python SDK đặt tên nhóm theo kiểu snake case: bank_accounts, webhook_logs, email_configs, email_logs và payment_profile. Các method trả trực tiếp trường data của response, nên không cần bóc thêm lớp success, message, data trong code sử dụng. Khi cần truyền thông tin tường minh, khởi tạo MonaPay với client_id và client_secret. Lỗi API là ApiError, có status và body để ghi log và tìm trường sai. Alias paymentProfile cũng có sẵn nếu anh chị muốn giữ cách gọi giống SDK Node.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo link thu tiền",
+    "p": "Tạo link thu tiền bằng mona.checkouts.create. Body cần amount, order_code và return_url; kết quả cho checkout_url để chuyển hướng hoặc gửi khách. Mỗi phiên mặc định hết hạn sau chín trăm giây theo tài liệu API. Hệ thống chỉ đánh dấu paid khi tổng tiền nhận lớn hơn hoặc bằng số tiền checkout. Vì vậy, ứng dụng không được xác nhận đơn chỉ vì khách quay về return_url.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thử checkout sandbox",
+    "p": "Muốn kiểm luồng mà chưa nối ngân hàng, tạo checkout với sandbox=True. Lấy checkout[\"bank\"][\"account_number\"], số tiền và mã đơn để gọi mona.sandbox.transaction. Sau đó đọc lại checkout bằng mona.checkouts.get. Trạng thái đủ tiền sẽ là paid; thiếu tiền vẫn là pending. Sandbox phát webhook như luồng thật nhưng không chuyển tiền, rất phù hợp để thử mapping đơn và chống xử lý trùng trước khi bật production.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Xác thực webhook",
+    "p": "Để xác thực webhook, import verify_webhook. Truyền raw_body, headers và MONA_WEBHOOK_SECRET; raw body phải là bytes nguyên bản từ request. Các framework phải giữ body trước mọi middleware phân tích JSON. Nếu result.ok không đúng, trả HTTP bốn trăm lẻ một với result.reason. Nếu hợp lệ, đọc payload và lưu transaction_code bằng unique key trước khi đổi trạng thái đơn. Không parse JSON rồi encode lại, vì chỉ một khác biệt byte cũng làm chữ ký không khớp.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chặn lỗi xử lý đơn",
+    "p": "Với sự kiện CHECKOUT_PAID, trường định danh phiên là checkout_id, không phải id. Sau khi kiểm chữ ký, lấy checkout từ API, so order_code, số tiền và trạng thái paid rồi mới giao hàng. Flask, FastAPI và Django đều có ví dụ trong thư mục examples. Nếu cần đọc nhiều giao dịch, dùng iterator và vẫn chống trùng bằng transaction_code. Nhớ dùng tên Python from_env, không dùng fromEnv của Node. Đây là lỗi đặt tên thường gặp khi chuyển ví dụ giữa hai SDK.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi và xem docs",
+    "p": "Nếu pip cài nhầm gói, đối chiếu trang PyPI có tên đúng monapay và phiên bản Python từ ba chấm tám. Nếu nhận HTTP bốn trăm lẻ hai, đọc ApiError.body để sửa trường hoặc kiểu dữ liệu. Nếu webhook luôn sai, kiểm raw bytes, secret và headers trước. README cùng code mẫu nằm trên PyPI; bản này cũng chỉ rõ lệnh chạy bộ test bằng pytest. Đặc tả checkout ở monapay.vn/docs/api/trang-thanh-toan. Anh chị đăng ký tại my.monapay.vn hoặc gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 279.4
+   }
+  ],
+  "docSlug": "sdk"
+ },
+ "docs-ai-agent": {
+  "youtubeId": "0Jv3wZqva9w",
+  "title": "Đưa MONA Pay cho AI agent: Claude Code, Codex tự tích hợp qua MCP",
+  "description": "Đưa MONA Pay cho AI agent: Claude Code, Codex tự tích hợp qua MCP. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M45S",
+  "transcript": [
+   {
+    "h": "Tài liệu cho AI agent",
+    "p": "Anh chị muốn giao việc tích hợp thanh toán cho Claude Code, Codex hoặc Cursor nhưng không muốn đưa username, mật khẩu hay để agent đoán OTP. Trong vài phút, mình sẽ thiết lập MCP, cấp client_id và client_secret đúng cách, rồi giao cho agent tạo webhook, nối ngân hàng, cấu hình email hoặc Zalo và tự kiểm log. Tài liệu có bản máy đọc ở llms.txt, llms-full.txt và openapi.json, nên agent có thể bám đặc tả thay vì đoán API.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo khóa và cài MCP",
+    "p": "Vào my.monapay.vn, mở API Keys rồi bấm Tạo key. Dashboard hiển thị client_id cùng client_secret; mã bí mật chỉ hiện một lần nên lưu trong biến môi trường. Với Claude Code, dùng lệnh claude mcp add monapay và truyền hai biến MONAPAY_CLIENT_ID, MONAPAY_CLIENT_SECRET. Claude Desktop, Cursor hoặc Codex dùng khối mcpServers với lệnh npx, đối số -y, monapay-mcp và cùng hai biến môi trường. Tài khoản bật xác thực hai lớp vẫn chạy bình thường theo cách này.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Xác thực dành cho agent",
+    "p": "Sau khi MCP chạy, agent không cần username hay mật khẩu. Nó đổi client_id và client_secret thành Bearer token qua /api/v1/oauth/token; token này hạn ba nghìn sáu trăm giây rồi gọi lại. Dặn agent đọc toàn văn tại https://monapay.vn/llms-full.txt hoặc đặc tả tại https://monapay.vn/openapi.json. Mọi response có success, message, data; lệnh ghi gửi thêm X-Client-Secret bằng chính mã bí mật của khóa API.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Giao agent làm webhook",
+    "p": "Giao việc webhook theo chuỗi rõ ràng. Agent tạo endpoint HTTPS /webhook/monapay, đọc raw body, kiểm X-Mona-Signature với X-Mona-Timestamp, từ chối timestamp lệch quá ba trăm giây, rồi chống trùng bằng transaction_code. Endpoint trả HTTP 200 trong mười giây và xử lý đơn bất đồng bộ. Sau đó agent đăng ký URL bằng POST /api/v1/client-webhooks, gửi thử, đọc webhook log và không tạo đơn từ payload có mã DUMMY123.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Hai lần dừng hỏi OTP",
+    "p": "Agent cũng nối ACB trong cuộc trò chuyện. Nó hỏi số tài khoản, số điện thoại đăng ký với ngân hàng, loại khách hàng, đầu số VA và nội dung định danh. Khi ACB gửi OTP, agent phải dừng và hỏi anh chị, tuyệt đối không tự đoán. Quy trình có OTP thứ nhất để xác minh tài khoản, rồi OTP thứ hai để đăng ký nhận thông báo. Chỉ sau khi cả hai bước thành công mới được nói kết nối ngân hàng đã hoàn tất.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Email và Zalo qua agent",
+    "p": "Với email, agent tạo cấu hình rồi đọc pending_verification, yêu cầu từng người nhận lấy mã sáu số trong hộp thư. Sau khi anh chị trả lời, agent gọi công cụ xác minh, gửi mail thử và đọc log; chỉ hoàn tất khi status là sent. Với Zalo, nhóm phải có bot Gấu Mona. Agent tạo nhóm bằng group_id, lấy ID cấu hình, gửi thử và đọc log; chỉ hoàn tất khi trạng thái là ok.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thử bằng sandbox",
+    "p": "Muốn thử mà chưa nối ngân hàng, yêu cầu agent tạo giao dịch sandbox với amount và description. Hệ thống dùng một VA bắt đầu bằng SBX, phát giao dịch qua webhook, Telegram, Zalo, email và bộ khớp trang thanh toán như tiền thật, nhưng không chuyển tiền và không tính hạn mức. Khi tạo link thu tiền, agent phải đưa checkout_url cho người dùng và chỉ chốt đơn sau webhook CHECKOUT_PAID đã kiểm chữ ký hoặc checkout có trạng thái paid.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chặn các hiểu sai",
+    "p": "Ba nhầm lẫn cần chặn trong prompt: X-Client-Secret không phải secret_key ký webhook; chữ ký phải tính trên raw body; type hiện chỉ có income. Không ghi cứng token, khóa hay mã HMAC trong code. Anh chị có thể sao chép prompt hoàn chỉnh tại monapay.vn/docs/ai-agent, rồi đăng ký và tạo khóa tại my.monapay.vn. Nếu cần hỗ trợ, gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 285.3
+   }
+  ],
+  "docSlug": "ai-agent"
+ },
+ "docs-api-giao-dich": {
+  "youtubeId": "veDqNzjxqKA",
+  "title": "API giao dịch: tra cứu tiền vào theo tài khoản ảo",
+  "description": "API giao dịch: tra cứu tiền vào theo tài khoản ảo. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M30S",
+  "transcript": [
+   {
+    "h": "Giao dịch không biến mất",
+    "p": "Webhook đến chậm hoặc server từng bị lỗi không có nghĩa giao dịch biến mất. MONA Pay vẫn lưu bản ghi ACB đã báo và cho anh chị kéo lại theo tài khoản ảo. Trong video này, mình gọi API danh sách, đọc cấu trúc phân trang, hiểu từng trường quan trọng, đối soát bằng transaction_code và gửi lại thông báo cho đúng một giao dịch.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Query theo số VA",
+    "p": "Gọi GET /api/v1/acb/virtual-account/transactions với Bearer. Query bắt buộc virtual_account_number, chẳng hạn MONA0000010234. page là số trang từ một, mặc định một. limit nhận từ một đến một trăm, mặc định mười. API kiểm tra VA có thuộc tài khoản của anh chị rồi mới trả dữ liệu. Lệnh đọc này không cần X-Client-Secret.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đọc phần phân trang",
+    "p": "Trong response, data.data là mảng giao dịch. Phần phân trang có current_page, per_page, total, last_page, start, end, has_next và has_prev. Muốn đọc tiếp, tăng page khi has_next là true. Danh sách được sắp xếp giao dịch mới trước. Đừng nhầm data bọc ngoài với mảng data bên trong; đây là nguyên nhân dễ làm code nghĩ response rỗng. per_page phản ánh giới hạn đang dùng, còn total là tổng số bản ghi tìm thấy.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Hiểu trạng thái giao dịch",
+    "p": "Các trường trạng thái gồm transaction_status, trong đó SUCCESS nghĩa là tiền đã vào; transaction_channel là kênh ACB ghi nhận; transaction_date là thời điểm giao dịch và effective_date là ngày hiệu lực ghi sổ. debit_or_credit bằng credit là tiền vào, debit là tiền ra. Webhook hiện phát cho tiền vào, nên khi đối soát anh chị lọc bản ghi credit.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Khớp đúng khoản tiền",
+    "p": "Các trường khớp tiền gồm amount, số nguyên VND; transaction_content, nội dung khách gõ hoặc QR điền sẵn; và transaction_code, mã tham chiếu ổn định dùng làm khóa chống trùng. account_number là tài khoản ACB thật. va_prefix_cd và va_nbr là đầu số cùng số VA, có thể null nếu tiền vào thẳng tài khoản chính. attributes chứa thêm thông tin người chuyển và ngân hàng chuyển.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đối soát từng trang",
+    "p": "Đối soát theo từng VA, bắt đầu trang đầu với giới hạn một trăm. Mỗi bản ghi, tìm transaction_code trong bảng nội bộ. Mã đã có thì bỏ qua; mã mới thì ghi và chạy cùng hàm xử lý đơn như webhook. Đọc trang tiếp theo khi has_next là true. Hiện chưa có since_id, nên có thể dừng khi gặp dữ liệu đã có và cũ hơn mốc lần chạy trước.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gửi lại thông báo",
+    "p": "Muốn gửi lại thông báo, lấy trường id của bản ghi rồi gọi POST /api/v1/acb/virtual-account/transactions/{transaction_id}/retry. Request cần Bearer và X-Client-Secret. Body bắt buộc có target_type là WEBHOOK hoặc TELEGRAM; target_id có thể chỉ định một cấu hình. Nếu bỏ target_id, hệ thống gửi theo mọi cấu hình đang bật và khớp giao dịch. Payload gửi lại vẫn cùng transaction_code, nên server phải bỏ qua nếu giao dịch đã xử lý.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi truy vấn",
+    "p": "API trả bốn trăm khi số VA không tồn tại hoặc không thuộc tài khoản; lấy lại số từ endpoint danh sách VA. Bốn trăm lẻ một là token hết hạn, hãy đăng nhập lại lấy token mới. Bốn trăm hai mươi hai thường do thiếu virtual_account_number hoặc limit lớn hơn một trăm. Retry trả bốn trăm lẻ bốn thì transaction_id sai; phải dùng id của giao dịch, không dùng transaction_code.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và đối chiếu",
+    "p": "Response đầy đủ, bảng giải nghĩa và code đọc mọi trang nằm tại monapay.vn/docs/api/giao-dich. Anh chị đăng ký tại my.monapay.vn, mở mục Giao dịch để so một bản ghi dashboard với kết quả API thực tế trước khi đặt tác vụ đối soát. Nếu còn nhầm ID, số VA hoặc phân trang, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 270.7
+   }
+  ],
+  "docSlug": "api/giao-dich"
+ },
+ "dev-mcp-npm": {
+  "youtubeId": "-MiSYhObank",
+  "title": "Cài MCP MONA Pay từ npm cho Claude Code, Codex, Cursor: 47 công cụ thu tiền cho AI agent",
+  "description": "Cài MCP MONA Pay từ npm cho Claude Code, Codex, Cursor: 47 công cụ thu tiền cho AI agent. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M41S",
+  "transcript": [
+   {
+    "h": "Thu tiền ngay trong IDE",
+    "p": "Anh chị đang dùng Claude Code, Codex hoặc Cursor và muốn agent tự tạo QR, tra giao dịch, cấu hình webhook ngay trong lúc code. Nhưng đưa tài khoản đăng nhập cho agent vừa bất tiện, vừa vướng xác thực hai lớp. Trong video này, mình cài gói monapay-mcp từ npm, nối bằng khóa API và kiểm tra cách dùng bốn mươi bảy công cụ. Toàn bộ phần cài đặt chỉ cần Node mười tám trở lên và một tài khoản MONA Pay.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Cài gói từ npm",
+    "p": "Trước hết, mở my.monapay.vn, vào API Keys, bấm Tạo key và lưu client_id cùng client_secret. Mã bí mật chỉ hiện một lần, nên đặt trong biến môi trường, không ghi vào mã nguồn. Gói trên npm có tên chính xác là monapay-mcp. Lệnh npx monapay-mcp chạy máy chủ qua stdio. Khi thêm vào một trình khách MCP, README dùng npx -y monapay-mcp để npm tự xác nhận việc chạy gói.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Cấu hình Claude Code",
+    "p": "Với Claude Code, sao chép nguyên lệnh trong README. Hai tùy chọn -e truyền MONAPAY_CLIENT_ID và MONAPAY_CLIENT_SECRET; phần sau dấu -- là lệnh khởi động MCP. Sau khi thêm, mở lại phiên làm việc nếu trình khách chưa nhận cấu hình mới. Cách này lấy OAuth token bằng client credentials, nên agent không cần username hay mật khẩu. Tài khoản bật xác thực hai lớp vẫn dùng được bình thường.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Cấu hình Codex Cursor",
+    "p": "Cursor dùng tệp .cursor/mcp.json, còn Codex dùng ~/.codex/config.toml. Với Codex, tạo mục [mcp_servers.monapay], đặt command là npx, args là -y và monapay-mcp, rồi khai báo hai biến môi trường. Claude Desktop dùng cấu trúc mcpServers tương tự Cursor. Kiểm tra cấu hình xong bằng cách yêu cầu agent đọc hồ sơ tài khoản hiện tại. Dù dùng trình khách nào, không commit giá trị thật của MONAPAY_CLIENT_SECRET vào git và không dán secret vào prompt công khai.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bốn mươi bảy tool",
+    "p": "Khi kết nối xong, agent có bốn mươi bảy tool chia theo công việc. Nhóm đọc hồ sơ và tài khoản có monapay_whoami, monapay_me, danh sách ngân hàng và VA. Nhóm thu tiền tạo checkout, tạo VietQR, tra giao dịch và tạo giao dịch sandbox. Nhóm vận hành tạo, sửa, thử webhook, đọc log và thống kê. Ngoài ra còn nhóm email, Zalo, xoay khóa, kiểm chữ ký và sinh code endpoint webhook cho PHP, Node hoặc Python.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Nối ngân hàng bằng OTP",
+    "p": "Agent còn có thể nối tài khoản ACB bằng bốn bước có hai điểm dừng. Nó gọi monapay_link_bank_start, rồi phải hỏi anh chị OTP lần đầu trước khi gọi monapay_link_bank_verify_otp. Tiếp theo, agent đăng ký thông báo bằng monapay_notification_register, hỏi OTP lần hai và mới gọi monapay_notification_verify_otp. Nếu OTP sai hoặc hết hạn, gọi lại bước trước để ngân hàng gửi mã mới. Agent không được tự đoán hoặc lưu OTP.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Giao agent tích hợp",
+    "p": "Một yêu cầu thực tế có thể bắt đầu bằng câu: tích hợp nhận tiền chuyển khoản cho web này bằng MONA Pay. Agent kiểm tài khoản, lấy code mẫu nhận webhook, viết endpoint, đăng ký cấu hình HMAC, bắn thử và đọc log để chắc endpoint trả HTTP hai trăm. Sau đó nó tạo checkout cho từng đơn và chờ sự kiện CHECKOUT_PAID. Với webhook, chữ ký phải được kiểm trên raw body và transaction_code phải là khóa chống xử lý trùng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi và mở docs",
+    "p": "Nếu MCP không lên, kiểm tra Node đã từ phiên bản mười tám, tên gói là monapay-mcp và đủ hai biến môi trường. Nếu vừa xoay khóa, secret cũ hết hiệu lực ngay; cập nhật MONAPAY_CLIENT_SECRET rồi khởi động lại agent. Hướng dẫn đầy đủ nằm ở trang npm và monapay.vn/docs/ai-agent. Anh chị có thể đăng ký tại my.monapay.vn. Khi cần hỗ trợ, gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 281.2
+   }
+  ],
+  "docSlug": "mcp"
+ },
+ "docs-api-va": {
+  "youtubeId": "0Wk8EENKIi0",
+  "title": "Tài khoản ngân hàng ảo ACB: tạo VA qua API và qua dashboard",
+  "description": "Tài khoản ngân hàng ảo ACB: tạo VA qua API và qua dashboard. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M45S",
+  "transcript": [
+   {
+    "h": "Đủ bốn bước mới nhận báo",
+    "p": "Tạo xong tài khoản ảo nhưng tiền vào không phát webhook thường không phải lỗi webhook, mà do quy trình ACB còn thiếu bước đăng ký thông báo. Trong video này, mình đi đủ bốn bước tạo tài khoản ảo, gọi tắt là VA: đăng ký, nhập OTP, bật báo giao dịch và nhập OTP lần hai. Anh chị cũng biết trường nào phải lưu cho bước kế tiếp.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "VA dùng để làm gì",
+    "p": "VA là số tài khoản phụ do ACB cấp dưới tài khoản thật. Tiền vẫn nằm trong tài khoản ACB của anh chị, nhưng mỗi VA có thể gắn một đơn hoặc một khách để khớp tự động. Điều kiện là tài khoản ACB đứng tên anh chị và số điện thoại đang đăng ký với ACB. Không muốn gọi API, dashboard mục Ngân hàng và VA có wizard bốn bước tương tự.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gửi yêu cầu đăng ký",
+    "p": "Ở bước đầu, gọi POST /api/v1/acb/virtual-account/registration với Bearer và X-Client-Secret. Lần đầu chưa có bank_account_id, truyền customer_type như PERS, account_number, phone_number, khối virtual_account_info và user_agreement bằng true. Nếu tài khoản ACB đã nối, có thể truyền bank_account_id rồi bỏ số tài khoản và số điện thoại. Trong khối con, virtual_account_prefix_code là bắt buộc; virtual_account_content có thể chứa mã đơn, còn virtual_account_explain là diễn giải.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đặt đầu số VA",
+    "p": "Đầu số VA do anh chị tự đặt bằng chữ in hoa và số, nên ngắn như HOA hoặc SHOP; không cần đăng ký trước. ACB có thể ghép thêm mã đối tác và phần định danh. Vì vậy, đừng tự nối chuỗi. Sau bước đầu, lưu acb_request.id. Nếu đầu số không được chấp nhận, đổi sang đầu số ngắn khác và gửi lại yêu cầu, không cần ra quầy.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Xác thực OTP lần đầu",
+    "p": "ACB gửi OTP về số điện thoại. Dùng acb_request_id vừa lưu để gọi POST /api/v1/acb/{acb_request_id}/virtual-account/verification, body chỉ có code. Response trả VA vừa tạo. Lưu id cho bước tiếp theo và virtual_account_number để tạo QR, khớp giao dịch hoặc đưa cho khách. Đây phải là nguyên số ACB trả về, không phải đầu số anh chị đã nhập.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bật thông báo, nhập OTP",
+    "p": "Bước ba gọi POST /api/v1/acb/{virtual_account_id}/notification/registration. Body có receive_noti_realtime bằng true để nhận từng giao dịch ngay; false nghĩa là ACB gộp báo cuối ngày. Response trả một acb_request.id mới và ACB gửi OTP lần hai. Bước bốn gọi /notification/verification với ID mới cùng code. Hoàn tất bước này thì tiền vào mới phát webhook hoặc Telegram.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Truy vấn và quản lý VA",
+    "p": "Sau khi tạo, dùng GET /api/v1/client/bank-accounts để lấy danh sách tài khoản và bank_account_id. Endpoint virtual-account/retrieve liệt kê VA theo tài khoản. Anh chị còn có thể xem chi tiết đăng ký thông báo, sửa kiểu nhận, hủy nhận hoặc hủy VA bằng các endpoint quản lý. Những lệnh ghi đều cần Bearer và X-Client-Secret; một số thay đổi có thể yêu cầu OTP xác thực lại.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi tạo VA",
+    "p": "Lỗi bốn trăm sau bước đầu thường do sai tài khoản ACB, sai số điện thoại hoặc đầu số không được chấp nhận. code sai ở bước hai hay bốn nghĩa là OTP sai hoặc hết hạn; làm lại bước trước để nhận mã mới. Bốn trăm hai mươi hai cho biết thiếu virtual_account_info.virtual_account_prefix_code. VA tồn tại nhưng không thấy giao dịch thì kiểm tra ngay bước ba và bước bốn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs hoặc dùng wizard",
+    "p": "Sơ đồ bốn bước, body mẫu và code PHP, Node nằm tại monapay.vn/docs/api/tai-khoan-ao-va. Anh chị đăng ký tại my.monapay.vn, có thể vào mục Ngân hàng và VA để làm đủ bốn bước bằng wizard trước khi tự động hóa qua API. Nếu toàn bộ quy trình OTP hoặc đăng ký thông báo chưa hoàn tất, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 285.5
+   }
+  ],
+  "docSlug": "api/tai-khoan-ao-va"
+ },
+ "docs-bat-dau-nhanh": {
+  "youtubeId": "0eVb_glPPiU",
+  "title": "Bắt đầu nhanh với MONA Pay trong 5 phút: đăng ký, nối ACB, nhận tiền đầu tiên",
+  "description": "Bắt đầu nhanh với MONA Pay trong 5 phút: đăng ký, nối ACB, nhận tiền đầu tiên. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M31S",
+  "transcript": [
+   {
+    "h": "Chuẩn bị trước khi làm",
+    "p": "Anh chị muốn tiền vừa vào tài khoản ACB là website biết ngay, nhưng đang mắc giữa tài khoản, khóa API, hai lần OTP và webhook. Video này mình đi trọn sáu việc trong khoảng năm phút: chuẩn bị, đăng ký, lấy quyền gọi API, nối ngân hàng, khai báo webhook rồi chuyển một khoản nhỏ để kiểm tra. Anh chị cần tài khoản ACB, điện thoại nhận OTP và một URL HTTPS công khai. Chưa có máy chủ vẫn có thể dùng thông báo Telegram.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đăng ký và lấy token",
+    "p": "Vào my.monapay.vn/auth, chọn tab Đăng ký, rồi điền tên đăng nhập, mật khẩu, tên và email. Tài khoản tạo xong dùng ngay, không có bước chờ duyệt. Nếu làm qua API, gửi POST tới /api/v1/client/register-client với ba trường username, password, name. Sau đó đăng nhập tại /api/v1/client/login. Kết quả có access_token và expires_in; mọi lệnh gọi tiếp theo gửi Authorization: Bearer kèm token này.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo khóa API",
+    "p": "Mở mục API Keys và tạo một khóa tên may-chu-production. Hệ thống trả client_secret, tức mã bí mật, đúng một lần nên phải lưu ngay vào biến môi trường. Nếu mất, tạo khóa mới rồi thu hồi khóa cũ. Với token lấy từ client/login, các lệnh POST, PUT, PATCH và DELETE còn phải gửi X-Client-Secret. Token đổi qua /api/v1/oauth/token không bắt buộc header này, nhưng tài liệu vẫn khuyến nghị luôn gửi.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Nối ACB bằng hai OTP",
+    "p": "Tiếp theo vào Ngân hàng & VA, bấm Thêm tài khoản. Nhập số tài khoản ACB, số điện thoại đã đăng ký với ACB, loại khách hàng cá nhân hoặc doanh nghiệp, rồi tự đặt đầu số VA bằng chữ in hoa hoặc số, ví dụ HOA hay SHOP. Nhập OTP thứ nhất để xác thực và tạo tài khoản ảo đầu tiên. Đăng ký nhận thông báo, nhập OTP thứ hai. Phải hoàn tất đủ hai lượt thì giao dịch mới báo sang hệ thống.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Khai báo webhook",
+    "p": "ACB sẽ ghép mã đối tác phía trước đầu số anh chị chọn. Ví dụ đầu số HOA có thể thành VA LOCHOA000123456; hãy dùng nguyên số hệ thống trả về, không tự ghép. Bây giờ vào Webhooks, bấm Thêm webhook. Điền URL HTTPS, chọn HMAC_SHA256, đặt secret_key, tức mã bí mật dùng ký webhook, và để định dạng application/json. Bỏ trống virtual_account_id để nhận mọi tài khoản, hoặc chọn một VA để lọc riêng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kiểm chữ ký và localhost",
+    "p": "Endpoint phía anh chị làm ba việc theo đúng thứ tự: đọc raw body, kiểm X-Mona-Timestamp và X-Mona-Signature, trả HTTP 200 ngay, rồi mới xử lý đơn. Chữ ký là HMAC-SHA256 của chuỗi timestamp, dấu chấm và raw body. Timestamp lệch quá năm phút thì từ chối. Nếu đang thử trên máy cá nhân, localhost không nhận được cuộc gọi từ MONA Pay; hãy dùng URL HTTPS công khai do tunnel cấp rồi dán vào webhook_url.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gửi thử và chuyển tiền",
+    "p": "Trong mục Webhooks, bấm Gửi thử. Mở Lịch sử gửi để xem mã HTTP và thời gian phản hồi. Sau đó chuyển một khoản nhỏ, ví dụ mười nghìn đồng, vào VA vừa tạo. Trong vài giây, giao dịch sẽ hiện trên dashboard và webhook tới máy chủ. Nếu báo TIMEOUT, server chưa trả lời trong mười giây. Nếu chữ ký sai, đừng parse JSON rồi ký lại. Nếu tiền chưa hiện, kiểm tra đã nhập OTP thứ hai hay chưa.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Việc nên làm tiếp",
+    "p": "Vậy là anh chị đã đi từ tài khoản mới tới giao dịch thật: có token, khóa API, VA, thông báo ngân hàng và webhook đã kiểm chữ ký. Bước tiếp theo nên đọc Định dạng payload để hiểu từng trường, dùng transaction_code chống trùng, rồi xem Gửi lại và xử lý lỗi. Toàn bộ hướng dẫn nằm tại monapay.vn/docs/bat-dau-nhanh. Đăng ký tại my.monapay.vn. Cần hỗ trợ, anh chị gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 271.8
+   }
+  ],
+  "docSlug": "bat-dau-nhanh"
+ },
+ "docs-quan-an-tra-sua": {
+  "youtubeId": "4ul2jwZ89tg",
+  "title": "Quán ăn, trà sữa: loa báo có, tiền vào là quầy biết ngay",
+  "description": "Quán ăn, trà sữa: loa báo có, tiền vào là quầy biết ngay. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT3M30S",
+  "transcript": [
+   {
+    "h": "Quầy tự biết tiền vào",
+    "p": "Giờ đông khách, thu ngân của anh chị nhìn màn hình chuyển khoản khách đưa rồi lại hỏi chủ quán tiền vào chưa. Việc này làm chậm quầy và dễ bỏ sót khoản thiếu. Trong vài phút, mình sẽ thiết lập bốn phần cho quán ăn, cà phê hoặc trà sữa: nối tài khoản, thêm nhóm nhân viên, bật loa báo có và in QR tại bàn. Xong quy trình, cả nhóm nhìn hoặc nghe được số tiền thật ngay khi giao dịch xuất hiện.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Nối tài khoản chủ quán",
+    "p": "Vào my.monapay.vn, tạo tài khoản, rồi mở mục Ngân hàng. Nhập số tài khoản đứng tên chủ quán và số điện thoại đã đăng ký với ngân hàng. Nhập đủ hai mã OTP ngân hàng gửi về. Không nên mượn tài khoản người khác vì OTP gửi đúng số điện thoại đã đăng ký với tài khoản đó. Tiền khách chuyển vẫn nằm trong tài khoản ngân hàng của chủ quán; hệ thống chỉ nhận thông báo để báo lại.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thêm nhóm nhân viên",
+    "p": "Tạo một nhóm Zalo hoặc Telegram gồm chủ quán và khoảng năm đến bảy nhân viên đang làm ca. Thêm bot theo hướng dẫn trong dashboard, tạo cấu hình rồi bấm Gửi thử. Khi tin xuất hiện đúng nhóm, mỗi khoản tiền vào tài khoản đã nối sẽ thành một tin có số tiền, nội dung và giờ chuyển. Thu ngân, người pha chế và chủ quán cùng thấy, không cần một người báo lại cho từng người.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bật loa báo có",
+    "p": "Tiếp theo mở mục Loa báo có. Dashboard cung cấp một đường link riêng; mở link đó trên điện thoại hoặc máy tính bảng đặt cố định tại quầy. Bấm nút bật loa một lần vì trình duyệt cần thao tác này để cho phép phát âm thanh. Sau đó giữ màn hình sáng. Khi tiền vào, giao dịch mới hiện trên màn hình và loa đọc số tiền cùng nội dung, phù hợp lúc nhân viên đang bận tay.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "In QR cho bàn và quầy",
+    "p": "In mã QR ngân hàng của quán từ dashboard, dán tại từng bàn hoặc dùng một mã chung ở quầy thu ngân. Khách quét bằng app ngân hàng sẽ ra đúng số tài khoản, rồi nhập số tiền và nội dung. Dán thêm quy tắc nội dung như ban 3 hoặc mang di 12. Khi hai khách chuyển gần nhau, nhân viên đọc nội dung trong tin báo là biết khoản nào thuộc bàn hay đơn mang đi nào.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tách quầy và chi nhánh",
+    "p": "Nếu quán có nhiều quầy hoặc nhiều chi nhánh, mỗi nơi có thể dùng một tài khoản ảo riêng và gắn với một nhóm riêng. Nhóm của quầy nào nhận tin của quầy đó, còn chủ chuỗi xem gộp trên dashboard. Với ca đêm, nhóm và loa vẫn nhận tin vì hệ thống chạy suốt hai mươi bốn giờ. Sáng hôm sau, chủ quán mở danh sách giao dịch để đối chiếu doanh thu của ca.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Xử lý lúc quầy đông",
+    "p": "Ba tình huống cần xử lý ngay tại quầy. Khách chuyển thiếu thì nhìn số tiền thật trong tin, không chờ cuối ngày. Loa không đọc thì mở lại đường link và bấm bật loa trên thiết bị. Quán mất mạng thì khách vẫn chuyển qua ngân hàng; tin chỉ chậm tới khi thiết bị có mạng lại. Nhân viên nghỉ việc thì xóa người đó khỏi nhóm để họ không còn xem các tin báo mới.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Quy trình giao món",
+    "p": "Từ đây quy trình rất gọn: khách quét QR, ghi nội dung theo bàn, tiền vào thì nhóm hiện tin và loa đọc, thu ngân mới giao món hoặc gạch bill. Quán nhận đơn từ xa có thể dùng thêm link thu tiền theo hướng dẫn bán hàng online. Xem chi tiết tại monapay.vn/docs/dung-ngay/quan-an-tra-sua, đăng ký tại my.monapay.vn. Cần hỗ trợ, gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 210.2
+   }
+  ],
+  "docSlug": "dung-ngay/quan-an-tra-sua"
+ },
+ "docs-webhook-doi-soat": {
+  "youtubeId": "66uWXzNjirg",
+  "title": "Đối soát giao dịch bằng API MONA Pay cuối ngày",
+  "description": "Đối soát giao dịch bằng API MONA Pay cuối ngày. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M7S",
+  "transcript": [
+   {
+    "h": "Lưới đỡ cho webhook",
+    "p": "Webhook chạy thời gian thực nhưng chỉ một lần bảo trì, mất mạng hoặc khóa cơ sở dữ liệu cũng có thể làm hệ thống của anh chị bỏ lỡ giao dịch. Trong video này, mình dựng một vòng đối soát theo tài khoản ảo, phân trang đúng cách, bổ sung khoản thiếu và đặt lịch chạy. Mục tiêu là webhook có trục trặc thì cuối ca vẫn không sót tiền.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gọi API giao dịch",
+    "p": "Endpoint cần gọi là GET /api/v1/acb/virtual-account/transactions. Query bắt buộc có virtual_account_number, là số tài khoản ảo cần lấy giao dịch. page bắt đầu từ một và limit tối đa một trăm. Vì đây là lệnh GET, request chỉ cần Authorization: Bearer và không cần X-Client-Secret. Anh chị nên gọi riêng cho từng tài khoản ảo đang dùng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đọc response phân trang",
+    "p": "Response dùng khung success, message, data. Bên trong, data.data là mảng giao dịch. Các trường current_page, per_page, total và last_page mô tả phân trang. Mỗi giao dịch có mã, số tiền, thời gian, nội dung và tài khoản nhận giống dữ liệu webhook. Dừng vòng lặp khi current_page lớn hơn hoặc bằng last_page. Danh sách mới nhất nằm trước.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thuật toán đối soát",
+    "p": "Thuật toán bắt đầu bằng trang đầu với limit bằng một trăm. Với mỗi bản ghi, tìm transaction_code trong bảng giao dịch nội bộ. Mã chưa có thì chèn và gọi đúng hàm xử lý mà webhook đang dùng. Mã đã có thì bỏ qua. Nếu cả trang không có mã mới, dừng; nếu vẫn có giao dịch mới, đọc trang kế tiếp. Cuối lần chạy, lưu thời điểm và số khoản được bổ sung.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Dừng khi hết mã mới",
+    "p": "Hiện API chưa có since_id hay bộ lọc khoảng ngày. Vì thế, đừng kéo toàn bộ lịch sử ở mọi lần chạy. Bắt đầu từ dữ liệu mới nhất và dừng ngay khi cả trang đều đã tồn tại. Cả webhook và tác vụ đối soát phải ghi vào cùng một bảng có UNIQUE trên transaction_code. Nếu hai luồng dùng hai bảng khác nhau, anh chị vẫn tạo trùng dù thuật toán đọc đúng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Làm mới token hết hạn",
+    "p": "Token truy cập có hạn dùng. Nếu tác vụ định kỳ nhận HTTP bốn trăm lẻ một, hãy đăng nhập lại hoặc xin token mới rồi thử lại trang đang đọc. Đừng bỏ qua lỗi và ghi mốc đối soát thành công. Lệnh mẫu trong tài liệu còn in transaction_code, amount và ngày giao dịch của trang đầu để anh chị so nhanh trước khi đưa logic chèn dữ liệu vào chạy tự động.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chọn lịch chạy phù hợp",
+    "p": "Tần suất phụ thuộc việc khách chờ bao lâu. Web bán hàng giao ngay, vé hoặc khóa học mở tức thì có thể chạy mỗi mười lăm phút. Phần mềm quản lý, học phí hay phí dịch vụ có thể chạy mỗi giờ. Kế toán chốt sổ chạy lúc hai mươi ba giờ ba mươi mỗi ngày. Cách chắc hơn là đối soát nhanh trang đầu mỗi giờ và đọc đủ các trang vào cuối ngày.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đối soát trên dashboard",
+    "p": "Nếu không viết code, vào dashboard mục Giao dịch, lọc theo tài khoản ảo và khoảng ngày rồi xuất CSV để so trong Excel bằng transaction_code. API trả trống dù có tiền thì kiểm tra virtual_account_number; khoản đó có thể vào tài khoản chính hoặc một tài khoản ảo khác. Tác vụ chạy quá lâu nghĩa là chưa dừng khi hết mã mới. Chèn trùng thì kiểm tra ràng buộc UNIQUE và hàm xử lý dùng chung.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và chạy thử",
+    "p": "Code PHP, Node và thuật toán đầy đủ nằm tại monapay.vn/docs/webhooks/doi-soat. Anh chị có thể đăng ký tại my.monapay.vn, mở mục Giao dịch để đối chiếu kết quả API với dữ liệu dashboard trước khi đặt lịch tự động. Nếu còn kẹt ở phân trang hoặc giao dịch thiếu, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 247.4
+   }
+  ],
+  "docSlug": "webhooks/doi-soat"
+ },
+ "docs-dung-ngay": {
+  "youtubeId": "5b1ALTBZxW0",
+  "title": "Dùng MONA Pay ngay không cần web, không cần lập trình",
+  "description": "Dùng MONA Pay ngay không cần web, không cần lập trình. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT3M40S",
+  "transcript": [
+   {
+    "h": "Chỉ cần hai thứ",
+    "p": "Anh chị bán tại quán, tiệm, trên Facebook, Zalo hoặc thu học phí nhưng không có website và cũng không muốn đụng tới code. Trong vài phút, mình sẽ làm đúng ba việc để tiền vào là biết: nối tài khoản ngân hàng, chọn kênh báo có, rồi in QR hoặc lấy link thu tiền. Mọi thao tác đều làm được trên điện thoại. Anh chị chỉ cần tài khoản ngân hàng đứng tên mình và chiếc điện thoại dùng số đã đăng ký với ngân hàng để nhận OTP.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Nối ngân hàng",
+    "p": "Trước tiên vào my.monapay.vn, tạo tài khoản bằng số điện thoại hoặc email. Tạo xong dùng ngay, không chờ duyệt. Mở mục Ngân hàng, nhập số tài khoản và số điện thoại đã đăng ký với ngân hàng. Mã OTP thứ nhất tạo kết nối; mã thứ hai bật nhận thông báo mỗi khi tiền vào. Nhập đủ hai mã. Anh chị không cần đưa mật khẩu ngân hàng cho ai trong toàn bộ quá trình này.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chọn kênh báo có",
+    "p": "Sau khi nối ngân hàng, chọn nơi cả đội muốn nhận tin. Nhóm Zalo hoặc Telegram hợp cho chủ quán, thu ngân, người chốt đơn và kế toán cùng xem. Email hợp khi chủ muốn theo dõi riêng trong hộp thư. Anh chị có thể bật một kênh hoặc cả ba. Với nhóm, thêm bot theo hướng dẫn trên dashboard; từ đó tiền vào là cả nhóm cùng thấy dòng tin, không ai phải hỏi lại ai.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bật loa tại quầy",
+    "p": "Quầy đông khách nên dùng thêm Loa báo có. Trong dashboard mở mục Loa báo có để lấy đường link, rồi mở link trên điện thoại hoặc máy tính bảng đặt cố định tại quầy. Bấm nút bật loa một lần để trình duyệt cho phép phát âm thanh. Từ đó, khi tiền vào, màn hình hiện giao dịch mới và đọc số tiền cùng nội dung. Nhân viên không phải cầm điện thoại kiểm tra liên tục giữa lúc đang phục vụ.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "QR hoặc link thu tiền",
+    "p": "Nếu khách đứng tại quầy, in mã QR ngân hàng rồi dán ở quầy hoặc bàn. Khách quét là ra đúng số tài khoản, không cần chép tay. Nếu bán online hoặc thu cọc từ xa, mở Trang thanh toán và tạo link đúng số tiền, rồi gửi qua Zalo hoặc Facebook. Khách bấm link sẽ thấy màn hình chuyển khoản đã điền sẵn. Hai cách có thể dùng cùng lúc cho cửa hàng vừa bán trực tiếp vừa nhận đơn từ xa.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chọn theo tình huống",
+    "p": "Chọn cách vận hành theo đúng tình huống. Quán ăn và trà sữa nên kết hợp nhóm với loa ở quầy. Tiệm tóc, spa dùng link để thu cọc và cho lễ tân xem tin báo. Shop online đặt tên link theo mã đơn. Lớp học đặt tên theo học viên và dùng email làm căn cứ biên lai. Mục Hướng dẫn trong dashboard có sẵn bốn lối đi này, nên đang thao tác anh chị không cần quay lại trang ngoài.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Ba lỗi hay gặp",
+    "p": "Ba lưu ý hay gặp. Không có tin sau khi nối ngân hàng thì kiểm tra đã nhập đủ hai OTP. Loa không đọc thì bấm bật loa trên thiết bị quầy và giữ màn hình hoạt động. Với đơn online, chỉ xác nhận khi tin báo cho biết tiền thật sự đã vào, không dựa vào ảnh chụp khách gửi. Email phù hợp cho người muốn theo dõi riêng. Tiền khách chuyển thẳng vào tài khoản ngân hàng của anh chị.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sẵn sàng nhận tiền",
+    "p": "Hoàn tất ba việc này là anh chị có thể dùng ngay mà không cần website: ngân hàng đã nối, kênh báo có đã thử, QR hoặc link thu tiền đã sẵn sàng. MONA Pay miễn phí năm trăm giao dịch mỗi tháng và không thu phần trăm trên tiền khách chuyển. Xem lại hướng dẫn tại monapay.vn/docs/dung-ngay, đăng ký tại my.monapay.vn. Kẹt bước nào, gọi một chín không không, sáu ba sáu, sáu bốn tám để được hỗ trợ.",
+    "start": 0.0,
+    "end": 220.7
+   }
+  ],
+  "docSlug": "dung-ngay"
+ },
+ "docs-tong-quan": {
+  "youtubeId": "8XzJB2l0sIg",
+  "title": "Tài liệu webhook và API ngân hàng MONA Pay: tổng quan, đi từ đâu",
+  "description": "Tài liệu webhook và API ngân hàng MONA Pay: tổng quan, đi từ đâu. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M13S",
+  "transcript": [
+   {
+    "h": "Bản đồ tài liệu",
+    "p": "Anh chị muốn tự xác nhận chuyển khoản nhưng mở bộ tài liệu ra lại chưa biết nên bắt đầu từ VA, VietQR, webhook hay khóa API. Trong vài phút, mình vẽ lại toàn bộ bản đồ: tiền đi đâu, bốn bước hệ thống xử lý, trang nào đọc trước và công cụ nào dành cho từng nhu cầu. Điểm quan trọng nhất là tiền vào thẳng tài khoản ACB của anh chị; MONA Pay nhận thông báo giao dịch rồi chuyển tin sang hệ thống.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Luồng bốn bước",
+    "p": "Luồng vận hành có bốn chặng. Khách chuyển vào tài khoản ảo hoặc quét VietQR. ACB báo giao dịch cho MONA Pay sau khi anh chị đăng ký nhận thông báo bằng OTP. MONA Pay lưu giao dịch rồi gửi JSON tới webhook, đồng thời có thể nhắn Telegram. Cuối cùng website, phần mềm quản lý hoặc bảng dữ liệu của anh chị tự đổi đơn sang đã thanh toán. Vì vậy không cần người mở app ngân hàng và dò từng khoản.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "VA, QR và checkout",
+    "p": "Nếu cần khớp tiền theo từng đơn, đọc Tài khoản ảo và QR thanh toán. VA cho mỗi đơn hoặc mỗi khách một số riêng. VietQR động điền sẵn số tài khoản, số tiền và nội dung. Nếu cần gửi đường dẫn qua Zalo hoặc Facebook, dùng Trang thanh toán. Nếu muốn thử trước khi nối ngân hàng, dùng Sandbox; giao dịch và trang thanh toán thử không chuyển tiền thật và không tính hạn mức.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Webhook và bảo mật",
+    "p": "Nếu phần mềm phải phản ứng ngay khi tiền vào, đọc Tích hợp webhook, Định dạng payload và Bảo mật webhook. Máy chủ cần trả HTTP 200, 201 hoặc 202 trong mười giây. Mỗi lần gửi có log riêng. Bật HMAC-SHA256 để kiểm X-Mona-Signature và X-Mona-Timestamp, đồng thời chặn gói cũ quá năm phút. Sau đó đọc Gửi lại và xử lý lỗi cùng Đối soát để có phương án khi máy chủ gián đoạn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kênh báo cho con người",
+    "p": "Nếu chỉ cần con người biết tiền vào, không phải viết code. Telegram phù hợp nhóm kế toán hoặc bán hàng. Zalo gửi tin vào nhóm đã có bot Gấu Mona. Email gửi cho người nhận đã xác minh. Anh chị có thể dùng nhiều kênh cùng lúc. Mỗi kênh giải quyết một việc: webhook cho phần mềm, tin nhắn cho nhóm đang vận hành, email cho người theo dõi trong hộp thư.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tài liệu cho máy đọc",
+    "p": "Phần dành cho máy chủ bắt đầu ở API keys và Xác thực API. Base URL là https://api.monapay.vn; dashboard là https://my.monapay.vn. Tài liệu còn có OpenAPI 3.1 tại /openapi.json, Postman collection với hai mươi request và API reference tương tác. AI agent có thể nạp llms.txt để lấy mục lục, hoặc llms-full.txt để đọc toàn văn rồi tự viết phần tích hợp theo đặc tả.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chọn lối đi phù hợp",
+    "p": "Chọn lối đi ngắn nhất theo tình trạng hiện tại. Chưa có tài khoản thì mở Bắt đầu nhanh. Chưa quen VA, VietQR, webhook và HMAC thì đọc Khái niệm. Muốn kiểm code trước khi nối ACB thì mở Sandbox. Khi gửi webhook thật, nếu server có tường lửa, xem trang Địa chỉ IP. Lỗi phổ biến nhất ở bước đầu là đọc lan man; chỉ cần chọn một mục tiêu rồi đi đúng chuỗi tài liệu liên quan.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Dùng trang Tổng quan",
+    "p": "Tóm lại, trang Tổng quan là bản đồ chứ không phải một quy trình duy nhất. Anh chị xác định mình cần báo cho người, báo cho phần mềm hay tạo luồng thu tiền, rồi mở đúng nhóm tài liệu. Bản markdown của từng trang có thể lấy bằng cách thêm .md vào URL. Xem bản đồ tại monapay.vn/docs, đăng ký sử dụng tại my.monapay.vn. Nếu kẹt khi chọn luồng, gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 253.1
+   }
+  ]
+ },
+ "docs-zalo": {
+  "youtubeId": "8v6ZpqknMas",
+  "title": "Báo tiền vào nhóm Zalo bằng bot Gấu Mona",
+  "description": "Báo tiền vào nhóm Zalo bằng bot Gấu Mona. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT3M57S",
+  "transcript": [
+   {
+    "h": "Cả nhóm cùng nhận tin",
+    "p": "Anh chị bán hàng theo nhóm Zalo nhưng mỗi lần khách chuyển vẫn phải chờ chủ tài khoản kiểm tra rồi báo lại. Trong vài phút, video này nối bot Gấu Mona để thu ngân, bán hàng và kế toán cùng nhận tin tiền vào. Cách làm không cần Zalo OA, không cài thêm ứng dụng và không viết code. Mình sẽ đi từ điều kiện có bot trong nhóm, lấy group_id, tạo cấu hình, chọn sự kiện đến gửi thử và đọc lỗi.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Điều kiện có bot",
+    "p": "Điều kiện đầu tiên là nhóm phải có bot Gấu Mona. Nếu anh chị là khách hàng MONA, nhờ Account phụ trách thêm bot và lấy group_id từ PMS tại dự án, phần kết nối Zalo, trường chatId. Nếu chưa là khách hàng MONA, hiện chưa thể tự thêm bot; gọi tổng đài để được nối nhóm và cấp group_id. Mã này phải là chuỗi từ mười đến hai mươi lăm chữ số.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thêm nhóm trên dashboard",
+    "p": "Vào my.monapay.vn, mở mục Zalo rồi chọn Thêm nhóm. Đặt tên gợi nhớ, dán group_id, chọn VA và sự kiện nếu cần, sau đó lưu cấu hình. Anh chị có thể nối nhiều nhóm. Ví dụ nhóm bán hàng chỉ nhận tiền vào một VA, còn nhóm kế toán nhận mọi giao dịch. Không gửi mã đăng nhập, OTP ngân hàng hoặc mật khẩu vào nhóm vì các dữ liệu đó không cần cho việc báo tiền.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mẫu tin và biến",
+    "p": "Bấm Gửi thử. Khi nhóm nhận tin bắt đầu bằng biểu tượng gấu và nội dung MONA Pay đã nối nhóm này, kết nối đã chạy. Tin giao dịch mặc định hiển thị số tiền, số tài khoản, nội dung, mã giao dịch và thời gian. Khi sửa mẫu, dùng {amount}, {description}, {virtual_account_number}, {transaction_code} và {transfer_date}. Zalo chỉ nhận text thuần, nên dấu Markdown hoặc thẻ HTML sẽ hiện nguyên dạng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chọn sự kiện cần báo",
+    "p": "Bốn sự kiện có thể chọn là TRANSACTION_IN khi có tiền vào, CHECKOUT_PAID khi trang thanh toán được trả đủ, WEBHOOK_FAILED khi webhook thất bại và VA_CREATED khi tạo xong tài khoản ảo. Nếu gọi API mà không truyền events, cấu hình nhận TRANSACTION_IN. Hệ thống gửi tối đa một tin cho mỗi giao dịch trên mỗi cấu hình và chống trùng theo mã giao dịch, nên không dùng kênh này để quảng cáo hay gửi hàng loạt.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo nhóm bằng API",
+    "p": "Nếu đội kỹ thuật cấu hình bằng API, dùng POST /api/v1/zalo-groups để tạo nhóm, lấy data.id, rồi gọi endpoint có ID đó và đuôi /test. Bearer token dùng cho mọi request, còn lệnh ghi bằng token dashboard thêm X-Client-Secret. Log xem tại /api/v1/zalo-groups/logs, có thể lọc ok hoặc failed. Agent cũng làm cùng chuỗi: tạo nhóm, lấy ID, gửi thử rồi đọc log.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đọc log khi lỗi",
+    "p": "Gửi thử mà nhóm không có tin thì kiểm tra hai điểm trước: bot Gấu Mona đã thật sự ở trong nhóm chưa và group_id có đúng chuỗi chữ số do MONA cung cấp không. API trả lỗi định dạng nếu mã không hợp lệ; máy chủ chưa bật relay có thể trả trạng thái kênh chưa mở. Sau khi sửa, gửi thử lần nữa rồi đọc log failed để xem lý do, chỉ kết luận xong khi log là ok.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Hoàn tất nhóm Zalo",
+    "p": "Vậy là nhóm Zalo đã có một nguồn báo chung: bot đúng nhóm, mã nhóm đúng, sự kiện đúng và tin thử đã tới. Từ đây đội bán hàng xác nhận dựa trên giao dịch thật, không cần chia sẻ app ngân hàng. Xem lại mẫu tin, biến, API và câu hỏi thường gặp tại monapay.vn/docs/zalo. Đăng ký tại my.monapay.vn. Cần MONA nối bot hoặc hỗ trợ cấu hình, gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 237.1
+   }
+  ],
+  "docSlug": "zalo"
+ },
+ "docs-webhook-tich-hop": {
+  "youtubeId": "DsTVp6v9u4Y",
+  "title": "Tích hợp webhook thanh toán: nhận tiền vào ACB trong 5 phút",
+  "description": "Tích hợp webhook thanh toán: nhận tiền vào ACB trong 5 phút. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M32S",
+  "transcript": [
+   {
+    "h": "Webhook trong năm phút",
+    "p": "Khách đã chuyển khoản nhưng đơn vẫn nằm chờ vì hệ thống của anh chị chưa nhận được báo có. Trong khoảng năm phút, mình sẽ đi trọn luồng webhook: khai báo URL, nhận đúng bảy trường JSON, kiểm chữ ký, trả mã thành công và chống xử lý trùng. Cuối video, anh chị còn biết cách thử endpoint và đọc lỗi trước khi đưa lên môi trường thật.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Luồng tiền đến endpoint",
+    "p": "Luồng bắt đầu khi tiền vào tài khoản ACB qua tài khoản ảo, VietQR hoặc chuyển khoản thường. ACB báo giao dịch cho MONA Pay. Hệ thống lưu giao dịch, tìm các cấu hình webhook phù hợp rồi gửi HTTP POST đến URL của anh chị. Cấu hình “mọi tài khoản” nhận mọi giao dịch. Cấu hình gắn một tài khoản ảo chỉ nhận tiền vào đúng tài khoản đó. Máy chủ có tối đa mười giây để phản hồi.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Khai báo URL webhook",
+    "p": "Trong dashboard, vào mục Webhooks rồi bấm Thêm webhook. Đặt Tên dễ nhớ, chẳng hạn Web bán hàng. Trường URL phải là địa chỉ HTTPS công khai. Kiểu xác thực nên chọn HMAC_SHA256, nhập Secret riêng. Định dạng gửi mặc định là application/json. Ở Tài khoản áp dụng, chọn mọi tài khoản hoặc một tài khoản ảo cụ thể. Nếu đang làm tại máy, dùng đường hầm HTTPS vì hệ thống không gọi được localhost.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đọc bảy trường payload",
+    "p": "Payload mặc định có bảy trường. amount là số tiền VND dạng số nguyên. description là nội dung chuyển khoản. transfer_date là thời điểm giao dịch. transaction_code là mã giao dịch ngân hàng và cũng là khóa chống trùng. account_number là số tài khoản thật hoặc tài khoản ảo nhận tiền. bank_name là tên ngân hàng. type hiện mang giá trị income, nghĩa là tiền vào. Endpoint phải bỏ qua trường lạ được thêm sau này.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kiểm chữ ký, trả sớm",
+    "p": "Ở endpoint, thứ tự xử lý rất quan trọng. Đọc raw body nguyên bản trước khi bộ phân tích JSON thay đổi khoảng trắng hoặc thứ tự khóa. Lấy X-Mona-Timestamp và X-Mona-Signature, tính lại HMAC-SHA256 bằng Secret, rồi so chữ ký bằng hàm thời gian cố định. Từ chối timestamp lệch quá năm phút. Chữ ký đúng thì trả HTTP hai trăm ngay; cập nhật đơn, gửi email hoặc gọi dịch vụ khác hãy đẩy sang hàng đợi.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chống xử lý trùng",
+    "p": "Sau khi trả lời, giải mã JSON và chèn giao dịch vào bảng của anh chị. Cột transaction_code phải có ràng buộc UNIQUE. Với MySQL có thể dùng INSERT IGNORE; với PostgreSQL dùng ON CONFLICT DO NOTHING. Nếu chèn không thành công, đây là gói đã xử lý nên dừng. Khi là gói mới, khớp đơn bằng account_number nếu mỗi đơn có một tài khoản ảo, hoặc bằng description, rồi mới đổi trạng thái đơn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kiểm tra trước production",
+    "p": "Trước khi chạy thật, bấm Gửi thử và mở tab Lịch sử gửi. Kết quả hợp lệ là HTTP hai trăm, hai trăm lẻ một hoặc hai trăm lẻ hai, thời gian phản hồi dưới một giây. Endpoint phải dùng HTTPS có chứng chỉ hợp lệ, không chuyển hướng và tường lửa phải cho phép IP 103.168.55.14. Cuối cùng, chuyển một khoản nhỏ vào tài khoản ảo để kiểm tra trọn luồng từ ngân hàng đến đơn hàng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi webhook",
+    "p": "Nếu chữ ký sai dù Secret đúng, gần như raw body đã bị framework phân tích rồi tạo lại. Nếu thấy TIMEOUT, endpoint đang làm việc nặng trước khi trả lời; hãy trả hai trăm trước. HTTP_4XX với bốn trăm lẻ bốn thường là sai đường dẫn, còn bốn trăm lẻ năm là route không nhận POST. Không nhận gì thì kiểm tra cấu hình có đang gắn nhầm tài khoản ảo và xem Lịch sử gửi.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở tài liệu và thử",
+    "p": "Mẫu PHP, Node, lệnh thử cURL và toàn bộ danh sách kiểm tra nằm tại monapay.vn/docs/webhooks/tich-hop-webhook. Anh chị có thể đăng ký tài khoản tại my.monapay.vn, tạo cấu hình thử rồi đối chiếu từng bước trong tài liệu. Nếu endpoint vẫn chưa nhận đúng payload, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ kiểm tra.",
+    "start": 0.0,
+    "end": 272.2
+   }
+  ],
+  "docSlug": "webhooks/tich-hop-webhook"
+ },
+ "docs-webhook-gui-lai": {
+  "youtubeId": "HQbDT_V6hAA",
+  "title": "Webhook lỗi thì sao: gửi lại, xem log, xử lý timeout",
+  "description": "Webhook lỗi thì sao: gửi lại, xem log, xử lý timeout. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M16S",
+  "transcript": [
+   {
+    "h": "Tìm lỗi không đoán mò",
+    "p": "Webhook lỗi đúng lúc khách chuyển tiền thì đơn có thể nằm chờ, nhưng đoán mò và bắt khách trả lại là cách xử lý nguy hiểm. Trong video này, mình sẽ đọc Lịch sử gửi, giải nghĩa từng nhóm lỗi, sửa timeout và gửi lại đúng giao dịch. Anh chị cũng sẽ biết chỉ số nào cần theo dõi để phát hiện endpoint xuống sức trước giờ cao điểm.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Điều kiện thành công",
+    "p": "Một lần gửi chỉ được tính thành công khi máy chủ trả HTTP hai trăm, hai trăm lẻ một hoặc hai trăm lẻ hai trong tối đa mười giây. Body phản hồi không bắt buộc và hệ thống không đọc nội dung. Mã hai trăm lẻ bốn không nằm trong danh sách. Redirect ba trăm lẻ một hoặc ba trăm lẻ hai cũng tính là thất bại vì MONA Pay không đi theo đường chuyển hướng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đọc từng dòng log",
+    "p": "Vào Webhooks, mở tab Lịch sử gửi. Mỗi dòng có thời điểm, mã HTTP, duration_ms là số mili giây chờ phản hồi, error_label là nhãn kết quả, payload đã gửi và phần đầu body phản hồi. API tương ứng là GET /api/v1/webhook-logs. Hãy tìm theo thời điểm và transaction_code, rồi so payload ở đây với raw body đã lưu trên máy chủ của anh chị.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Nhóm lỗi HTTP",
+    "p": "Nhóm lỗi HTTP cho biết máy chủ đã trả lời. HTTP_3XX thường do URL thiếu HTTPS, thừa dấu gạch cuối hoặc chuyển hướng tên miền. HTTP_4XX có thể là sai Secret, tường lửa chặn, sai đường dẫn, route không nhận POST hoặc endpoint đòi trường không có. HTTP_5XX nghĩa là code, bộ nhớ hay kết nối cơ sở dữ liệu lỗi. Mở log ứng dụng đúng thời điểm ghi trong dòng gửi.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Lỗi kết nối và timeout",
+    "p": "Nhóm lỗi kết nối cần kiểm tra hạ tầng. TIMEOUT là quá mười giây, thường vì endpoint xử lý đơn rồi mới phản hồi. SSL liên quan chứng chỉ hết hạn, tự ký, sai tên miền hoặc thiếu chuỗi trung gian. DNS là tên miền không phân giải được. CONNECTION thường do cổng bốn trăm bốn mươi ba bị chặn hoặc máy chủ tắt. Tường lửa cần cho phép IP 103.168.55.14.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gửi lại đúng giao dịch",
+    "p": "Sửa xong, tại dòng thất bại bấm Gửi lại. Hệ thống gửi nguyên payload đến nguyên URL ngay lập tức và tạo thêm một dòng log. transaction_code không thay đổi, vì vậy endpoint phải chống trùng bằng khóa UNIQUE. Anh chị cũng có thể gọi endpoint retry với transaction_id, body có target_type là WEBHOOK; nếu cần chỉ một cấu hình thì truyền thêm target_id.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Endpoint chịu tải tốt",
+    "p": "Để tránh timeout, trình tự phía server là kiểm chữ ký, trả hai trăm, rồi mới cập nhật đơn, gửi email hoặc gọi API khác bằng hàng đợi. Lưu raw body và header ít nhất ba mươi ngày để đối chiếu. Gửi lại tự động tối đa bảy lần đang được triển khai và chưa chạy trên production, nên hiện anh chị vẫn gửi lại chủ động và chạy đối soát định kỳ để không sót tiền.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Theo dõi tỷ lệ và P95",
+    "p": "Theo dõi thêm tab thống kê hoặc GET /api/v1/webhook-logs/stats. Tỷ lệ thành công dưới chín mươi chín phần trăm trong ngày là dấu hiệu cần xem phân bố lỗi. P chín mươi lăm trên ba nghìn mili giây cho thấy endpoint làm việc nặng trước phản hồi. Nếu HTTP_4XX tăng ngay sau khi triển khai code, kiểm tra Secret và đường dẫn. Log OK nhưng đơn không đổi thì lỗi nằm ở bước xử lý sau phản hồi.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và kiểm log",
+    "p": "Bảng chín nhãn lỗi, endpoint gửi lại và lệnh đọc thống kê nằm tại monapay.vn/docs/webhooks/gui-lai-va-xu-ly-loi. Anh chị đăng ký tại my.monapay.vn, mở Lịch sử gửi và thử lại một giao dịch cũ sau khi đã sửa server. Nếu chưa xác định được nhãn lỗi, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 256.5
+   }
+  ],
+  "docSlug": "webhooks/gui-lai-va-xu-ly-loi"
+ },
+ "docs-lop-hoc": {
+  "youtubeId": "JKu7dut0Fcs",
+  "title": "Trung tâm, lớp học: học phí tự xác nhận, không dò sao kê",
+  "description": "Trung tâm, lớp học: học phí tự xác nhận, không dò sao kê. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT3M40S",
+  "transcript": [
+   {
+    "h": "Không dò sao kê học phí",
+    "p": "Cuối tháng, giáo vụ của anh chị phải dò từng dòng sao kê để biết phụ huynh nào đã đóng học phí, nhất là khi tên trùng hoặc số tiền thiếu. Trong vài phút, mình sẽ thiết lập quy trình không cần lập trình: nối tài khoản của lớp, báo tiền vào nhóm Zalo, rồi gửi link thu học phí theo từng học viên. Tiền vừa tới là giáo vụ có thông tin để khớp người, còn phụ huynh có thể nhận email làm căn cứ khi cần biên lai.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Nối tài khoản trung tâm",
+    "p": "Vào my.monapay.vn, tạo tài khoản, sau đó mở mục Ngân hàng. Nhập số tài khoản đứng tên chủ lớp hoặc trung tâm và số điện thoại đã đăng ký với ngân hàng. Ngân hàng gửi hai mã OTP về điện thoại; nhập đủ hai mã để nối tài khoản và bật thông báo giao dịch. Phụ huynh sẽ chuyển thẳng vào tài khoản này. MONA Pay không giữ học phí, hệ thống chỉ đọc thông báo rồi chuyển tin sang các kênh đã chọn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thêm nhóm giáo vụ",
+    "p": "Tạo nhóm Zalo gồm giáo vụ và kế toán nếu có. Thêm bot theo hướng dẫn trong dashboard, tạo cấu hình và bấm Gửi thử trước khi áp dụng cho học phí thật. Từ lúc kết nối chạy, mỗi khoản vào tài khoản đã nối trở thành một tin nhắn trong nhóm. Giáo vụ không cần dùng app ngân hàng của chủ trung tâm, và mọi người phụ trách thu phí đều nhìn cùng một nguồn thông tin.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo link theo học viên",
+    "p": "Trong mục Trang thanh toán, tạo link đúng mức học phí và đặt tên theo học viên. Đầu tháng, gửi link qua Zalo cho phụ huynh. Khách bấm link sẽ thấy màn hình chuyển khoản điền sẵn số tiền. Nếu phụ huynh đóng trực tiếp khi đưa đón con, anh chị có thể in QR và dán tại lớp. Với hai học viên có cùng mức phí, link riêng hoặc nội dung có tên học viên giúp phân biệt rõ.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tin báo và biên lai",
+    "p": "Khi tiền vào, nhóm giáo vụ nhận tin có số tiền và nội dung chuyển khoản. Phụ huynh đồng thời nhận email xác nhận đã đóng học phí, dùng làm biên lai khi cần. Giáo vụ cũng có thể dùng email đó hoặc lịch sử giao dịch trên dashboard làm căn cứ xuất biên lai. Cách làm này giảm việc tìm lại sổ tay. Nếu phụ huynh hỏi đã đóng chưa, giáo vụ tra tin nhóm, email hoặc lịch sử thay vì dò toàn bộ sao kê.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tách lớp bằng VA",
+    "p": "Trung tâm có nhiều lớp hoặc nhiều cơ sở nên tách bằng tài khoản ảo. Mỗi lớp hay cơ sở dùng một số riêng; cuối tháng mở dashboard và lọc theo từng tài khoản ảo để xem nguồn thu. Giáo vụ từng nơi chỉ theo dõi nhóm của cơ sở mình, còn chủ trung tâm có thể xem gộp. Đây là cách giảm nhầm khi nhiều phụ huynh chuyển cùng ngày và cùng một mức học phí.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tránh nhầm học viên",
+    "p": "Lỗi hay gặp là dùng một link chung cho mọi học viên rồi không có tên trong nội dung. Khi đó hai khoản bằng nhau rất khó phân biệt. Hãy đặt tên link theo học viên hoặc nhắc phụ huynh ghi tên con. Nếu nhóm chưa có tin, bấm Gửi thử để kiểm tra bot và xem lại bước nhập đủ hai OTP. Khi phụ huynh hỏi lại, tra email xác nhận hoặc lịch sử giao dịch thay vì lục sổ ghi tay.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chốt quy trình học phí",
+    "p": "Quy trình thu học phí hoàn chỉnh là gửi link đúng người, chờ tiền vào, nhận tin ở nhóm rồi lưu căn cứ email hoặc dashboard. Giáo vụ không phải dò từng dòng sao kê để hỏi lại phụ huynh. Trung tâm bán thêm tài liệu qua mạng có thể dùng cùng cách của shop online. Xem hướng dẫn tại monapay.vn/docs/dung-ngay/lop-hoc, đăng ký tại my.monapay.vn. Cần hỗ trợ, gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 220.6
+   }
+  ],
+  "docSlug": "dung-ngay/lop-hoc"
+ },
+ "docs-ban-hang-online": {
+  "youtubeId": "JUoPsVXhsvE",
+  "title": "Bán hàng online qua Facebook, Zalo: khách chuyển là báo có ngay",
+  "description": "Bán hàng online qua Facebook, Zalo: khách chuyển là báo có ngay. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT3M36S",
+  "transcript": [
+   {
+    "h": "Bỏ cảnh dò tiền thủ công",
+    "p": "Anh chị chốt đơn qua Facebook hoặc Zalo, khách nhắn đã chuyển nhưng shop chưa biết tiền vào thật chưa. Giao sớm thì có rủi ro, kiểm tra chậm thì khách phải chờ. Trong vài phút, mình sẽ thiết lập một quy trình không cần website: nối tài khoản, đưa tin báo vào nhóm và tạo link thu tiền theo từng đơn. Sau đó người chốt đơn, người đóng gói và kế toán đều nhìn cùng một thông tin trước khi giao hàng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Nối tài khoản shop",
+    "p": "Vào my.monapay.vn, tạo tài khoản rồi mở mục Ngân hàng. Nhập số tài khoản đứng tên chủ shop và số điện thoại đã đăng ký với ngân hàng. Ngân hàng gửi hai mã OTP về điện thoại; nhập đủ hai mã để hoàn tất kết nối và bật nhận thông báo. Tiền khách vẫn chuyển thẳng vào tài khoản của shop. MONA Pay chỉ nhận thông báo giao dịch rồi đưa tin tới nhóm mà anh chị cấu hình.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thêm nhóm chốt đơn",
+    "p": "Tạo nhóm gồm người chốt đơn, người đóng gói và kế toán nếu có. Trong dashboard, làm theo hướng dẫn để thêm bot vào nhóm Zalo hoặc Telegram, sau đó bấm Gửi thử. Khi tin thử xuất hiện đúng nhóm, mọi khoản tiền vào tài khoản đã nối sẽ thành một tin nhắn chung. Người đóng gói không cần chờ người bán nhắn lại, còn kế toán có cùng căn cứ để kiểm tra giao dịch.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo link theo mã đơn",
+    "p": "Khi chốt một đơn, mở mục Trang thanh toán trên dashboard và tạo link đúng số tiền cần thu. Ví dụ đơn ba trăm năm mươi nghìn đồng thì nhập đúng mức đó. Đặt tên link theo mã đơn hoặc tên khách, vì đây là dấu hiệu giúp cả nhóm nhận ra giao dịch khi nhiều đơn cùng tới. Gửi link ngay trong khung chat Facebook hoặc Zalo; shop không cần có website để dùng cách này.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chờ báo có rồi giao",
+    "p": "Khách bấm link sẽ thấy màn hình chuyển khoản có sẵn số tiền và tên shop, rồi mở app ngân hàng để xác nhận. Tiền vào thì trang báo thanh toán thành công, đồng thời nhóm nhận tin. Quy ước vận hành nên rõ: chỉ bắt đầu đóng và giao hàng sau khi tin báo xuất hiện. Ảnh chụp chuyển khoản có thể là ảnh cũ hoặc đã chỉnh sửa, còn tin báo chỉ hiện khi tài khoản shop thật sự nhận tiền.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tách cọc và tiền còn lại",
+    "p": "Nếu đơn thu cọc trước rồi thu phần còn lại khi giao, tạo hai link riêng. Link đầu mang tên mã đơn kèm phần cọc; link sau dành cho số tiền còn lại. Mỗi link có tin báo riêng nên người chốt đơn theo dõi được tiến độ. Khi nhiều khách chuyển cùng một mức tiền, đừng dùng một tên chung. Tên link theo mã đơn hoặc tên khách sẽ giúp nhóm biết khoản nào thuộc đơn nào mà không hỏi lại.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Khách nói đã chuyển",
+    "p": "Khách nói đã chuyển nhưng nhóm chưa có tin thì kiểm tra số tiền và tài khoản nhận trong thông tin khách gửi. Có thể khách chọn nhầm tài khoản hoặc chưa bấm xác nhận trong app ngân hàng. Đừng giao hàng chỉ dựa trên lời nhắn. Nếu không thấy bất kỳ tin nào, quay lại kiểm tra hai OTP ở bước nối ngân hàng và dùng nút Gửi thử để xác nhận bot vẫn hoạt động trong đúng nhóm.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chốt quy trình bán online",
+    "p": "Quy trình hoàn chỉnh là chốt đơn, tạo link đúng số tiền, gửi khách, chờ tin báo rồi mới đóng hàng. Shop bán tại điểm trực tiếp có thể bổ sung QR ở quầy; còn đơn từ xa tiếp tục dùng link riêng. Xem hướng dẫn tại monapay.vn/docs/dung-ngay/ban-hang-online và đăng ký tại my.monapay.vn. Nếu anh chị kẹt ở bước nối tài khoản hoặc cấu hình nhóm, gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 216.6
+   }
+  ],
+  "docSlug": "dung-ngay/ban-hang-online"
+ },
+ "docs-telegram": {
+  "youtubeId": "O5MrPJDo11g",
+  "title": "Thông báo biến động số dư qua Telegram: cấu hình bot MONA Pay từng bước",
+  "description": "Thông báo biến động số dư qua Telegram: cấu hình bot MONA Pay từng bước. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M10S",
+  "transcript": [
+   {
+    "h": "Tiền vào báo cả nhóm",
+    "p": "Anh chị muốn kế toán, chủ shop và người giao hàng cùng biết tiền vào mà không có ai phải canh app ngân hàng. Trong vài phút, mình sẽ nối một nhóm Telegram với MONA Pay, từ lúc thêm bot, lấy group_id, chọn tài khoản, sửa mẫu tin đến gửi thử và xử lý lỗi. Cách dashboard không cần viết code. Mỗi giao dịch của tài khoản ACB hoặc VA đã chọn sẽ tạo một tin trong nhóm để mọi người nhìn cùng lúc.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thêm bot và lấy ID",
+    "p": "Tạo nhóm Telegram mới hoặc dùng nhóm công ty đang có, rồi thêm bot MONA Pay với quyền gửi tin nhắn. Tên bot hiển thị trong mục Telegram trên dashboard. Tiếp theo mở nhóm tại web.telegram.org để lấy group_id, tức mã nhóm trong đường dẫn. Nhóm thường có mã bắt đầu bằng dấu trừ. Nếu nhóm bật Chủ đề, lấy thêm topic_id, tức mã chủ đề, để tin đi đúng luồng thay vì rơi vào General.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo cấu hình nhóm",
+    "p": "Mở my.monapay.vn, vào mục Telegram và tạo cấu hình. Đặt friendly_name, nghĩa là tên gợi nhớ, dán group_id, thêm topic_id nếu có, rồi chọn nhận mọi tài khoản hay chỉ một virtual_account_id. Giữ mẫu tin mặc định trước để giảm lỗi. Một tài khoản có thể tạo nhiều cấu hình, chẳng hạn nhóm kế toán nhận mọi giao dịch còn nhóm bán hàng chỉ nhận VA của cửa hàng đó.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chỉnh mẫu tin",
+    "p": "Mẫu mặc định dùng các biến đặt trong hai cặp ngoặc nhọn. bank_name là ngân hàng, account_number là tài khoản nhận, amount là số tiền, transaction_date là thời điểm và transaction_content là nội dung chuyển khoản. vao_hay_ra hiển thị VÀO hoặc RA, còn cong_hay_tru hiển thị dấu cộng hoặc trừ. Biến accumulated là số dư sau giao dịch nếu ngân hàng gửi kèm. Telegram hiểu một số thẻ như <b> để in đậm.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gửi thử hai kiểu",
+    "p": "Bấm Gửi thử sau khi lưu cấu hình. Có hai kiểu: is_dummy bằng false gửi tin xác nhận Kết nối thành công; bằng true gửi một giao dịch giả theo message_template, tức mẫu tin anh chị đã đặt. Thấy tin trong nhóm là hoàn tất. Nếu muốn cấu hình bằng API, endpoint tạo là POST /api/v1/telegram-configs; mọi request cần Bearer, còn lệnh POST, PUT và DELETE thêm X-Client-Secret.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gửi lại một giao dịch",
+    "p": "Khi một tin giao dịch cũ không tới vì nhóm đổi ID hoặc bot bị đưa ra khỏi nhóm rồi thêm lại, mở mục Giao dịch trên dashboard để gửi lại. Qua API, gọi đường dẫn retry của transaction_id với target_type bằng TELEGRAM. Đây là thao tác cho đúng một giao dịch, không tạo giao dịch mới. Sau khi gửi lại, kiểm tra nhóm và xác nhận cấu hình đang bật trước khi kết luận kênh đã hoạt động bình thường.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi Telegram",
+    "p": "Ba lỗi thường gặp. Không có tin sau Gửi thử thường do bot chưa ở trong nhóm hoặc group_id sai, nhất là thiếu dấu trừ hay phần đầu của mã. Tin rơi vào General nghĩa là thiếu topic_id. Có webhook nhưng không có Telegram thì xem cấu hình có gắn nhầm VA hoặc is_active đang tắt không. Nếu thẻ hiện nguyên dạng, chỉ dùng các thẻ Telegram hỗ trợ như <b>, <i> và <code>.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Hoàn tất cấu hình",
+    "p": "Quy trình hoàn chỉnh là thêm bot, lấy đúng mã nhóm, tạo cấu hình, chọn VA, giữ hoặc sửa mẫu rồi gửi thử. Khi nhóm nhận tin mẫu, mọi người có thể theo dõi giao dịch mà không chia sẻ quyền vào app ngân hàng. Một tài khoản tạo được nhiều cấu hình cho nhiều nhóm. Xem đầy đủ biến, endpoint và cách xử lý lỗi tại monapay.vn/docs/telegram. Đăng ký tại my.monapay.vn. Nếu cần hỗ trợ, gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 250.6
+   }
+  ],
+  "docSlug": "telegram"
+ },
+ "docs-email": {
+  "youtubeId": "VGW3-fVu0TI",
+  "title": "Thông báo tiền vào qua email: cấu hình, xác minh người nhận, xem log",
+  "description": "Thông báo tiền vào qua email: cấu hình, xác minh người nhận, xem log. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M12S",
+  "transcript": [
+   {
+    "h": "Luồng email đầy đủ",
+    "p": "Anh chị muốn tiền vào, webhook lỗi hoặc VA mới được tạo đều báo vào hộp thư, nhưng cấu hình tạo xong lại chưa hoạt động vì còn bước xác minh. Trong vài phút, mình sẽ đi trọn luồng trên dashboard: tạo cấu hình, thêm người nhận, nhập mã sáu số, gửi thử, xem log và xử lý địa chỉ bị chặn. Mỗi cấu hình nhận tối đa mười địa chỉ và chỉ tự bật sau khi tất cả người nhận đã xác minh thành công.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo cấu hình email",
+    "p": "Vào my.monapay.vn, mở Email rồi bấm Tạo cấu hình. Đặt tên như Kế toán, thêm các địa chỉ nhận, chọn sự kiện và chọn virtual_account_id nếu chỉ muốn theo dõi một VA. Ba sự kiện là TRANSACTION_IN cho tiền vào, WEBHOOK_FAILED cho webhook lỗi và VA_CREATED cho VA mới. Một tài khoản có thể có nhiều cấu hình; địa chỉ đã xác minh một lần được dùng lại trong cấu hình khác của cùng tài khoản.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Xác minh người nhận",
+    "p": "Sau khi tạo, mỗi địa chỉ chưa xác minh nhận một mã sáu số. Người nhận mở hộp thư, lấy đúng mã và nhập vào dashboard. Mã hết hạn sau mười lăm phút. Nhập sai tối đa năm lần thì phải dùng chức năng gửi lại mã. Nếu còn bất kỳ địa chỉ nào trong pending_verification, trạng thái is_active vẫn là false; sau mã cuối cùng hợp lệ, cấu hình tự chuyển sang hoạt động.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gửi thử và xem log",
+    "p": "Khi cấu hình đã bật, bấm Gửi thử rồi mở Log email. Mail mẫu giao dịch hiển thị số tiền, VA hoặc tài khoản, nội dung chuyển khoản, thời gian, mã giao dịch, ngân hàng và nút Xem trên dashboard. Log lưu người nhận, chủ đề, message_id, trạng thái, mã SMTP, thời gian, nhãn lỗi và số lần thử. Hệ thống không lưu nội dung email, nên log dùng để kiểm đường gửi chứ không đọc lại nội dung thư.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Cấu hình bằng API",
+    "p": "Đội kỹ thuật có thể làm cùng quy trình bằng API. POST /api/v1/email-configs nhận name, recipients, events và virtual_account_id nếu cần. Endpoint /verify nhận email và code; /test gửi mail mẫu; GET /api/v1/email-logs đọc log phân trang. Mọi request cần Bearer, lệnh POST, PUT hoặc DELETE thêm X-Client-Secret. POST hỗ trợ Idempotency-Key trong hai mươi bốn giờ để tránh tạo trùng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Xử lý suppression",
+    "p": "Các trạng thái log gồm sent, failed, suppressed và skipped. Bounce cứng đưa địa chỉ vào suppression với lý do hard_bounce; khiếu nại hoặc tắt tay cũng có thể chặn. Sau khi sửa địa chỉ hoặc nguyên nhân, xem danh sách bằng GET /email-suppressions, rồi gọi DELETE theo email để gỡ. Bounce tạm thời chỉ được ghi log. Đừng gỡ chặn trước khi sửa nguyên nhân, vì lần gửi tiếp theo vẫn có thể thất bại.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Retry và lỗi thường gặp",
+    "p": "Nếu không nhận mã, kiểm tra thư rác và địa chỉ đã nhập, rồi gửi lại trong giới hạn. Nếu test trả skipped, xem người nhận đã xác minh chưa. Nếu log là SUPPRESSED, sửa nguyên nhân rồi mới gỡ chặn. Lỗi SMTP tạm thời, timeout hoặc mất kết nối được thử lại tối đa ba lần sau một giây, năm giây và hai mươi lăm giây; SMTP loại năm thất bại ngay.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chỉ xong khi log sent",
+    "p": "Luồng đúng là tạo cấu hình, xác minh từng người nhận, chờ trạng thái tự bật, gửi thử rồi chỉ kết luận khi log là sent. Email có thể chạy cùng webhook, Telegram và Zalo; mỗi kênh phục vụ một nhóm người khác nhau. Xem đầy đủ endpoint, giới hạn và bảo mật tại monapay.vn/docs/email. Đăng ký tại my.monapay.vn. Cần hỗ trợ, anh chị gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 252.1
+   }
+  ],
+  "docSlug": "email"
+ },
+ "docs-api-xac-thuc": {
+  "youtubeId": "YoD7-U-Lpiw",
+  "title": "Xác thực API MONA Pay: Bearer token và X-Client-Secret",
+  "description": "Xác thực API MONA Pay: Bearer token và X-Client-Secret. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M40S",
+  "transcript": [
+   {
+    "h": "Gỡ lỗi xác thực API",
+    "p": "API trả bốn trăm lẻ một dù token vừa lấy thường là do anh chị đang trộn hai luồng xác thực hoặc thiếu X-Client-Secret. Trong video này, mình phân biệt token cho máy chủ với token đăng nhập, chỉ rõ request nào cần lớp bí mật thứ hai và cách đọc khung response. Cuối cùng, anh chị sẽ biết xử lý token hết hạn, lỗi header và lỗi dữ liệu đầu vào.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chọn base URL và token",
+    "p": "Base URL production là https://api.monapay.vn; alias cũ https://ipn.mona.host vẫn chạy cho tích hợp trước năm hai nghìn không trăm hai mươi sáu. Mọi request, trừ đăng ký và đăng nhập, cần Authorization: Bearer <access_token>. Token có thể đến từ POST /api/v1/oauth/token dành cho máy chủ, hoặc POST /api/v1/client/login dành cho phiên người dùng trên dashboard.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Token cho máy chủ",
+    "p": "Với máy chủ và AI agent, tạo khóa API để có client_id và client_secret, rồi gọi /api/v1/oauth/token bằng grant_type=client_credentials. Response trả access_token, token_type, expires_in và scope. Token này hết hạn sau ba nghìn sáu trăm giây; khi hết hạn chỉ cần gọi lại, không có refresh token. Hãy lưu hai thông tin gốc trong biến môi trường, không đưa username hay mật khẩu cho máy.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Token đăng nhập",
+    "p": "Với đăng nhập bằng mật khẩu, gọi POST /api/v1/client/login cùng username và password. Response trả token có expires_in là tám mươi sáu nghìn bốn trăm giây, tương đương hai mươi bốn giờ. Hết hạn thì đăng nhập lại. Tài khoản bật xác thực hai lớp sẽ hỏi OTP trên web; tài liệu khuyên API trực tiếp dùng tài khoản chưa bật hai lớp hoặc liên hệ đội hỗ trợ.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Hai lớp xác thực",
+    "p": "Quy tắc quan trọng nằm ở lệnh ghi. Token từ client/login bắt buộc kèm X-Client-Secret cho POST, PUT, PATCH và DELETE; thiếu sẽ trả bốn trăm lẻ một với thông báo Thiếu X-Client-Secret. Token từ oauth/token đã kiểm client_secret lúc cấp nên không bắt buộc gửi lại. Tuy vậy, SDK, MCP và tài liệu vẫn khuyến nghị luôn gửi để tăng thêm một lớp bảo vệ.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đọc khung response",
+    "p": "Mọi response thông thường được bọc trong ba trường. success là boolean cho biết nghiệp vụ hoàn tất hay lỗi. message là thông điệp ngắn để ghi log. data là object, array hoặc null chứa kết quả. Đừng chỉ nhìn mã HTTP rồi giả định thành công; hãy đọc cả success và message. Riêng lỗi kiểm tra dữ liệu trả HTTP bốn trăm hai mươi hai với detail[] liệt kê từng trường sai.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kiểm token và đổi mật khẩu",
+    "p": "Để tự kiểm tra token, gọi GET /api/v1/client/me với Bearer. Response cho biết tài khoản hiện tại, tên, trạng thái và thời điểm tạo. Nếu cần đổi mật khẩu, gọi PUT /api/v1/client/change-password với old_password, new_password, Bearer và X-Client-Secret. Token cũ vẫn chạy đến khi hết hạn; muốn cắt quyền sớm, anh chị cần đăng nhập lại và thu hồi khóa trong mục API Keys.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi 401 và 422",
+    "p": "Lỗi phổ biến nhất là viết sai header Bearer hoặc quên khoảng trắng sau chữ Bearer. Bốn trăm lẻ một cũng có thể do token hết hạn hoặc sai thông tin đăng nhập. Bốn trăm hai mươi hai nghĩa là thiếu trường hay sai kiểu, hãy đọc detail[] thay vì thử ngẫu nhiên. Mã năm trăm là lỗi phía dịch vụ; thử lại sau vài giây và giữ nguyên message để báo khi lỗi lặp lại.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và lấy khóa",
+    "p": "Hai luồng lấy token, lệnh cURL, PHP và Node nằm tại monapay.vn/docs/api/xac-thuc. Anh chị đăng ký tại my.monapay.vn, tạo khóa riêng cho từng hệ thống rồi thử client/me trước khi gọi endpoint nghiệp vụ. Nếu vẫn gặp lỗi xác thực, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ đối chiếu header.",
+    "start": 0.0,
+    "end": 280.5
+   }
+  ],
+  "docSlug": "api/xac-thuc"
+ },
+ "docs-api-webhook-configs": {
+  "youtubeId": "eI3dgonwYmw",
+  "title": "Cấu hình webhook qua API thay vì dashboard",
+  "description": "Cấu hình webhook qua API thay vì dashboard. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT5M4S",
+  "transcript": [
+   {
+    "h": "Tự động hóa cấu hình",
+    "p": "Khi có nhiều môi trường hoặc nhiều cửa hàng, bấm cấu hình webhook bằng tay rất dễ lệch URL và Secret. Trong video này, mình tạo, đọc, tắt, xóa và gửi thử webhook hoàn toàn qua API. Sau đó anh chị sẽ biết cách lọc log thất bại, xem tỷ lệ thành công và đọc P chín mươi lăm để theo dõi độ trễ endpoint.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Các trường cấu hình",
+    "p": "Đối tượng cấu hình bắt buộc có name và webhook_url. auth_type nhận NONE, API_KEY hoặc HMAC_SHA256; nên dùng HMAC. Khi xác thực khác NONE, cần secret_key. api_key_name mặc định X-Webhook-Secret. payload_format mặc định application/json, ngoài ra có form urlencoded và multipart. virtual_account_id bỏ trống nghĩa là nhận mọi tài khoản; có giá trị thì chỉ nhận đúng VA đó.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đọc danh sách webhook",
+    "p": "Gọi GET /api/v1/client-webhooks với Bearer để đọc danh sách. Response trả id, tên, URL, kiểu xác thực, định dạng, tài khoản ảo, trạng thái và max_retries, nhưng không trả secret_key. Cơ chế gửi lại tự động dùng max_retries đang được triển khai nên trường này hiện chưa có tác dụng. Tài liệu khuyên giữ dưới hai mươi cấu hình để log dễ theo dõi.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo webhook bằng API",
+    "p": "Tạo cấu hình bằng POST /api/v1/client-webhooks, cần Bearer và X-Client-Secret. Body mẫu đặt tên Web ban hang, URL HTTPS của endpoint, auth_type bằng HMAC_SHA256, một secret_key dài và ngẫu nhiên, payload_format bằng application/json. Lưu data.id từ response làm config_id. Secret này phải trùng với biến môi trường mà server dùng để kiểm chữ ký webhook. Nếu muốn gắn riêng một VA, thêm virtual_account_id.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa, tắt và xóa",
+    "p": "Muốn đổi một phần, gọi PUT /api/v1/client-webhooks/{config_id} và chỉ gửi trường cần sửa. Ví dụ is_active bằng false để tạm dừng mà không xóa. Muốn xóa, gọi DELETE cùng đường dẫn; log cũ vẫn giữ để tra cứu. Cả PUT và DELETE cần Bearer cùng X-Client-Secret. Trước khi xóa, lấy đúng ID từ danh sách để tránh tác động nhầm cấu hình. Mỗi giao dịch sẽ gửi tới mọi cấu hình đang bật và khớp điều kiện.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Bắn payload giả lập",
+    "p": "Để thử endpoint mà chưa tạo cấu hình, gọi POST /api/v1/client-webhooks/test. Truyền webhook_url, kiểu xác thực, Secret, định dạng và is_dummy bằng true. Gói mẫu có amount năm trăm nghìn, transaction_code bằng DUMMY123 và đủ bảy trường giao dịch. Server nên nhận diện mã này để không tạo đơn thật. Thành công khi endpoint trả hai trăm, hai trăm lẻ một hoặc hai trăm lẻ hai trong mười giây.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Lọc lịch sử gửi",
+    "p": "Đọc lịch sử bằng GET /api/v1/webhook-logs. Query hỗ trợ page, limit, status, from_date và to_date. Mỗi dòng có URL đích, payload, header, status_code, body phản hồi, duration_ms và error_label. Nhãn có thể là OK, nhóm HTTP, TIMEOUT, SSL, DNS, CONNECTION hoặc ERROR. event_type phân biệt giao dịch thật với lần gửi thử.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đọc thống kê P95",
+    "p": "Endpoint thống kê là GET /api/v1/webhook-logs/stats?days=7. Tham số days có thể dùng bảy hoặc ba mươi ngày. Response có tổng lần gửi, số thành công, thất bại, success_rate, p95_duration_ms, dữ liệu từng ngày và phân bố lỗi. Nếu P chín mươi lăm vượt năm nghìn mili giây, nên xem lại endpoint vì hệ thống cắt ở mười nghìn. Lỗi bốn trăm hai mươi hai thường do viết sai auth_type hoặc payload_format; hãy dùng đúng giá trị cho phép.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và thử API",
+    "p": "Toàn bộ trường cấu hình, các lệnh tạo, sửa, xóa, gói thử và kết quả log nằm tại monapay.vn/docs/api/webhook-configs. Anh chị đăng ký tại my.monapay.vn, tạo một cấu hình cho môi trường thử, bắn payload giả lập rồi kiểm đầy đủ log trước khi đưa lên hệ thống thật. Nếu API vẫn trả lỗi xác thực, định dạng hoặc timeout, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 304.2
+   }
+  ],
+  "docSlug": "api/webhook-configs"
+ },
+ "docs-webhook-bao-mat": {
+  "youtubeId": "fOSRpYUpP-M",
+  "title": "Bảo mật webhook: kiểm chữ ký HMAC-SHA256 và chống replay",
+  "description": "Bảo mật webhook: kiểm chữ ký HMAC-SHA256 và chống replay. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M35S",
+  "transcript": [
+   {
+    "h": "Vì sao phải xác thực",
+    "p": "URL webhook là địa chỉ công khai. Nếu endpoint tin mọi JSON gửi tới, một gói giả cũng có thể làm đơn chuyển sang đã thanh toán. Trong video này, mình cấu hình HMAC_SHA256, tính lại X-Mona-Signature, chặn phát lại bằng timestamp và chỉ ra cách lấy raw body trong từng framework. Anh chị sẽ có một trình tự kiểm tra rõ ràng trước khi chạm vào dữ liệu đơn hàng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Ba kiểu xác thực",
+    "p": "MONA Pay có ba kiểu xác thực. HMAC_SHA256 ký từng gói bằng mã bí mật dùng chung và là lựa chọn được khuyên dùng. API_KEY gửi Secret nguyên văn trong một header. NONE không có header xác thực và chỉ phù hợp môi trường thử nội bộ. Với HMAC, Secret không đi trong request; phía gửi và phía nhận cùng dùng Secret để tính chữ ký từ chính nội dung gói.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "MONA Pay tạo chữ ký",
+    "p": "Cách ký gồm bốn phần. Lấy timestamp là Unix giây lúc gửi. Lấy raw_body đúng từng byte của body. Ghép timestamp, một dấu chấm và raw body. Tính HMAC-SHA256 bằng Secret, xuất hex chữ thường rồi thêm tiền tố sha256=. Request mang hai header: X-Mona-Timestamp và X-Mona-Signature. Secret nên là chuỗi ngẫu nhiên ít nhất ba mươi hai ký tự, mỗi cấu hình dùng một chuỗi riêng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kiểm HMAC và timestamp",
+    "p": "Ở endpoint, đọc raw body trước khi parse JSON. Đọc hai header, rồi kiểm chênh lệch giữa giờ hiện tại và timestamp không quá ba trăm giây. Quá cửa sổ năm phút thì trả bốn trăm và bỏ gói để chống phát lại. Sau đó tính lại chữ ký theo đúng công thức. So chữ ký bằng hash_equals trong PHP hoặc crypto.timingSafeEqual trong Node. Không khớp thì trả bốn trăm lẻ một.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Lấy raw body đúng cách",
+    "p": "Raw body là chỗ nhiều dự án vấp nhất. PHP thuần dùng file_get_contents('php://input'); Laravel dùng $request->getContent(). Express đặt express.raw ngay tại route webhook rồi đổi body sang chuỗi UTF tám. Next.js App Router dùng await request.text() thay vì request.json(). Django đọc request.body; FastAPI dùng await request.body(). Parse rồi mã hóa lại có thể đổi khoảng trắng, thứ tự khóa và làm chữ ký sai.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Xử lý sau khi hợp lệ",
+    "p": "Khi chữ ký hợp lệ, trả HTTP hai trăm ngay rồi mới parse dữ liệu và xử lý đơn ở phía sau. Cột transaction_code cần ràng buộc UNIQUE để cùng một gói không chạy hai lần. Nếu giá trị giao dịch lớn, tài liệu còn khuyên xác minh lại bằng API đối soát trước khi giao hàng. Mã bí mật phải nằm trong biến môi trường, không ghi cứng trong code và không đưa lên kho mã nguồn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "API key và NONE",
+    "p": "Nếu hệ thống không tính được HMAC, anh chị có thể dùng API_KEY. Đặt tên header qua api_key_name, mặc định là X-Webhook-Secret, rồi so giá trị bằng hàm thời gian cố định. Cách này đơn giản nhưng Secret đi theo mọi request và không chống phát lại. Với NONE, ít nhất chỉ cho phép IP 103.168.55.14 và đối soát lại giao dịch trước khi giao hàng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Sửa lỗi chữ ký",
+    "p": "Nếu chữ ký luôn sai, kiểm tra middleware có parse rồi tạo lại JSON không. Nếu lệnh cURL đúng nhưng gói thật sai, đừng tự dựng lại JSON có khoảng trắng; hãy ký chuỗi nhận được. Báo “timestamp qua han” thường do giờ máy chủ lệch hơn năm phút, cần bật NTP. Với API_KEY không thấy header, chỉ dùng chữ và dấu gạch ngang trong tên, rồi kiểm toàn bộ header máy chủ nhận.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và cấu hình",
+    "p": "Công thức chữ ký, mã PHP, Node và danh sách kiểm tra đầy đủ nằm tại monapay.vn/docs/webhooks/bao-mat. Anh chị đăng ký tại my.monapay.vn, tạo một webhook HMAC riêng cho môi trường thử và lưu Secret đúng cách trước khi chạy thật. Nếu cần đối chiếu header hoặc chữ ký, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 275.7
+   }
+  ],
+  "docSlug": "webhooks/bao-mat"
+ },
+ "docs-khai-niem": {
+  "youtubeId": "pr1g3MZ31vs",
+  "title": "Webhook là gì, VietQR là gì, tài khoản ảo là gì: giải thích dễ hiểu cho chủ shop",
+  "description": "Webhook là gì, VietQR là gì, tài khoản ảo là gì: giải thích dễ hiểu cho chủ shop. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M10S",
+  "transcript": [
+   {
+    "h": "Bảy từ cần hiểu",
+    "p": "Anh chị mở dashboard rồi gặp một loạt từ như VA, VietQR, webhook, HMAC và khóa API, đọc riêng từng chữ thì khó hình dung chúng nối với nhau ra sao. Trong vài phút, mình sẽ giải thích bảy khái niệm bằng một luồng bán hàng dễ hiểu, sau đó ghép chúng lại thành quy trình hoàn chỉnh. Xem hết, anh chị biết công cụ nào dành cho khách chuyển tiền, công cụ nào báo cho phần mềm và công cụ nào giúp kiểm tra không bỏ sót giao dịch.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tài khoản ảo là gì",
+    "p": "Tài khoản ảo, viết tắt là VA, là số tài khoản phụ do ACB cấp. Tiền chuyển vào VA vẫn về tài khoản chính của anh chị. Mỗi đơn hoặc mỗi khách có thể dùng một số khác nhau, nên hệ thống biết tiền thuộc về đâu mà không phụ thuộc hoàn toàn vào nội dung khách gõ. Lập trình viên tạo VA qua POST /api/v1/acb/virtual-account/registration, hoặc anh chị quản lý tại mục Ngân hàng & VA trên dashboard.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "VietQR động",
+    "p": "VietQR là mã QR chuyển khoản theo chuẩn ngân hàng Việt Nam. Mã QR động của MONA Pay có sẵn số tài khoản, số tiền và nội dung, nên khách quét rồi xác nhận thay vì nhập tay. Khi gọi API tạo QR, bốn dữ liệu quan trọng là orderId, amount, description và thông tin tài khoản. amount là số nguyên VND, tối đa một tỷ; description tối đa hai trăm năm mươi lăm ký tự.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Webhook báo tiền vào",
+    "p": "Webhook giống một cuộc gọi từ MONA Pay sang phần mềm của anh chị khi có tiền vào. Hệ thống gửi một gói JSON gồm số tiền, nội dung, thời gian, mã giao dịch và tài khoản nhận. Endpoint trả HTTP 200, 201 hoặc 202 trong mười giây thì lần gửi được tính là thành công. Trường transaction_code, nghĩa là mã giao dịch, là khóa chống trùng để một khoản tiền không làm đơn hàng được ghi nhận hai lần.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chữ ký HMAC",
+    "p": "HMAC là chữ ký chống giả cho webhook công khai. Hai bên giữ chung một secret, tức mã bí mật. MONA Pay ký từ X-Mona-Timestamp, dấu chấm và raw body, rồi gửi kết quả trong X-Mona-Signature. Máy chủ tính lại, chữ ký khớp mới nhận. Timestamp lệch quá năm phút thì từ chối để ngăn phát lại gói cũ. Điểm dễ sai là framework parse JSON trước; phải kiểm chữ ký trên raw body đúng từng byte.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Khóa API và Telegram",
+    "p": "Khóa API là chìa khóa để máy chủ gọi MONA Pay nhằm tạo VA, tạo QR hoặc xem giao dịch. Anh chị đặt tên riêng cho từng khóa để lộ khóa nào thì thu hồi đúng khóa đó. access_token được gửi dạng Bearer cho mọi request; lệnh ghi còn thêm X-Client-Secret là client_secret. Với Telegram, anh chị chỉ cần thông báo tiền vào cho nhóm: chọn mọi tài khoản hoặc một VA, đặt mẫu tin rồi bấm Gửi thử.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đối soát chống sót",
+    "p": "Đối soát là lưới đỡ cho webhook. Máy chủ có thể bảo trì đúng lúc tiền vào, nên mỗi giờ hoặc cuối ngày hãy gọi danh sách giao dịch, tối đa một trăm giao dịch mỗi trang, rồi so transaction_code với dữ liệu của mình. Nếu còn phân vân chọn VA hay VietQR, tài liệu khuyên dùng cả hai: QR giúp khách chuyển đúng, VA giúp hệ thống phân biệt đúng đơn. Tiền vẫn nằm trong tài khoản ACB của anh chị.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Ghép thành một luồng",
+    "p": "Ghép lại như sau: mỗi đơn có VA hoặc VietQR động, khách chuyển tiền, ACB báo giao dịch, MONA Pay gửi webhook có HMAC, web đổi đơn sang đã thanh toán, nhóm Telegram nhận tin, cuối ngày hệ thống đối soát. Anh chị không cần ghi nhớ mọi thuật ngữ ngay; chỉ cần nhớ vai trò của từng lớp. Đọc lại tại monapay.vn/docs/khai-niem, đăng ký tại my.monapay.vn, hoặc gọi một chín không không, sáu ba sáu, sáu bốn tám khi cần hỗ trợ.",
+    "start": 0.0,
+    "end": 250.0
+   }
+  ],
+  "docSlug": "khai-niem"
+ },
+ "docs-dia-chi-ip": {
+  "youtubeId": "sCHkiQwfCeo",
+  "title": "Địa chỉ IP của MONA Pay để mở firewall cho webhook",
+  "description": "Địa chỉ IP của MONA Pay để mở firewall cho webhook. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M29S",
+  "transcript": [
+   {
+    "h": "Nhận diện lỗi firewall",
+    "p": "Webhook gửi thử chạy ở máy cá nhân nhưng lên server lại báo CONNECTION, lỗi bốn không ba hoặc TIMEOUT. Nguyên nhân thường là firewall hay WAF đang chặn máy gửi của MONA Pay. Trong vài phút, mình sẽ mở đúng đường vào cho webhook bằng nginx, ufw hoặc Cloudflare, rồi kiểm lại bằng log. IP hiện tại đọc là một không ba chấm một sáu tám chấm năm năm chấm một bốn. Dù cho phép IP, anh chị vẫn phải kiểm chữ ký HMAC.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Hai chiều kết nối",
+    "p": "Trang Địa chỉ IP ghi hai chiều dùng cùng địa chỉ. Chiều thứ nhất là MONA Pay gửi webhook thật hoặc gửi thử tới server anh chị. Chiều thứ hai là API api.monapay.vn để server anh chị gọi ra. Thông thường chỉ cần allowlist chiều webhook đi vào; chiều gọi API không cần mở riêng trừ khi server chặn outbound. Khi log hiện CONNECTION, hãy đọc lại trang này vì thay đổi IP sẽ được cập nhật tại đây.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chặn tại nginx",
+    "p": "Với nginx, tạo rule riêng cho đúng đường dẫn /webhook/monapay. Đặt lệnh allow cho IP trên màn hình, tiếp theo là deny all, rồi proxy_pass vào ứng dụng nội bộ, ví dụ cổng ba nghìn. Cách chặn tại đường dẫn cụ thể phù hợp hơn mở toàn bộ cổng HTTPS. Rule mẫu chỉ cho nguồn MONA Pay vào đường webhook và từ chối các nguồn còn lại tại chính đường dẫn đó.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Ufw và Cloudflare WAF",
+    "p": "Với ufw, rule mẫu cho phép đúng IP nguồn đi vào cổng bốn bốn ba bằng TCP. Tuy nhiên cổng này thường còn phục vụ website cho mọi khách, nên tài liệu ưu tiên lọc ở nginx. Nếu website qua Cloudflare, tạo WAF rule: đường dẫn bằng /webhook/monapay và IP nguồn không nằm trong allowlist thì chặn. Tắt JS challenge và Bot Fight Mode cho đường webhook vì máy chủ không vượt được thử thách trình duyệt.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kiểm IP trong ứng dụng",
+    "p": "Nếu không sửa được nginx, ứng dụng có thể kiểm REMOTE_ADDR trong PHP hoặc req.ip trong Express. Khi đứng sau proxy tin cậy như Cloudflare, đọc CF-Connecting-IP theo cấu hình proxy, không tin tùy tiện vào X-Forwarded-For. Với Express, địa chỉ IPv4 có thể đi kèm tiền tố ::ffff: nên code mẫu loại phần này trước khi so với tập IP được phép.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "IP không thay chữ ký",
+    "p": "Allowlist chỉ là lớp giảm rác, không thay xác thực. Proxy hoặc cấu hình tin nhầm header vẫn có thể làm kiểm IP sai. Trong cấu hình webhook, bật HMAC_SHA256; ở endpoint kiểm X-Mona-Signature và X-Mona-Timestamp theo trang Bảo mật webhook. Whitelist IP là lớp thứ hai, không phải lớp duy nhất. Yêu cầu phải đồng thời đi từ nguồn được phép và có chữ ký hợp lệ. Không nên chỉ dựa vào IP rồi tự động xác nhận đơn hàng.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Gửi thử và đọc log",
+    "p": "Sau khi mở rule, chạy dig +short api.monapay.vn và alias ipn.mona.host; kết quả đúng bản hiện hành là IP trên màn hình. Tiếp theo gọi POST /api/v1/client-webhooks/test, rồi đọc request_headers và status_code trong GET /api/v1/webhook-logs. CONNECTION nghĩa là kết nối còn bị chặn; HTTP bốn không ba thường do allow, deny hoặc WAF; TIMEOUT có thể do firewall thả rơi gói và hệ thống chờ tối đa mười giây.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Hoàn tất firewall",
+    "p": "Tóm lại, mở đúng IP cho riêng endpoint webhook, loại thử thách trình duyệt khỏi đường này, giữ HMAC và xác nhận bằng lượt gửi thử cùng log. Đừng mở rộng cả server nếu chỉ một đường dẫn cần nhận webhook. IP có thể thay đổi, nên dùng trang tài liệu làm nguồn hiện hành khi log kết nối xuất hiện. Xem cấu hình mẫu tại monapay.vn/docs/dia-chi-ip, đăng ký tại my.monapay.vn, hoặc gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 269.1
+   }
+  ],
+  "docSlug": "dia-chi-ip"
+ },
+ "docs-tiem-toc-spa": {
+  "youtubeId": "visLpj-8DzU",
+  "title": "Tiệm tóc, spa: khách cọc lịch là lễ tân biết ngay",
+  "description": "Tiệm tóc, spa: khách cọc lịch là lễ tân biết ngay. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT3M30S",
+  "transcript": [
+   {
+    "h": "Lễ tân tự biết tiền cọc",
+    "p": "Lễ tân của anh chị chốt lịch rồi vẫn phải mở app ngân hàng của chủ tiệm để dò tiền cọc, vừa chậm vừa bất tiện khi đổi ca. Trong vài phút, mình sẽ thiết lập ba việc cho tiệm tóc, spa hoặc phòng khám nhỏ: nối tài khoản, đưa tin báo vào nhóm Zalo và tạo link thu cọc riêng cho từng lịch hẹn. Khi tiền vào, cả lễ tân và chủ tiệm cùng thấy số tiền lẫn nội dung, không phải hỏi lại nhau.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Nối tài khoản chủ tiệm",
+    "p": "Vào my.monapay.vn, tạo tài khoản rồi mở mục Ngân hàng. Nhập số tài khoản đứng tên chủ tiệm và số điện thoại đã đăng ký với ngân hàng. Ngân hàng gửi hai mã OTP về điện thoại; nhập đủ hai mã để nối xong và bật nhận thông báo. Tiền cọc của khách chuyển thẳng vào tài khoản chủ tiệm. Hệ thống không đứng giữa, chỉ đọc thông báo giao dịch và gửi tin tới nhóm đã cấu hình.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thêm nhóm lễ tân",
+    "p": "Tạo nhóm Zalo gồm lễ tân và chủ tiệm. Thêm bot MONA Pay vào nhóm theo phần hướng dẫn trên dashboard, sau đó bấm Gửi thử trước khi nhận lịch thật. Từ lúc cấu hình hoạt động, mỗi khoản tiền vào tài khoản đã nối thành một tin nhắn trong nhóm. Lễ tân ở ca sau vẫn xem lại lịch sử tin, còn chủ tiệm không phải đưa quyền truy cập app ngân hàng cho nhân viên.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo link thu cọc",
+    "p": "Khi chốt một lịch hẹn, mở mục Trang thanh toán và tạo link đúng số cọc. Ví dụ khách hẹn cắt tóc lúc mười lăm giờ ngày mai, anh chị có thể tạo link một trăm nghìn đồng để giữ chỗ. Đặt tên link theo tên khách hoặc mã lịch hẹn, rồi gửi qua Zalo hay Messenger. Khách bấm vào sẽ thấy số tiền đã điền sẵn, không phải tự gõ số tài khoản tiệm.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Cọc vào là giữ chỗ",
+    "p": "Ngay khi khách xác nhận chuyển và tiền vào tài khoản, nhóm Zalo hiện số tiền cùng nội dung. Lễ tân dùng tin đó để đánh dấu lịch đã cọc. Nếu hai khách cùng cọc một mức trong buổi sáng, tên khách trong link hoặc nội dung chuyển khoản giúp phân biệt. Lịch sử giao dịch trên dashboard có thời gian, số tiền và nội dung, nên tiệm có căn cứ áp dụng chính sách cọc đã thống nhất với khách.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thu phần còn lại",
+    "p": "Sau khi làm dịch vụ xong, phần còn lại cũng có thể thu bằng một link tương tự. Tạo link mới đúng số tiền cần thanh toán, cho khách bấm hoặc quét tại quầy, rồi chờ tin báo. Nếu tiệm có nhiều lễ tân theo ca, dùng chung một nhóm để ca sau biết lịch nào đã cọc và lịch nào chưa. Không cần tách nhóm, vì mọi người đều cần cùng trạng thái của lịch hẹn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tránh nhầm lịch cọc",
+    "p": "Lỗi dễ gặp nhất là tạo một link chung cho nhiều khách cùng mức cọc. Khi tin về, lễ tân khó biết của ai. Hãy dùng link riêng và đặt tên theo khách hoặc mã lịch. Nếu bấm Gửi thử mà nhóm không nhận tin, kiểm tra bot đã có trong nhóm và xem lại cấu hình. Nếu tiền vào nhưng hoàn toàn không có thông báo, quay lại bước nối ngân hàng để chắc cả hai OTP đã hoàn tất.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Chốt quy trình giữ lịch",
+    "p": "Từ đây, quy trình đặt lịch là chốt giờ, gửi link cọc, chờ tin báo rồi đánh dấu giữ chỗ. Tin vẫn nằm trong nhóm và lịch sử dashboard nếu lễ tân chưa kịp xem ngay. Tiệm bán thêm sản phẩm qua Facebook có thể dùng cùng cách link thu tiền cho đơn online. Xem chi tiết tại monapay.vn/docs/dung-ngay/tiem-toc-spa, đăng ký tại my.monapay.vn, hoặc gọi một chín không không, sáu ba sáu, sáu bốn tám.",
+    "start": 0.0,
+    "end": 210.6
+   }
+  ],
+  "docSlug": "dung-ngay/tiem-toc-spa"
+ },
+ "docs-api-trang-thanh-toan": {
+  "youtubeId": "JLDM5_qONXI",
+  "title": "Trang thanh toán MONA Pay: tạo link là thu tiền",
+  "description": "Trang thanh toán MONA Pay: tạo link là thu tiền. Video hướng dẫn từng bước, có ví dụ trực quan và các lưu ý cần thiết. Làm theo đúng thứ tự chapter bên dưới để hoàn tất nhanh hơn.",
+  "uploadDate": "2026-09-05",
+  "duration": "PT4M38S",
+  "transcript": [
+   {
+    "h": "Tạo link, xác nhận đúng",
+    "p": "Anh chị muốn gửi một link để khách quét QR nhưng vẫn cần hệ thống xác nhận đúng đơn, đúng tiền và không tin nhầm trang chuyển hướng. Video này mình tạo trang thanh toán được lưu trữ sẵn, gọi tắt là checkout, nhận checkout_url, xử lý CHECKOUT_PAID và kiểm chữ ký khi khách quay lại. Mình cũng chạy cả ca đủ tiền, thiếu tiền và hết hạn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thiết lập hồ sơ thanh toán",
+    "p": "Trước tiên thiết lập hồ sơ thanh toán một lần bằng PUT /api/v1/payment-profile, gồm tên shop, tài khoản nhận mặc định và bộ thông tin tạo QR. Response trả return_signature_secret đúng một lần khi tạo hoặc xoay. Nếu chưa có hồ sơ, tạo checkout trả bốn trăm hai mươi hai với payment_profile_missing. Anh chị cũng thiết lập được ở dashboard, mục Cài đặt rồi Trang thanh toán.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Tạo checkout cho đơn",
+    "p": "Cho từng đơn, gọi POST /api/v1/checkouts với Bearer, X-Client-Secret và Idempotency-Key. Body mẫu gồm amount, order_code, description, return_url, cancel_url, email người trả và expires_in. amount từ một nghìn đến một tỷ đồng. Mã đơn dài tối đa năm mươi ký tự. Hai URL quay về phải dùng HTTPS. expires_in mặc định chín trăm giây.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Đưa khách sang trang QR",
+    "p": "Response HTTP hai trăm lẻ một trả checkout_url dạng https://pay.monapay.vn/c/<token>. Anh chị chuyển hướng trình duyệt hoặc gửi link qua kênh đang bán hàng. Khách không cần đăng nhập, chỉ thấy VietQR, số tiền, mã đơn và thời gian còn lại. Các endpoint public đọc trạng thái và ảnh QR dùng token ngẫu nhiên ba mươi hai ký tự, không lộ ID nội bộ hay email người trả. API trạng thái còn trả paid_at, expires_at và seconds_left.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Xử lý CHECKOUT_PAID",
+    "p": "Nguồn xác nhận đơn là webhook CHECKOUT_PAID hoặc GET /checkouts/{id}, không phải query string khi trình duyệt quay lại. Payload có checkout_id, order_code, status, amount, paid_amount, paid_at và transaction_code. Kiểm X-Mona-Signature trên raw body, lưu transaction_code bằng khóa UNIQUE, rồi gọi GET kiểm status là paid trước khi đổi trạng thái đơn.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Kiểm chữ ký redirect",
+    "p": "Khi khách quay lại return_url, MONA Pay nối monapay_checkout, order_code, status, ts và sig sau khoảng ba giây. Chữ ký là HMAC-SHA256 của chuỗi ID, mã đơn, chữ paid và timestamp, ngăn cách bằng dấu gạch đứng. So sig bằng return_signature_secret, từ chối timestamp lệch quá năm phút, rồi vẫn gọi GET để kiểm tra. Redirect hủy về cancel_url không có chữ ký.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Hết hạn và thiếu tiền",
+    "p": "Checkout mặc định hết hạn sau mười lăm phút và không tạo QR mới. Nếu khách trả muộn, giao dịch vẫn được ghi nhận và phiên có thể thành paid cùng paid_late bằng true; anh chị tự quyết định nhận đơn hay hoàn tiền. Với trả thiếu, status vẫn pending, paid_amount là null và partial_amount là tổng đã nhận. Checkout chỉ thành paid khi tổng nhận lớn hơn hoặc bằng số tiền yêu cầu. Chỉ phát hiện thiếu khi status là pending và partial_amount lớn hơn không.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Thử sandbox và giữ Secret",
+    "p": "Muốn thử không chuyển tiền, thêm sandbox bằng true khi tạo phiên rồi dùng giao dịch sandbox nạp đủ hoặc thiếu. Nếu mất return_signature_secret, gọi endpoint reveal với mật khẩu hoặc mã TOTP để xem lại; nếu nghi lộ thì xoay Secret và cập nhật biến môi trường. Luôn dùng Idempotency-Key để request thử lại không tạo hai phiên cho một đơn. Đừng giao hàng chỉ vì URL có status=paid.",
+    "start": 0.0,
+    "end": 0.0
+   },
+   {
+    "h": "Mở docs và chạy thử",
+    "p": "Luồng năm bước, cURL, Node, Python và payload mẫu nằm tại monapay.vn/docs/api/trang-thanh-toan. Anh chị đăng ký tại my.monapay.vn, thiết lập hồ sơ rồi tạo một checkout sandbox để đi hết luồng trước khi thu tiền thật. Nếu còn vướng chữ ký quay về hoặc trạng thái thiếu tiền, gọi tổng đài một chín không không, sáu ba sáu, sáu bốn tám để đội MONA hỗ trợ.",
+    "start": 0.0,
+    "end": 278.9
+   }
+  ],
+  "docSlug": "api/trang-thanh-toan"
+ }
+}

@@ -13,6 +13,10 @@ export const SITE = {
   email: 'info@themona.global',
   company: 'The MONA Group',
   companyUrl: 'https://mona.media',
+  // Pháp nhân vận hành MONA Pay (Mon chốt 15/09/2026; MST + địa chỉ lấy từ mona.host)
+  legalEntity: 'Công ty TNHH Mona Host',
+  taxId: '0317401755',
+  address: '1073/23 Cách Mạng Tháng 8, Phường 7, Quận Tân Bình, TP. Hồ Chí Minh',
   founded: 2016,
   projects: '14.000+',
   retention: '85%',
@@ -22,9 +26,8 @@ export const SITE = {
     'MONA Pay là cổng thanh toán và API ngân hàng của The MONA Group, giúp doanh nghiệp Việt Nam nhận và xác nhận tiền chuyển khoản theo thời gian thực qua tài khoản ảo (VA), VietQR, webhook và Telegram — thiết kế để cả lập trình viên lẫn AI agent tích hợp trong vài phút.',
   entityShort: 'MONA Pay — API ngân hàng & webhook thanh toán tự động cho thời đại AI.',
   trustLine:
-    'Hệ thống MONA tự xây để thu tiền cho chính mình, rồi từ 2022 tới nay hơn 6.000 khách hàng mới của MONA đã thu tiền qua đây trong web, phần mềm MONA giao. Năm 2026 mở cho mọi doanh nghiệp, miễn phí 500 giao dịch mỗi tháng.',
-  customersSince2022: '6.000+',
-  storyLine: 'Từ 2022 tới nay, hơn 6.000 khách hàng mới của MONA đã dùng hệ thống này để nhận và xác nhận tiền chuyển khoản; năm 2026 tụi em mở public tại monapay.vn cho mọi doanh nghiệp.',
+    'Hệ thống MONA tự xây để thu tiền cho chính mình, rồi từ 2022 tới nay khách hàng của MONA đã thu tiền qua đây trong web, phần mềm MONA giao. Năm 2026 mở cho mọi doanh nghiệp, miễn phí 500 giao dịch mỗi tháng.',
+  storyLine: 'Từ 2022 tới nay, khách hàng của MONA đã dùng hệ thống này để nhận và xác nhận tiền chuyển khoản; năm 2026 tụi em mở public tại monapay.vn cho mọi doanh nghiệp.',
   // Số kỹ thuật lấy từ code BE acb-ipn (kiểm 28/08/2026) — đổi ở đây khi BE đổi
   tech: {
     hmacHeader: 'X-Mona-Signature',
@@ -41,6 +44,19 @@ export const SITE = {
     'https://mona.host',
     'https://mona.software',
     'https://www.facebook.com/monamedia.net',
+    'https://www.facebook.com/monapayvn/',
+    'https://www.youtube.com/channel/UCAwazs0rz3We501-6bWdkQg',
+    'https://github.com/themonagroup',
+    'https://www.npmjs.com/package/monapay-mcp',
+    'https://www.npmjs.com/package/@monapay/node',
+    'https://pypi.org/project/monapay/',
+  ],
+  social: [
+    { label: 'YouTube', href: 'https://www.youtube.com/channel/UCAwazs0rz3We501-6bWdkQg', note: 'Video hướng dẫn từng tính năng' },
+    { label: 'Facebook', href: 'https://www.facebook.com/monapayvn/', note: 'Cập nhật tính năng mới' },
+    { label: 'GitHub', href: 'https://github.com/themonagroup', note: 'SDK, plugin, MCP mã nguồn mở' },
+    { label: 'npm', href: 'https://www.npmjs.com/package/monapay-mcp', note: 'MCP + SDK Node' },
+    { label: 'PyPI', href: 'https://pypi.org/project/monapay/', note: 'SDK Python' },
   ],
 };
 
@@ -75,6 +91,7 @@ export const FOOTER_LINKS = {
     { href: '/faq', label: 'Hỏi đáp' },
     { href: 'https://my.monapay.vn', label: 'Đăng nhập' },
     { href: '/changelog', label: 'Nhật ký thay đổi' },
+    { href: '/nghien-cuu', label: 'Nghiên cứu' },
     { href: '/roadmap', label: 'Lộ trình' },
     { href: '/status', label: 'Trạng thái hệ thống' },
     { href: '/dieu-khoan', label: 'Điều khoản sử dụng' },

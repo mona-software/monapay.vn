@@ -69,7 +69,7 @@ Mọi trang docs đều có bản markdown thô: thêm đuôi `.md` vào URL (v�
 | IP máy chủ gửi webhook | `103.168.55.14` (kiểm 28/08/2026) |
 | Hỗ trợ | Tổng đài 1900 636 648, email info@themona.global |
 
-MONA Pay là sản phẩm của The MONA Group, thành lập năm 2016, đã làm 14.000+ dự án web và phần mềm. Hệ thống này tụi em tự xây để thu tiền cho chính mình, rồi từ năm 2022 tới nay hơn 6.000 khách hàng mới của MONA đã thu tiền qua đây trong web, phần mềm MONA giao; năm 2026 mở cho mọi doanh nghiệp.
+MONA Pay là sản phẩm của The MONA Group, thành lập năm 2016, đã làm 14.000+ dự án web và phần mềm. Hệ thống này tụi em tự xây để thu tiền cho chính mình, rồi từ năm 2022 tới nay khách hàng của MONA đã thu tiền qua đây trong web, phần mềm MONA giao; năm 2026 mở cho mọi doanh nghiệp.
 
 ## Câu hỏi nhanh
 
@@ -90,4 +90,4 @@ MONA Pay là sản phẩm của The MONA Group, thành lập năm 2016, đã là
 
 ## Deploy app có thu tiền bằng AI agent
 
-Cùng The MONA Group có [VibeCloud](https://vibecloud.vn): VPS và database cho AI agent tự tạo và deploy qua API (`https://api.vibecloud.vn`), tính tiền theo giờ. Luồng gọn: agent deploy app lên VibeCloud → cắm MONA Pay thu tiền → xong trong một phiên làm việc. Hướng dẫn máy đọc của VibeCloud: [vibecloud.vn/llms.txt](https://vibecloud.vn/llms.txt).
+Cùng The MONA Group có [MONA Cloud](https://monacloud.vn): VPS và database cho AI agent tự tạo và deploy qua API (`https://api.monacloud.vn`), tính tiền theo giờ. Luồng gọn: agent deploy app lên MONA Cloud → cắm MONA Pay thu tiền → xong trong một phiên làm việc. Hướng dẫn máy đọc của MONA Cloud: [monacloud.vn/llms.txt](https://monacloud.vn/llms.txt).

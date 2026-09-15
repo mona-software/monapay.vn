@@ -1,12 +1,12 @@
 // NGÂN HÀNG — nơi ở duy nhất về trạng thái kết nối. Thêm bank = thêm 1 dòng; mọi trang/FAQ/docs đọc từ đây.
 // status: 'live' = đang hoạt động thật · 'dang-dang-ky' = đã/đang nộp hồ sơ kết nối API đối tác · 'ke-hoach' = trong kế hoạch
 export type BankStatus = 'live' | 'dang-dang-ky' | 'ke-hoach';
-export type Bank = { slug: string; name: string; fullName: string; bin: string; status: BankStatus; since?: string; note?: string; features?: { va: boolean; qr: boolean; notify: boolean } };
+export type Bank = { slug: string; name: string; fullName: string; bin: string; status: BankStatus; since?: string; note?: string; page?: boolean; features?: { va: boolean; qr: boolean; notify: boolean } };
 export const BANKS: Bank[] = [
-  { slug: 'acb', name: 'ACB', fullName: 'Ngân hàng TMCP Á Châu', bin: '970416', status: 'live', since: '2022', note: 'Tài khoản ảo, VietQR động, thông báo giao dịch qua API đối tác của ACB. Chạy thật từ 2022.', features: { va: true, qr: true, notify: true } },
+  { slug: 'acb', name: 'ACB', fullName: 'Ngân hàng TMCP Á Châu', bin: '970416', status: 'live', since: '2022', note: 'Tài khoản ảo, VietQR động, thông báo giao dịch qua API đối tác của ACB. Chạy thật từ 2022.', page: true, features: { va: true, qr: true, notify: true } },
   { slug: 'mb', name: 'MB Bank', fullName: 'Ngân hàng TMCP Quân đội', bin: '970422', status: 'dang-dang-ky', note: 'Đăng ký chương trình API mở của MB.' },
-  { slug: 'bidv', name: 'BIDV', fullName: 'Ngân hàng TMCP Đầu tư và Phát triển Việt Nam', bin: '970418', status: 'dang-dang-ky', note: 'Đăng ký cổng Open API của BIDV.' },
-  { slug: 'vietinbank', name: 'VietinBank', fullName: 'Ngân hàng TMCP Công Thương Việt Nam', bin: '970415', status: 'dang-dang-ky', note: 'Đăng ký VietinBank iConnect.' },
+  { slug: 'bidv', name: 'BIDV', fullName: 'Ngân hàng TMCP Đầu tư và Phát triển Việt Nam', bin: '970418', status: 'live', since: '2026', note: 'Tài khoản ảo, VietQR động, thông báo giao dịch qua Open API của BIDV. Kết nối qua cổng SmartConnect của BIDV.', features: { va: true, qr: true, notify: true } },
+  { slug: 'vietinbank', name: 'VietinBank', fullName: 'Ngân hàng TMCP Công Thương Việt Nam', bin: '970415', status: 'live', since: '2026', note: 'Thu hộ VietQR Pay (chuẩn Napas), sao kê tài khoản qua VietinBank Open API. Kết nối 2026.', page: true, features: { va: true, qr: true, notify: true } },
   { slug: 'ocb', name: 'OCB', fullName: 'Ngân hàng TMCP Phương Đông', bin: '970448', status: 'dang-dang-ky', note: 'Đăng ký Open API của OCB.' },
   { slug: 'msb', name: 'MSB', fullName: 'Ngân hàng TMCP Hàng Hải', bin: '970426', status: 'dang-dang-ky' },
   { slug: 'kienlongbank', name: 'KienlongBank', fullName: 'Ngân hàng TMCP Kiên Long', bin: '970452', status: 'dang-dang-ky' },

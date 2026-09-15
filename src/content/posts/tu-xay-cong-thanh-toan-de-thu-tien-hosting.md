@@ -8,7 +8,7 @@ h1: "Tự động xác nhận thanh toán hosting: chuyện tụi em tự xây h
 ogImage: /img/blog/tu-xay-cong-thanh-toan-de-thu-tien-hosting.jpg
 ---
 
-Tự động xác nhận thanh toán hosting ở MONA nghĩa là khách chuyển khoản xong, hệ thống nhận thông báo từ ngân hàng, khớp đúng hoá đơn rồi tự gia hạn gói mà không cần người bấm gì. Tụi em xây cơ chế này hơn 4 năm trước cho chính Mona.Host, sau đó dùng luôn cho học phí Khánh Hùng Academy và tiền phần mềm Mona.Software, rồi từ năm 2022 nhúng vào web, phần mềm giao khách, tới nay hơn 6.000 khách hàng mới của MONA thu tiền qua đó. Sau 14.000 dự án tụi em thấy chủ web nào cũng kẹt đúng chỗ này, nên bài này kể cụ thể tụi em vấp cái gì, học được gì, và vì sao giờ nó thành [MONA Pay](/) cho mọi doanh nghiệp. Kể thật, không tô màu.
+Tự động xác nhận thanh toán hosting ở MONA nghĩa là khách chuyển khoản xong, hệ thống nhận thông báo từ ngân hàng, khớp đúng hoá đơn rồi tự gia hạn gói mà không cần người bấm gì. Tụi em xây cơ chế này hơn 4 năm trước cho chính Mona.Host, sau đó dùng luôn cho học phí Khánh Hùng Academy và tiền phần mềm Mona.Software, rồi từ năm 2022 nhúng vào web, phần mềm giao khách, tới nay khách hàng của MONA thu tiền qua đó. Sau 14.000 dự án tụi em thấy chủ web nào cũng kẹt đúng chỗ này, nên bài này kể cụ thể tụi em vấp cái gì, học được gì, và vì sao giờ nó thành [MONA Pay](/) cho mọi doanh nghiệp. Kể thật, không tô màu.
 
 ## Khách gia hạn hosting lúc 11 giờ đêm và cái web phải chờ tới sáng
 
@@ -48,7 +48,7 @@ Phần gửi lại tự động theo lịch tối đa 7 lần tụi em đang tri
 
 Khi cơ chế chạy ổn cho hosting, học phí và phần mềm, tụi em nhìn lại các web bán hàng đang giao cho khách và thấy chúng đều kẹt đúng chỗ tụi em từng kẹt. Khách của chủ shop chuyển khoản, chụp màn hình, nhắn Zalo, rồi chờ. Chủ shop hoặc nhân viên mở app ngân hàng đối chiếu, rồi vào trang quản trị đổi trạng thái đơn bằng tay. Tụi em mang nguyên cơ chế tài khoản ảo và webhook nhúng vào web WooCommerce và phần mềm quản lý giao khách, đơn tự sang đã thanh toán khi tiền về.
 
-Hệ MONA từ năm 2016 tới giờ có hơn 14.000 dự án, phần lớn là web bán hàng và phần mềm nghiệp vụ, nên số nơi chạy cơ chế này lớn dần theo từng dự án bàn giao. Từ năm 2022 tới nay hơn 6.000 khách hàng mới của MONA đã dùng, nhưng suốt thời gian đó nó vẫn là thứ chỉ khách MONA có. Người ngoài không đăng ký được. Tới tháng 8 năm 2026 tụi em mở ra thành MONA Pay để ai cũng tự đăng ký được, vì bài toán này không phân biệt công ty lớn hay tiệm nhỏ. Anh chị đọc chuyện mở public ở bài [MONA Pay mở cho mọi doanh nghiệp](/blog/mona-pay-mo-public-sau-4-nam).
+Hệ MONA từ năm 2016 tới giờ có hơn 14.000 dự án, phần lớn là web bán hàng và phần mềm nghiệp vụ, nên số nơi chạy cơ chế này lớn dần theo từng dự án bàn giao. Từ năm 2022 tới nay khách hàng của MONA đã dùng, nhưng suốt thời gian đó nó vẫn là thứ chỉ khách MONA có. Người ngoài không đăng ký được. Tới tháng 8 năm 2026 tụi em mở ra thành MONA Pay để ai cũng tự đăng ký được, vì bài toán này không phân biệt công ty lớn hay tiệm nhỏ. Anh chị đọc chuyện mở public ở bài [MONA Pay mở cho mọi doanh nghiệp](/blog/mona-pay-mo-public-sau-4-nam).
 
 Điều tụi em muốn nói với chủ web hay chủ phần mềm đang tự thu tiền: đừng bắt đầu bằng cách canh app ngân hàng rồi tính tự động hoá sau. Bắt đầu bằng tài khoản ảo riêng cho từng đơn và một địa chỉ nhận webhook có chữ ký. Hai thứ đó tụi em mất hơn 4 năm để làm cho chắc, và giờ anh chị lấy dùng miễn phí.
 

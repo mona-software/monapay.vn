@@ -44,7 +44,7 @@ Vì đây là cách khách Việt đã quen, và nó miễn phí. Khách bấm t
 
 Cơ chế như sau: mỗi đơn hàng được gắn một tài khoản ảo ACB riêng hoặc một mã QR động riêng. Tiền vào, ACB gửi thông báo giao dịch cho MONA Pay theo bộ API dành cho đối tác, MONA Pay khớp với đơn rồi gửi webhook về website của anh chị, ký HMAC-SHA256 kèm dấu thời gian, website đổi trạng thái đơn sang đã thanh toán. Tiền không đi qua MONA Pay. Tụi em chỉ đọc thông báo và báo lại.
 
-Tụi em tự dùng cách này hơn 4 năm để thu phí hosting của Mona.Host, học phí của Khánh Hùng Academy với 40.000 học viên, đơn phần mềm của Mona.Software, rồi từ 2022 nhúng vào web bán hàng làm cho khách, tới nay hơn 6.000 khách hàng mới của MONA dùng. Trước khi mở cho mọi doanh nghiệp, tụi em chạy lại toàn bộ như một khách mới: tiền vào, thông báo về, webhook về, chữ ký khớp. Giá là 0 đồng tới 500 giao dịch mỗi tháng, trên đó gói cố định theo số giao dịch, không thu phần trăm, xem [bảng giá](/bang-gia).
+Tụi em tự dùng cách này hơn 4 năm để thu phí hosting của Mona.Host, học phí của Khánh Hùng Academy với 40.000 học viên, đơn phần mềm của Mona.Software, rồi từ 2022 nhúng vào web bán hàng làm cho khách, tới nay khách hàng của MONA dùng. Trước khi mở cho mọi doanh nghiệp, tụi em chạy lại toàn bộ như một khách mới: tiền vào, thông báo về, webhook về, chữ ký khớp. Giá là 0 đồng tới 500 giao dịch mỗi tháng, trên đó gói cố định theo số giao dịch, không thu phần trăm, xem [bảng giá](/bang-gia).
 
 Anh chị chưa cần quyết ngay, cứ tạo tài khoản, nối ACB, bật báo tiền vào qua Telegram cho nhóm bán hàng trước, chưa cần đụng tới website. Thấy tin về đều rồi hãy kêu dev nối webhook.
 

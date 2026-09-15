@@ -40,7 +40,7 @@ Có một thứ MONA Pay không làm: giữ tiền. Tiền vào thẳng tài kho
 
 Sau khi nối, thông báo tiền vào đến phần mềm theo hai đường tụi em thấy khách dùng nhiều nhất. Đường webhook: MONA Pay POST một gói JSON gồm số tiền, nội dung, mã giao dịch, số tài khoản ảo về địa chỉ do anh chị khai, ký bằng HMAC-SHA256, từ chối gói tin lệch quá 5 phút để chặn giả mạo; phần mềm trả mã 200 trong 10 giây là xong. Đường Telegram: tin nhắn vào nhóm công ty gồm tên ngân hàng, số tài khoản, số tiền, thời gian, nội dung, cho thu ngân và kế toán nhìn, không cần code.
 
-Ở [Mona.Host](https://mona.host), tụi em dùng đường webhook: tiền vào là hoá đơn hosting chuyển sang đã thanh toán, dịch vụ tự gia hạn, chạy như vậy hơn 4 năm, và từ 2022 hơn 6.000 khách hàng mới của MONA thu tiền qua đúng đường này. Chưa lỡ đơn nào. Ở nhiều khách bán hàng, tụi em bật cả hai, webhook cho website mở đơn, Telegram cho nhân viên nhìn. Chi tiết từng đường ở [tích hợp webhook](/docs/webhooks/tich-hop-webhook) và [thông báo Telegram](/docs/telegram).
+Ở [Mona.Host](https://mona.host), tụi em dùng đường webhook: tiền vào là hoá đơn hosting chuyển sang đã thanh toán, dịch vụ tự gia hạn, chạy như vậy hơn 4 năm, và từ 2022 khách hàng của MONA thu tiền qua đúng đường này. Chưa lỡ đơn nào. Ở nhiều khách bán hàng, tụi em bật cả hai, webhook cho website mở đơn, Telegram cho nhân viên nhìn. Chi tiết từng đường ở [tích hợp webhook](/docs/webhooks/tich-hop-webhook) và [thông báo Telegram](/docs/telegram).
 
 Tụi em không khuyên nối API ngân hàng qua công cụ kéo thả kiểu Zapier, Make, n8n. Với tiền, một lần dịch vụ trung gian chập chờn là mất đơn mà không ai biết. Nối thẳng vào phần mềm, hoặc để MONA nối cho.
 
