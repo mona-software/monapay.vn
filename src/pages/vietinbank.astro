@@ -5,7 +5,7 @@ import CtaBand from '../components/CtaBand.astro';
 import Steps from '../components/Steps.astro';
 import BankLogos from '../components/BankLogos.astro';
 import { SITE } from '../data/site';
-import { BANKS_LINE, LIVE_BANKS, APPLYING_BANKS } from '../data/banks';
+import { BANKS_LINE, LIVE_BANKS } from '../data/banks';
 import { PRICE_LINE } from '../data/pricing';
 
 const title = 'API VietinBank: thu hộ VietQR, tài khoản định danh, tự động báo có';
@@ -190,7 +190,7 @@ const faq = [
       <span class="eyebrow">VietinBank trong hệ MONA Pay</span>
       <h2>Một trong những ngân hàng MONA Pay đã kết nối Open API</h2>
       <p>VietinBank (Ngân hàng TMCP Công Thương Việt Nam) là một trong bốn ngân hàng thương mại nhà nước lớn nhất Việt Nam, phủ rộng khắp tỉnh thành, nhiều đơn vị hành chính, trường học và doanh nghiệp đang dùng. MONA Pay kết nối VietinBank qua cổng Open API chính thức cho bốn nhóm dịch vụ: tài khoản định danh, thu hộ VietQR Pay, thông báo biến động số dư và sao kê.</p>
-      <p>MONA Pay đang mở rộng danh sách ngân hàng theo chương trình Open API của từng bên: {APPLYING_BANKS.map((b) => b.name).join(', ')} đang trong quá trình đăng ký kết nối. Trạng thái từng ngân hàng cập nhật tại <a href="/ngan-hang">trang ngân hàng hỗ trợ</a>. Webhook, Telegram, API và mã QR của anh chị dùng chung cho mọi ngân hàng, nối thêm sau không phải sửa gì.</p>
+      <p>MONA Pay đã tích hợp phần lớn ngân hàng lớn ở Việt Nam; trạng thái từng ngân hàng cập nhật tại <a href="/ngan-hang">trang ngân hàng hỗ trợ</a>. Webhook, Telegram, API và mã QR của anh chị dùng chung cho mọi ngân hàng, thêm ngân hàng sau không phải sửa gì.</p>
       <p>Đọc tiếp: <a href="/ngan-hang">Bảng trạng thái ngân hàng</a> · <a href="/docs/api/qr-thanh-toan">API QR thanh toán</a> · <a href="/chia-se-bien-dong-so-du-telegram">Báo biến động số dư qua Telegram</a>.</p>
     </div>
   </section>

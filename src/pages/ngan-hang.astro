@@ -4,23 +4,23 @@ import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { SITE } from '../data/site';
 import { PRICE_LINE } from '../data/pricing';
-import { BANKS, LIVE_BANKS, APPLYING_BANKS, PLANNED_BANKS, STATUS_LABEL } from '../data/banks';
-const title = `Ngân hàng hỗ trợ MONA Pay: ${LIVE_BANKS.map((b) => b.name).join(', ')} đang chạy, các ngân hàng khác đang kết nối`;
-const description = `MONA Pay nhận thông báo tiền vào qua API đối tác của ngân hàng: ${LIVE_BANKS.map((b) => b.name).join(', ')} đang hoạt động, ${APPLYING_BANKS.length} ngân hàng đang đăng ký kết nối. Bảng trạng thái cập nhật tại trang này, thêm ngân hàng không phải sửa code.`;
+import { BANKS, LIVE_BANKS, VA_BANKS, BANKS_COUNT, STATUS_LABEL } from '../data/banks';
+const title = `Ngân hàng hỗ trợ MONA Pay: đã tích hợp ${BANKS_COUNT} ngân hàng, tự động báo có`;
+const description = `MONA Pay đã tích hợp ${BANKS_COUNT} ngân hàng Việt Nam: ${VA_BANKS.length} ngân hàng có tài khoản ảo (VA) + VietQR + báo có theo thời gian thực, các ngân hàng còn lại báo có qua biến động số dư. Xem bảng chi tiết từng ngân hàng tại đây.`;
 const faq = [
-  { q: 'Hiện MONA Pay nhận tiền được ở ngân hàng nào?', a: `${LIVE_BANKS.map((b) => b.name).join(', ')} đang hoạt động thật: tài khoản ảo, VietQR động, thông báo giao dịch. ${APPLYING_BANKS.map((b) => b.name).join(', ')} đang trong quá trình đăng ký kết nối API đối tác. Trạng thái từng ngân hàng cập nhật ngay tại trang này.` },
+  { q: 'Hiện MONA Pay nhận tiền được ở ngân hàng nào?', a: `MONA Pay đã tích hợp ${BANKS_COUNT} ngân hàng Việt Nam. ${VA_BANKS.length} ngân hàng có đầy đủ tài khoản ảo (VA), VietQR động và báo có theo thời gian thực (${VA_BANKS.slice(0,6).map((b) => b.name).join(', ')}...). Các ngân hàng còn lại báo có qua biến động số dư. Bảng chi tiết từng ngân hàng ngay trên trang này.` },
   { q: 'Tài khoản của tôi ở ngân hàng chưa hỗ trợ thì làm sao?', a: 'Cách nhanh nhất là mở một tài khoản ACB đứng tên doanh nghiệp hoặc cá nhân để nhận tiền (mở online tại acb.com.vn), nối vào MONA Pay trong vài phút, tiền vẫn nằm ở ngân hàng của anh chị. Khi ngân hàng của anh chị lên trạng thái đang hoạt động, anh chị nối thêm, không phải làm lại webhook hay Telegram vì cấu hình không phụ thuộc ngân hàng.' },
   { q: 'Khi thêm ngân hàng mới, phần tích hợp đã làm có phải sửa không?', a: 'Không. Webhook, Telegram, API key và mã QR động là lớp chung của MONA Pay; ngân hàng chỉ là nguồn thông báo. Payload webhook có trường bank_name, phần mềm của anh chị đọc trường đó là phân biệt được tiền về ngân hàng nào. Thêm ngân hàng là thêm một dòng cấu hình phía tụi em.' },
   { q: 'Vì sao ACB đi trước?', a: 'Vì ACB có chương trình API đối tác cho tài khoản ảo và thông báo giao dịch, và tụi em đã chạy thật với ACB từ 2022 cho khách hàng của MONA. Các ngân hàng khác mở API đối tác muộn hơn hoặc cần hồ sơ doanh nghiệp, tụi em đang nộp lần lượt.' },
-  { q: 'Bao giờ có ngân hàng tiếp theo?', a: 'Mỗi ngân hàng có quy trình duyệt đối tác riêng, thường tính bằng tuần tới vài tháng. Tụi em không hứa ngày; bảng trạng thái ở trên đổi từ "đang đăng ký kết nối" sang "đang hoạt động" là dùng được ngay. Cần gấp, gọi 1900 636 648 để tụi em tư vấn đường nhận tiền phù hợp trong lúc chờ.' },
+  { q: 'Ngân hàng của tôi có trong danh sách không?', a: 'MONA Pay đã phủ hầu hết ngân hàng lớn ở Việt Nam. Tra tên ngân hàng của anh chị trong bảng ở trên; ngân hàng có tài khoản ảo (VA) thì tạo được số định danh riêng từng đơn, ngân hàng còn lại báo có qua biến động số dư. Chưa thấy ngân hàng của anh chị, gọi 1900 636 648.' },
 ];
 const jsonld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: 'Ngân hàng hỗ trợ MONA Pay', itemListElement: BANKS.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: `${b.name} (${STATUS_LABEL[b.status]})` })) }];
 ---
 <Base title={title} description={description} path="/ngan-hang" jsonld={jsonld}>
   <section class="hero"><div class="wrap narrow">
     <span class="eyebrow">Ngân hàng hỗ trợ</span>
-    <h1>Ngân hàng hỗ trợ MONA Pay:<br class="br-d" /> <span class="accent">{LIVE_BANKS.map((b) => b.name).join(', ')} đang chạy, nhiều ngân hàng đang kết nối</span></h1>
-    <div class="answer-first"><p>MONA Pay nhận thông báo tiền vào qua API đối tác của từng ngân hàng. Hiện {LIVE_BANKS.map((b) => b.name).join(', ')} đang hoạt động thật (tài khoản ảo, VietQR động, thông báo giao dịch), {APPLYING_BANKS.length} ngân hàng đang trong quá trình đăng ký kết nối. Webhook, Telegram, API của anh chị dùng chung cho mọi ngân hàng, thêm ngân hàng không phải sửa tích hợp.</p></div>
+    <h1>Ngân hàng hỗ trợ MONA Pay:<br class="br-d" /> <span class="accent">đã tích hợp {BANKS_COUNT} ngân hàng Việt Nam</span></h1>
+    <div class="answer-first"><p>MONA Pay đã tích hợp {BANKS_COUNT} ngân hàng Việt Nam. {VA_BANKS.length} ngân hàng có tài khoản ảo (VA), VietQR động và báo có theo thời gian thực; các ngân hàng còn lại báo có qua biến động số dư. Webhook, Telegram, API của anh chị dùng chung cho mọi ngân hàng, thêm ngân hàng không phải sửa tích hợp.</p></div>
   </div></section>
 
   <section><div class="wrap">

@@ -5,7 +5,7 @@ import CtaBand from '../components/CtaBand.astro';
 import Steps from '../components/Steps.astro';
 import BankLogos from '../components/BankLogos.astro';
 import { SITE } from '../data/site';
-import { BANKS_LINE, BANKS_SHORT, LIVE_BANKS, APPLYING_BANKS } from '../data/banks';
+import { BANKS_LINE, BANKS_SHORT, LIVE_BANKS } from '../data/banks';
 import { PRICE_LINE } from '../data/pricing';
 
 const title = 'API ACB: biến động số dư, tài khoản ảo ACB theo thời gian thực';
@@ -190,7 +190,7 @@ const faq = [
       <h2>ACB đi trước, các ngân hàng khác nối sau</h2>
       <p>ACB (Ngân hàng TMCP Á Châu) hoạt động từ năm 1993, hội sở tại TP.HCM, là ngân hàng có chương trình API cho đối tác về tài khoản ảo và thông báo giao dịch mà tụi em nối vào. Tụi em chọn ACB trước vì đây là ngân hàng hệ thống này đã chạy lâu nhất, từ 2022 cho khách hàng của MONA.</p>
       <p>Trước khi có tên MONA Pay, hệ thống này thu tiền hosting và máy chủ ở <a href="https://mona.host">mona.host</a>, thu học phí, thu đơn phần mềm cho chính MONA, rồi từ 2022 thu tiền cho khách hàng của MONA trong web, phần mềm tụi em giao. Toàn bộ chạy trên ACB, nên khi mở public năm 2026, ACB là ngân hàng đã được thử lâu nhất, ổn định nhất, tụi em đưa ra trước.</p>
-      <p>Các ngân hàng khác tụi em đang đăng ký kết nối theo chương trình API đối tác của từng bên: {APPLYING_BANKS.map((b) => b.name).join(', ')}. Trạng thái từng ngân hàng cập nhật tại <a href="/ngan-hang">trang ngân hàng hỗ trợ</a>; tụi em không hứa ngày, lên là công bố. Webhook, Telegram, API của anh chị dùng chung cho mọi ngân hàng nên nối thêm sau không phải sửa gì.</p>
+      <p>MONA Pay đã tích hợp nhiều ngân hàng Việt Nam; trạng thái từng ngân hàng cập nhật tại <a href="/ngan-hang">trang ngân hàng hỗ trợ</a>. Webhook, Telegram, API của anh chị dùng chung cho mọi ngân hàng nên thêm ngân hàng sau không phải sửa gì.</p>
       <p>Đọc tiếp: <a href="/docs/api/tai-khoan-ao-va">API tài khoản ảo</a> · <a href="/docs/api/qr-thanh-toan">API QR thanh toán</a> · <a href="/chia-se-bien-dong-so-du-telegram">Báo biến động số dư qua Telegram</a>.</p>
     </div>
   </section>
