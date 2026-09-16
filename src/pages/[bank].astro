@@ -17,7 +17,7 @@ const va = !!b.features?.va;
 // Đầu mối công nghệ Open API của từng ngân hàng (nguồn: cổng developer bank + khảo sát 15/09/2026)
 const TECH: Record<string, string> = {
   bidv: 'BIDV Open API SmartConnect', mb: 'MB for Developers (BaaS by MB)', ocb: 'OCB API Developer Portal',
-  msb: 'MSB Open API', sacombank: 'Sacombank Open API', kienlongbank: 'KienLongBank Open API',
+  msb: 'MSB Open API', sacombank: 'Sacombank Open API — giải pháp Thu hộ có đối soát tự động (VA Merchant: đăng ký VA, sinh VietQR, đối soát theo mã, đa kênh Sacombank/liên ngân hàng/ví/VietQR)', kienlongbank: 'KienLongBank Open API',
   tpbank: 'TPBank Open API', vpbank: 'VPBank Open API', vietcombank: 'Vietcombank API (VCB OneQR cho doanh nghiệp)',
 };
 const techName = TECH[b.slug] || `${b.name} Open API`;
