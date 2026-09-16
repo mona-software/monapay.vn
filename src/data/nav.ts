@@ -3,7 +3,7 @@ export type NavItem = { href: string; label: string; desc?: string; badge?: stri
 export type NavGroup = { label: string; href?: string; cols?: { title: string; items: NavItem[] }[]; match?: string[] };
 export const MEGA: NavGroup[] = [
   {
-    label: 'Sản phẩm', match: ['/trang-thanh-toan', '/acb', '/vietinbank', '/ngan-hang', '/chia-se-bien-dong-so-du-telegram', '/ai-agent', '/tao-ma-qr-ngan-hang', '/loa-thong-bao-chuyen-khoan', '/docs/dung-ngay'],
+    label: 'Sản phẩm', match: ['/trang-thanh-toan', '/chia-se-bien-dong-so-du-telegram', '/ai-agent', '/tao-ma-qr-ngan-hang', '/loa-thong-bao-chuyen-khoan', '/docs/dung-ngay'],
     cols: [
       { title: 'Nhận tiền', items: [
         { href: '/docs/dung-ngay', label: 'Dùng ngay, không cần lập trình', desc: 'Hướng dẫn cho quán ăn, tiệm tóc, shop online, lớp học: nối ngân hàng, báo có, in QR trong 10 phút', badge: 'Cho chủ quán' },
@@ -101,7 +101,7 @@ export const MEGA: NavGroup[] = [
 // Menu tiếng Anh cho /en (Mon 03/09/2026: trang EN mà menu VI). Trang chưa có bản EN thì trỏ về trang VI, ghi rõ trong desc.
 export const MEGA_EN: NavGroup[] = [
   {
-    label: 'Products', match: ['/trang-thanh-toan', '/acb', '/vietinbank', '/ngan-hang', '/chia-se-bien-dong-so-du-telegram', '/en/ai-agent', '/tao-ma-qr-ngan-hang', '/loa-thong-bao-chuyen-khoan', '/en/docs/dung-ngay'],
+    label: 'Products', match: ['/trang-thanh-toan', '/chia-se-bien-dong-so-du-telegram', '/en/ai-agent', '/tao-ma-qr-ngan-hang', '/loa-thong-bao-chuyen-khoan', '/en/docs/dung-ngay'],
     cols: [
       { title: 'Collect payments', items: [
         { href: '/en/docs/dung-ngay', label: 'Get started today, no coding needed', desc: 'For restaurants, salons, online shops and classes: connect a bank, get paid alerts, print a QR in 10 minutes', badge: 'For owners' },
