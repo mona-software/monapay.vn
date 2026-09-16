@@ -7,6 +7,7 @@ import CtaBand from '../components/CtaBand.astro';
 import MonaStory from '../components/MonaStory.astro';
 import MonaScale from '../components/MonaScale.astro';
 import BankLogos from '../components/BankLogos.astro';
+import Integrations from '../components/Integrations.astro';
 import MonaVisit from '../components/MonaVisit.astro';
 import MonaFreeBanner from '../components/MonaFreeBanner.astro';
 import Steps from '../components/Steps.astro';
@@ -91,33 +92,15 @@ const jsonld = [{
 ---
 <Base title={title} description={description} path="/" jsonld={jsonld} alternate={{ vi: '/', en: '/en' }}>
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">Cho doanh nghiệp kinh doanh online · The MONA Group</span>
-        <h1>Cổng thanh toán tự động báo có<br class="br-d" /> <span class="accent">miễn phí cho doanh nghiệp online</span></h1>
-        <div class="answer-first">
-          <p>MONA Pay là cổng thanh toán tự động báo có bằng chuyển khoản ngân hàng: khách chuyển tiền vào tài khoản ngân hàng của anh chị, tiền vừa vào là MONA Pay báo ngay về website, phần mềm bán hàng, nhóm Telegram và email đã xác minh, đơn tự chuyển sang đã thanh toán.</p>
-          <p>{priceCap}, không thu phần trăm trên số tiền. Tiền vẫn nằm trong tài khoản ngân hàng đứng tên anh chị, MONA Pay không giữ tiền.</p>
-        </div>
-        <div class="btn-row">
-          <a class="btn btn-primary" href={SITE.appRegister}>Tạo tài khoản miễn phí</a>
-          <a class="btn btn-outline" href="#cach-hoat-dong">Xem cách hoạt động</a>
-        </div>
-        <p class="hero-note">Đăng ký xong dùng ngay · Không cần biết lập trình · Tổng đài <a href={SITE.hotlineTel}>{SITE.hotline}</a></p>
+    <div class="wrap hero-narrow">
+      <span class="eyebrow">Cho doanh nghiệp kinh doanh online · The MONA Group</span>
+      <h1>Cổng thanh toán tự động báo có<br class="br-d" /> <span class="accent">miễn phí cho doanh nghiệp online</span></h1>
+      <div class="answer-first hero-sub"><p>Khách chuyển khoản vào tài khoản ngân hàng của anh chị, tiền vừa vào là MONA Pay báo ngay về website, phần mềm bán hàng, Telegram, đơn tự chuyển sang đã thanh toán. {priceCap}, không thu phần trăm, tiền vẫn nằm trong tài khoản đứng tên anh chị.</p></div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={SITE.appRegister}>Tạo tài khoản miễn phí</a>
+        <a class="btn btn-outline" href="#cach-hoat-dong">Xem cách hoạt động</a>
       </div>
-      <div class="demo card" aria-label="Minh hoạ một giao dịch tiền vào được MONA Pay báo về">
-        <div class="demo-head"><span class="badge badge-ok">Tiền vào {liveBank}</span><span class="demo-tag">minh hoạ</span></div>
-        <div class="demo-amount">+2.500.000 đ</div>
-        <div class="demo-row"><span>Nội dung</span><b>DH10234 NGUYEN VAN A</b></div>
-        <div class="demo-row"><span>Tài khoản nhận</span><b>Số tài khoản riêng của đơn DH10234</b></div>
-        <div class="demo-row"><span>Mã giao dịch</span><b>FT26240001234</b></div>
-        <div class="demo-row"><span>Thời gian</span><b>23:02:15 · 29/08/2026</b></div>
-        <div class="demo-log">
-          <span class="badge badge-cta">Telegram · nhóm Chốt đơn đã nhận</span>
-          <span class="badge badge-ok">Website · đơn DH10234 đã thanh toán</span>
-          <span class="badge">Kho · bắt đầu đóng hàng</span>
-        </div>
-      </div>
+      <p class="hero-note">Đăng ký xong dùng ngay · Không cần biết lập trình · Tổng đài <a href={SITE.hotlineTel}>{SITE.hotline}</a></p>
     </div>
   </section>
 
@@ -270,6 +253,8 @@ const jsonld = [{
   </section>
 
   <MonaStory />
+
+  <Integrations />
 
   <section class="section-dark">
     <div class="wrap">

@@ -1,0 +1,59 @@
+---
+// Dải TÍCH HỢP kèm logo — báo có đi đâu + nối nền tảng nào + SDK ngôn ngữ nào.
+// Logo bên thứ 3 = nhận diện nền tảng (nominative use). status 'soon' = đang làm.
+interface Item { name: string; logo?: string; status?: 'live' | 'soon' }
+interface Grp { title: string; note?: string; items: Item[] }
+const groups: Grp[] = [
+  { title: 'Báo có tức thì về đâu', items: [
+    { name: 'Telegram', logo: 'telegram' }, { name: 'Zalo', logo: 'zalo' },
+    { name: 'Email', logo: 'gmail' }, { name: 'Webhook' },
+    { name: 'Loa báo tiền' }, { name: 'Viber', logo: 'viber', status: 'soon' },
+    { name: 'Lark', status: 'soon' },
+  ]},
+  { title: 'Nối vào nền tảng bán hàng', items: [
+    { name: 'WooCommerce', logo: 'woocommerce' }, { name: 'WordPress', logo: 'wordpress' },
+    { name: 'Shopify', logo: 'shopify' }, { name: 'Sapo' }, { name: 'Haravan' },
+    { name: 'KiotViet' }, { name: 'OpenCart' }, { name: 'PrestaShop', logo: 'prestashop' },
+    { name: 'Google Sheets', logo: 'googlesheets', status: 'soon' }, { name: 'GoHighLevel', status: 'soon' },
+  ]},
+  { title: 'SDK cho lập trình viên — 12 ngôn ngữ', items: [
+    { name: 'Node.js', logo: 'nodedotjs' }, { name: 'PHP', logo: 'php' }, { name: 'Python', logo: 'python' },
+    { name: 'Go', logo: 'go' }, { name: '.NET', logo: 'dotnet' }, { name: 'Java', logo: 'java' },
+    { name: 'Ruby', logo: 'ruby' }, { name: 'Dart' }, { name: 'Elixir' }, { name: 'Rust' },
+  ]},
+];
+---
+<section class="integ"><div class="wrap">
+  <span class="eyebrow">Tích hợp</span>
+  <h2>Nối vào mọi thứ anh chị đang dùng</h2>
+  <p class="integ-lead">Tiền vào là MONA Pay báo về đúng chỗ anh chị làm việc, nối sẵn các nền tảng bán hàng, và có SDK 12 ngôn ngữ cho lập trình viên tích hợp trong vài phút.</p>
+  {groups.map((g) => (
+    <div class="integ-grp">
+      <h3 class="integ-title">{g.title}</h3>
+      <ul class="integ-grid" role="list">
+        {g.items.map((it) => (
+          <li class="integ-cell">
+            {it.logo ? <img src={`/img/integrations/${it.logo}.svg`} alt={it.name} width="24" height="24" loading="lazy" /> : <span class="integ-dot" aria-hidden="true">●</span>}
+            <span class="integ-name">{it.name}</span>
+            {it.status === 'soon' && <span class="integ-soon">sắp có</span>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+  <p class="integ-note">Cần nền tảng chưa có trong danh sách? MONA Pay có webhook + API chuẩn + tài liệu cho AI agent (llms.txt, openapi.json) để nối bất cứ đâu. Gọi 1900 636 648.</p>
+</div></section>
+
+<style>
+  .integ{padding:56px 0}
+  .integ-lead{max-width:66ch;color:var(--text-soft);margin:.3rem 0 1.6rem}
+  .integ-grp{margin:1.4rem 0}
+  .integ-title{font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-soft);margin:0 0 .7rem}
+  .integ-grid{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .integ-cell{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px 8px 12px;box-shadow:var(--shadow);font-weight:600;font-size:.92rem}
+  .integ-cell img{width:22px;height:22px;object-fit:contain;display:block}
+  .integ-dot{color:var(--cta);font-size:.7rem}
+  .integ-name{color:var(--foreground)}
+  .integ-soon{font-size:.66rem;font-weight:700;color:var(--text-soft);background:var(--muted);padding:1px 7px;border-radius:999px;text-transform:uppercase;letter-spacing:.02em}
+  @media (max-width:600px){.integ-cell{font-size:.86rem;padding:7px 12px 7px 10px}}
+</style>

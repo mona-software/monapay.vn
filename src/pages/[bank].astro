@@ -1,0 +1,118 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import BankLogos from '../components/BankLogos.astro';
+import { SITE } from '../data/site';
+import { BANKS } from '../data/banks';
+import { PRICE_LINE } from '../data/pricing';
+
+// acb + vietinbank có trang riêng viết tay → dynamic route lo phần còn lại
+export function getStaticPaths() {
+  return BANKS.filter((b) => !['acb', 'vietinbank'].includes(b.slug)).map((b) => ({ params: { bank: b.slug }, props: { b } }));
+}
+const { b } = Astro.props;
+const va = !!b.features?.va;
+
+// Đầu mối công nghệ Open API của từng ngân hàng (nguồn: cổng developer bank + khảo sát 15/09/2026)
+const TECH: Record<string, string> = {
+  bidv: 'BIDV Open API SmartConnect', mb: 'MB for Developers (BaaS by MB)', ocb: 'OCB API Developer Portal',
+  msb: 'MSB Open API', sacombank: 'Sacombank Open API', kienlongbank: 'KienLongBank Open API',
+  tpbank: 'TPBank Open API', vpbank: 'VPBank Open API', vietcombank: 'Vietcombank API (VCB OneQR cho doanh nghiệp)',
+};
+const techName = TECH[b.slug] || `${b.name} Open API`;
+
+const title = va
+  ? `API ${b.name}: tài khoản định danh, VietQR, tự động báo có | MONA Pay`
+  : `Báo có tự động cho tài khoản ${b.name} | MONA Pay`;
+const description = va
+  ? `Nối tài khoản ${b.name} vào MONA Pay: tài khoản định danh (VA), VietQR động, thông báo biến động số dư theo thời gian thực. Tiền vẫn ở ${b.name}, MONA Pay chỉ đọc thông báo và bắn webhook, Telegram.`
+  : `MONA Pay tự động báo có tiền chuyển khoản vào tài khoản ${b.name} qua biến động số dư. ${b.name} hiện chưa mở Open API tài khoản ảo cho đối tác; MONA Pay vẫn báo có và khớp đơn theo nội dung chuyển khoản.`;
+
+const faq = va ? [
+  { q: `MONA Pay nối ${b.name} bằng cách nào?`, a: `Qua ${techName} — kênh kết nối chính thức của ${b.name} cho đối tác. MONA Pay đăng ký dịch vụ tài khoản định danh (VA), VietQR động và thông báo biến động số dư, không cần mật khẩu internet banking của anh chị.` },
+  { q: 'Tài khoản định danh (VA) là gì?', a: `${b.name} cấp một dải số định danh; mỗi số trỏ về tài khoản thật của anh chị nhưng gắn được cho từng đơn, từng khách. Tiền vào số nào là biết ngay của đơn nào, không phụ thuộc khách gõ đúng nội dung.` },
+  { q: 'Tiền có nằm ở MONA Pay không?', a: `Không lúc nào. Tiền chuyển vào là vào thẳng tài khoản ${b.name} đứng tên anh chị. MONA Pay chỉ nhận thông báo giao dịch, không có quyền chuyển, rút hay giữ tiền.` },
+  { q: 'Dùng có mất phí gì không?', a: `Phía MONA Pay: ${PRICE_LINE}, không thu phần trăm trên số tiền. Phí dịch vụ của ${b.name} (nếu có) do ngân hàng thu theo biểu phí của họ.` },
+] : [
+  { q: `${b.name} có tự động báo có được không?`, a: `Được. MONA Pay nhận biến động số dư của tài khoản ${b.name} rồi báo ngay về website, phần mềm, Telegram và email. Khớp đơn theo nội dung chuyển khoản (mã đơn).` },
+  { q: `Vì sao ${b.name} chưa có tài khoản ảo (VA) như ACB?`, a: `Vì ${b.name} hiện chưa mở Open API tài khoản định danh cho đối tác bên thứ ba. Đây là tình trạng cổng API của ${b.name} ở thời điểm này, không phải hạn chế của MONA Pay — cùng một hệ thống, ${VA_LIST()} đã có VA vì các ngân hàng đó đã mở API. Khi ${b.name} mở, MONA Pay bật VA ngay, anh chị không phải làm lại gì.` },
+  { q: 'Tiền có an toàn không?', a: `Có. MONA Pay chỉ ĐỌC biến động số dư của tài khoản anh chị (không mật khẩu internet banking, không giả lập đăng nhập). Tiền vào thẳng tài khoản ${b.name} đứng tên anh chị, MONA Pay không giữ tiền.` },
+  { q: 'Khớp đơn bằng gì khi chưa có VA?', a: 'Bằng nội dung chuyển khoản: mỗi đơn một mã (ví dụ DH10234). Khách chuyển kèm mã, MONA Pay đọc biến động số dư, so mã + số tiền rồi báo đúng đơn. Mã QR động của MONA Pay điền sẵn mã này để khách khỏi gõ tay.' },
+];
+
+function VA_LIST() { return BANKS.filter((x) => x.features?.va).slice(0, 3).map((x) => x.name).join(', '); }
+---
+<Base title={title} description={description} path={'/' + b.slug}>
+  <section class="hero"><div class="wrap narrow">
+    <span class="eyebrow">Ngân hàng {b.name}</span>
+    <h1>{va ? `API ${b.name}: tiền vào tài khoản,` : `Tự động báo có cho tài khoản ${b.name}:`}<br class="br-d" /> <span class="accent">phần mềm biết ngay</span></h1>
+    <div class="answer-first"><p>{description}</p></div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href={SITE.appRegister}>Tạo tài khoản miễn phí</a>
+      <a class="btn btn-outline" href="/ngan-hang">Xem tất cả ngân hàng</a>
+    </div>
+  </div></section>
+
+  <section class="link-section"><div class="wrap">
+    <div class="link-card">
+      <div class="link-logos" aria-label={`MONA Pay kết nối ${b.name}`}>
+        <img src="/brand/monapay-logo-light.svg" alt="MONA Pay" width="203" height="44" />
+        <span class="link-arrow" aria-hidden="true">⇄</span>
+        <img src={`/img/banks/${b.slug}.png`} alt={`Ngân hàng ${b.name}`} width="150" height="56" />
+      </div>
+      <p class="link-caption">{va
+        ? `MONA Pay kết nối ${b.name} qua ${techName}: tài khoản định danh, VietQR động và thông báo biến động số dư theo thời gian thực.`
+        : `MONA Pay báo có tiền vào tài khoản ${b.name} qua biến động số dư — không cần mật khẩu ngân hàng, không giả lập đăng nhập.`}</p>
+      <p class="link-note">{b.fullName}. Tiền của anh chị nằm ở {b.name}; MONA Pay chỉ nhận thông báo giao dịch, không có quyền chuyển, rút hay giữ tiền.</p>
+    </div>
+  </div></section>
+
+  <section><div class="wrap narrow">
+    <span class="eyebrow">Công nghệ &amp; cách kết nối</span>
+    <h2>{va ? `${b.name} cung cấp gì, MONA Pay làm gì` : `${b.name} báo có qua biến động số dư`}</h2>
+    {va ? (
+      <>
+        <p><strong>{b.name}</strong> ({b.fullName}) có chương trình <strong>{techName}</strong> cho đối tác: cấp tài khoản định danh (Virtual Account) hàng loạt, mã VietQR động theo chuẩn Napas, và thông báo biến động số dư theo thời gian thực. MONA Pay nối trực tiếp vào đây.</p>
+        <h3>Hai cách nhận tiền qua {b.name}</h3>
+        <ol>
+          <li><strong>Tài khoản định danh (VA) — báo có realtime:</strong> MONA Pay tạo cho mỗi đơn/khách một số tài khoản riêng. Tiền vào số nào là biết đơn nào, {b.name} đẩy thông báo, MONA Pay bắn webhook + Telegram ngay.</li>
+          <li><strong>VietQR động + biến động số dư:</strong> tạo mã VietQR điền sẵn số tiền và nội dung, khách quét là chuyển đúng; MONA Pay khớp theo nội dung chuyển khoản.</li>
+        </ol>
+      </>
+    ) : (
+      <>
+        <p><strong>{b.name}</strong> ({b.fullName}) <strong>hiện chưa mở Open API tài khoản định danh cho đối tác bên thứ ba</strong>. Đây là tình trạng cổng API của {b.name} ở thời điểm này — <strong>không phải hạn chế của MONA Pay</strong>. Cùng một hệ thống, các ngân hàng như {VA_LIST()} đã có tài khoản ảo vì họ đã mở API đối tác.</p>
+        <h3>MONA Pay báo có cho {b.name} thế nào</h3>
+        <ol>
+          <li><strong>Đọc biến động số dư:</strong> MONA Pay nhận thông báo tiền vào tài khoản {b.name} của anh chị (qua biến động số dư), không cần mật khẩu internet banking, không giả lập đăng nhập.</li>
+          <li><strong>Khớp đơn theo nội dung chuyển khoản:</strong> mỗi đơn một mã; mã QR động của MONA Pay điền sẵn mã để khách khỏi gõ tay. Tiền vào là báo về website, phần mềm, Telegram, email.</li>
+        </ol>
+        <p style="color:var(--text-soft)">Khi {b.name} mở Open API tài khoản định danh cho đối tác, MONA Pay bật tài khoản ảo (VA) cho {b.name} ngay, anh chị không phải làm lại tích hợp.</p>
+      </>
+    )}
+    <p style="margin-top:1rem">Đọc chi tiết tích hợp: <a href="/docs/khai-niem">Khái niệm VA, VietQR, webhook</a> · <a href="/docs/bat-dau-nhanh">Bắt đầu nhanh 5 phút</a> · <a href="/docs/webhooks/tich-hop-webhook">Tích hợp webhook</a>.</p>
+  </div></section>
+
+  <section class="section-alt"><div class="wrap narrow">
+    <Faq items={faq} eyebrow={`Hỏi đáp về ${b.name}`} title={`Câu hỏi thường gặp khi nhận tiền qua ${b.name}`} />
+  </div></section>
+
+  <BankLogos compact />
+
+  <CtaBand title={`Nhận tiền qua ${b.name} tự động ngay hôm nay`} body={`Tạo tài khoản MONA Pay, nối tài khoản ${b.name}, nhận báo có qua webhook hoặc Telegram. Cần người ngồi cùng thì gọi tổng đài, kỹ sư MONA trực.`} secondary={{ href: '/ngan-hang', label: 'Xem tất cả ngân hàng hỗ trợ' }} />
+</Base>
+
+<style>
+  .br-d{display:inline}
+  @media (max-width:767px){.br-d{display:none}}
+  .link-section{padding:0 0 48px}
+  .link-card{background:var(--surface);border-radius:var(--radius);padding:2rem 2.2rem;box-shadow:var(--shadow);text-align:center;max-width:860px;margin:0 auto}
+  .link-logos{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.4rem}
+  .link-logos img{height:44px;width:auto}
+  .link-arrow{font-size:2rem;font-weight:800;color:var(--cta);line-height:1}
+  .link-caption{font-size:1.05rem;color:var(--ink);margin:0 0 .6rem}
+  .link-note{color:var(--text-soft);font-size:.95rem;margin:0}
+  @media (max-width:600px){.link-logos{flex-direction:column;gap:.8rem}.link-arrow{transform:rotate(90deg)}.link-card{padding:1.5rem 1.2rem}}
+  ol{padding-left:20px}ol li{margin:.5rem 0}
+</style>
