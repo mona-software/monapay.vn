@@ -14,6 +14,7 @@ export const PAGES = [
   { path: '/chia-se-bien-dong-so-du-telegram', title: 'Báo biến động số dư ngân hàng qua Telegram', desc: 'Nhận thông báo tiền vào ACB trong nhóm Telegram của công ty.' },
   { path: '/loa-thong-bao-chuyen-khoan', title: 'Loa thông báo chuyển khoản: có cần mua loa để biết tiền vào?', desc: 'Loa của ngân hàng làm được gì, thiếu gì; 3 cách nhận báo có qua Telegram, điện thoại thu ngân, webhook không cần mua loa.' },
   { path: '/tao-ma-qr-ngan-hang', title: 'Tạo mã QR ngân hàng (VietQR) miễn phí', desc: 'Công cụ tạo mã QR chuyển khoản chuẩn VietQR cho 36 ngân hàng, chạy trên trình duyệt, không lưu dữ liệu.' },
+  { path: '/tao-ma-qr-thanh-toan-cua-hang', title: 'Tạo mã QR thanh toán cho cửa hàng: in dán quầy', desc: 'Tạo mã QR thanh toán cho cửa hàng chuẩn VietQR, in PNG dán quầy, tiền vào báo cho thu ngân khỏi canh app ngân hàng, miễn phí.' },
   { path: '/tao-ma-qr/vietcombank', title: 'Tạo mã QR Vietcombank (VietQR) miễn phí', desc: 'Tạo mã QR chuyển khoản Vietcombank chuẩn VietQR, ngân hàng chọn sẵn, tải PNG, chạy trên trình duyệt.' },
   { path: '/tao-ma-qr/techcombank', title: 'Tạo mã QR Techcombank (VietQR) miễn phí', desc: 'Tạo mã QR chuyển khoản Techcombank chuẩn VietQR, ngân hàng chọn sẵn, tải PNG, chạy trên trình duyệt.' },
   { path: '/tao-ma-qr/mb-bank', title: 'Tạo mã QR MB Bank (VietQR) miễn phí', desc: 'Tạo mã QR chuyển khoản MB Bank chuẩn VietQR, ngân hàng chọn sẵn, tải PNG, chạy trên trình duyệt.' },
