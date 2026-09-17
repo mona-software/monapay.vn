@@ -4,7 +4,7 @@ description: "Cài monapay-mcp, đưa API key cho Claude Code, Cursor hoặc Cod
 updated: 05/09/2026
 ---
 
-`monapay-mcp` là MCP server chính thức của MONA Pay. Sau khi cài, Claude Code, Cursor, Codex hoặc một MCP client khác có thể gọi 47 công cụ để tạo link thu tiền, tạo VietQR, tra giao dịch, cấu hình webhook và chạy sandbox ngay trong lúc làm code.
+`monapay-mcp` là MCP server chính thức của MONA Pay. Sau khi cài, Claude Code, Cursor, Codex hoặc một MCP client khác có thể gọi 50 công cụ để tạo link thu tiền, tạo VietQR, tra giao dịch, cấu hình webhook và chạy sandbox ngay trong lúc làm code.
 
 Tiền vẫn chuyển thẳng vào tài khoản ngân hàng của anh chị. MCP chỉ dùng API MONA Pay để tạo và đọc dữ liệu theo lệnh anh chị giao.
 
@@ -83,18 +83,19 @@ env = { MONAPAY_CLIENT_ID = "client_id", MONAPAY_CLIENT_SECRET = "client_secret"
 
 Khởi động lại Codex sau khi lưu. Nếu anh chị xoay secret trong dashboard hoặc bằng tool `monapay_rotate_key`, hãy cập nhật `MONAPAY_CLIENT_SECRET` rồi khởi động lại client.
 
-## 47 công cụ MCP
+## 50 công cụ MCP
 
 Mỗi tool trong manifest có nhãn phạm vi để client biết đây là lệnh đọc hay lệnh ghi. Các nhãn như `read`, `checkout:write`, `webhooks:write` mô tả loại thao tác của tool; OAuth token hiện trả `scope: "*"`.
 
 | Nhóm | Tool |
 |---|---|
+| Bắt đầu nhanh | `monapay_quickstart` |
 | Kết nối và hồ sơ | `monapay_whoami`, `monapay_me` |
 | Ngân hàng và VA | `monapay_list_bank_accounts`, `monapay_list_virtual_accounts`, `monapay_link_bank_start`, `monapay_link_bank_verify_otp`, `monapay_notification_register`, `monapay_notification_verify_otp` |
 | Hồ sơ thanh toán | `monapay_get_payment_profile`, `monapay_set_payment_profile` |
 | Link thu tiền | `monapay_create_checkout`, `monapay_get_checkout`, `monapay_list_checkouts`, `monapay_cancel_checkout` |
 | VietQR | `monapay_create_qr`, `monapay_cancel_qr` |
-| Giao dịch | `monapay_list_transactions`, `monapay_sandbox_transaction`, `monapay_retry_transaction` |
+| Giao dịch | `monapay_list_transactions`, `monapay_get_transaction`, `monapay_get_transactions_summary`, `monapay_sandbox_transaction`, `monapay_retry_transaction` |
 | Webhook | `monapay_list_webhooks`, `monapay_create_webhook`, `monapay_update_webhook`, `monapay_delete_webhook`, `monapay_test_webhook`, `monapay_webhook_logs`, `monapay_webhook_stats` |
 | Email | `monapay_list_email_configs`, `monapay_create_email_config`, `monapay_update_email_config`, `monapay_delete_email_config`, `monapay_verify_email`, `monapay_resend_email_verification`, `monapay_test_email`, `monapay_email_logs`, `monapay_email_stats`, `monapay_list_email_suppressions`, `monapay_remove_email_suppression` |
 | Nhóm Zalo | `monapay_list_zalo_groups`, `monapay_create_zalo_group`, `monapay_update_zalo_group`, `monapay_delete_zalo_group`, `monapay_test_zalo_group`, `monapay_zalo_group_logs` |

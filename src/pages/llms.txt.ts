@@ -82,7 +82,7 @@ export const GET: APIRoute = async () => {
   lines.push(`- [Mona.Software](https://mona.software): phần mềm theo yêu cầu (CRM, ERP, HRM) và sản phẩm đóng gói, nhúng sẵn MONA Pay để thu tiền.`);
   lines.push(`- [Mona.Media](https://mona.media): thiết kế web, SEO, ads; khách làm web tại MONA được gói MONA Pay miễn phí hoàn toàn. Bài giới thiệu: https://mona.media/mona-pay-cong-thanh-toan-tu-dong/`);
   lines.push(`- [The MONA Group](https://themona.global): tập đoàn mẹ (2016, 14.000+ dự án, 85% khách quay lại).`);
-  lines.push(`- Mã nguồn và gói: GitHub https://github.com/themonagroup · npm monapay-mcp, @monapay/node, @monapay/cli · PyPI monapay · MCP 47 tools (nối ngân hàng bằng OTP trong chat, checkout, webhook, QR, giao dịch, email và nhóm Zalo).`);
+  lines.push(`- Mã nguồn và gói: GitHub https://github.com/themonagroup · npm monapay-mcp, @monapay/node, @monapay/cli · PyPI monapay · MCP 50 tools (nối ngân hàng bằng OTP trong chat, checkout, webhook, QR, giao dịch, email và nhóm Zalo).`);
   lines.push(``);
   lines.push(`## Optional`);
   lines.push(``);

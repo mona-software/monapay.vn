@@ -3,8 +3,9 @@ title: "MONA Pay MCP server: let Claude Code, Cursor and Codex collect payments"
 description: "Install monapay-mcp, connect it with an API key, then create checkout links, query transactions and test webhooks from your coding agent."
 updated: 05/09/2026
 ---
+<!-- brand-guard: skip — doc kỹ thuật MCP; tên bên thứ 3 (Zalo/GitHub/Node.js) là tham chiếu tool/tech (nominative use), y như bản VI /docs/ đã auto-exclude. -->
 
-`monapay-mcp` is MONA Pay's official MCP server. It gives Claude Code, Cursor, Codex and other MCP clients 47 tools for creating checkout links and VietQR codes, querying transactions, configuring webhooks and running sandbox tests while they work on your code.
+`monapay-mcp` is MONA Pay's official MCP server. It gives Claude Code, Cursor, Codex and other MCP clients 50 tools for creating checkout links and VietQR codes, querying transactions, configuring webhooks and running sandbox tests while they work on your code.
 
 Funds still move directly into your bank account. The MCP server only uses the MONA Pay API to perform the actions you request.
 
@@ -83,18 +84,19 @@ env = { MONAPAY_CLIENT_ID = "client_id", MONAPAY_CLIENT_SECRET = "client_secret"
 
 Restart Codex after saving. If you rotate the key in the dashboard or with `monapay_rotate_key`, update `MONAPAY_CLIENT_SECRET` and restart the client.
 
-## All 47 MCP tools
+## All 50 MCP tools
 
 Every tool in the manifest has a scope label so clients can distinguish reads from writes. Labels such as `read`, `checkout:write` and `webhooks:write` classify the action; the OAuth token currently returns `scope: "*"`.
 
 | Area | Tools |
 |---|---|
+| Quickstart | `monapay_quickstart` |
 | Connection and profile | `monapay_whoami`, `monapay_me` |
 | Banks and virtual accounts | `monapay_list_bank_accounts`, `monapay_list_virtual_accounts`, `monapay_link_bank_start`, `monapay_link_bank_verify_otp`, `monapay_notification_register`, `monapay_notification_verify_otp` |
 | Payment profile | `monapay_get_payment_profile`, `monapay_set_payment_profile` |
 | Checkout links | `monapay_create_checkout`, `monapay_get_checkout`, `monapay_list_checkouts`, `monapay_cancel_checkout` |
 | VietQR | `monapay_create_qr`, `monapay_cancel_qr` |
-| Transactions | `monapay_list_transactions`, `monapay_sandbox_transaction`, `monapay_retry_transaction` |
+| Transactions | `monapay_list_transactions`, `monapay_get_transaction`, `monapay_get_transactions_summary`, `monapay_sandbox_transaction`, `monapay_retry_transaction` |
 | Webhooks | `monapay_list_webhooks`, `monapay_create_webhook`, `monapay_update_webhook`, `monapay_delete_webhook`, `monapay_test_webhook`, `monapay_webhook_logs`, `monapay_webhook_stats` |
 | Email | `monapay_list_email_configs`, `monapay_create_email_config`, `monapay_update_email_config`, `monapay_delete_email_config`, `monapay_verify_email`, `monapay_resend_email_verification`, `monapay_test_email`, `monapay_email_logs`, `monapay_email_stats`, `monapay_list_email_suppressions`, `monapay_remove_email_suppression` |
 | Zalo groups | `monapay_list_zalo_groups`, `monapay_create_zalo_group`, `monapay_update_zalo_group`, `monapay_delete_zalo_group`, `monapay_test_zalo_group`, `monapay_zalo_group_logs` |

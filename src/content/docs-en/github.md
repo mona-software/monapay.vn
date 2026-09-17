@@ -22,7 +22,7 @@ The endpoint documentation is published separately at `monapay.vn`. When a READM
 | [`monapay-dart`](https://github.com/themonagroup/monapay-dart) | Dart / Flutter SDK, package `monapay` | 0.4.0 tag; on GitHub, not on pub.dev yet |
 | [`monapay-rust`](https://github.com/themonagroup/monapay-rust) | Rust SDK, crate `monapay` | 0.4.0 tag; on GitHub, not on crates.io yet |
 | [`monapay-elixir`](https://github.com/themonagroup/monapay-elixir) | Elixir SDK, Hex package `monapay` | 0.4.0 tag; on GitHub, not on Hex yet |
-| [`monapay-mcp`](https://github.com/themonagroup/monapay-mcp) | MCP server for Claude Code, Cursor and Codex | npm `monapay-mcp` 0.5.5; manifest contains 47 tools |
+| [`monapay-mcp`](https://github.com/themonagroup/monapay-mcp) | MCP server for Claude Code, Cursor and Codex | npm `monapay-mcp` 0.6.0; manifest contains 50 tools |
 | [`monapay-cli`](https://github.com/themonagroup/monapay-cli) | CLI for login, QR creation, transaction queries and webhook listening | npm `@monapay/cli` 0.2.0 published |
 | [`woocommerce-monapay`](https://github.com/themonagroup/woocommerce-monapay) | WooCommerce plugin for hosted checkout or VietQR with automatic order confirmation | GitHub release 0.3.2; WordPress.org account review pending |
 | [`monapay-connectors`](https://github.com/themonagroup/monapay-connectors) | Shopify app, platform adapters and commerce modules | Shopify, OpenCart and PrestaShop passed sandbox flows through `paid`; Magento remains a scaffold |

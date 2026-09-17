@@ -22,7 +22,7 @@ Tài liệu endpoint được phát hành riêng tại `monapay.vn`. Khi README 
 | [`monapay-dart`](https://github.com/themonagroup/monapay-dart) | SDK Dart / Flutter, package `monapay` | Tag 0.4.0; trên GitHub, chưa lên pub.dev |
 | [`monapay-rust`](https://github.com/themonagroup/monapay-rust) | SDK Rust, crate `monapay` | Tag 0.4.0; trên GitHub, chưa lên crates.io |
 | [`monapay-elixir`](https://github.com/themonagroup/monapay-elixir) | SDK Elixir, Hex package `monapay` | Tag 0.4.0; trên GitHub, chưa lên Hex |
-| [`monapay-mcp`](https://github.com/themonagroup/monapay-mcp) | MCP server cho Claude Code, Cursor, Codex | npm `monapay-mcp` 0.5.5, manifest có 47 tool |
+| [`monapay-mcp`](https://github.com/themonagroup/monapay-mcp) | MCP server cho Claude Code, Cursor, Codex | npm `monapay-mcp` 0.6.0, manifest có 50 tool |
 | [`monapay-cli`](https://github.com/themonagroup/monapay-cli) | CLI đăng nhập, tạo QR, tra giao dịch, nghe webhook | npm `@monapay/cli` 0.2.0 đã publish |
 | [`woocommerce-monapay`](https://github.com/themonagroup/woocommerce-monapay) | Plugin WooCommerce tạo checkout hoặc VietQR và tự xác nhận đơn | GitHub release 0.3.2; hồ sơ WordPress.org đang chờ |
 | [`monapay-connectors`](https://github.com/themonagroup/monapay-connectors) | Shopify app, adapter và module cho các nền tảng bán hàng | Shopify, OpenCart, PrestaShop đã qua luồng sandbox tới `paid`; Magento đang ở bản scaffold |

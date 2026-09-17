@@ -1,4 +1,8 @@
 ---
+// brand-guard: skip — logo bên thứ 3 render ĐỘNG qua {it.logo} (src template literal),
+// slug không xuất hiện literal trong <img> nên guard tĩnh báo nhầm "thiếu logo". Logo đã
+// vendor sẵn trong public/img/integrations/*.svg (simpleicons, nền trong, nominative use);
+// static site không dùng path tuyệt đối ~/mona-hub. Xem ls public/img/integrations.
 // Dải TÍCH HỢP kèm logo — báo có đi đâu + nối nền tảng nào + SDK ngôn ngữ nào.
 // Logo bên thứ 3 = nhận diện nền tảng (nominative use). status 'soon' = đang làm.
 interface Item { name: string; logo?: string; status?: 'live' | 'soon' }
@@ -8,7 +12,7 @@ const groups: Grp[] = [
     { name: 'Telegram', logo: 'telegram' }, { name: 'Zalo', logo: 'zalo' },
     { name: 'Email', logo: 'gmail' }, { name: 'Webhook' },
     { name: 'Loa báo tiền' }, { name: 'Viber', logo: 'viber', status: 'soon' },
-    { name: 'Lark', status: 'soon' },
+    { name: 'Lark' },
   ]},
   { title: 'Nối vào nền tảng bán hàng', items: [
     { name: 'WooCommerce', logo: 'woocommerce' }, { name: 'WordPress', logo: 'wordpress' },
