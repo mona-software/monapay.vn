@@ -9,7 +9,7 @@ dataset: website-vua-va-lon-chi-phi-cong-thanh-toan-2026.csv
 key_numbers:
   - {label: "Phí cổng hỗn hợp nội địa", value: "≈2,19% + 4.260 đ/GD (ước tính)"}
   - {label: "Phí cổng quốc tế (PayPal)", value: "4,40% + 7.620 đ/GD + phí rút"}
-  - {label: "MONA Pay (gói Kinh doanh)", value: "299.000 đ/tháng cho 10.000 GD"}
+  - {label: "MONA Pay (gói Doanh nghiệp)", value: "799.000 đ/tháng cho tới 50.000 GD"}
   - {label: "Tiết kiệm ở mốc 10.000 GD", value: "Hơn 150 triệu đ/tháng"}
 sources:
   - {name: "Biểu phí dịch vụ chấp nhận thanh toán thẻ VietinBank (22/04/2026)", url: "https://www.vietinbank.vn/ca-nhan/cong-cu-tien-ich/bieu-phi-va-bieu-mau/dich-vu-chap-nhan-thanh-toan-the-40-html", checked: "06/09/2026"}
@@ -25,9 +25,9 @@ Một website trung bình tới lớn ở Việt Nam có khoảng bao nhiêu gia
 
 - **500 giao dịch/tháng (Shop nhỏ):** Phí cổng phần trăm lên tới 5–24 triệu đồng/tháng. MONA Pay không tính phí.
 - **2.000 giao dịch/tháng (Shop đang lớn):** Phí cổng phần trăm lấy đi 21–96 triệu đồng/tháng. MONA Pay giá 99.000 đ/tháng.
-- **10.000 giao dịch/tháng (Chuỗi, nền tảng vé):** Phí cổng phần trăm tốn 108–481 triệu đồng/tháng. MONA Pay giá 299.000 đ/tháng.
+- **10.000 giao dịch/tháng (Chuỗi, nền tảng vé):** Phí cổng phần trăm tốn 108–481 triệu đồng/tháng. MONA Pay giá 799.000 đ/tháng (gói Doanh nghiệp, tới 50.000 giao dịch).
 - **50.000 giao dịch/tháng (Nền tảng vừa):** Phí cổng phần trăm ngốn 0,5–2,4 tỷ đồng/tháng. MONA Pay giá 799.000 đ/tháng.
-- **300.000 giao dịch/tháng (Nền tảng lớn):** Phí cổng phần trăm ăn đứt 3–14 tỷ đồng/tháng. MONA Pay giá 1.990.000 đ/tháng.
+- **300.000 giao dịch/tháng (Nền tảng lớn):** Phí cổng phần trăm ăn đứt 3–14 tỷ đồng/tháng. MONA Pay gói Quy mô lớn tính tịnh tiến theo số giao dịch, liên hệ báo giá.
 
 ## 1. Khung quy mô website và giả định phân tích
 
@@ -73,15 +73,15 @@ Bảng dưới đây tính toán tổng chi phí hàng tháng, tỷ lệ phần 
 | 2.000 (Shop đang lớn) | 300.000 đ | 600.000.000 đ | 21.686.400 đ (3,61%, 10.843 đ/GD) | 41.880.000 đ (6,98%, 20.940 đ/GD) | 99.000 đ (0,02%, 49,50 đ/GD) |
 | 2.000 (Shop đang lớn) | 800.000 đ | 1.600.000.000 đ | 43.630.400 đ (2,73%, 21.815 đ/GD) | 85.880.000 đ (5,37%, 42.940 đ/GD) | 99.000 đ (0,01%, 49,50 đ/GD) |
 | 2.000 (Shop đang lớn) | 2.000.000 đ | 4.000.000.000 đ | 96.296.000 đ (2,41%, 48.148 đ/GD) | 191.480.000 đ (4,79%, 95.740 đ/GD) | 99.000 đ (0,00%, 49,50 đ/GD) |
-| 10.000 (Chuỗi/đặt vé) | 300.000 đ | 3.000.000.000 đ | 108.432.000 đ (3,61%, 10.843 đ/GD) | 208.440.000 đ (6,95%, 20.844 đ/GD) | 299.000 đ (0,01%, 29,90 đ/GD) |
-| 10.000 (Chuỗi/đặt vé) | 800.000 đ | 8.000.000.000 đ | 218.152.000 đ (2,73%, 21.815 đ/GD) | 428.440.000 đ (5,36%, 42.844 đ/GD) | 299.000 đ (0,00%, 29,90 đ/GD) |
-| 10.000 (Chuỗi/đặt vé) | 2.000.000 đ | 20.000.000.000 đ | 481.480.000 đ (2,41%, 48.148 đ/GD) | 956.440.000 đ (4,78%, 95.644 đ/GD) | 299.000 đ (0,00%, 29,90 đ/GD) |
+| 10.000 (Chuỗi/đặt vé) | 300.000 đ | 3.000.000.000 đ | 108.432.000 đ (3,61%, 10.843 đ/GD) | 208.440.000 đ (6,95%, 20.844 đ/GD) | 799.000 đ (0,03%, 79,90 đ/GD) |
+| 10.000 (Chuỗi/đặt vé) | 800.000 đ | 8.000.000.000 đ | 218.152.000 đ (2,73%, 21.815 đ/GD) | 428.440.000 đ (5,36%, 42.844 đ/GD) | 799.000 đ (0,01%, 79,90 đ/GD) |
+| 10.000 (Chuỗi/đặt vé) | 2.000.000 đ | 20.000.000.000 đ | 481.480.000 đ (2,41%, 48.148 đ/GD) | 956.440.000 đ (4,78%, 95.644 đ/GD) | 799.000 đ (0,00%, 79,90 đ/GD) |
 | 50.000 (Nền tảng vừa) | 300.000 đ | 15.000.000.000 đ | 542.160.000 đ (3,61%, 10.843 đ/GD) | 1.041.240.000 đ (6,94%, 20.825 đ/GD) | 799.000 đ (0,01%, 15,98 đ/GD) |
 | 50.000 (Nền tảng vừa) | 800.000 đ | 40.000.000.000 đ | 1.090.760.000 đ (2,73%, 21.815 đ/GD) | 2.141.240.000 đ (5,35%, 42.825 đ/GD) | 799.000 đ (0,00%, 15,98 đ/GD) |
 | 50.000 (Nền tảng vừa) | 2.000.000 đ | 100.000.000.000 đ | 2.407.400.000 đ (2,41%, 48.148 đ/GD) | 4.781.240.000 đ (4,78%, 95.625 đ/GD) | 799.000 đ (0,00%, 15,98 đ/GD) |
-| 300.000 (Nền tảng lớn) | 300.000 đ | 90.000.000.000 đ | 3.252.960.000 đ (3,61%, 10.843 đ/GD) | 6.246.240.000 đ (6,94%, 20.821 đ/GD) | 1.990.000 đ (0,00%, 6,63 đ/GD) |
-| 300.000 (Nền tảng lớn) | 800.000 đ | 240.000.000.000 đ | 6.544.560.000 đ (2,73%, 21.815 đ/GD) | 12.846.240.000 đ (5,35%, 42.821 đ/GD) | 1.990.000 đ (0,00%, 6,63 đ/GD) |
-| 300.000 (Nền tảng lớn) | 2.000.000 đ | 600.000.000.000 đ | 14.444.400.000 đ (2,41%, 48.148 đ/GD) | 28.686.240.000 đ (4,78%, 95.621 đ/GD) | 1.990.000 đ (0,00%, 6,63 đ/GD) |
+| 300.000 (Nền tảng lớn) | 300.000 đ | 90.000.000.000 đ | 3.252.960.000 đ (3,61%, 10.843 đ/GD) | 6.246.240.000 đ (6,94%, 20.821 đ/GD) | Tịnh tiến theo số giao dịch (liên hệ) |
+| 300.000 (Nền tảng lớn) | 800.000 đ | 240.000.000.000 đ | 6.544.560.000 đ (2,73%, 21.815 đ/GD) | 12.846.240.000 đ (5,35%, 42.821 đ/GD) | Tịnh tiến theo số giao dịch (liên hệ) |
+| 300.000 (Nền tảng lớn) | 2.000.000 đ | 600.000.000.000 đ | 14.444.400.000 đ (2,41%, 48.148 đ/GD) | 28.686.240.000 đ (4,78%, 95.621 đ/GD) | Tịnh tiến theo số giao dịch (liên hệ) |
 
 Chi phí từ cổng phần trăm tăng tuyến tính theo doanh thu. Nếu bán được một món đồ 2 triệu đồng, doanh nghiệp mất gần 50.000 đ tiền phí cho cổng nội địa và gần 100.000 đ nếu khách thanh toán qua PayPal. Với MONA Pay, phí biên trên mỗi giao dịch thêm vào luôn bằng 0.
 
@@ -117,7 +117,7 @@ Khoản chênh lệch giữa việc dùng cổng phần trăm và dùng gói thu
 Một thương hiệu thời trang hoặc nhà phân phối mỹ phẩm trực tuyến thu về 5 tỷ đồng mỗi tháng qua 10.000 đơn hàng nhỏ. Chi phí để nhận số tiền này qua các phương thức:
 - Dùng cổng phần trăm trong nước: Mất khoảng **152.320.000 đ** mỗi tháng. Toàn bộ biên lợi nhuận của hơn 300 đơn hàng đầu tiên bay hơi chỉ để trả phí giao dịch.
 - Dùng PayPal: Mất khoảng **296.440.000 đ** mỗi tháng. Một con số không tưởng nếu tệp khách hàng nằm hoàn toàn trong nước.
-- Dùng MONA Pay: Gói Kinh doanh giá **299.000 đ** mỗi tháng.
+- Dùng MONA Pay: Gói Doanh nghiệp giá **799.000 đ** mỗi tháng (tới 50.000 giao dịch).
 *Kết luận:* Mức phí 152 triệu so với 299 ngàn đồng cho thấy doanh nghiệp đang mất đi khoản tiền bằng lương của gần 20 nhân viên Sale/CSKH chỉ vì duy trì cổng thanh toán cũ.
 
 **Ca 2: Website nền tảng lớn (50.000 GD/tháng × 800.000 đ/đơn = Doanh thu 40 tỷ đ/tháng)**
