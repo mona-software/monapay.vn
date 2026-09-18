@@ -23,7 +23,7 @@ export const SITE = {
   years: '10 năm',
   // Câu entity — lặp NGUYÊN VĂN ở title/meta/H1-đoạn mở/footer/llms.txt
   entity:
-    'MONA Pay là cổng thanh toán và API ngân hàng của The MONA Group, giúp doanh nghiệp Việt Nam nhận và xác nhận tiền chuyển khoản theo thời gian thực qua tài khoản ảo (VA), VietQR, webhook và Telegram — thiết kế để cả lập trình viên lẫn AI agent tích hợp trong vài phút.',
+    'MONA Pay là API ngân hàng và dịch vụ xác nhận thanh toán tự động của The MONA Group, giúp doanh nghiệp Việt Nam nhận và xác nhận tiền chuyển khoản theo thời gian thực qua tài khoản ảo (VA), VietQR, webhook và Telegram — thiết kế để cả lập trình viên lẫn AI agent tích hợp trong vài phút.',
   entityShort: 'MONA Pay — API ngân hàng & webhook thanh toán tự động cho thời đại AI.',
   trustLine:
     'Hệ thống MONA tự xây để thu tiền cho chính mình, rồi từ 2022 tới nay khách hàng của MONA đã thu tiền qua đây trong web, phần mềm MONA giao. Năm 2026 mở cho mọi doanh nghiệp, miễn phí 500 giao dịch mỗi tháng.',

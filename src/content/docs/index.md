@@ -6,7 +6,7 @@ updated: 03/09/2026
 
 MONA Pay đọc thông báo giao dịch từ ngân hàng ACB ngay khi tiền vào tài khoản của anh chị, rồi bắn webhook về máy chủ của anh chị hoặc nhắn vào nhóm Telegram. Tiền không đi qua MONA Pay, vẫn vào thẳng tài khoản ngân hàng như bình thường. Tích hợp cơ bản mất khoảng 5 phút nếu anh chị đã có tài khoản ACB và một URL nhận webhook.
 
-> MONA Pay là cổng thanh toán và API ngân hàng của The MONA Group, giúp doanh nghiệp Việt Nam nhận và xác nhận tiền chuyển khoản theo thời gian thực qua tài khoản ảo (VA), VietQR, webhook và Telegram — thiết kế để cả lập trình viên lẫn AI agent tích hợp trong vài phút.
+> MONA Pay là API ngân hàng và dịch vụ xác nhận thanh toán tự động của The MONA Group, giúp doanh nghiệp Việt Nam nhận và xác nhận tiền chuyển khoản theo thời gian thực qua tài khoản ảo (VA), VietQR, webhook và Telegram — thiết kế để cả lập trình viên lẫn AI agent tích hợp trong vài phút.
 
 ## MONA Pay hoạt động thế nào
 

@@ -15,7 +15,7 @@ const out = {
   openapi: src.openapi || '3.1.0',
   info: {
     title: 'MONA Pay API v1', version: '1.0',
-    description: 'MONA Pay là cổng thanh toán và API ngân hàng của The MONA Group, giúp doanh nghiệp Việt Nam nhận và xác nhận tiền chuyển khoản theo thời gian thực qua tài khoản ảo (VA), VietQR, webhook, Telegram, nhóm Zalo và email. Tiền không đi qua MONA Pay. Tài liệu: https://monapay.vn/docs · llms.txt: https://monapay.vn/llms.txt',
+    description: 'MONA Pay là API ngân hàng và dịch vụ xác nhận thanh toán tự động của The MONA Group, giúp doanh nghiệp Việt Nam nhận và xác nhận tiền chuyển khoản theo thời gian thực qua tài khoản ảo (VA), VietQR, webhook, Telegram, nhóm Zalo và email. Tiền không đi qua MONA Pay. Tài liệu: https://monapay.vn/docs · llms.txt: https://monapay.vn/llms.txt',
     contact: { name: 'MONA Pay', url: 'https://monapay.vn', email: 'info@themona.global' },
   },
   servers: [{ url: 'https://api.monapay.vn', description: 'Production' }, { url: 'https://ipn.mona.host', description: 'Alias cũ (vẫn chạy)' }],

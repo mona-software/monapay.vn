@@ -1,7 +1,7 @@
 // Code mẫu + prompt AI dùng ở trang chủ (tách khỏi index.astro cho gọn). Số kỹ thuật lấy từ SITE.tech.
 import { SITE } from './site';
 
-export const AI_PROMPT = `Tích hợp MONA Pay (cổng thanh toán nội địa Việt Nam: nhận và xác nhận tiền
+export const AI_PROMPT = `Tích hợp MONA Pay (API ngân hàng nội địa Việt Nam: nhận và xác nhận tiền
 chuyển khoản ngân hàng theo thời gian thực) vào dự án của tôi.
 
 Base URL API: ${SITE.api} (legacy: ${SITE.apiLegacy})

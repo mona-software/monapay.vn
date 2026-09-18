@@ -21,8 +21,8 @@ const isFree = PRICING_MODE === 'free-all';
 const priceCap = PRICE_LINE.charAt(0).toUpperCase() + PRICE_LINE.slice(1);
 const liveBank = LIVE_BANKS[0]?.name ?? 'ACB';
 
-const title = 'Cổng thanh toán tự động báo có chuyển khoản, miễn phí | MONA Pay';
-const description = `Cổng thanh toán tự động báo có MONA Pay: khách chuyển khoản là website, phần mềm, Telegram và email biết ngay, đơn tự xác nhận. ${isFree ? 'Miễn phí, không giới hạn giao dịch.' : `Miễn phí ${FREE_TX_PER_MONTH} giao dịch/tháng.`}`;
+const title = 'API ngân hàng tự động báo có chuyển khoản, miễn phí | MONA Pay';
+const description = `MONA Pay, API ngân hàng tự động báo có: khách chuyển khoản là website, phần mềm, Telegram và email biết ngay, đơn tự xác nhận. ${isFree ? 'Miễn phí, không giới hạn giao dịch.' : `Miễn phí ${FREE_TX_PER_MONTH} giao dịch/tháng.`}`;
 
 const stats = [
   { value: String(SITE.founded), label: 'năm The MONA Group thành lập, hơn 10 năm làm web và phần mềm' },
@@ -94,7 +94,7 @@ const jsonld = [{
   <section class="hero">
     <div class="wrap hero-narrow">
       <span class="eyebrow">Cho doanh nghiệp kinh doanh online · The MONA Group</span>
-      <h1>Cổng thanh toán tự động báo có<br class="br-d" /> <span class="accent">miễn phí cho doanh nghiệp online</span></h1>
+      <h1>API ngân hàng tự động báo có<br class="br-d" /> <span class="accent">miễn phí cho doanh nghiệp online</span></h1>
       <div class="btn-row">
         <a class="btn btn-primary" href={SITE.appRegister}>Tạo tài khoản miễn phí</a>
         <a class="btn btn-outline" href="#cach-hoat-dong">Xem cách hoạt động</a>
