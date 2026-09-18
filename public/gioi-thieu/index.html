@@ -1,0 +1,637 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="robots" content="noindex, nofollow, noarchive"><meta name="description" content="Hồ sơ giới thiệu MONA Pay 2026: hạ tầng báo có tự động cho người và AI, chạy tiền thật từ 2022, 29 ngân hàng, SDK 12 ngôn ngữ, thiết kế AI-Friendly."></head><body>
+<meta charset="utf-8">
+<title>MONA Pay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+  :root{
+    --bg:#160a0f;
+    --bg-2:#1b0c11;
+    --surface:#241019;
+    --surface-2:#2c1420;
+    --ink:#fff7f9;
+    --text:#e9d6dc;
+    --text-soft:#b491a0;
+    --line:rgba(255,255,255,.10);
+    --line-2:rgba(255,255,255,.17);
+    --warm-line:#5b3542;
+    --pink:#f1a0b2;
+    --pink-deep:#e16b87;
+    --teal:#36bfb2;
+    --teal-deep:#0f8f81;
+    --pink-subtle:rgba(241,160,178,.13);
+    --teal-subtle:rgba(54,191,178,.13);
+    --radius:20px;
+    --radius-sm:13px;
+    --maxw:1080px;
+    --font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:
+      radial-gradient(900px 520px at 82% -6%,rgba(241,160,178,.14),transparent 60%),
+      radial-gradient(820px 520px at 4% 3%,rgba(54,191,178,.11),transparent 58%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--font);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.62;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:20px}
+  section{padding-block:60px;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:0}
+
+  .eyebrow{
+    display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--pink);background:var(--pink-subtle);padding:6px 13px;border-radius:100px;line-height:1.5;margin:0 0 18px;
+    border:1px solid rgba(241,160,178,.22);
+  }
+  h1,h2,h3{margin:0;color:var(--ink);text-wrap:balance;line-height:1.3}
+  h2{font-size:clamp(25px,4.2vw,38px);font-weight:800;letter-spacing:-.012em;padding-bottom:2px}
+  h3{font-size:18px;font-weight:700}
+  .lead{font-size:clamp(15.5px,2.1vw,18px);color:var(--text);max-width:64ch;margin:16px 0 0}
+  p{margin:13px 0 0}
+  strong{color:var(--ink);font-weight:700}
+  .teal{color:var(--teal)}
+  .pink{color:var(--pink)}
+
+  /* ---------- COVER ---------- */
+  .cover{border-top:0;position:relative;overflow:hidden;padding-block:clamp(40px,7vw,64px) clamp(56px,10vw,96px)}
+  .cover-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:clamp(48px,9vw,88px)}
+  .cover-top img{height:34px;width:auto;display:block}
+  .doclabel{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-soft);font-weight:600;text-align:right;line-height:1.5}
+  .cover h1{font-size:clamp(44px,9vw,92px);font-weight:900;letter-spacing:-.035em;line-height:.98;color:var(--ink)}
+  .cover h1 .g{background:linear-gradient(96deg,var(--teal),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cover .tag{margin-top:22px;font-size:clamp(17px,2.7vw,23px);font-weight:600;color:#f6e7ec;max-width:22ch;line-height:1.28}
+  .cover .sub{margin-top:20px;font-size:15px;color:var(--text-soft);max-width:54ch}
+  .cover .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+  .badge{font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:100px;border:1px solid var(--line-2);
+    background:rgba(255,255,255,.03);color:#e9d6dc}
+  .badge b{color:var(--ink)}
+  .cover-orb{position:absolute;right:-120px;top:44%;z-index:-1;width:min(44vw,420px);aspect-ratio:1;border-radius:50%;
+    background:conic-gradient(from 180deg,var(--teal),var(--pink),var(--pink-deep),var(--teal));filter:blur(3px);opacity:.13}
+
+  /* ---------- generic ---------- */
+  .grid{display:grid;gap:16px}
+  @media(min-width:720px){.cols-3{grid-template-columns:repeat(3,1fr)}.cols-2{grid-template-columns:1fr 1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:23px 21px;position:relative;overflow:hidden}
+  .card .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;margin-bottom:14px;
+    background:var(--teal-subtle);border:1px solid rgba(54,191,178,.28);color:var(--teal)}
+  .card .ic svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7}
+  .card h3{margin-bottom:7px}
+  .card p{color:var(--text-soft);font-size:14.5px;margin-top:6px}
+  .card .num{position:absolute;top:15px;right:17px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--pink);font-weight:700;opacity:.8}
+  .ucard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .ucard img{width:100%;height:auto;display:block;border-bottom:1px solid var(--line)}
+  .ucard .b{padding:17px 20px}
+  .ucard .b p{margin:0;color:var(--text-soft);font-size:14px}
+  .conceptfull{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line);margin-top:24px}
+  .slide{margin-top:20px}
+  .slide img{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line)}
+  .slide p{color:var(--text-soft);font-size:14.5px;margin:12px 0 0;max-width:72ch}
+
+  /* framed screenshot */
+  .shotgrid{display:grid;gap:16px;margin-top:26px}
+  @media(min-width:640px){.shotgrid{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.shotgrid.three{grid-template-columns:repeat(3,1fr)}}
+  .shot{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .shot .bar{display:flex;align-items:center;gap:6px;padding:10px 13px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+  .shot .bar i{width:9px;height:9px;border-radius:50%;background:var(--warm-line);display:block}
+  .shot .bar i:nth-child(1){background:#e16b87}
+  .shot .bar span{margin-left:8px;font-size:11px;color:var(--text-soft);font-family:'JetBrains Mono',monospace}
+  .shot img{display:block;width:100%;height:auto;background:#fff}
+  .shot .cap{padding:12px 15px;font-size:13px;color:var(--text-soft);border-top:1px solid var(--line)}
+  .shot .cap b{color:var(--ink);font-weight:600}
+
+  /* flow */
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:11px;margin-top:28px}
+  .fnode{flex:1 1 150px;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:15px 14px;display:flex;flex-direction:column;gap:6px}
+  .fnode .ft{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-weight:700}
+  .fnode .fb{font-size:14px;font-weight:600;color:var(--ink);line-height:1.35}
+  .fnode.hot{border-color:transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(120deg,var(--teal),var(--pink)) border-box}
+  .fnode .split{display:flex;gap:6px;margin-top:3px;flex-wrap:wrap}
+  .chip{font-size:11px;font-weight:600;padding:3px 9px;border-radius:7px;background:var(--teal-subtle);border:1px solid rgba(54,191,178,.28);color:var(--teal)}
+  .farrow{display:flex;align-items:center;color:var(--warm-line);font-size:19px;align-self:center}
+  @media(max-width:719px){.farrow{transform:rotate(90deg)}.flow{flex-direction:column}.fnode{flex-basis:auto}}
+
+  /* timeline */
+  .tl{display:flex;flex-wrap:wrap;gap:13px;margin-top:26px}
+  .tl .step{flex:1 1 200px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:19px}
+  .tl .yr{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13.5px;color:var(--teal);margin-bottom:8px}
+  .tl .step p{margin:0;color:var(--text-soft);font-size:13.5px}
+
+  /* security */
+  .seclist{display:grid;gap:13px;margin-top:24px}
+  @media(min-width:720px){.seclist{grid-template-columns:1fr 1fr}}
+  .secitem{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .secitem .si{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--teal-subtle);border:1px solid rgba(54,191,178,.28);color:var(--teal)}
+  .secitem .si svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7}
+  .secitem h3{font-size:15.5px;margin-bottom:4px}
+  .secitem p{margin:0;color:var(--text-soft);font-size:13.5px}
+
+  /* tech chips */
+  .techlbl{margin:24px 0 0;font-size:13px;color:var(--text-soft);font-weight:700;letter-spacing:.03em}
+  .techgrid{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+  .tech{display:flex;align-items:center;gap:9px;padding:10px 15px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-weight:600;font-size:13.5px;color:var(--ink)}
+  .tech .sq{width:9px;height:9px;border-radius:3px;background:linear-gradient(120deg,var(--teal),var(--pink))}
+  .logorow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  .lchip{display:flex;align-items:center;gap:10px;padding:8px 15px 8px 8px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-weight:600;font-size:13.5px;color:var(--ink)}
+  .lchip.txt{padding:11px 15px;color:var(--text-soft)}
+  .ltile{width:30px;height:30px;border-radius:8px;background:#fff;display:grid;place-items:center;flex:none}
+  .ltile img{width:19px;height:19px;object-fit:contain;display:block}
+  .bankgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:9px;margin-top:22px}
+  .bank{aspect-ratio:37/20;background:#fff;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;padding:8px 11px}
+  .bank img{max-width:100%;max-height:24px;object-fit:contain;display:block}
+
+  /* AI cards */
+  .airow{display:grid;gap:16px;margin-top:24px}
+  @media(min-width:760px){.airow{grid-template-columns:repeat(3,1fr)}}
+  .aicard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+  .aicard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--pink))}
+  .aihead{display:flex;align-items:center;gap:11px}
+  .ailogo{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:#fff;border:1px solid var(--line-2);flex:none}
+  .ailogo img{width:26px;height:26px;object-fit:contain;display:block}
+  .ainame{font-weight:700;font-size:15.5px;color:var(--ink)}
+  .aimeta{font-size:11px;color:var(--text-soft);font-family:'JetBrains Mono',monospace}
+  .aichip{margin-left:auto;font-size:10.5px;font-weight:700;color:var(--teal);background:var(--teal-subtle);border:1px solid rgba(54,191,178,.28);padding:4px 9px;border-radius:100px;white-space:nowrap}
+  .aiquote{font-size:14px;color:var(--text);line-height:1.62;flex:1}
+  .aifoot{font-size:11px;color:var(--text-soft);font-family:'JetBrains Mono',monospace;border-top:1px solid var(--line);padding-top:11px}
+
+  /* eco */
+  .eco{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}
+  .eco .e{flex:1 1 150px;text-align:center;padding:19px 14px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-weight:700;color:var(--ink)}
+  .eco .e span{display:block;font-size:11px;color:var(--text-soft);font-weight:600;margin-top:5px;text-transform:uppercase;letter-spacing:.07em}
+  .eco .e.pay{border-color:transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(120deg,var(--teal),var(--pink)) border-box}
+  .eco .e.pay span{color:var(--teal)}
+
+  /* stats */
+  .stats{display:flex;flex-wrap:wrap;gap:13px;margin-top:24px}
+  .stat{flex:1 1 130px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:19px}
+  .stat .n{font-size:clamp(25px,3.6vw,33px);font-weight:900;letter-spacing:-.02em;line-height:1;color:var(--teal)}
+  .stat .t{font-size:12.5px;color:var(--text-soft);margin-top:8px}
+  .pillars{display:grid;gap:13px;margin-top:22px}
+  @media(min-width:720px){.pillars{grid-template-columns:repeat(3,1fr)}}
+  .pillar{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:19px}
+  .pillar h3{font-size:15.5px;margin-bottom:5px}
+  .pillar p{margin:0;font-size:13px;color:var(--text-soft)}
+
+  .photostrip{display:grid;gap:12px;margin-top:22px;grid-template-columns:1fr 1fr}
+  @media(min-width:720px){.photostrip{grid-template-columns:1.3fr .9fr 1.1fr}}
+  .photostrip figure{margin:0;position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .photostrip img{display:block;width:100%;height:150px;object-fit:cover}
+  .photostrip figcaption{position:absolute;left:8px;right:8px;bottom:8px;padding:6px 9px;border-radius:8px;background:rgba(21,10,14,.82);color:#fff;font-size:11px;line-height:1.35;backdrop-filter:blur(3px)}
+  @media(max-width:719px){.photostrip figure:nth-child(n+3){display:none}}
+
+  .legal{margin-top:22px;padding:18px 20px;border-left:2px solid var(--pink);background:var(--surface);border-radius:0 14px 14px 0}
+  .legal .ln{font-size:14.5px;color:var(--ink);font-weight:600}
+  .legal .la{font-size:12.5px;color:var(--text-soft);margin-top:4px}
+
+  /* CTA */
+  .cta{margin-top:8px;border-radius:24px;padding:clamp(30px,5vw,44px) clamp(22px,4vw,36px);position:relative;overflow:hidden;
+    background:linear-gradient(120deg,rgba(54,191,178,.14),rgba(241,160,178,.14));border:1px solid var(--line-2)}
+  .cta h2{font-size:clamp(23px,3.8vw,33px)}
+  .cta .row{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
+  .contact{display:flex;flex-direction:column;padding:13px 20px;border-radius:13px;font-weight:700;background:rgba(255,255,255,.05);border:1px solid var(--line-2);color:var(--ink);font-size:15px}
+  .contact.hot{background:linear-gradient(120deg,var(--teal),var(--pink));border-color:transparent;color:#160a0f}
+  .contact .cl{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:2px}
+  .contact.hot .cl{color:rgba(22,10,15,.7)}
+
+  footer{padding:32px 20px 40px;text-align:center;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:14px}
+  footer img{height:26px;width:auto;opacity:.9}
+  footer .fl{color:var(--text-soft);font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em}
+
+  .note{font-size:12.5px;color:var(--text-soft);margin-top:14px;display:flex;gap:8px;align-items:flex-start}
+  .note::before{content:"◆";color:var(--teal);font-size:9px;margin-top:5px;flex:none}
+
+  @media(prefers-reduced-motion:no-preference){.cover-orb{animation:spin 44s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}}
+
+  /* ===== interactivity / lung linh ===== */
+  .card,.ucard,.shot,.aicard,.pillar,.secitem,.tl .step,.slide{transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s,border-color .28s}
+  .tech,.lchip,.badge,.eco .e,.stat,.fnode,.bank,.contact{transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,border-color .22s}
+  .card:hover,.ucard:hover,.shot:hover,.aicard:hover,.pillar:hover,.secitem:hover,.tl .step:hover{border-color:var(--line-2);box-shadow:0 16px 40px rgba(0,0,0,.38)}
+  .tech:hover,.lchip:hover,.badge:hover,.eco .e:hover,.stat:hover,.fnode:hover,.contact:hover{transform:translateY(-2px);border-color:var(--line-2)}
+  .bank:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 28px rgba(0,0,0,.45);z-index:2}
+  .ltile{transition:transform .22s}
+  .lchip:hover .ltile{transform:scale(1.1)}
+  .slide img,.conceptfull{transition:transform .38s cubic-bezier(.2,.7,.3,1),box-shadow .38s}
+  .slide:hover img,.conceptfull:hover{transform:translateY(-5px) scale(1.006);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .wrap,footer{position:relative;z-index:1}
+  .cursor-glow{position:fixed;top:0;left:0;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;transform:translate(-50%,-50%);opacity:0;transition:opacity .5s;
+    background:radial-gradient(circle,rgba(54,191,178,.17),rgba(241,160,178,.11) 42%,transparent 70%)}
+  .card,.ucard,.aicard,.shot{--mx:50%;--my:50%}
+  .card::after,.ucard::after,.aicard::after,.shot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(340px circle at var(--mx) var(--my),rgba(255,255,255,.07),transparent 60%)}
+  .card:hover::after,.ucard:hover::after,.aicard:hover::after,.shot:hover::after{opacity:1}
+  body.anim [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+  body.anim [data-reveal].in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .cursor-glow{display:none}
+    body.anim [data-reveal]{opacity:1!important;transform:none!important;transition:none}
+    .card,.ucard,.shot,.aicard,.slide img,.conceptfull{transition:none}
+  }
+
+  /* ===== DECK MODE — thuyết trình lật trang ===== */
+  body.deck{overflow:hidden}
+  body.deck section{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;padding-block:56px 96px;border-top:0;opacity:0;visibility:hidden;transform:translateX(48px) scale(.985);transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.3,1);pointer-events:none;z-index:1}
+  body.deck section>.wrap{margin-block:auto;width:100%}
+  body.deck section.active{opacity:1;visibility:visible;transform:none;pointer-events:auto;z-index:2}
+  body.deck section.exit{transform:translateX(-48px) scale(.985)}
+  body.deck footer{display:none}
+  body.deck section::-webkit-scrollbar{width:0}
+  .dprogress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--pink));z-index:60;transition:width .55s cubic-bezier(.2,.7,.3,1);box-shadow:0 0 12px rgba(54,191,178,.5)}
+  .dbar{position:fixed;z-index:55;font-family:'JetBrains Mono',monospace;color:var(--text-soft)}
+  .dcount{right:20px;bottom:18px;font-size:12px;letter-spacing:.05em}
+  .dcount b{color:var(--ink)}
+  .dctrl{right:16px;bottom:42px;display:flex;gap:8px}
+  .dbtn{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.05);border:1px solid var(--line-2);color:var(--ink);cursor:pointer;display:grid;place-items:center;font-size:19px;line-height:1;transition:background .2s,transform .2s,opacity .2s}
+  .dbtn:hover{background:rgba(255,255,255,.13);transform:translateY(-2px)}
+  .dbtn:disabled{opacity:.3;cursor:default;transform:none}
+  .dhint{left:20px;bottom:18px;font-size:11px;opacity:.55}
+  .dmenu{position:fixed;inset:0;z-index:80;background:rgba(12,6,9,.94);backdrop-filter:blur(8px);display:none;padding:60px 24px;overflow:auto}
+  .dmenu.open{display:block}
+  .dmenu h4{color:var(--text-soft);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px;text-align:center;font-family:'JetBrains Mono',monospace}
+  .dmenu-grid{max-width:720px;margin:0 auto;display:grid;gap:9px}
+  .dmenu-item{display:flex;gap:14px;align-items:center;padding:13px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);color:var(--ink);cursor:pointer;text-align:left;font-size:14.5px;font-weight:600;transition:border-color .2s,transform .2s}
+  .dmenu-item:hover,.dmenu-item.on{border-color:var(--pink);transform:translateX(4px)}
+  .dmenu-item .n{font-family:'JetBrains Mono',monospace;color:var(--teal);font-size:13px;min-width:26px}
+  @media(max-width:640px){.dctrl{bottom:40px}.dbtn{width:38px;height:38px}.dhint{display:none}}
+  @media(prefers-reduced-motion:reduce){body.deck section{transition:none;transform:none}.dprogress{transition:none}}
+  @media print{
+    body.deck{overflow:visible}
+    body.deck section{position:relative;inset:auto;opacity:1;visibility:visible;transform:none;page-break-after:always;min-height:96vh}
+    .dprogress,.dbar,.dmenu,.cursor-glow{display:none!important}
+  }
+</style>
+
+<!-- ================= COVER ================= -->
+<section class="cover">
+  <div class="cover-orb"></div>
+  <div class="wrap">
+    <div class="cover-top">
+      <img src="/img/gioi-thieu/brand/monapay-logo-dark.svg" alt="MONA Pay">
+      <div class="doclabel">Hồ sơ giới thiệu · 2026<br>The MONA Group</div>
+    </div>
+    <h1>Hạ tầng báo có<br>cho <span class="g">người và AI</span></h1>
+    <div class="tag">Cổng thanh toán tự động báo có qua Open Banking — thiết kế AI‑Friendly.</div>
+    <div class="sub">Tiền vào, hệ thống tự biết. Người và AI đều lắp vào trong vài phút.</div>
+    <div class="badges">
+      <span class="badge"><b>Tự báo có</b> tự động</span>
+      <span class="badge">AI lắp trong <b>1–3 phút</b></span>
+      <span class="badge">Chạy tiền thật <b>từ 2022</b></span>
+      <span class="badge"><b>29</b> ngân hàng · <b>6.000+</b> khách</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 1. LÀ GÌ ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">MONA Pay là gì</span>
+  <h2>Nhận tiền và báo có tự động, cho cả người lẫn AI</h2>
+  <p class="lead answer-first">MONA Pay là hạ tầng nhận tiền và báo có tự động cho doanh nghiệp Việt. Khách chuyển khoản vào tài khoản ngân hàng, hệ thống nhận diện đúng giao dịch và báo ngay về phần mềm, website hoặc bot Zalo/Telegram của anh chị — con người rảnh tay khỏi mở app ngân hàng canh sao kê hay đối chiếu thủ công.</p>
+  <p class="lead">Điểm làm nên khác biệt: MONA Pay được thiết kế để cả con người lẫn AI đều tích hợp được. Một trợ lý lập trình AI như Claude Code hay Codex tự đọc tài liệu và lắp MONA Pay vào phần mềm chỉ trong <strong>1–3 phút</strong>.</p>
+</div></section>
+
+<!-- ================= 2. VẤN ĐỀ ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Vấn đề</span>
+  <h2>Anh chị còn xác nhận từng đơn chuyển khoản bằng tay?</h2>
+  <p class="lead">Gần như mọi doanh nghiệp bán hàng ở Việt Nam đều nhận tiền qua chuyển khoản. Phần lớn vẫn xử lý khâu “biết khách đã trả chưa” bằng sức người: nhân viên mở app ngân hàng, dò nội dung chuyển khoản, đối chiếu với đơn, rồi gõ tay vào phần mềm. Cách này chậm, dễ nhầm, tốn người, và tắc nghẽn ngay khi lượng đơn tăng lên.</p>
+  <p class="lead">Cùng lúc đó, AI đang làm phần mềm mọc lên với tốc độ chưa từng thấy. Giám đốc, quản lý, cả người không phải dân lập trình giờ cũng tự dựng được SaaS, web bán hàng, app nội bộ bằng vibe coding. Mỗi ngày hàng chục ngàn phần mềm mới ra lò, và tất cả đều cần một câu trả lời: làm sao nhận tiền tự động? Các cổng thanh toán bên ngoài thì thủ tục nặng, tích hợp phức tạp, chi phí cao.</p>
+  <p class="lead"><strong>MONA Pay trả lời đúng câu hỏi đó</strong>, cho cả doanh nghiệp lớn lẫn người vừa vibe code ra phần mềm đầu tiên.</p>
+</div></section>
+
+<!-- ================= 3. NGUỒN GỐC ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Nguồn gốc</span>
+  <h2>Hạ tầng đã chạy tiền thật từ 2022</h2>
+  <p class="lead">MONA tự xây hệ thống nhận và xác nhận chuyển khoản để thu tiền cho chính mình trước. Từ 2022, hệ thống này nhúng vào web và phần mềm giao cho khách hàng của MONA, chạy với dòng tiền thật mỗi ngày, chưa từng mở ra bán cho thị trường.</p>
+  <p class="lead">Khi làn sóng AI và vibe coding đẩy nhu cầu lên cao, MONA đóng gói phần hạ tầng đã tôi luyện này thành sản phẩm và mở public tại monapay.vn. Người dùng nhận được một hệ thống đã qua nhiều năm vận hành tiền thật.</p>
+  <div class="tl">
+    <div class="step"><div class="yr">2022</div><p>Tự xây để thu tiền cho MONA + nhúng vào web/phần mềm giao khách B2B.</p></div>
+    <div class="step"><div class="yr">2022 → 2026</div><p>6.000+ khách hàng MONA thu tiền qua hệ thống mỗi ngày, không public.</p></div>
+    <div class="step"><div class="yr">29/08/2026</div><p>Mở public thành MONA Pay tại monapay.vn cho mọi doanh nghiệp.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 4. TRONG SP MONA ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Đã chạy thật trong hệ sinh thái MONA</span>
+  <h2>MONA Pay là bộ máy báo có bên dưới nhiều sản phẩm MONA</h2>
+  <p class="lead">Cách chắc chắn nhất để đánh giá một hạ tầng thanh toán là xem nó đang gánh tiền thật ở đâu. MONA Pay đang vận hành mỗi ngày trong:</p>
+  <div class="grid cols-2" style="margin-top:24px">
+    <div class="ucard"><img src="/img/gioi-thieu/concept/usecase-sales-os.png" alt="Sales OS — AI kế toán"><div class="b"><p>Sales OS là CRM tích hợp trọn AI Agent. Toàn bộ cơ chế kế toán chạy trên MONA Pay: tiền chảy vào tới đâu, bộ máy tự vận hành tới đó — ghi doanh thu, cập nhật trạng thái, kích hoạt quy trình. Gần như cả công ty tự chạy theo dòng tiền.</p></div></div>
+    <div class="ucard"><img src="/img/gioi-thieu/concept/usecase-mona-host.png" alt="MONA Host — thanh toán tự động"><div class="b"><p>Toàn bộ khâu thanh toán của MONA Host tự động hóa hoàn toàn nhờ MONA Pay. Khách trả tiền hosting, tên miền, máy chủ là hệ thống tự nhận tiền, tự gia hạn, tự kích hoạt dịch vụ.</p></div></div>
+    <div class="ucard"><img src="/img/gioi-thieu/concept/usecase-mona-lms.png" alt="MONA LMS — thu học phí qua Zalo"><div class="b"><p>Mỗi tháng phụ huynh tự nhận thông báo học phí và các khoản phí khác qua Zalo. Phụ huynh chuyển khoản xong, MONA Pay tự báo có và hệ thống cập nhật đã đóng — trung tâm rảnh tay khỏi nhắn nhắc, dò sao kê hay gạch nợ từng em.</p></div></div>
+    <div class="ucard"><img src="/img/gioi-thieu/concept/usecase-de-cuoi.png" alt="AI Agent Dê Cười — QR thu hộ công nợ"><div class="b"><p>Với doanh nghiệp e‑commerce có bán sỉ, Dê Cười theo dõi công nợ từng đối tác. Khi khoản nợ tới hạn hoặc vượt trần, hệ thống tự tạo mã QR thu hộ. Chủ doanh nghiệp giữ được mối quan hệ với đối tác, mà tiền vẫn về đúng hạn.</p></div></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n">2.000+</div><div class="t">website thương mại điện tử của MONA chạy trên MONA Pay</div></div>
+    <div class="stat"><div class="n">800+</div><div class="t">hệ thống website e‑learning của mona.academy</div></div>
+    <div class="stat"><div class="n">6.000+</div><div class="t">khách hàng MONA đã thu tiền qua hệ thống</div></div>
+  </div>
+</div></section>
+
+<!-- ================= 5. BÊN TRONG PHẦN MỀM ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Bên trong MONA Pay</span>
+  <h2>Một dashboard gọn, chủ tiệm lẫn lập trình viên đều dùng được</h2>
+  <p class="lead">Toàn bộ việc nhận tiền quản lý ở một chỗ tại <strong>my.monapay.vn</strong>: kích hoạt tài khoản, nối ngân hàng, tạo VietQR, cấu hình kênh báo có, xem sổ giao dịch và webhook. Ảnh chụp thật từ phần mềm:</p>
+  <div class="shotgrid three">
+    <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Tổng quan</span></div><img src="/img/gioi-thieu/shots/db-overview.webp" alt="Màn hình tổng quan tài chính MONA Pay"><div class="cap"><b>Tổng quan tài chính</b> — kích hoạt tài khoản, VA, kênh báo có, theo dõi giao dịch.</div></div>
+    <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Giao dịch</span></div><img src="/img/gioi-thieu/shots/db-transactions.webp" alt="Sổ giao dịch MONA Pay"><div class="cap"><b>Sổ giao dịch</b> — lọc theo ngày/tài khoản, đối soát, xuất CSV cho kế toán.</div></div>
+    <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Tạo QR</span></div><img src="/img/gioi-thieu/shots/db-qr.webp" alt="Tạo VietQR động"><div class="cap"><b>VietQR động</b> — mỗi đơn một mã điền sẵn số tiền và nội dung, khách quét là khớp.</div></div>
+    <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Telegram</span></div><img src="/img/gioi-thieu/shots/db-telegram.webp" alt="Báo có qua Telegram"><div class="cap"><b>Báo có Telegram</b> — cả nhóm cửa hàng thấy tiền vào cùng lúc, khỏi cầm app ngân hàng.</div></div>
+    <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Webhooks</span></div><img src="/img/gioi-thieu/shots/db-webhooks.webp" alt="Cấu hình webhook MONA Pay"><div class="cap"><b>Webhook ký số</b> — nối vào phần mềm, có lịch sử và nút gửi lại khi cần.</div></div>
+    <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Tích hợp</span></div><img src="/img/gioi-thieu/shots/db-integrations.webp" alt="Tích hợp nền tảng và SDK"><div class="cap"><b>Tích hợp</b> — nối sẵn nền tảng bán hàng và SDK cho lập trình viên.</div></div>
+  </div>
+  <p class="note">Ngoài dashboard, MONA Pay còn có hơn 30 video hướng dẫn nhúng ngay trong từng trang tài liệu — chủ tiệm xem thao tác và làm theo trên cùng một trang.</p>
+</div></section>
+
+<!-- ================= 6. BA CÁCH DÙNG ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Ba cách dùng</span>
+  <h2>Một hạ tầng, phục vụ ba nhóm rất khác nhau</h2>
+  <div class="slide"><img src="/img/gioi-thieu/concept/cach-1-tich-hop.png" alt="Tích hợp thẳng vào phần mềm & website"><p>Nối vào SaaS, web bán hàng, CRM hay app nội bộ để tự cộng tiền, kích hoạt đơn, nạp ví, mở khoá dịch vụ ngay khi khách chuyển khoản. Xác nhận thanh toán chạy tự động, không cần người can thiệp.</p></div>
+  <div class="slide"><img src="/img/gioi-thieu/concept/cach-2-tiem-nho.png" alt="Dùng độc lập cho quán, tiệm nhỏ"><p>Quán ăn, tạp hoá, shop nhỏ không có phần mềm vẫn dùng được. Có tiền vào là MONA Pay bắn một tin báo có vào Zalo/Telegram của chủ tiệm, kèm số tiền và nội dung. Khách trả xong biết ngay, khỏi canh app ngân hàng.</p></div>
+  <div class="slide"><img src="/img/gioi-thieu/concept/cach-3-ai.png" alt="Để AI tự lắp trong 1–3 phút"><p>Vì thiết kế AI‑Friendly, một trợ lý lập trình AI (Claude Code, Codex, Gemini/Antigravity) tự đọc tài liệu và tự lắp MONA Pay vào dự án chỉ sau 1–3 phút. Người chủ chỉ cần bảo AI “thêm chức năng nhận tiền”, phần còn lại AI lo.</p></div>
+</div></section>
+
+<!-- ================= 7. HAI TẦNG ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Kiến trúc · Hai tầng báo có</span>
+  <h2>Phủ gần như mọi ngân hàng Việt Nam</h2>
+  <p class="lead">Không phải ngân hàng nào cũng đã có hệ thống VA (Virtual Account — tài khoản định danh) hoàn chỉnh. MONA Pay dùng hai tầng để phủ rộng:</p>
+  <div class="grid cols-2" style="margin-top:20px">
+    <div class="card"><div class="num" style="font-size:11px">TẦNG 1</div><h3>Kết nối VA — chuẩn chỉnh</h3><p>Với ngân hàng đã hỗ trợ, mỗi giao dịch gắn một mã định danh riêng. Hệ thống biết chính xác tuyệt đối ai trả tiền và trả cho đơn nào — cách kết nối chuẩn và chính xác nhất.</p></div>
+    <div class="card"><div class="num" style="font-size:11px">TẦNG 2</div><h3>SMS/Email Banking — phủ rộng</h3><p>Với ngân hàng chưa có VA hoàn chỉnh, MONA Pay đọc thông báo biến động số dư qua SMS/Email Banking để vẫn báo có được. Khách ở gần như mọi ngân hàng dùng được ngay.</p></div>
+  </div>
+  <div class="flow">
+    <div class="fnode"><span class="ft">Bước 1</span><span class="fb">Tiền vào tài khoản ngân hàng</span></div>
+    <div class="farrow">›</div>
+    <div class="fnode hot"><span class="ft">Bước 2 · MONA Pay</span><span class="fb">Nhận diện giao dịch</span><div class="split"><span class="chip">VA</span><span class="chip">SMS/Email</span></div></div>
+    <div class="farrow">›</div>
+    <div class="fnode"><span class="ft">Bước 3</span><span class="fb">Đối chiếu đúng giao dịch</span></div>
+    <div class="farrow">›</div>
+    <div class="fnode"><span class="ft">Bước 4</span><span class="fb">Webhook ký số HMAC</span></div>
+    <div class="farrow">›</div>
+    <div class="fnode"><span class="ft">Bước 5 · Của khách</span><span class="fb">Phần mềm · Website · Bot · AI agent</span></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n">29</div><div class="t">ngân hàng Việt Nam đã tích hợp</div></div>
+    <div class="stat"><div class="n">11</div><div class="t">ngân hàng có VA + báo có realtime</div></div>
+    <div class="stat"><div class="n">18</div><div class="t">ngân hàng báo có qua biến động số dư</div></div>
+  </div>
+  <div class="bankgrid">
+    <div class="bank"><img src="/img/gioi-thieu/banks/acb.png" alt="ACB"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/vietcombank.png" alt="Vietcombank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/bidv.png" alt="BIDV"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/vietinbank.png" alt="VietinBank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/techcombank.png" alt="Techcombank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/mb.png" alt="MBBank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/vpbank.png" alt="VPBank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/agribank.png" alt="Agribank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/sacombank.png" alt="Sacombank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/tpbank.png" alt="TPBank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/ocb.png" alt="OCB"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/msb.png" alt="MSB"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/hdbank.png" alt="HDBank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/vib.png" alt="VIB"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/shb.png" alt="SHB"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/eximbank.png" alt="Eximbank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/lpbank.png" alt="LPBank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/seabank.png" alt="SeABank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/abbank.png" alt="ABBANK"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/kienlongbank.png" alt="KienLongBank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/namabank.png" alt="NamABank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/bacabank.png" alt="BacABank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/shinhan.png" alt="Shinhan Bank"></div>
+    <div class="bank"><img src="/img/gioi-thieu/banks/publicbank.png" alt="Public Bank"></div>
+  </div>
+  <p class="note">Logo là nhãn hiệu của các ngân hàng tương ứng, dùng để nhận diện ngân hàng khách chuyển khoản.</p>
+</div></section>
+
+<!-- ================= 8. BẢO MẬT ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Bảo mật & độ tin cậy</span>
+  <h2>An toàn từng đồng, đối soát từng giao dịch</h2>
+  <div class="seclist">
+    <div class="secitem"><div class="si"><svg viewBox="0 0 24 24"><path d="M4 10h16v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M12 3l8 7H4z"/></svg></div><div><h3>Tiền nằm ở tài khoản ngân hàng của khách</h3><p>Khách chuyển thẳng vào tài khoản đứng tên doanh nghiệp. MONA Pay chỉ đọc thông báo giao dịch rồi báo lại — không giữ tiền, không cần mật khẩu ngân hàng, ngừng dùng lúc nào tài khoản vẫn y nguyên.</p></div></div>
+    <div class="secitem"><div class="si"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h3>Tín hiệu báo có được ký số</h3><p>Mỗi tín hiệu mang chữ ký HMAC‑SHA256, bị từ chối nếu quá 5 phút (chống phát lại). Phần mềm khách xác thực trước khi cộng tiền.</p></div></div>
+    <div class="secitem"><div class="si"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><div><h3>Mỗi giao dịch cộng đúng một lần</h3><p>Idempotency + dedup theo mã giao dịch và số tiền: khách được cộng đúng một lần, kể cả khi tín hiệu bị gửi lặp.</p></div></div>
+    <div class="secitem"><div class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="11" r="3"/><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg></div><div><h3>Xác thực nhiều lớp cho quản trị</h3><p>Đăng nhập 2 lớp TOTP · API key theo scope · OAuth2 client credentials · rate limit · IP allowlist.</p></div></div>
+  </div>
+  <p class="note">Cam kết công khai tại monapay.vn/cam-ket-bao-mat và file SECURITY.md ở mọi repo. Đây là những gì MONA đã làm cho đúng suốt nhiều năm chạy tiền thật cho đối tác B2B.</p>
+</div></section>
+
+<!-- ================= 9. MỌI CÔNG NGHỆ ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Chơi được mọi công nghệ</span>
+  <h2>SDK 12 ngôn ngữ, plugin cắm thẳng — lắp vào là chạy</h2>
+  <p class="lead">MONA Pay không kén công nghệ. Có sẵn SDK cho 12 ngôn ngữ và plugin cho các nền tảng bán hàng phổ biến. Nếu anh chị (hoặc AI của anh chị) dùng công nghệ chưa có sẵn thư viện, MONA Pay vẫn là một API chuẩn kèm webhook, gọi được từ bất kỳ đâu.</p>
+  <p class="techlbl">Nối sẵn nền tảng bán hàng</p>
+  <div class="logorow">
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/woocommerce.svg" alt=""></span>WooCommerce</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/wordpress.svg" alt=""></span>WordPress</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/shopify.svg" alt=""></span>Shopify</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/prestashop.svg" alt=""></span>PrestaShop</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/googlesheets.svg" alt=""></span>Google Sheets</span>
+    <span class="lchip txt">+ Haravan · Sapo · KiotViet · OpenCart</span>
+  </div>
+  <p class="techlbl">Báo có gửi về đâu</p>
+  <div class="logorow">
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/telegram.svg" alt=""></span>Telegram</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/zalo.svg" alt=""></span>Zalo</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/gmail.svg" alt=""></span>Email</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/viber.svg" alt=""></span>Viber</span>
+  </div>
+  <p class="techlbl">SDK cho lập trình viên — 12 ngôn ngữ</p>
+  <div class="logorow">
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/nodedotjs.svg" alt=""></span>Node.js</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/php.svg" alt=""></span>PHP</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/python.svg" alt=""></span>Python</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/go.svg" alt=""></span>Go</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/dotnet.svg" alt=""></span>.NET</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/java.svg" alt=""></span>Java</span>
+    <span class="lchip"><span class="ltile"><img src="/img/gioi-thieu/logos/ruby.svg" alt=""></span>Ruby</span>
+    <span class="lchip txt">+ REST API + Webhook chuẩn</span>
+  </div>
+</div></section>
+
+<!-- ================= 10. AI-FRIENDLY ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">AI‑Friendly</span>
+  <h2>Thiết kế để AI tự đọc hiểu và tự lắp vào</h2>
+  <p class="lead">AI‑Friendly là triết lý xuyên suốt MONA Pay: hệ thống được viết để AI đọc hiểu và tự dùng được, chứ không chỉ dành cho con người đọc tài liệu.</p>
+  <div class="grid cols-3" style="margin-top:20px">
+    <div class="card"><h3>MCP server</h3><p>AI agent kết nối trực tiếp vào MONA Pay qua MCP.</p></div>
+    <div class="card"><h3>Schema sạch, máy đọc được</h3><p>Tài liệu và openapi.json rõ ràng, AI không phải đoán cách gọi.</p></div>
+    <div class="card"><h3>Lỗi rõ để AI tự sửa</h3><p>Thông báo lỗi đủ rõ để AI tự hiểu và tự khắc phục khi tích hợp.</p></div>
+  </div>
+  <div class="techgrid" style="margin-top:16px">
+    <span class="tech"><span class="sq"></span>llms.txt</span><span class="tech"><span class="sq"></span>openapi.json</span><span class="tech"><span class="sq"></span>MCP manifest</span><span class="tech"><span class="sq"></span>npm: monapay‑mcp</span><span class="tech"><span class="sq"></span>PyPI: monapay</span>
+  </div>
+  <p class="note">Tài liệu máy đọc công khai trên monapay.vn; SDK phát hành trên npm và PyPI. Dán một prompt là AI tự viết phần nhận tin, kiểm chữ ký và khớp đơn.</p>
+
+  <span class="eyebrow" style="margin-top:38px">Ba AI lớn nói gì về thiết kế AI‑Friendly của MONA Pay</span>
+  <div class="airow">
+    <div class="aicard"><div class="aihead"><div class="ailogo"><img src="/img/gioi-thieu/logos/ai-claude.svg" alt="Claude"></div><div><div class="ainame">Claude</div><div class="aimeta">Anthropic</div></div><span class="aichip">✓ Đánh giá thật</span></div><div class="aiquote">“Với MCP server cùng OpenAPI schema sạch, một AI agent tự khám phá endpoint và sinh code tích hợp mà gần như không phải đoán. Webhook ký số HMAC kèm idempotency và dedup theo mã giao dịch giúp luồng báo có an toàn ngay từ lần tích hợp đầu.”</div><div class="aifoot">Nhận xét thiết kế AI‑Friendly · 16/09/2026</div></div>
+    <div class="aicard"><div class="aihead"><div class="ailogo"><img src="/img/gioi-thieu/logos/ai-gemini.svg" alt="Gemini"></div><div><div class="ainame">Gemini</div><div class="aimeta">Google</div></div><span class="aichip">✓ Đánh giá thật</span></div><div class="aiquote">“Thiết kế này rất AI‑Friendly và đi đúng vào trọng tâm của thời Agentic Coding. Bộ ba llms.txt + openapi.json + MCP server cung cấp đúng context để một coding agent tự tích hợp trong vài phút mà không bị ảo giác.”</div><div class="aifoot">Nhận xét thiết kế AI‑Friendly · 16/09/2026</div></div>
+    <div class="aicard"><div class="aihead"><div class="ailogo"><img src="/img/gioi-thieu/logos/ai-openai.svg" alt="OpenAI"></div><div><div class="ainame">GPT</div><div class="aimeta">OpenAI</div></div><span class="aichip">✓ Đánh giá thật</span></div><div class="aiquote">“MCP server cùng OpenAPI schema sạch cho phép AI agent khám phá khả năng, hiểu cấu trúc dữ liệu và tạo mã tích hợp tương đối tự động. SDK/plugin sẵn cho Laravel, Node.js, Python, Next.js và WooCommerce giảm đáng kể lượng mã đặc thù AI phải tự suy luận.”</div><div class="aifoot">Nhận xét thiết kế AI‑Friendly · 16/09/2026</div></div>
+  </div>
+  <p class="note">Trích đánh giá thật (có rút gọn một vài chữ) từ Claude, Gemini và GPT về thiết kế AI‑Friendly của MONA Pay (16/09/2026); logo chính hãng Anthropic · Google · OpenAI. Có thể kèm ảnh chụp màn hình đánh giá thật khi cần.</p>
+</div></section>
+
+<!-- ================= 11. MONA CLOUD ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Hệ sinh thái</span>
+  <h2>MONA Pay nằm trong bộ MONA Cloud</h2>
+  <p class="lead">MONA Pay là một mảnh của <strong>MONA Cloud</strong> — bộ hạ tầng công nghệ AI‑Friendly sinh ra để giúp doanh nghiệp và cá nhân dựng phần mềm dễ dàng bằng các công cụ AI như Claude Code, Codex, Gemini/Antigravity. Có thể hình dung là bộ “Vercel + Supabase + Resend + Stripe phiên bản Việt Nam”, làm sẵn để AI agent lắp vào. Trong bộ đó, MONA Pay lo phần dòng tiền.</p>
+  <div class="eco">
+    <div class="e">Cloud<span>Deploy</span></div>
+    <div class="e">Base<span>Database</span></div>
+    <div class="e">Mail<span>Email giao dịch</span></div>
+    <div class="e pay">Pay<span>Dòng tiền</span></div>
+    <div class="e">eInvoice<span>Hoá đơn điện tử</span></div>
+  </div>
+</div></section>
+
+<!-- ================= 12. TĂNG TRƯỞNG ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Tốc độ tăng trưởng dự kiến</span>
+  <h2>Sẵn hai nguồn người dùng thật, cộng một thị trường đang phình</h2>
+  <div class="grid cols-2" style="margin-top:20px">
+    <div class="card"><h3>6.000+ khách đã dùng MONA Pay</h3><p>Khách hàng MONA đã thu tiền qua hệ thống này nhiều năm, sẵn nền để mở rộng.</p></div>
+    <div class="card"><h3>Hơn 5.000 khách chuyển đổi được</h3><p>Đang dùng giải pháp báo có/thanh toán của bên thứ ba, có thể chuyển thẳng sang MONA Pay.</p></div>
+  </div>
+  <p class="lead">Cộng thêm thị trường vibe code phình mỗi ngày với hàng chục ngàn phần mềm mới — mỗi phần mềm là một nhu cầu nhận tiền — tệp người dùng MONA Pay có dư địa tăng rất nhanh trong thời gian ngắn.</p>
+</div></section>
+
+<!-- ================= 13. VỀ MONA ================= -->
+<section><div class="wrap">
+  <span class="eyebrow">Về The MONA Group</span>
+  <h2>Đội đứng sau hàng ngàn hệ thống thật đang chạy mỗi ngày</h2>
+  <div class="stats">
+    <div class="stat"><div class="n">2016</div><div class="t">thành lập, gần 10 năm làm công nghệ cho thị trường Việt</div></div>
+    <div class="stat"><div class="n">14.000+</div><div class="t">dự án đã triển khai</div></div>
+    <div class="stat"><div class="n">85%</div><div class="t">khách hàng tiếp tục dùng dịch vụ</div></div>
+  </div>
+  <div class="pillars">
+    <div class="pillar"><h3>Mona.Media</h3><p>Thiết kế website, SEO tổng thể, quảng cáo, thương hiệu, nội dung.</p></div>
+    <div class="pillar"><h3>Mona.Software</h3><p>CRM/ERP/HRM theo yêu cầu cùng hơn 10 sản phẩm đóng gói.</p></div>
+    <div class="pillar"><h3>Mona.Host</h3><p>Hosting, máy chủ, tên miền, SSL, mona‑cloud đặt tại Việt Nam.</p></div>
+  </div>
+  <div class="photostrip">
+    <figure><img src="/img/gioi-thieu/team/mona-san-van-phong-doi-ngu.jpg" alt="Sàn văn phòng The MONA Group"><figcaption>Đội kỹ thuật và vận hành tại văn phòng MONA</figcaption></figure>
+    <figure><img src="/img/gioi-thieu/team/mona-dev-viet-phan-mem.jpg" alt="Kỹ sư MONA phát triển phần mềm"><figcaption>Đội in‑house trực hệ thống mỗi ngày</figcaption></figure>
+    <figure><img src="/img/gioi-thieu/team/mona-hop-khach-hang-doanh-nghiep.jpg" alt="MONA họp cùng khách hàng doanh nghiệp"><figcaption>Làm việc trực tiếp cùng khách doanh nghiệp</figcaption></figure>
+  </div>
+  <div class="legal">
+    <div class="ln">Công ty TNHH MONA MEDIA · MST 0313728397</div>
+    <div class="la">1073/23 Cách Mạng Tháng Tám, phường Tân Sơn Nhất, TP. Hồ Chí Minh · Đại diện: Vy Nguyễn Khánh Hùng, Giám đốc · 1900 636 648 · info@themona.global</div>
+  </div>
+</div></section>
+
+<!-- ================= 14. LIÊN HỆ ================= -->
+<section style="border-top:0"><div class="wrap">
+  <div class="cta">
+    <span class="eyebrow">Liên hệ</span>
+    <h2>Muốn xem MONA Pay chạy thật, hay để AI của anh chị thử lắp trong 3 phút?</h2>
+    <div class="row">
+      <div class="contact hot"><span class="cl">Tổng đài</span>1900 636 648</div>
+      <div class="contact"><span class="cl">Website</span>monapay.vn</div>
+      <div class="contact"><span class="cl">Email</span>info@monapay.vn</div>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <img src="/img/gioi-thieu/brand/mona-logo-the-mona-white.svg" alt="The MONA Group">
+  <div class="fl">The MONA Group · mona.media · mona.software · mona.host · monapay.vn · 1900 636 648</div>
+</footer>
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hoverable=matchMedia('(hover: hover)').matches;
+  if(!reduce && hoverable){
+    var glow=document.createElement('div');glow.className='cursor-glow';document.body.appendChild(glow);
+    var tx=innerWidth/2,ty=innerHeight/2,cx=tx,cy=ty,shown=false;
+    window.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;if(!shown){shown=true;glow.style.opacity='1';}},{passive:true});
+    (function loop(){cx+=(tx-cx)*.12;cy+=(ty-cy)*.12;glow.style.left=cx.toFixed(1)+'px';glow.style.top=cy.toFixed(1)+'px';requestAnimationFrame(loop);})();
+    document.querySelectorAll('.card,.ucard,.aicard,.shot').forEach(function(c){
+      c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();var mx=(e.clientX-r.left)/r.width,my=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',(mx*100).toFixed(1)+'%');c.style.setProperty('--my',(my*100).toFixed(1)+'%');c.style.transform='translateY(-4px) perspective(760px) rotateX('+((0.5-my)*3.5).toFixed(2)+'deg) rotateY('+((mx-0.5)*3.5).toFixed(2)+'deg)';},{passive:true});
+      c.addEventListener('mouseleave',function(){c.style.transform='';});
+    });
+  }
+  try{
+    var slides=[].slice.call(document.querySelectorAll('section'));
+    if(slides.length<2) return;
+    document.body.classList.add('deck','anim');
+    function mk(t,c){var e=document.createElement(t);e.className=c;return e;}
+    function mkbtn(x){var b=document.createElement('button');b.className='dbtn';b.type='button';b.textContent=x;return b;}
+    function pad(n){return (n<10?'0':'')+n;}
+    slides.forEach(function(s,si){ if(si===0) return;
+      s.querySelectorAll('.eyebrow,h1,h2,.lead,.card,.ucard,.shot,.aicard,.slide,.tl .step,.pillar,.secitem,.stat,.eco .e,.conceptfull,.bankgrid,.techgrid,.logorow,.flow,.legal,.cta').forEach(function(el){el.setAttribute('data-reveal','');});
+    });
+    var total=slides.length, idx=-1;
+    var prog=mk('div','dprogress');
+    var count=mk('div','dbar dcount');
+    var ctrl=mk('div','dbar dctrl');
+    var bPrev=mkbtn('‹'),bMenu=mkbtn('☰'),bNext=mkbtn('›');
+    var bFull=document.createElement('button');bFull.className='dbtn';bFull.type='button';
+    var FS_ON='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>';
+    var FS_OFF='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2M20 8V6a2 2 0 0 0-2-2h-2M4 16v2a2 2 0 0 0 2 2h2M20 16v2a2 2 0 0 1-2 2h-2"/></svg>';
+    bFull.innerHTML=FS_ON;
+    bPrev.title='Trước (←)';bMenu.title='Danh mục (O)';bFull.title='Toàn màn hình (F)';bNext.title='Sau (→)';
+    ctrl.appendChild(bPrev);ctrl.appendChild(bMenu);ctrl.appendChild(bFull);ctrl.appendChild(bNext);
+    var hint=mk('div','dbar dhint');hint.textContent='← → chuyển slide  ·  O danh mục  ·  F toàn màn hình';
+    var menu=mk('div','dmenu');var mh=document.createElement('h4');mh.textContent='Danh mục slide';menu.appendChild(mh);
+    var mgrid=mk('div','dmenu-grid');menu.appendChild(mgrid);
+    slides.forEach(function(s,i){
+      var h=s.querySelector('h1,h2');var t=h?h.textContent.trim():('Slide '+(i+1));
+      var it=document.createElement('button');it.className='dmenu-item';it.type='button';
+      var sp=mk('span','n');sp.textContent=pad(i+1);it.appendChild(sp);it.appendChild(document.createTextNode(t));
+      it.addEventListener('click',function(){menu.classList.remove('open');go(i);});
+      mgrid.appendChild(it);
+    });
+    [prog,count,ctrl,hint,menu].forEach(function(n){document.body.appendChild(n);});
+    function reveal(s){var els=s.querySelectorAll('[data-reveal]');els.forEach(function(el){el.classList.remove('in');});
+      if(reduce){els.forEach(function(el){el.classList.add('in');});return;}
+      els.forEach(function(el,i){setTimeout(function(){el.classList.add('in');},Math.min(i*55,650));});
+    }
+    function go(i){
+      i=Math.max(0,Math.min(total-1,i));if(i===idx) return;
+      slides.forEach(function(s,j){s.classList.remove('active','exit');if(j<i)s.classList.add('exit');});
+      idx=i;var cur=slides[i];cur.classList.add('active');cur.scrollTop=0;reveal(cur);
+      prog.style.width=((i+1)/total*100)+'%';
+      count.innerHTML='<b>'+pad(i+1)+'</b> / '+pad(total);
+      [].forEach.call(mgrid.children,function(c,j){c.classList.toggle('on',j===i);});
+      bPrev.disabled=i===0;bNext.disabled=i===total-1;
+      if(history.replaceState){history.replaceState(null,'','#'+(i+1));}
+    }
+    bNext.addEventListener('click',function(){go(idx+1);});
+    bPrev.addEventListener('click',function(){go(idx-1);});
+    bMenu.addEventListener('click',function(){menu.classList.toggle('open');});
+    function toggleFull(){try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}catch(_){}}
+    bFull.addEventListener('click',toggleFull);
+    document.addEventListener('fullscreenchange',function(){var on=!!document.fullscreenElement;bFull.innerHTML=on?FS_OFF:FS_ON;bFull.title=on?'Thoát toàn màn hình (F)':'Toàn màn hình (F)';});
+    window.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(idx+1);}
+      else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(idx-1);}
+      else if(e.key==='Home'){go(0);} else if(e.key==='End'){go(total-1);}
+      else if(e.key==='o'||e.key==='O'){menu.classList.toggle('open');}
+      else if(e.key==='Escape'){menu.classList.remove('open');}
+      else if(e.key==='f'||e.key==='F'){toggleFull();}
+    });
+    var sx=0,sy=0;
+    window.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+    window.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.4){go(idx+(dx<0?1:-1));}},{passive:true});
+    window.addEventListener('hashchange',function(){var n=parseInt(location.hash.replace('#',''),10);if(n>=1&&n<=total&&n-1!==idx)go(n-1);});
+    var st=parseInt((location.hash||'').replace('#',''),10);
+    go(st>=1&&st<=total?st-1:0);
+  }catch(e){try{document.body.classList.remove('deck');}catch(_){}}
+})();
+</script>
+
+</body></html>

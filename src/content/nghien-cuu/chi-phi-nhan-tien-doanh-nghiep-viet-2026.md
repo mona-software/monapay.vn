@@ -13,7 +13,7 @@ sources:
   - {name: "Thống kê thanh toán NHNN", url: "https://www.sbv.gov.vn", checked: "05/09/2026"}
   - {name: "Biểu phí dịch vụ chấp nhận thanh toán thẻ VietinBank (hiệu lực 22/04/2026)", url: "https://www.vietinbank.vn/ca-nhan/cong-cu-tien-ich/bieu-phi-va-bieu-mau/dich-vu-chap-nhan-thanh-toan-the-40-html", checked: "06/09/2026"}
   - {name: "Tạp chí Công Thương: Thanh toán điện tử tại Việt Nam giai đoạn 2022–2025", url: "https://tapchicongthuong.vn/thanh-toan-dien-tu-tai-viet-nam-giai-doan-2022-2025--trien-vong--thach-thuc-va-mot-so-giai-phap-phat-trien-89400.htm", checked: "06/09/2026"}
-  - {name: "Giới thiệu MONA Pay: hệ thống chạy cho khách hàng MONA từ 2022", url: "https://monapay.vn/gioi-thieu", checked: "06/09/2026"}
+  - {name: "Giới thiệu MONA Pay: hệ thống chạy cho khách hàng MONA từ 2022", url: "https://monapay.vn/cau-chuyen-mona-pay", checked: "06/09/2026"}
 key_numbers:
   - {label: "Phí PayPal (quốc tế)", value: "4,40% + 0,30 USD"}
   - {label: "Chi phí đối soát tay ẩn (SME)", value: "≈2,25 triệu đ/tháng (ước tính)"}
@@ -137,4 +137,4 @@ Nhóm nghiên cứu MONA Pay (2026). Chi phí nhận tiền của doanh nghiệp
 - Thống kê thanh toán không dùng tiền mặt Ngân hàng Nhà nước, https://www.sbv.gov.vn (Kiểm tra: 05/09/2026)
 - Tạp chí Công Thương, Thanh toán điện tử tại Việt Nam giai đoạn 2022–2025, https://tapchicongthuong.vn/thanh-toan-dien-tu-tai-viet-nam-giai-doan-2022-2025--trien-vong--thach-thuc-va-mot-so-giai-phap-phat-trien-89400.htm (kiểm 06/09/2026)
 - VietinBank, Biểu phí dịch vụ chấp nhận thanh toán thẻ (hiệu lực 22/04/2026), https://www.vietinbank.vn/ca-nhan/cong-cu-tien-ich/bieu-phi-va-bieu-mau/dich-vu-chap-nhan-thanh-toan-the-40-html (kiểm 06/09/2026)
-- MONA Pay, Giới thiệu: hệ thống xác nhận chuyển khoản chạy cho khách hàng MONA từ 2022, https://monapay.vn/gioi-thieu (kiểm 06/09/2026)
+- MONA Pay, Giới thiệu: hệ thống xác nhận chuyển khoản chạy cho khách hàng MONA từ 2022, https://monapay.vn/cau-chuyen-mona-pay (kiểm 06/09/2026)

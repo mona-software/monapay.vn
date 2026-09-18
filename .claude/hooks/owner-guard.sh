@@ -18,9 +18,14 @@ if [ -f "$OVR" ]; then
   if [ $age -lt 3600 ]; then exit 0; else rm -f "$OVR"; fi
 fi
 input=$(cat)
-HOOK_INPUT="$input" python3 - "$OWN" "$ROOT" <<'PY'
+BR=$(git -C "$ROOT" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "")
+CHANGED=$(git -C "$ROOT" diff --name-only origin/main...HEAD 2>/dev/null | tr '\n' '|')
+HOOK_INPUT="$input" GIT_BRANCH="$BR" GIT_CHANGED="$CHANGED" python3 - "$OWN" "$ROOT" <<'PY'
 import json, os, re, sys
 own, root = sys.argv[1], sys.argv[2]
+branch = os.environ.get("GIT_BRANCH", "")
+changed = [x for x in os.environ.get("GIT_CHANGED", "").split("|") if x]
+on_feature = bool(branch) and branch not in ("main", "master", "HEAD")   # nhánh feat/… → được sửa phần của người (đường MR), vẫn cấm deploy + push main
 try:
     d = json.loads(os.environ.get("HOOK_INPUT") or "{}")
 except Exception:
@@ -52,15 +57,26 @@ if tool in ("Edit", "Write", "MultiEdit", "NotebookEdit"):
         deny("OWNERS.md chỉ Mon sửa tay (đây là hợp đồng phân quyền). Muốn đổi chủ → nói Mon.")
     for p, o, n in human:
         if p in (".", "./", "*") or fp == p.rstrip("/") or fp.startswith(p.rstrip("/") + "/"):
-            deny(f"⛔ `{fp}` thuộc phần CỦA {o.upper()} ({n or 'xem OWNERS.md'}). AI không sửa phần của người — vụ 16/09 đè giao diện Nhựt. Muốn đổi: `bd create \"…\" -l owner:{o}` hoặc comment MR cho {o}. Mon mở khoá bằng MONA_OWNER_OVERRIDE=1 nếu cố ý.")
+            if on_feature:
+                break   # đang ở nhánh feat/… = đường Merge Request → cho sửa; deploy/push main vẫn bị chặn bên dưới
+            deny(f"⛔ `{fp}` thuộc phần CỦA {o.upper()} ({n or 'xem OWNERS.md'}) và bạn đang ở nhánh `{branch or '?'}`. "
+                 f"ĐƯỜNG MẶC ĐỊNH (không hỏi Mon chọn cách): `git checkout -b feat/<viec-ngan>` → sửa đúng chỗ → `git push -u origin feat/<viec-ngan>` → mở Merge Request cho {o} (glab/URL GitLab in ra khi push) → báo Mon 1 dòng 'đã tạo MR, chờ {o} merge+deploy'. "
+                 f"KHÔNG merge, KHÔNG deploy hộ. Source không có trên máy → clone repo của {o} vào ~/mona-hub/_mr/<repo> rồi làm y vậy.")
 elif tool == "Bash":
     cmd = ti.get("command", "") or ""
     for rx in cmds:
         try:
             if re.search(rx, cmd): deny(f"⛔ Lệnh khớp mục 'Lệnh cấm với AI' trong OWNERS.md: /{rx}/ — deploy/ghi đè phần của người phải do chủ module hoặc CI làm. Mon mở khoá: MONA_OWNER_OVERRIDE=1.")
         except re.error: pass
-    writes = re.search(r"\b(rsync|scp|rm|mv|cp|sed -i|tee|>|>>|git (push|checkout|reset|restore)|npm run (build|deploy)|pnpm (build|deploy))\b", cmd)
-    if writes:
+    if re.search(r"git\s+push[^|;&]*\s(origin\s+)?(main|master)(\b|:)", cmd) or re.search(r"git\s+push[^|;&]*\s(HEAD|\S+):(main|master)\b", cmd):
+        def hit(f):
+            return any(p in (".", "./", "*") or f == p.rstrip("/") or f.startswith(p.rstrip("/") + "/") for p, o, n in human)
+        bad = [f for f in changed if hit(f)] if changed else (["(cả repo)"] if any(p in (".", "./", "*") for p, o, n in human) else [])
+        if bad: deny(f"⛔ Push `main` có commit đụng phần của người: {', '.join(bad[:5])} — tách ra nhánh `feat/…` rồi mở Merge Request cho chủ module. (OWNERS.md)")
+    if re.search(r"git\s+merge\b|git\s+checkout\s+(main|master)\s*&&.*git\s+push", cmd) and human and not on_feature:
+        deny("⛔ Merge vào main là việc của chủ module (người) — AI chỉ mở MR. (OWNERS.md)")
+    writes = re.search(r"\b(rsync|scp|rm|mv|cp|sed -i|tee|>|>>|git (checkout|reset|restore)|npm run (build|deploy)|pnpm (build|deploy))\b", cmd)
+    if writes and not on_feature:
         for p, o, n in human:
             if p in (".", "./", "*"):
                 deny(f"⛔ Repo này thuộc {o.upper()} — AI không chạy lệnh ghi/deploy ở đây. Mon mở khoá: MONA_OWNER_OVERRIDE=1.")

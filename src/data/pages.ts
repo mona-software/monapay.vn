@@ -27,7 +27,7 @@ export const PAGES = [
   { path: '/tao-ma-qr/acb', title: 'Tạo mã QR ACB (VietQR) miễn phí', desc: 'Tạo mã QR chuyển khoản ACB chuẩn VietQR, ngân hàng chọn sẵn, tải PNG, chạy trên trình duyệt.' },
   { path: '/ai-agent', title: 'MONA Pay cho AI agent', desc: 'Hướng dẫn viết cho AI agent (Claude Code, Codex, Cursor) tự tích hợp MONA Pay: đăng ký xong dùng ngay, tự tạo API key, không cần ai duyệt.' },
   { path: '/khach-hang', title: 'Khách hàng và ca dùng thật', desc: 'MONA tự dùng để thu tiền hosting, học phí, phần mềm; khách MONA dùng trong web bán hàng.' },
-  { path: '/gioi-thieu', title: 'Giới thiệu MONA Pay', desc: 'Sản phẩm của The MONA Group (2016, 14.000+ dự án), hơn 4 năm chạy nội bộ, nay mở public.' },
+  { path: '/cau-chuyen-mona-pay', title: 'Giới thiệu MONA Pay', desc: 'Sản phẩm của The MONA Group (2016, 14.000+ dự án), hơn 4 năm chạy nội bộ, nay mở public.' },
   { path: '/cong-thanh-toan-quoc-te', title: 'Cổng thanh toán quốc tế tại Việt Nam: PayPal, Stripe hợp việc gì', desc: 'PayPal 4,40% + phí cố định, Stripe chưa mở cho Việt Nam (28/08/2026); hợp bán ra nước ngoài, thu tiền trong nước dùng chuyển khoản VietQR.' },
   { path: '/paypal-viet-nam', title: 'PayPal Việt Nam: dùng được không, phí bao nhiêu, rút tiền thế nào', desc: 'Biểu phí PayPal Việt Nam kiểm 28/08/2026: 4,40% + 0,30 USD mỗi giao dịch, rút về ngân hàng 60.000đ/lần, quy đổi 3% đến 4%.' },
   { path: '/stripe-viet-nam', title: 'Stripe Việt Nam: có hỗ trợ không, đăng ký thế nào, thay bằng gì', desc: 'Stripe chưa có Việt Nam trong danh sách quốc gia (28/08/2026); cách người ta đăng ký qua pháp nhân nước ngoài và giải pháp thu tiền trong nước.' },

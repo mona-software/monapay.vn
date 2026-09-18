@@ -32,7 +32,7 @@ Tụi em từng thử cách mà nhiều anh chị đang tính: ráp bằng công
 
 Cách thứ hai là thuê thêm người trực. Cách này chạy, nhưng chỉ chạy trong giờ hành chính. Khách của tụi em thì mua hosting lúc nửa đêm, đóng học phí cuối tuần.
 
-Nên tụi em viết phần mềm riêng, nối thẳng vào ngân hàng, để thông báo tiền vào chạy thẳng vào phần mềm quản lý chứ không đi vòng qua email hay bảng tính. Chạy hơn 4 năm, thu tiền cho [Mona.Host](https://mona.host), cho Khánh Hùng Academy với 40.000 học viên, cho đơn phần mềm của Mona.Software, rồi từ 2022 nhúng vào web bán hàng và phần mềm giao cho khách, tới nay khách hàng của MONA dùng. Năm 2026 tụi em mở nó ra thành [MONA Pay](/gioi-thieu) cho mọi doanh nghiệp.
+Nên tụi em viết phần mềm riêng, nối thẳng vào ngân hàng, để thông báo tiền vào chạy thẳng vào phần mềm quản lý chứ không đi vòng qua email hay bảng tính. Chạy hơn 4 năm, thu tiền cho [Mona.Host](https://mona.host), cho Khánh Hùng Academy với 40.000 học viên, cho đơn phần mềm của Mona.Software, rồi từ 2022 nhúng vào web bán hàng và phần mềm giao cho khách, tới nay khách hàng của MONA dùng. Năm 2026 tụi em mở nó ra thành [MONA Pay](/cau-chuyen-mona-pay) cho mọi doanh nghiệp.
 
 ## Làm xác nhận thanh toán tự động với MONA Pay trong 4 bước
 
