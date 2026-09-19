@@ -60,7 +60,7 @@ Hiện ACB đang hoạt động; MB, BIDV, VietinBank, OCB, MSB, KienlongBank, T
 
 Gửi lại webhook tự động theo lịch cũng đang triển khai. Hiện tại nếu máy nhận của anh chị lỗi, anh chị bấm gửi lại từ bảng điều khiển, và bản tự gửi lại tối đa 7 lần sẽ lên trong thời gian tới. Tụi em ghi rõ trạng thái này trong tài liệu thay vì viết như đã có.
 
-MONA Pay cũng không phải cổng thẻ quốc tế. Anh chị bán ra nước ngoài, khách trả bằng thẻ hay ví ngoại thì vẫn cần PayPal hoặc cổng tương tự, chấp nhận mức phí 4,40% cộng phí cố định cho mỗi giao dịch thương mại từ ngoài Việt Nam và 60.000 đồng mỗi lần rút về ngân hàng trong nước theo biểu phí PayPal tụi em kiểm ngày 28/08/2026. Với thu tiền trong nước thì chuyển khoản qua VietQR gần như là chuẩn, và đó đúng là việc MONA Pay sinh ra để làm. Tụi em viết kỹ chuyện này ở bài [cổng thanh toán quốc tế](/cong-thanh-toan-quoc-te).
+MONA Pay cũng không phải cổng thẻ Visa/Mastercard. Anh chị bán ra nước ngoài, khách trả bằng thẻ hay ví ngoại thì vẫn cần PayPal hoặc cổng tương tự, chấp nhận mức phí 4,40% cộng phí cố định cho mỗi giao dịch thương mại từ ngoài Việt Nam và 60.000 đồng mỗi lần rút về ngân hàng trong nước theo biểu phí PayPal tụi em kiểm ngày 28/08/2026. Với thu tiền trong nước thì chuyển khoản qua VietQR gần như là chuẩn, và đó đúng là việc MONA Pay sinh ra để làm. Tụi em viết kỹ chuyện này ở bài [cổng thanh toán quốc tế](/cong-thanh-toan-quoc-te).
 
 ## Anh chị muốn thử thì làm gì trong 5 phút tới
 

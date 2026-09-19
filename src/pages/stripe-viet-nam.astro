@@ -13,7 +13,7 @@ const faq = [
   { q: 'Stripe có ở Việt Nam không, có công ty Stripe Việt Nam không?', a: 'Stripe không có văn phòng hay pháp nhân tại Việt Nam và không nhận đăng ký từ doanh nghiệp Việt Nam tính đến 28/08/2026. Những công ty tự gọi là "Stripe Việt Nam" là bên thứ ba, không phải Stripe.' },
   { q: 'Đăng ký Stripe từ Việt Nam thì người ta làm cách nào?', a: 'Cách thường thấy là lập pháp nhân tại một nước Stripe hỗ trợ, ví dụ Singapore hoặc Mỹ, rồi đăng ký Stripe bằng pháp nhân đó và mở tài khoản ngân hàng ở nước đó để nhận tiền. Cách này kéo theo chi phí duy trì công ty, kế toán, thuế ở hai nước và việc đưa tiền về Việt Nam. Tụi em không tư vấn pháp lý, anh chị hỏi kế toán và luật sư trước khi làm.' },
   { q: 'Phí Stripe là bao nhiêu?', a: 'Stripe tính phần trăm cộng phí cố định trên mỗi giao dịch, mức niêm yết theo từng nước trên stripe.com/pricing của nước đăng ký. Vì chưa có bảng phí cho Việt Nam nên tụi em không đưa số ở đây.' },
-  { q: 'Stripe hợp với việc gì?', a: 'Phần mềm bán theo tháng, thanh toán thẻ quốc tế, thị trường nước ngoài, đội kỹ thuật cần API mạnh. Điều kiện là có pháp nhân ở nước Stripe hỗ trợ. Thu tiền khách lẻ trong nước bằng Stripe không hợp: khách Việt quét VietQR chứ không nhập thẻ.' },
+  { q: 'Stripe hợp với việc gì?', a: 'Phần mềm bán theo tháng, thanh toán thẻ Visa/Mastercard, thị trường nước ngoài, đội kỹ thuật cần API mạnh. Điều kiện là có pháp nhân ở nước Stripe hỗ trợ. Thu tiền khách lẻ trong nước bằng Stripe không hợp: khách Việt quét VietQR chứ không nhập thẻ.' },
   { q: 'Thu tiền khách trong nước thì thay Stripe bằng gì?', a: 'Chuyển khoản qua VietQR với MONA Pay: mỗi đơn một mã QR động hoặc tài khoản ảo ACB, tiền vào thẳng tài khoản ngân hàng của anh chị, webhook ký HMAC-SHA256 báo về phần mềm để đơn tự xác nhận, ' + PRICE_LINE + '. Có tài liệu API, llms.txt và openapi.json cho lập trình viên và AI agent giống cách Stripe làm tài liệu.' },
 ];
 
@@ -83,7 +83,7 @@ const countries = ['Singapore', 'Thái Lan', 'Malaysia', 'Indonesia', 'Nhật B�
           <h3>Hợp</h3>
           <ul>
             <li>Phần mềm bán theo tháng cho thị trường nước ngoài, thu USD hoặc EUR định kỳ.</li>
-            <li>Khách trả bằng thẻ quốc tế, Apple Pay, Google Pay.</li>
+            <li>Khách trả bằng thẻ Visa/Mastercard, Apple Pay, Google Pay.</li>
             <li>Đội kỹ thuật cần API, webhook và tài liệu chuẩn.</li>
             <li>Đã có pháp nhân ở nước Stripe hỗ trợ.</li>
           </ul>
@@ -112,7 +112,7 @@ const countries = ['Singapore', 'Thái Lan', 'Malaysia', 'Indonesia', 'Nhật B�
           <thead><tr><th>Tiêu chí</th><th>Stripe</th><th>MONA Pay (chuyển khoản nội địa)</th></tr></thead>
           <tbody>
             <tr><td>Đăng ký từ Việt Nam</td><td>Chưa mở (28/08/2026)</td><td>Đăng ký xong dùng ngay</td></tr>
-            <tr><td>Khách trả bằng</td><td>Thẻ quốc tế, ví điện tử toàn cầu</td><td>Quét VietQR bằng ứng dụng ngân hàng bất kỳ</td></tr>
+            <tr><td>Khách trả bằng</td><td>Thẻ Visa/Mastercard, ví điện tử toàn cầu</td><td>Quét VietQR bằng ứng dụng ngân hàng bất kỳ</td></tr>
             <tr><td>Phí mỗi giao dịch</td><td>Phần trăm + phí cố định theo nước</td><td>0đ</td></tr>
             <tr><td>Tiền về đâu</td><td>Tài khoản ngân hàng ở nước đăng ký</td><td>Thẳng tài khoản ACB của anh chị</td></tr>
             <tr><td>Báo về phần mềm</td><td>Webhook</td><td>Webhook ký HMAC-SHA256, tin Telegram</td></tr>

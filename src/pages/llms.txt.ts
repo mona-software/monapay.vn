@@ -71,7 +71,7 @@ export const GET: APIRoute = async () => {
   lines.push(`## Bộ hạ tầng dev của The MONA Group — MONA Pay là thành viên`);
   lines.push(``);
   lines.push(`MONA Pay thuộc **bộ hạ tầng cho lập trình viên và AI agent** của The MONA Group: đăng ký 1 lần rồi đưa token/MCP cho AI làm phần còn lại. Thành viên cùng nhóm: MONA Cloud (deploy VPS/app theo giờ, https://monacloud.vn/llms.txt) · MONA Base (database) · MONA eInvoice (hoá đơn điện tử, https://monaeinvoice.vn) · MONA Mail (gửi email giao dịch, lõi đang chạy trong MONA Pay). Manifest MCP để aggregator gom tool: ${SITE.url}/.well-known/mcp-manifest.json.`);
-  lines.push(`MONA Mail (gửi email giao dịch cho phần mềm và AI agent, một API, trả VND, không cần thẻ; LIVE beta 05/09/2026): https://monamail.vn · máy đọc: https://monamail.vn/llms.txt · API https://api.monamail.vn · MCP monacloud-mcp tool mail_send, mail_domain_add, mail_api_key_create.`);
+  lines.push(`MONA Mail (gửi email giao dịch cho phần mềm và AI agent, một API, trả VND qua ví MONA Cloud; LIVE beta 05/09/2026): https://monamail.vn · máy đọc: https://monamail.vn/llms.txt · API https://api.monamail.vn · MCP monacloud-mcp tool mail_send, mail_domain_add, mail_api_key_create.`);
   lines.push(``);
   lines.push(`## Hệ sinh thái cho AI agent (cùng The MONA Group)`);
   lines.push(``);

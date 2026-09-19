@@ -92,7 +92,7 @@ const jsonld = [{
             {p.featured && <span class="badge badge-cta" style="margin-bottom:.8rem">Nhiều người chọn</span>}
             <h3>{p.name}</h3>
             <p class="price">{p.price_month === 0 ? '0 đ' : fmtVnd(p.price_month)} <small>/ tháng</small></p>
-            {p.price_month > 0 ? <p class="year">hoặc {fmtVnd(p.price_year)}/năm, tiết kiệm {12 - YEARLY_MONTHS} tháng</p> : <p class="year">không cần thẻ, không hết hạn</p>}
+            {p.price_month > 0 ? <p class="year">hoặc {fmtVnd(p.price_year)}/năm, tiết kiệm {12 - YEARLY_MONTHS} tháng</p> : <p class="year">nạp bằng chuyển khoản, không hết hạn</p>}
             <p class="tx"><strong>{fmt(p.tx_limit)} giao dịch</strong> tiền vào mỗi tháng</p>
             <ul>{p.features.map((f) => <li>{f}</li>)}</ul>
             {p.price_month === 0

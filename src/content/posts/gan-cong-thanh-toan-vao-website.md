@@ -12,7 +12,7 @@ Khách đến MONA làm web bán hàng, câu hỏi tụi em nghe nhiều nhất 
 
 ## Khách đến MONA làm web bán hàng rơi vào 3 nhóm nào?
 
-Tụi em chia khách theo dòng tiền, không chia theo ngành, và cách chia này rút ra từ hơn 14.000 dự án web và phần mềm tụi em đã giao. Nhóm một, bán cho người Việt, thu tiền Việt: shop quần áo, mỹ phẩm, đồ gia dụng, trung tâm dạy học, dịch vụ. Nhóm này chiếm đa số. Khách của họ trả bằng chuyển khoản là chính, một phần bằng ví điện tử, gần như không ai trả bằng thẻ quốc tế.
+Tụi em chia khách theo dòng tiền, không chia theo ngành, và cách chia này rút ra từ hơn 14.000 dự án web và phần mềm tụi em đã giao. Nhóm một, bán cho người Việt, thu tiền Việt: shop quần áo, mỹ phẩm, đồ gia dụng, trung tâm dạy học, dịch vụ. Nhóm này chiếm đa số. Khách của họ trả bằng chuyển khoản là chính, một phần bằng ví điện tử, gần như không ai trả bằng thẻ Visa/Mastercard.
 
 Nhóm hai, bán ra nước ngoài, thu ngoại tệ: xưởng gia công nhận đơn từ Mỹ, Úc, freelancer làm dịch vụ cho khách nước ngoài, shop bán đồ thủ công cho người Việt ở nước ngoài. Nhóm này bắt buộc cần cổng quốc tế, vì khách của họ không có app ngân hàng Việt Nam.
 
@@ -65,7 +65,7 @@ Bảng này tụi em đưa cho khách MONA xem trước khi chốt cổng, số 
 | Tiêu chí | Ví điện tử, cổng thu % | Cổng quốc tế PayPal | Chuyển khoản VietQR + MONA Pay |
 |---|---|---|---|
 | Phí mỗi giao dịch | % theo hợp đồng, không niêm yết công khai (kiểm 28/08/2026) | 4,40% + phí cố định, rút về ngân hàng VN 60.000 đ/lần | 0 đồng |
-| Khách cần có gì | Đúng ví đó | Tài khoản PayPal hoặc thẻ quốc tế | App ngân hàng bất kỳ |
+| Khách cần có gì | Đúng ví đó | Tài khoản PayPal hoặc thẻ Visa/Mastercard | App ngân hàng bất kỳ |
 | Tiền về đâu | Ví hoặc tài khoản đối soát, rồi về ngân hàng theo kỳ | Ví PayPal, tự rút về ngân hàng | Thẳng tài khoản ACB của anh chị |
 | Đăng ký | Ký hợp đồng merchant từng ví | Tài khoản PayPal doanh nghiệp | Đăng ký xong dùng ngay, nối ACB 2 lần OTP |
 | Hợp với | Bán lẻ tại quầy, app bán lẻ | Khách ở nước ngoài | Bán trong nước, đơn giá trị cao, web và phần mềm |
@@ -92,7 +92,7 @@ Không. Tiền vào thẳng tài khoản ngân hàng của anh chị như chuy�
 
 ### Khách trả bằng thẻ Visa trong nước thì sao?
 
-Đường chuyển khoản không nhận thẻ. Khách trong nước có thẻ Visa gần như luôn có app ngân hàng, quét VietQR là xong. Anh chị cần nhận thẻ quốc tế cho khách nước ngoài thì gắn thêm PayPal làm đường phụ.
+Đường chuyển khoản không nhận thẻ. Khách trong nước có thẻ Visa gần như luôn có app ngân hàng, quét VietQR là xong. Anh chị cần nhận thẻ Visa/Mastercard cho khách nước ngoài thì gắn thêm PayPal làm đường phụ.
 
 ### Gắn xong có mất phí hàng tháng không?
 
