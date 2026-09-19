@@ -18,6 +18,8 @@ export const GET: APIRoute = async () => {
   lines.push(`Tiền KHÔNG đi qua MONA Pay: tiền vào thẳng tài khoản ngân hàng của doanh nghiệp, MONA Pay chỉ đọc thông báo giao dịch từ ngân hàng (ACB đang hoạt động; MB, BIDV, VietinBank, OCB, MSB, KienlongBank, TPBank đang đăng ký kết nối, bảng trạng thái tại ${SITE.url}/ngan-hang; webhook/Telegram/Zalo/email/API dùng chung mọi ngân hàng, payload có bank_name) rồi bắn webhook (HMAC-SHA256, header ${SITE.tech.hmacHeader} + ${SITE.tech.tsHeader}, chống replay ${SITE.tech.replayWindowMin} phút) hoặc gửi thông báo qua Telegram, nhóm Zalo và email. Sản phẩm của ${SITE.company} (thành lập ${SITE.founded}, ${SITE.projects} dự án, giữ chân ${SITE.retention} khách). ${SITE.storyLine} Hotline ${SITE.hotline} · ${SITE.email}.`);
   lines.push(``);
   lines.push(`Base URL API: ${SITE.api} (alias cũ: ${SITE.apiLegacy}) · Dashboard: ${SITE.app} · OpenAPI: ${SITE.url}/openapi.json · Toàn văn: ${SITE.url}/llms-full.txt · Cập nhật: ${today}`);
+  lines.push(`MCP remote: https://mcp.monacloud.vn/mcp (Streamable HTTP + OAuth MONA Pass)`);
+  lines.push(`AGENTS.md: https://monapay.vn/AGENTS.md · Official MCP Registry: vn.monapay/monapay-mcp`);
   lines.push(``);
   lines.push(`## Tài liệu tích hợp (mỗi trang có bản .md: thêm đuôi .md vào URL)`);
   lines.push(``);

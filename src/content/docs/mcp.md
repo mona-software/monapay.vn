@@ -83,6 +83,18 @@ env = { MONAPAY_CLIENT_ID = "client_id", MONAPAY_CLIENT_SECRET = "client_secret"
 
 Khởi động lại Codex sau khi lưu. Nếu anh chị xoay secret trong dashboard hoặc bằng tool `monapay_rotate_key`, hãy cập nhật `MONAPAY_CLIENT_SECRET` rồi khởi động lại client.
 
+## Claude.ai · ChatGPT · Cursor (kết nối bằng URL)
+
+Vào Settings → Connectors → Add custom connector, dán URL rồi đăng nhập MONA Pass:
+
+```text
+https://mcp.monacloud.vn/mcp
+```
+
+Cursor dùng `"url": "https://mcp.monacloud.vn/mcp"` trong `mcp.json`. Codex dùng `[mcp_servers.monacloud] url = "https://mcp.monacloud.vn/mcp"`.
+
+Qua endpoint chung, đăng nhập MONA Pass rồi gọi `monapay_link` một lần. Muốn dùng API key trực tiếp thì cài `npx -y monapay-mcp`.
+
 ## 50 công cụ MCP
 
 Mỗi tool trong manifest có nhãn phạm vi để client biết đây là lệnh đọc hay lệnh ghi. Các nhãn như `read`, `checkout:write`, `webhooks:write` mô tả loại thao tác của tool; OAuth token hiện trả `scope: "*"`.

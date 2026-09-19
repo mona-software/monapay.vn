@@ -33,6 +33,18 @@ Claude Desktop, Cursor, Codex dùng khối `mcpServers`:
 { "mcpServers": { "monapay": { "command": "npx", "args": ["-y", "monapay-mcp"], "env": { "MONAPAY_CLIENT_ID": "client_xxx", "MONAPAY_CLIENT_SECRET": "xxx" } } } }
 ```
 
+### Claude.ai · ChatGPT · Cursor (kết nối bằng URL)
+
+Vào Settings → Connectors → Add custom connector, dán URL rồi đăng nhập MONA Pass:
+
+```text
+https://mcp.monacloud.vn/mcp
+```
+
+Cursor dùng `"url": "https://mcp.monacloud.vn/mcp"` trong `mcp.json`. Codex dùng `[mcp_servers.monacloud] url = "https://mcp.monacloud.vn/mcp"`.
+
+Qua endpoint chung, đăng nhập MONA Pass rồi gọi `monapay_link` một lần. Muốn dùng API key trực tiếp thì cài `npx -y monapay-mcp`.
+
 Từ lúc đó agent tự đọc gói, tạo webhook, tạo QR, tra giao dịch qua MCP; kể cả bước nối tài khoản ngân hàng: agent hỏi anh chị số tài khoản và số điện thoại, ngân hàng gửi OTP về máy anh chị, anh chị dán OTP vào khung chat là agent làm nốt (tool `monapay_link_bank_start` → `monapay_link_bank_verify_otp` → `monapay_notification_register` → `monapay_notification_verify_otp`, có từ bản 0.3.0). Agent **không cần** username hay mật khẩu của anh chị, và tài khoản bật xác thực 2 lớp vẫn chạy bình thường. MONA Pay có 4 kênh thông báo: webhook · Telegram · Zalo · email.
 
 ## Thông báo vào nhóm Zalo

@@ -1,6 +1,16 @@
 // Sinh public/openapi.json = bản công khai (chỉ route dành cho khách) từ openapi.json của BE.
 import { readFileSync, writeFileSync } from 'node:fs';
-const src = JSON.parse(readFileSync(new URL('../../fe-payment/openapi.json', import.meta.url)));
+// Repo site đã dời từ ~/MONApay/site sang ~/monacloud/sites/monapay.vn (19/09) → tìm openapi BE ở 2 chỗ, ưu tiên env.
+import { existsSync } from 'node:fs';
+import { homedir } from 'node:os';
+const candidates = [
+  process.env.MONAPAY_BE_OPENAPI,
+  new URL('../../fe-payment/openapi.json', import.meta.url).pathname,
+  `${homedir()}/MONApay/fe-payment/openapi.json`,
+].filter(Boolean);
+const srcPath = candidates.find((path) => existsSync(path));
+if (!srcPath) throw new Error(`Không tìm thấy openapi.json của BE ở: ${candidates.join(', ')}`);
+const src = JSON.parse(readFileSync(srcPath, 'utf8'));
 const PUBLIC = [
   '/api/v1/client/register-client', '/api/v1/client/login', '/api/v1/client/me', '/api/v1/client/bank-accounts', '/api/v1/client/change-password',
   '/api/v1/client-keys/generate', '/api/v1/client-keys/list', '/api/v1/client-keys/destroy/{key_id}',

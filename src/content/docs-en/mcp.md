@@ -84,6 +84,18 @@ env = { MONAPAY_CLIENT_ID = "client_id", MONAPAY_CLIENT_SECRET = "client_secret"
 
 Restart Codex after saving. If you rotate the key in the dashboard or with `monapay_rotate_key`, update `MONAPAY_CLIENT_SECRET` and restart the client.
 
+## Claude.ai · ChatGPT · Cursor (connect by URL)
+
+Open Settings → Connectors → Add custom connector, paste the URL, then sign in with MONA Pass:
+
+```text
+https://mcp.monacloud.vn/mcp
+```
+
+In Cursor, set `"url": "https://mcp.monacloud.vn/mcp"` in `mcp.json`. In Codex, set `[mcp_servers.monacloud] url = "https://mcp.monacloud.vn/mcp"`.
+
+Through the shared endpoint, sign in with MONA Pass and call `monapay_link` once. To use API keys directly, install `npx -y monapay-mcp`.
+
 ## All 50 MCP tools
 
 Every tool in the manifest has a scope label so clients can distinguish reads from writes. Labels such as `read`, `checkout:write` and `webhooks:write` classify the action; the OAuth token currently returns `scope: "*"`.

@@ -33,6 +33,18 @@ Claude Desktop, Cursor and Codex use the `mcpServers` block:
 { "mcpServers": { "monapay": { "command": "npx", "args": ["-y", "monapay-mcp"], "env": { "MONAPAY_CLIENT_ID": "client_xxx", "MONAPAY_CLIENT_SECRET": "xxx" } } } }
 ```
 
+### Claude.ai · ChatGPT · Cursor (connect by URL)
+
+Open Settings → Connectors → Add custom connector, paste the URL, then sign in with MONA Pass:
+
+```text
+https://mcp.monacloud.vn/mcp
+```
+
+In Cursor, set `"url": "https://mcp.monacloud.vn/mcp"` in `mcp.json`. In Codex, set `[mcp_servers.monacloud] url = "https://mcp.monacloud.vn/mcp"`.
+
+Through the shared endpoint, sign in with MONA Pass and call `monapay_link` once. To use API keys directly, install `npx -y monapay-mcp`.
+
 From then on the agent reads plans, creates webhooks, generates QR codes and queries transactions through MCP; including linking the bank account: the agent asks for your account number and phone, the bank sends an OTP to your phone, you paste it into the chat and the agent finishes the job (tools `monapay_link_bank_start` → `monapay_link_bank_verify_otp` → `monapay_notification_register` → `monapay_notification_verify_otp`, available from 0.3.0). The agent **never needs** your username or password, and accounts with two-factor authentication keep working. MONA Pay has four notification channels: webhook · Telegram · Zalo · email.
 
 ## Zalo group notifications
