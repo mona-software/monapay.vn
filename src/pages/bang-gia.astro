@@ -8,21 +8,23 @@ import MonaFreeBanner from '../components/MonaFreeBanner.astro';
 
 // Trang giá: 1 gói Miễn phí + 4 gói trả phí theo số giao dịch (nguồn: pricing/plans.json). Mon chốt 31/08/2026.
 const title = `Bảng giá API ngân hàng MONA Pay: miễn phí ${fmt(FREE_TX_PER_MONTH)} giao dịch/tháng`;
-const description = `Bảng giá MONA Pay: gói Miễn phí ${fmt(FREE_TX_PER_MONTH)} giao dịch/tháng đủ tính năng, 4 gói trả phí từ ${fmtVnd(CHEAPEST_PAID.price_month)}/tháng tính theo số giao dịch, không thu phần trăm trên số tiền.`;
+const description = `Bảng giá MONA Pay: gói Miễn phí ${fmt(FREE_TX_PER_MONTH)} giao dịch/tháng đủ tính năng, ${PAID_PLANS.length} gói trả phí từ ${fmtVnd(CHEAPEST_PAID.price_month)}/tháng tính theo số giao dịch, không thu phần trăm trên số tiền.`;
 
 const idx = (code: string) => PLANS.findIndex((p) => p.code === code);
+const byCode = (code: string) => PLANS.find((p) => p.code === code)!;
+const ENT = byCode('enterprise');
 const fromPlan = (code: string) => (p: (typeof PLANS)[number]) => (idx(p.code) >= idx(code) ? '✓' : '–');
 const matrix: { label: string; cell: (p: (typeof PLANS)[number]) => string }[] = [
-  { label: 'Giao dịch tiền vào mỗi tháng', cell: (p) => fmt(p.tx_limit) },
-  { label: 'Giá theo tháng', cell: (p) => (p.price_month === 0 ? '0 đ' : fmtVnd(p.price_month)) },
-  { label: `Giá theo năm (trả ${YEARLY_MONTHS} tháng)`, cell: (p) => (p.price_month === 0 ? '0 đ' : fmtVnd(p.price_year)) },
-  { label: 'Vượt hạn mức', cell: (p) => (p.overage_per_tx ? `Không khoá, +${p.overage_per_tx} đ mỗi giao dịch vượt` : 'Tháng đầu du di, sau đó ngưng báo phần vượt tới khi nâng gói') },
+  { label: 'Giao dịch tiền vào mỗi tháng', cell: (p) => (p.progressive ? `Trên ${fmt(ENT.tx_limit)}` : fmt(p.tx_limit)) },
+  { label: 'Giá theo tháng', cell: (p) => (p.progressive ? 'Tịnh tiến theo số giao dịch' : p.price_month === 0 ? '0 đ' : fmtVnd(p.price_month)) },
+  { label: `Giá theo năm (trả ${YEARLY_MONTHS} tháng)`, cell: (p) => (p.progressive ? 'Theo thoả thuận' : p.price_month === 0 ? '0 đ' : fmtVnd(p.price_year)) },
+  { label: 'Vượt hạn mức', cell: (p) => (p.progressive ? 'Tính tịnh tiến, không khoá' : p.overage_per_tx ? `Không khoá, +${p.overage_per_tx} đ mỗi giao dịch vượt` : 'Tháng đầu du di, sau đó ngưng báo phần vượt tới khi nâng gói') },
   { label: 'Tài khoản ảo, VietQR động, webhook ký HMAC, Telegram, API', cell: () => '✓' },
   { label: 'Số webhook, số nhóm Telegram', cell: () => 'Không giới hạn' },
   { label: 'Dashboard sổ giao dịch, lịch sử gửi webhook', cell: () => '✓' },
   { label: 'Xuất CSV đối soát', cell: fromPlan('startup') },
-  { label: 'Nhiều tài khoản ngân hàng, nhiều tài khoản ảo', cell: fromPlan('business') },
-  { label: 'Hoá đơn VAT', cell: fromPlan('business') },
+  { label: 'Nhiều tài khoản ngân hàng, nhiều tài khoản ảo', cell: fromPlan('enterprise') },
+  { label: 'Hoá đơn VAT', cell: fromPlan('enterprise') },
   { label: 'Kỹ sư MONA hỗ trợ tích hợp trực tiếp', cell: fromPlan('enterprise') },
   { label: 'Người trực riêng cho hệ thống lớn', cell: fromPlan('scale') },
   { label: 'Hỗ trợ', cell: (p) => (idx(p.code) >= idx('startup') ? `Ưu tiên, tổng đài ${SITE.hotline}` : `Tổng đài ${SITE.hotline}`) },
@@ -32,9 +34,9 @@ const matrix: { label: string; cell: (p: (typeof PLANS)[number]) => string }[] =
 const viDu = [
   { ai: 'Shop bán qua Facebook, Zalo, 15 đơn mỗi ngày', gd: '≈ 450 giao dịch/tháng', goi: 'Miễn phí', tien: '0 đ' },
   { ai: 'Trung tâm 300 học viên đóng học phí hằng tháng', gd: '≈ 300 giao dịch/tháng', goi: 'Miễn phí', tien: '0 đ' },
-  { ai: 'Website bán hàng 50 đơn mỗi ngày', gd: '≈ 1.500 giao dịch/tháng', goi: 'Khởi nghiệp', tien: `${fmtVnd(PLANS[1].price_month)}/tháng` },
-  { ai: 'Chuỗi 8 cửa hàng, 300 hoá đơn chuyển khoản mỗi ngày', gd: '≈ 9.000 giao dịch/tháng', goi: 'Kinh doanh', tien: `${fmtVnd(PLANS[2].price_month)}/tháng` },
-  { ai: 'Sàn, phần mềm SaaS 1.500 khoản tiền vào mỗi ngày', gd: '≈ 45.000 giao dịch/tháng', goi: 'Doanh nghiệp', tien: `${fmtVnd(PLANS[3].price_month)}/tháng` },
+  { ai: 'Website bán hàng 50 đơn mỗi ngày', gd: '≈ 1.500 giao dịch/tháng', goi: 'Khởi nghiệp', tien: `${fmtVnd(byCode('startup').price_month)}/tháng` },
+  { ai: 'Chuỗi 8 cửa hàng, 300 hoá đơn chuyển khoản mỗi ngày', gd: '≈ 9.000 giao dịch/tháng', goi: 'Doanh nghiệp', tien: `${fmtVnd(ENT.price_month)}/tháng` },
+  { ai: 'Sàn, phần mềm SaaS 3.000 khoản tiền vào mỗi ngày', gd: '≈ 90.000 giao dịch/tháng', goi: 'Quy mô lớn', tien: 'Tịnh tiến theo số giao dịch' },
 ];
 
 // So sánh với cổng thanh toán quốc tế. Số PayPal lấy từ trang phí chính thức PayPal Việt Nam, Stripe từ trang quốc gia hỗ trợ của Stripe, kiểm 28/08/2026.
@@ -62,13 +64,13 @@ const faq = [
   { q: 'Hết hạn gói, đổi gói, huỷ gói thì sao?',
     a: `Không ràng buộc. Gói trả phí hết hạn mà chưa gia hạn thì sau 7 ngày tài khoản về gói Miễn phí, dữ liệu giao dịch, webhook, Telegram giữ nguyên. Đổi lên gói cao hơn thì gói mới tính từ lúc thanh toán. Giá gói có thay đổi tụi em báo trước ít nhất 30 ngày trên dashboard và trang này; gói đang trả tiền giữ giá tới hết kỳ đã thanh toán.` },
   { q: 'Có xuất hoá đơn VAT không?',
-    a: `Từ gói Kinh doanh trở lên có hoá đơn VAT, pháp nhân xuất là ${SITE.company}, đơn vị đứng sau MONA Pay từ ${SITE.founded}. Gói Khởi nghiệp cần hoá đơn thì gọi ${SITE.hotline} để tụi em xử lý riêng.` },
+    a: `Từ gói Doanh nghiệp trở lên có hoá đơn VAT, pháp nhân xuất là ${SITE.company}, đơn vị đứng sau MONA Pay từ ${SITE.founded}. Gói Khởi nghiệp cần hoá đơn thì gọi ${SITE.hotline} để tụi em xử lý riêng.` },
 ];
 
 const jsonld = [{
   '@context': 'https://schema.org', '@type': 'Product', name: 'MONA Pay', description: SITE.entity, url: SITE.url + '/bang-gia',
   brand: { '@type': 'Brand', name: 'MONA Pay' },
-  offers: PLANS.map((p) => ({ '@type': 'Offer', name: `Gói ${p.name}: ${fmt(p.tx_limit)} giao dịch/tháng`, price: String(p.price_month), priceCurrency: 'VND', availability: 'https://schema.org/InStock', url: SITE.url + '/bang-gia#goi-' + p.code })),
+  offers: PLANS.filter((p) => !p.progressive).map((p) => ({ '@type': 'Offer', name: `Gói ${p.name}: ${fmt(p.tx_limit)} giao dịch/tháng`, price: String(p.price_month), priceCurrency: 'VND', availability: 'https://schema.org/InStock', url: SITE.url + '/bang-gia#goi-' + p.code })),
 }];
 ---
 <Base title={title} description={description} path="/bang-gia" jsonld={jsonld}>
@@ -78,7 +80,7 @@ const jsonld = [{
       <span class="eyebrow">Bảng giá</span>
       <h1>Bảng giá API ngân hàng MONA Pay:<br class="br-d" /> <span class="accent">miễn phí {fmt(FREE_TX_PER_MONTH)} giao dịch mỗi tháng</span></h1>
       <div class="answer-first">
-        <p>MONA Pay có gói Miễn phí {fmt(FREE_TX_PER_MONTH)} giao dịch mỗi tháng với đầy đủ tính năng: tài khoản ảo, VietQR, webhook, Telegram, API. Dùng nhiều hơn thì có 4 gói trả phí từ {fmtVnd(CHEAPEST_PAID.price_month)} mỗi tháng, tính theo số giao dịch chứ không theo số tiền, trả năm chỉ tính {YEARLY_MONTHS} tháng. Tiền không đi qua MONA Pay, nên không có phí giữ tiền hay phí rút.</p>
+        <p>MONA Pay có gói Miễn phí {fmt(FREE_TX_PER_MONTH)} giao dịch mỗi tháng với đầy đủ tính năng: tài khoản ảo, VietQR, webhook, Telegram, API. Dùng nhiều hơn thì có {PAID_PLANS.length} gói trả phí từ {fmtVnd(CHEAPEST_PAID.price_month)} mỗi tháng, tính theo số giao dịch chứ không theo số tiền, trả năm chỉ tính {YEARLY_MONTHS} tháng. Tiền không đi qua MONA Pay, nên không có phí giữ tiền hay phí rút.</p>
       </div>
     </div>
   </section>
@@ -91,11 +93,13 @@ const jsonld = [{
           <div class={'price-card' + (p.featured ? ' featured' : '')} id={'goi-' + p.code}>
             {p.featured && <span class="badge badge-cta" style="margin-bottom:.8rem">Nhiều người chọn</span>}
             <h3>{p.name}</h3>
-            <p class="price">{p.price_month === 0 ? '0 đ' : fmtVnd(p.price_month)} <small>/ tháng</small></p>
-            {p.price_month > 0 ? <p class="year">hoặc {fmtVnd(p.price_year)}/năm, tiết kiệm {12 - YEARLY_MONTHS} tháng</p> : <p class="year">không cần thẻ, không hết hạn</p>}
-            <p class="tx"><strong>{fmt(p.tx_limit)} giao dịch</strong> tiền vào mỗi tháng</p>
+            <p class="price">{p.progressive ? 'Tịnh tiến' : p.price_month === 0 ? '0 đ' : fmtVnd(p.price_month)} <small>{p.progressive ? 'theo số giao dịch' : '/ tháng'}</small></p>
+            {p.progressive ? <p class="year">càng nhiều giao dịch, giá mỗi giao dịch càng thấp</p> : p.price_month > 0 ? <p class="year">hoặc {fmtVnd(p.price_year)}/năm, tiết kiệm {12 - YEARLY_MONTHS} tháng</p> : <p class="year">không cần thẻ, không hết hạn</p>}
+            <p class="tx"><strong>{p.progressive ? `Trên ${fmt(ENT.tx_limit)} giao dịch` : `${fmt(p.tx_limit)} giao dịch`}</strong> tiền vào mỗi tháng</p>
             <ul>{p.features.map((f) => <li>{f}</li>)}</ul>
-            {p.price_month === 0
+            {p.progressive
+              ? <a class="btn btn-outline" href="/lien-he">Liên hệ báo giá</a>
+              : p.price_month === 0
               ? <a class="btn btn-primary" href={SITE.appRegister}>Tạo tài khoản miễn phí</a>
               : <a class="btn btn-outline" href={SITE.appRegister}>Đăng ký rồi nâng gói</a>}
           </div>
@@ -199,18 +203,18 @@ const jsonld = [{
   .br-d{display:inline}
   .hero h1{font-size:clamp(1.8rem,3.2vw,2.4rem)}
   @media (max-width:767px){.br-d{display:none}}
-  .plans{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.9rem;align-items:start}
-  @media (max-width:1100px){.plans{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem;align-items:stretch}
+  @media (max-width:1100px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media (max-width:760px){.plans{grid-template-columns:minmax(0,1fr)}}
-  .plans .price-card{padding:1.3rem 1.1rem;min-width:0}
-  .plans .btn{white-space:normal;line-height:1.25;padding:.6rem .7rem;font-size:.92rem}
+  .plans .price-card{padding:1.6rem 1.3rem;min-width:0;display:flex;flex-direction:column}
+  .plans .btn{white-space:normal;line-height:1.25;padding:.7rem .8rem;font-size:.95rem;margin-top:auto}
   .plans .price{overflow-wrap:anywhere}
   .plans .price small{display:block;font-size:.85rem;margin-top:.1rem}
-  .plans .price-card h3{font-size:1.15rem}
-  .plans .price{font-size:1.6rem}
+  .plans .price-card h3{font-size:1.25rem}
+  .plans .price{font-size:1.9rem}
   .year{margin:.1rem 0 .6rem;font-size:.85rem;color:var(--text-soft)}
   .tx{color:var(--ink);margin:0 0 .6rem;font-size:.95rem}
-  .plans ul{font-size:.92rem}
+  .plans ul{font-size:.95rem;flex:1}
   .note{margin:1.4rem auto 0;max-width:820px;text-align:center;color:var(--text-soft);font-size:.95rem}
   .note-left{margin:1.2rem 0 0;color:var(--text-soft);font-size:.95rem;max-width:860px}
   .price-card .btn{width:100%;justify-content:center}

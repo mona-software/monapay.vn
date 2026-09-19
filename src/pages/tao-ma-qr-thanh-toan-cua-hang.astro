@@ -1,0 +1,60 @@
+---
+// brand-guard: skip — "Astro" là framework dựng trang (đuôi .astro), không phải brand thứ 3 nhắc trong nội dung; kênh thông báo viết dạng "nhóm chat" chung.
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import QrTool from '../components/QrTool.astro';
+import { SITE } from '../data/site';
+import { PRICE_LINE } from '../data/pricing';
+const title = 'Tạo mã QR thanh toán cho cửa hàng: in dán quầy, tiền vào báo ngay';
+const description = 'Tạo mã QR thanh toán cho cửa hàng chuẩn VietQR: tải PNG in khổ A4 dán quầy, khách quét chuyển đúng tiền. Tiền vào báo cho thu ngân, khỏi canh app ngân hàng. Miễn phí.';
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const faq = [
+  { q: 'Tạo mã QR thanh toán cho cửa hàng rồi in ra dán quầy, cỡ bao nhiêu thì khách quét được?', a: 'Tải PNG ở tool trên rồi in từ 4 cm mỗi cạnh trở lên là app ngân hàng quét tốt; dán quầy nên in khổ A5 hoặc A4 ép nhựa cho bền. Với cửa hàng, để trống số tiền (mã tĩnh) để khách tự nhập, hoặc in mã động theo từng đơn khi bán online.' },
+  { q: 'Mã QR ngân hàng in ở quầy khác gì mã QR của từng đơn hàng?', a: 'Mã in dán quầy là mã tĩnh: chỉ chứa số tài khoản, khách tự gõ số tiền và nội dung nên dễ gõ sai, thu ngân phải đối chiếu tay. Mã QR động theo đơn thì điền sẵn số tiền và nội dung, khách quét là đúng, phần mềm khớp được. Cửa hàng bán tại quầy thường dùng mã tĩnh; bán online hoặc muốn tự khớp đơn thì dùng mã động qua MONA Pay.' },
+  { q: 'Khách chuyển khoản vào mã QR ở quầy, thu ngân làm sao biết tiền đã vào mà không mở app ngân hàng?', a: 'Tool này chỉ tạo mã; muốn thu ngân biết ngay thì nối tài khoản ACB vào MONA Pay. Tiền vào là ACB báo, MONA Pay gửi tin vào nhóm chat của cửa hàng hoặc bật màn hình đọc số tiền ở quầy trong vài giây, khỏi ai canh app ngân hàng. ACB đang chạy, các ngân hàng khác đang kết nối, xem trạng thái tại ' + SITE.url + '/ngan-hang; ' + PRICE_LINE + '.' },
+  { q: 'Cửa hàng nhiều chi nhánh thì mỗi quầy một mã QR riêng được không?', a: 'Được. Mỗi chi nhánh dùng một số tài khoản hoặc một tài khoản ảo riêng, tạo mã QR riêng, tiền vào chi nhánh nào thì báo đúng chi nhánh đó. Với MONA Pay, mỗi chi nhánh nhận tin vào một nhóm chat riêng, kế toán tổng nhìn được tất cả trên một dashboard.' },
+  { q: 'Tạo mã QR thanh toán cho cửa hàng ở đây có mất phí không, có lưu số tài khoản không?', a: 'Tạo mã hoàn toàn miễn phí và chạy ngay trên trình duyệt, tụi em không gửi số tài khoản hay số tiền lên máy chủ nào. Phần tự động báo tiền vào qua MONA Pay cũng ' + PRICE_LINE + ', tiền vào thẳng tài khoản ngân hàng của cửa hàng, không đi qua MONA Pay.' },
+  { q: 'Không có website hay phần mềm bán hàng thì dùng được không?', a: 'Được. In mã QR dán quầy là dùng được ngay, không cần website. Muốn tiền vào tự báo cho cả cửa hàng thì chỉ cần nối ACB vào MONA Pay và bật thông báo vào nhóm chat, cũng không cần lập trình. Có website hay phần mềm thì nối thêm webhook để đơn tự xác nhận.' },
+];
+const jsonld = [{
+  '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Tạo mã QR thanh toán cho cửa hàng (VietQR)', url: SITE.url + '/tao-ma-qr-thanh-toan-cua-hang', applicationCategory: 'FinanceApplication', operatingSystem: 'Web', browserRequirements: 'Trình duyệt hỗ trợ JavaScript',
+  offers: { '@type': 'Offer', price: 0, priceCurrency: 'VND' }, publisher: { '@id': SITE.url + '/#organization' }, inLanguage: 'vi',
+  description: 'Tạo mã QR thanh toán cho cửa hàng chuẩn VietQR, in PNG dán quầy, chạy trên trình duyệt, miễn phí.',
+}];
+---
+<Base title={title} description={description} path="/tao-ma-qr-thanh-toan-cua-hang" jsonld={jsonld}>
+  <section class="hero"><div class="wrap">
+    <span class="eyebrow">Công cụ miễn phí</span>
+    <h1>Tạo mã QR thanh toán cho cửa hàng,<br class="br-d" /> <span class="accent">in dán quầy khách quét là chuyển đúng tiền</span></h1>
+    <div class="answer-first"><p>Tạo mã QR thanh toán cho cửa hàng ngay tại đây: chọn ngân hàng, nhập số tài khoản, bấm tạo, tải ảnh PNG in khổ A5 hoặc A4 dán ở quầy. Mã theo chuẩn VietQR nên app mọi ngân hàng Việt Nam quét được, khách chuyển thẳng vào tài khoản cửa hàng. Để trống số tiền cho khách tự nhập, hoặc điền sẵn số tiền cho từng đơn.</p></div>
+    <QrTool />
+  </div></section>
+
+  <section class="section-alt"><div class="wrap">
+    <span class="eyebrow">Dán mã ở quầy rồi sao nữa</span>
+    <h2>Khách quét chuyển khoản, thu ngân biết tiền vào bằng cách nào?</h2>
+    <div class="grid grid-3">
+      <div class="card"><div class="icon">1</div><h3>In mã QR ngân hàng dán quầy</h3><p>Tải PNG, in từ 4 cm mỗi cạnh trở lên, ép nhựa dán quầy. Khách quét là ra sẵn tài khoản cửa hàng, tự nhập số tiền rồi chuyển. Không cần website, không cần phần mềm.</p></div>
+      <div class="card"><div class="icon">2</div><h3>Vấn đề: canh app ngân hàng</h3><p>Với mã tĩnh dán quầy, thu ngân vẫn phải mở app ngân hàng xem tiền vào chưa, rồi đối chiếu đơn. Đông khách hoặc nhiều chi nhánh là dễ sót, dễ nhầm.</p></div>
+      <div class="card"><div class="icon">3</div><h3>MONA Pay báo tiền vào tận quầy</h3><p>Nối tài khoản ACB vào MONA Pay: tiền vào là báo vào nhóm chat của cửa hàng hoặc màn hình đọc số ở quầy trong vài giây. Nhiều chi nhánh thì mỗi quầy một nhóm riêng. {cap(PRICE_LINE)}.</p></div>
+    </div>
+    <div class="btn-row"><a class="btn btn-primary" href={SITE.appRegister}>Tạo tài khoản MONA Pay miễn phí</a><a class="btn btn-outline" href="/loa-thong-bao-chuyen-khoan">Cách báo tiền vào cho quầy</a></div>
+  </div></section>
+
+  <section><div class="wrap narrow">
+    <h2>Mã QR thanh toán cho cửa hàng: tĩnh hay động?</h2>
+    <p>Mã QR thanh toán ở Việt Nam đi theo chuẩn <strong>VietQR</strong> (định dạng EMVCo, chuyển nhanh Napas 247 theo số tài khoản). Mã <strong>tĩnh</strong> chỉ chứa ngân hàng và số tài khoản, hợp để in một tờ dán quầy dùng mãi; khách tự gõ số tiền và nội dung. Mã <strong>động</strong> điền sẵn số tiền và nội dung theo từng đơn, khách quét là đúng, phần mềm khớp đơn tự động; hợp khi bán online hoặc khi cửa hàng muốn hết cảnh đối chiếu tay.</p>
+    <p>Ở MONA, tụi em dùng đúng cơ chế này để thu phí hosting và học phí, và từ 2022 khách hàng của MONA cũng thu tiền như vậy: mỗi đơn một mã QR động kèm nội dung riêng, tiền vào là hệ thống tự khớp. Cửa hàng bán tại quầy thì bắt đầu bằng mã tĩnh in dán ở trên; khi cần tự khớp đơn và báo tiền vào tận quầy thì chuyển sang mã động và thông báo tự động của <a href="/">MONA Pay</a>. Xem thêm cách <a href="/tao-ma-qr-ngan-hang">tạo mã QR ngân hàng cho mọi mục đích</a> và <a href="/nganh/nha-hang-fnb">thu tiền cho quán ăn, nhà hàng</a>.</p>
+    <p>{SITE.entity}</p>
+  </div></section>
+
+  <section class="section-alt"><div class="wrap narrow"><Faq items={faq} eyebrow="Hỏi đáp" title="Câu hỏi hay gặp khi tạo mã QR thanh toán cho cửa hàng" /></div></section>
+  <CtaBand title="Cửa hàng đông khách: tiền vào là báo tận quầy, khỏi canh app" body={`MONA Pay báo tiền vào nhóm chat cửa hàng và màn hình quầy trong vài giây, nhiều chi nhánh mỗi quầy một nhóm riêng. ${cap(PRICE_LINE)}.`} />
+</Base>
+
+<style>
+  .br-d{display:inline}
+  @media (max-width:767px){.br-d{display:none}}
+  .hero h1{font-size:clamp(1.8rem,3.2vw,2.4rem)}
+</style>

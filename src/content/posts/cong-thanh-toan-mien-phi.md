@@ -60,7 +60,7 @@ Chưa cần là ai bán chủ yếu cho khách nước ngoài trả bằng thẻ
 
 ### Cổng thanh toán miễn phí có bị giới hạn số giao dịch mỗi tháng không?
 
-Có, và tụi em nói rõ thay vì giấu: gói Miễn phí 500 giao dịch mỗi tháng, đủ cho shop bán đều 16 đơn mỗi ngày. Trên mức đó có gói Khởi nghiệp 99.000đ cho 2.000 giao dịch, Kinh doanh 299.000đ cho 10.000, Doanh nghiệp 799.000đ cho 50.000, xem [bảng giá](/bang-gia). Ngoài ra chỉ có giới hạn tốc độ gọi API để chặn lạm dụng, người dùng thật không chạm tới.
+Có, và tụi em nói rõ thay vì giấu: gói Miễn phí 500 giao dịch mỗi tháng, đủ cho shop bán đều 16 đơn mỗi ngày. Trên mức đó có gói Khởi nghiệp 99.000đ cho 2.000 giao dịch, Doanh nghiệp 799.000đ cho 50.000, trên nữa là gói Quy mô lớn tính tịnh tiến theo số giao dịch, xem [bảng giá](/bang-gia). Ngoài ra chỉ có giới hạn tốc độ gọi API để chặn lạm dụng, người dùng thật không chạm tới.
 
 ### Miễn phí thì có thu phần trăm trên số tiền không?
 

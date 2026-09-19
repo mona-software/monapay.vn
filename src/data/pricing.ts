@@ -9,7 +9,7 @@ export const PRICING_APPROVED = true;
 
 export type Plan = {
   code: string; name: string; price_month: number; price_year: number;
-  tx_limit: number; overage_per_tx: number | null; featured: boolean; sort: number; features: string[]; hidden?: boolean;
+  tx_limit: number; overage_per_tx: number | null; featured: boolean; sort: number; features: string[]; hidden?: boolean; progressive?: boolean;
 };
 export const YEARLY_MONTHS: number = plansJson.yearly_months;
 const ALL_PLANS: Plan[] = [...plansJson.plans]
