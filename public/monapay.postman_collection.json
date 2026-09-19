@@ -1,7 +1,7 @@
 {
  "info": {
   "name": "MONA Pay API v1",
-  "description": "MONA Pay là cổng thanh toán và API ngân hàng của The MONA Group. Docs: https://monapay.vn/docs · Set biến baseUrl=https://api.monapay.vn, accessToken (từ POST /api/v1/client/login), clientSecret (từ POST /api/v1/client-keys/generate).",
+  "description": "MONA Pay là API ngân hàng và dịch vụ xác nhận thanh toán tự động của The MONA Group. Docs: https://monapay.vn/docs · Set biến baseUrl=https://api.monapay.vn, accessToken (từ POST /api/v1/client/login), clientSecret (từ POST /api/v1/client-keys/generate).",
   "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
  },
  "variable": [

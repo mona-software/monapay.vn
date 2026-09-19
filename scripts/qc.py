@@ -19,7 +19,7 @@ for line in open(BANNED, encoding='utf-8'):
     body = line[2:].strip()
     if body.startswith('re: '): regs.append(re.compile(body[4:], re.I))
     elif body and not body.startswith('**'): subs.append(body.lower())
-ENTITY = 'MONA Pay là cổng thanh toán và API ngân hàng của The MONA Group'
+ENTITY = 'MONA Pay là API ngân hàng và dịch vụ xác nhận thanh toán tự động của The MONA Group'
 # Giá (Mon chốt 31/08/2026: free 500 GD/tháng + gói trả phí) — cụm cũ 'miễn phí hoàn toàn / không giới hạn giao dịch' là SAI SỰ THẬT → FAIL
 PRICING_BANNED = ['miễn phí hoàn toàn', 'không giới hạn giao dịch', 'không giới hạn số giao dịch', 'không giới hạn số lượng giao dịch', 'no transaction limit', 'completely free']
 # Ngoại lệ Mon chốt 02/09: cụm trên HỢP LỆ khi nói về tầng khách hàng MONA — gỡ ngữ cảnh đó khỏi text trước khi quét
@@ -89,7 +89,7 @@ for f in files:
     for m in re.finditer(r'(tốt nhất|số 1 (việt nam|thị trường|ngành)|hàng đầu(?! tiên)|giải pháp toàn diện|trải nghiệm liền mạch)', t, re.I):
         issues.append(f'superlative/cliché: "{m.group(0)}"')
     # em-dash trong prose (trừ câu entity)
-    body_no_entity = t.replace(ENTITY, '').replace('— thiết kế để cả lập trình viên lẫn AI agent tích hợp trong vài phút', '').replace('MONA Pay — API ngân hàng & webhook thanh toán tự động cho thời đại AI', '').replace('MONA Pay — cổng thanh toán', '')
+    body_no_entity = t.replace(ENTITY, '').replace('— thiết kế để cả lập trình viên lẫn AI agent tích hợp trong vài phút', '').replace('MONA Pay — API ngân hàng & webhook thanh toán tự động cho thời đại AI', '').replace('MONA Pay — cổng thanh toán', '').replace('MONA Pay — API ngân hàng', '')
     n_dash = len(re.findall(r'\s—\s', body_no_entity))
     if n_dash > 4: ws.append(f'em-dash trong prose: {n_dash} chỗ (ngoài câu entity)')
     # GEO

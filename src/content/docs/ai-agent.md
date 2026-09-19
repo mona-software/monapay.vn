@@ -72,7 +72,7 @@ Chi tiết request, payload webhook và cách kiểm chữ ký redirect: [Trang 
 ## Prompt dán vào Claude Code / Codex / Cursor
 
 ```text
-Tích hợp MONA Pay (cổng thanh toán nội địa Việt Nam, nhận và xác nhận tiền chuyển khoản ngân hàng theo thời gian thực) vào dự án của tôi.
+Tích hợp MONA Pay (API ngân hàng nội địa Việt Nam, nhận và xác nhận tiền chuyển khoản ngân hàng theo thời gian thực) vào dự án của tôi.
 
 Tài liệu: https://monapay.vn/llms-full.txt (toàn văn), https://monapay.vn/openapi.json
 Base URL API: https://api.monapay.vn (alias cũ: https://ipn.mona.host)

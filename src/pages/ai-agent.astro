@@ -9,7 +9,7 @@ import { PRICE_LINE } from '../data/pricing';
 
 const MCP_CMD = 'claude mcp add monapay -e MONAPAY_CLIENT_ID=client_xxx -e MONAPAY_CLIENT_SECRET=xxx -- npx -y monapay-mcp';
 const MCP_JSON = JSON.stringify({ mcpServers: { monapay: { command: 'npx', args: ['-y', 'monapay-mcp'], env: { MONAPAY_CLIENT_ID: 'client_xxx', MONAPAY_CLIENT_SECRET: 'xxx' } } } }, null, 2);
-const AI_PROMPT = `Tích hợp MONA Pay (cổng thanh toán nội địa Việt Nam, nhận và xác nhận tiền
+const AI_PROMPT = `Tích hợp MONA Pay (API ngân hàng nội địa Việt Nam, nhận và xác nhận tiền
 chuyển khoản ngân hàng theo thời gian thực) vào dự án của tôi.
 
 Base URL API: ${SITE.api} (alias cũ: ${SITE.apiLegacy})
@@ -170,7 +170,7 @@ const jsonld = [{
           <span class="eyebrow">Dành cho AI agent</span>
           <h1>API ngân hàng cho AI agent:<br /><span class="accent">webhook tự tích hợp trong 5 phút</span></h1>
           <div class="answer-first">
-            <p>MONA Pay là cổng thanh toán và API ngân hàng Việt Nam thiết kế để AI agent (Claude Code, Codex, Cursor) tự tích hợp: agent đọc /llms.txt, bản .md từng trang tài liệu và /openapi.json ngay trên monapay.vn, sinh code nhận webhook ký HMAC-SHA256, trả HTTP 200 trong {SITE.tech.webhookTimeoutSec} giây. Tiền vào thẳng tài khoản ACB của anh chị, không qua MONA Pay.</p>
+            <p>MONA Pay là API ngân hàng Việt Nam thiết kế để AI agent (Claude Code, Codex, Cursor) tự tích hợp: agent đọc /llms.txt, bản .md từng trang tài liệu và /openapi.json ngay trên monapay.vn, sinh code nhận webhook ký HMAC-SHA256, trả HTTP 200 trong {SITE.tech.webhookTimeoutSec} giây. Tiền vào thẳng tài khoản ACB của anh chị, không qua MONA Pay.</p>
           </div>
           <p class="lead">{SITE.entity}</p>
           <div class="btn-row">

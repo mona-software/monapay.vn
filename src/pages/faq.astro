@@ -10,6 +10,8 @@ const isFree = PRICING_MODE === 'free-all';
 const coBan = [
   { q: 'MONA Pay là gì?',
     a: `${SITE.entity} Nói đơn giản: khách chuyển khoản vào tài khoản ACB của anh chị, ACB báo cho MONA Pay, MONA Pay báo ngay cho website, phần mềm hoặc nhóm Telegram của anh chị để đơn hàng tự xác nhận, không cần ai ngồi canh app ngân hàng.` },
+  { q: 'MONA Pay có phải cổng thanh toán hay trung gian thanh toán không?',
+    a: 'Không. Cổng thanh toán hay ví điện tử là dịch vụ trung gian thanh toán: tiền của khách vào tài khoản của họ trước rồi mới chuyển lại cho anh chị. MONA Pay không đứng giữa, không giữ tiền, không chuyển tiền hộ. Tiền đi thẳng từ khách sang tài khoản ngân hàng đứng tên anh chị, MONA Pay chỉ đọc thông báo giao dịch qua API ngân hàng rồi báo cho phần mềm của anh chị. Vì vậy tụi em gọi đúng tên: MONA Pay là API ngân hàng và dịch vụ xác nhận thanh toán tự động.' },
   { q: 'Tiền của tôi có đi qua MONA Pay không?',
     a: 'Không. Tiền vào thẳng tài khoản ngân hàng đứng tên anh chị, MONA Pay không giữ tiền, không rút, không chuyển. Việc duy nhất MONA Pay làm là đọc thông báo giao dịch ACB gửi về rồi báo lại cho hệ thống của anh chị qua webhook, Telegram và dashboard. Tụi em không có mật khẩu ngân hàng của anh chị; việc nối tài khoản xác thực bằng 2 lần OTP do ACB gửi về số điện thoại anh chị đã đăng ký.' },
   { q: 'Ai đứng sau MONA Pay, có mới không?',
@@ -78,13 +80,13 @@ const groups = [
 const total = groups.reduce((n, g) => n + g.items.length, 0);
 ---
 <Base
-  title="Cổng thanh toán MONA Pay là gì? 21 câu hỏi thường gặp"
-  description="Cổng thanh toán MONA Pay là gì, tiền có đi qua không, hỗ trợ ngân hàng nào, nối ACB mất bao lâu, webhook lỗi thì sao, giá, so với PayPal, Stripe: 21 câu trả lời."
+  title="MONA Pay là gì? 22 câu hỏi về API ngân hàng, phí, cổng thanh toán"
+  description="MONA Pay là gì, có phải cổng thanh toán không, tiền có đi qua không, hỗ trợ ngân hàng nào, nối ACB mất bao lâu, webhook lỗi thì sao, giá, so với PayPal, Stripe: 22 câu trả lời."
   path="/faq">
   <section class="hero">
     <div class="wrap narrow">
       <span class="eyebrow">Hỏi đáp</span>
-      <h1>Cổng thanh toán MONA Pay là gì?<br class="br-d" /> <span class="accent">{total} câu anh chị hay hỏi trước khi dùng</span></h1>
+      <h1>MONA Pay là gì?<br class="br-d" /> <span class="accent">{total} câu anh chị hay hỏi trước khi dùng</span></h1>
       <div class="answer-first">
         <p>Trang này trả lời {total} câu anh chị hay hỏi về MONA Pay: tiền có đi qua MONA Pay không (không), hỗ trợ ngân hàng nào (ACB), tích hợp mất bao lâu (vài phút tới một buổi với lập trình viên có sẵn), có miễn phí không ({PRICE_LINE}), PayPal hay Stripe có hợp thu tiền trong nước không. Mỗi câu trả lời ngắn, có số cụ thể, đủ để anh chị quyết.</p>
       </div>

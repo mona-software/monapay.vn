@@ -10,9 +10,9 @@ Luật: **title + H1 + đoạn mở đều mở bằng keyword chính**; keyword
 | `/cong-thanh-toan-wordpress` | `tích hợp cổng thanh toán vào website` 50 | `plugin thanh toán wordpress` 20 | Tích hợp cổng thanh toán vào website WordPress (chuyển khoản ACB) |
 | `/chia-se-bien-dong-so-du-telegram` | `biến động số dư` 200 | `thông báo biến động số dư`, `loa thông báo` 600 (đối chiếu) | Biến động số dư ngân hàng báo qua Telegram, tiền vào ACB thấy ngay |
 | `/ai-agent` | `api ngân hàng` 200 · KD0 | `webhook` 2.0K · KD0 | API ngân hàng cho AI agent: webhook thanh toán tích hợp 5 phút |
-| `/faq` | `cổng thanh toán là gì` 60 | `api ngân hàng là gì`, `paypal có dùng được ở việt nam không` | Cổng thanh toán MONA Pay là gì? 20 câu hỏi thường gặp |
-| `/bang-gia` | `cổng thanh toán` (biến thể giá) | `phí paypal việt nam` (cột so sánh quốc tế) | Bảng giá cổng thanh toán MONA Pay: miễn phí 100 giao dịch/tháng |
-| `/khach-hang` | brand | `cổng thanh toán` | Khách hàng dùng cổng thanh toán MONA Pay vào việc gì |
+| `/faq` | `cổng thanh toán là gì` 60 | `api ngân hàng là gì`, `paypal có dùng được ở việt nam không` | MONA Pay là gì? 20 câu hỏi thường gặp |
+| `/bang-gia` | `cổng thanh toán` (biến thể giá) | `phí paypal việt nam` (cột so sánh quốc tế) | Bảng giá API ngân hàng MONA Pay: miễn phí 100 giao dịch/tháng |
+| `/khach-hang` | brand | `cổng thanh toán` | Khách hàng dùng API ngân hàng MONA Pay vào việc gì |
 | `/gioi-thieu`, `/lien-he` | brand | — | giữ |
 | `/docs` | `webhook` 2.0K · KD0 | `api ngân hàng` | Tài liệu webhook và API ngân hàng MONA Pay |
 | `/docs/khai-niem` | `webhook là gì` 900 · `vietqr là gì` 1.2K | `tài khoản ngân hàng ảo` 300, `open banking` 700 | Webhook là gì, VietQR là gì, tài khoản ảo là gì (giải thích dễ hiểu) |
