@@ -14,7 +14,7 @@ const faq = [
   { q: 'Phí PayPal Việt Nam là bao nhiêu?', a: 'Theo biểu phí PayPal công bố, tụi em kiểm ngày 28/08/2026: nhận giao dịch thương mại từ ngoài lãnh thổ Việt Nam mất 4,40% cộng phí cố định theo tiền tệ (0,30 USD hoặc 0,35 EUR); thanh toán vi mô quốc tế 6,00% cộng phí cố định; quy đổi tiền tệ 4,00% khi gửi thanh toán hoặc nhận hoàn tiền và 3,00% các trường hợp khác; rút về ngân hàng Việt Nam 60.000đ mỗi lần khi không phải quy đổi tiền tệ.' },
   { q: 'Rút tiền PayPal về ngân hàng Việt Nam mất phí không?', a: 'Có. PayPal thu 60.000đ mỗi lần rút về tài khoản ngân hàng mở tại Việt Nam khi không cần quy đổi tiền tệ. Nếu số dư là USD mà rút về tài khoản tiền Việt thì áp phí quy đổi tiền tệ 3,00% trên tỷ giá cơ sở. Rút không thành công do sai thông tin ngân hàng bị tính 70.000đ.' },
   { q: 'Nhận 100 USD qua PayPal thì còn bao nhiêu?', a: 'Giao dịch thương mại từ nước ngoài: 100 USD trừ 4,40% (4,40 USD) và phí cố định 0,30 USD, còn 95,30 USD trong ví. Rút về tài khoản tiền Việt thì thêm phí quy đổi 3,00%, tương đương còn khoảng 92,44 USD quy ra tiền Việt theo tỷ giá PayPal áp dụng lúc rút.' },
-  { q: 'Khách trong nước có trả tiền qua PayPal được không?', a: 'Về kỹ thuật thì được nếu khách có tài khoản PayPal hoặc thẻ quốc tế, nhưng phần lớn khách lẻ Việt Nam không có và không muốn tạo. Bán cho khách trong nước, chuyển khoản qua mã VietQR vẫn là cách đơn giản nhất: khách quét bằng ứng dụng ngân hàng, tiền vào thẳng tài khoản, 0đ phí.' },
+  { q: 'Khách trong nước có trả tiền qua PayPal được không?', a: 'Về kỹ thuật thì được nếu khách có tài khoản PayPal hoặc thẻ Visa/Mastercard, nhưng phần lớn khách lẻ Việt Nam không có và không muốn tạo. Bán cho khách trong nước, chuyển khoản qua mã VietQR vẫn là cách đơn giản nhất: khách quét bằng ứng dụng ngân hàng, tiền vào thẳng tài khoản, 0đ phí.' },
   { q: 'Tích hợp PayPal vào website thế nào?', a: 'PayPal có nút thanh toán (PayPal Checkout) và IPN để báo về website khi khách trả xong; tài liệu tại developer.paypal.com. Web bán cả trong lẫn ngoài nước thường đặt 2 lựa chọn: nút PayPal cho khách ngoại và mã VietQR cho khách Việt, phần VietQR do MONA Pay xác nhận tự động qua webhook.' },
   { q: 'Thu tiền khách trong nước thì thay PayPal bằng gì?', a: 'Chuyển khoản qua VietQR với MONA Pay: khách quét mã đúng số tiền, tiền vào thẳng tài khoản ACB của anh chị, MONA Pay bắn webhook về web hoặc phần mềm và nhắn Telegram để đơn tự xác nhận. Không mất phần trăm, không phí rút, ' + PRICE_LINE + '.' },
 ];
@@ -55,7 +55,7 @@ const jsonld = [{
       <p class="lead">Dùng được. PayPal mở tài khoản cá nhân lẫn doanh nghiệp cho người ở Việt Nam, có trang biểu phí riêng cho thị trường Việt Nam và cho phép rút tiền về tài khoản ngân hàng mở tại Việt Nam. Câu hỏi đúng hơn là dùng vào việc gì thì có lợi.</p>
       <div class="grid grid-3">
         <div class="card"><div class="icon">✓</div><h3>Freelancer, agency nhận tiền khách ngoại</h3><p>Khách ở Mỹ, Úc, châu Âu trả hợp đồng thiết kế, lập trình, nội dung. PayPal là kênh đăng ký được ngay, khách bên kia cũng quen dùng.</p></div>
-        <div class="card"><div class="icon">✓</div><h3>Shop bán ra nước ngoài</h3><p>Bán thủ công mỹ nghệ, cà phê, đồ Việt cho khách ngoại qua website hoặc sàn. Khách trả bằng tài khoản PayPal hoặc thẻ quốc tế qua nút PayPal Checkout.</p></div>
+        <div class="card"><div class="icon">✓</div><h3>Shop bán ra nước ngoài</h3><p>Bán thủ công mỹ nghệ, cà phê, đồ Việt cho khách ngoại qua website hoặc sàn. Khách trả bằng tài khoản PayPal hoặc thẻ Visa/Mastercard qua nút PayPal Checkout.</p></div>
         <div class="card"><div class="icon">✗</div><h3>Thu tiền khách lẻ trong nước</h3><p>Không hợp. Khách Việt không có PayPal, phí 4,40% cộng phí cố định trên mỗi đơn, tiền nằm trong ví và mất thêm 60.000đ mỗi lần rút. Phần này để chuyển khoản VietQR lo.</p></div>
       </div>
     </div>
@@ -102,7 +102,7 @@ const jsonld = [{
       <span class="eyebrow">Khách trong nước</span>
       <h2>Vì sao không nên bắt khách Việt<br class="br-d" /> trả qua PayPal</h2>
       <div class="grid grid-2">
-        <div class="card"><h3>Khách không có PayPal</h3><p>Khách lẻ Việt Nam mở ứng dụng ngân hàng, quét mã QR là xong. Bắt họ tạo tài khoản PayPal hoặc nhập thẻ quốc tế là mất đơn ngay ở bước thanh toán.</p></div>
+        <div class="card"><h3>Khách không có PayPal</h3><p>Khách lẻ Việt Nam mở ứng dụng ngân hàng, quét mã QR là xong. Bắt họ tạo tài khoản PayPal hoặc nhập thẻ Visa/Mastercard là mất đơn ngay ở bước thanh toán.</p></div>
         <div class="card"><h3>Mất 4,40% mỗi đơn cho việc chuyển khoản làm với 0đ</h3><p>Đơn 1.000.000đ mất 44.000đ phí phần trăm chưa tính phí cố định. 300 đơn một tháng là hơn 13 triệu đồng.</p></div>
         <div class="card"><h3>Tiền nằm ví, không vào tài khoản</h3><p>Muốn có tiền trong tài khoản ngân hàng phải bấm rút và trả 60.000đ mỗi lần, dòng tiền chậm hơn chuyển khoản trực tiếp vài giây.</p></div>
         <div class="card"><h3>Bên thứ ba có quyền giữ tiền</h3><p>PayPal có thể tạm giữ khoản thanh toán để xác minh khi thấy giao dịch bất thường. Với chuyển khoản trực tiếp, tiền là của anh chị ngay khi ngân hàng báo có.</p></div>

@@ -54,7 +54,7 @@ Ngoài gói, tụi em có dịch vụ kèm theo cho doanh nghiệp cần kỹ s�
 
 ## Cái tụi em chưa có, nói trước để anh chị khỏi kỳ vọng sai
 
-Miễn phí không có nghĩa là làm được mọi thứ. ACB đang hoạt động, MB, BIDV, VietinBank, OCB, MSB, KienlongBank, TPBank đang đăng ký kết nối (bảng trạng thái ở [ngân hàng hỗ trợ](/ngan-hang)), tụi em không hứa ngày. Gửi lại webhook tự động tối đa 7 lần đang triển khai, hiện anh chị bấm gửi lại từ bảng điều khiển khi máy nhận lỗi. Không có thẻ quốc tế, không có trả góp, không có ví. Anh chị bán ra nước ngoài thì vẫn cần một cổng như PayPal chạy song song, tụi em viết rõ ở bài [PayPal tại Việt Nam](/paypal-viet-nam).
+Miễn phí không có nghĩa là làm được mọi thứ. ACB đang hoạt động, MB, BIDV, VietinBank, OCB, MSB, KienlongBank, TPBank đang đăng ký kết nối (bảng trạng thái ở [ngân hàng hỗ trợ](/ngan-hang)), tụi em không hứa ngày. Gửi lại webhook tự động tối đa 7 lần đang triển khai, hiện anh chị bấm gửi lại từ bảng điều khiển khi máy nhận lỗi. Không có thẻ, không có trả góp, không có ví. Anh chị bán ra nước ngoài thì vẫn cần một cổng như PayPal chạy song song, tụi em viết rõ ở bài [PayPal tại Việt Nam](/paypal-viet-nam).
 
 Nếu anh chị cần nhiều ngân hàng ngay hôm nay, hoặc cần nhận thẻ Visa của khách nước ngoài, thì MONA Pay chưa phải lựa chọn, và tụi em thà nói thẳng ở đây còn hơn để anh chị mất 5 phút đăng ký rồi thất vọng. Cái gì chưa có thì nói chưa có. Vậy cho nhẹ.
 

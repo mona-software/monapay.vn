@@ -28,7 +28,7 @@ Doanh nghiệp Việt Nam ở mọi quy mô đang phải chia sẻ một phần 
 
 - 4,40% + 0,30 USD: Mức phí cơ bản mà PayPal áp dụng cho mỗi giao dịch thương mại từ ngoài lãnh thổ Việt Nam.
 - 60.000đ: Chi phí cố định mỗi khi doanh nghiệp rút tiền từ ví PayPal về tài khoản ngân hàng nội địa.
-- 1,0% đến 3,7%: dải phí chiết khấu thẻ theo biểu phí công khai của một ngân hàng lớn (VietinBank, hiệu lực 22/04/2026): thẻ nội địa tại POS 1,0% đến 2,0%, thẻ quốc tế phát hành nước ngoài 3,5%, thương mại điện tử 1,818% + 4.200 đ mỗi giao dịch với thẻ nội địa và 3,7% + 4.500 đ với thẻ quốc tế. Ví điện tử và cổng trong nước thu theo hợp đồng từng đơn vị, bài này dùng mức giả định 1,5% đến 2,0%.
+- 1,0% đến 3,7%: dải phí chiết khấu thẻ theo biểu phí công khai của một ngân hàng lớn (VietinBank, hiệu lực 22/04/2026): thẻ nội địa tại POS 1,0% đến 2,0%, thẻ Visa/Mastercard phát hành nước ngoài 3,5%, thương mại điện tử 1,818% + 4.200 đ mỗi giao dịch với thẻ nội địa và 3,7% + 4.500 đ với thẻ Visa/Mastercard. Ví điện tử và cổng trong nước thu theo hợp đồng từng đơn vị, bài này dùng mức giả định 1,5% đến 2,0%.
 - ≈9,5 triệu đ/tháng: tổng phí trung gian của một shop thương mại điện tử doanh thu 800 triệu/tháng theo cơ cấu kênh giả định trong bài (ước tính, xem mục 5).
 - ≈2,25 triệu đ/tháng: chi phí ẩn cho nhân sự tra soát chuyển khoản bằng tay ở doanh nghiệp vừa (ước tính: 1.500 giao dịch × 3 phút × 30.000 đ/giờ).
 

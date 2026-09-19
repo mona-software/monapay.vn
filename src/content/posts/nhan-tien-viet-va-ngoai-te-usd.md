@@ -70,7 +70,7 @@ Không bắt buộc, nhưng với khách lẻ ở Mỹ, Úc, châu Âu thì PayP
 
 Không. MONA Pay miễn phí 500 giao dịch mỗi tháng, trên đó tính theo số giao dịch, không thu phần trăm trên số tiền. Tiền vào thẳng tài khoản ACB của anh chị. Chỉ có giới hạn fair-use để chặn lạm dụng như bắn API dồn dập. Anh chị dùng thật bao nhiêu đơn một tháng cũng không chạm tới ngưỡng đó, vì nó được đặt cho máy chứ không đặt cho người bán hàng.
 
-### Khách Việt trả bằng thẻ quốc tế thì sao?
+### Khách Việt trả bằng thẻ Visa/Mastercard thì sao?
 
 Một phần nhỏ khách Việt vẫn trả bằng thẻ Visa hay Mastercard, và khi đó một cổng thẻ có ích. Tụi em thấy phần lớn đơn trong nước đi bằng chuyển khoản vì nhanh và không mất phí, nên khuyên anh chị mở đường chuyển khoản trước, đo tỷ lệ vài tháng rồi mới quyết có thêm cổng thẻ hay không.
 
